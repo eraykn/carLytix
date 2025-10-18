@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="CarLytix logo - Concept A">
+  <title>CarLytix — Concept A</title>
+  <desc>Monogram CL with analytic sparkline and modern wordmark</desc>
+  <defs>
+    <style>
+      .ink { fill:none; stroke-linecap:round; stroke-linejoin:round }
+      .blue { stroke:#2979FF }
+      .lime { stroke:#A3E635 }
+      .dark { fill:#0F172A }
+      .blue-fill { fill:#2979FF }
+      .bold { font-weight:700 }
+      .font { font-family: Inter, Poppins, "Segoe UI", Helvetica, Arial, sans-serif }
+    </style>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(16,16)">
+    <!-- C arc (open on the right) -->
+    <path class="ink blue" d="M95.1 95.1 A44 44 0 1 0 95.1 32.9" stroke-width="12"/>
+    <!-- L -->
+    <path class="ink blue" d="M64 28 V100 H92" stroke-width="12" opacity="0.95"/>
+    <!-- Sparkline -->
+    <polyline class="ink lime" points="40,96 56,72 72,84 88,56" stroke-width="6"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g aria-hidden="true">
+    <text x="176" y="104" class="font bold" font-size="72">
+      <tspan class="dark">Car</tspan><tspan class="blue-fill">Lytix</tspan>
+    </text>
+  </g>
+</svg>

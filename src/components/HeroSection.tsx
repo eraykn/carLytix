@@ -54,11 +54,19 @@ export function HeroSection() {
     let isScrolling = false;
 
     const handleWheel = (e: WheelEvent) => {
+      // Sadece hero section içindeyken çalışsın
+      const heroElement = document.querySelector('.hero-section');
+      if (!heroElement || window.scrollY > 100) {
+        return; // Normal scroll'a izin ver
+      }
+
       const now = Date.now();
       
-      // Debounce: en az 800ms bekle
-      if (now - lastScrollTimeRef.current < 800 || isScrolling) {
-        e.preventDefault();
+      // Debounce: en az 500ms bekle
+      if (now - lastScrollTimeRef.current < 500 || isScrolling) {
+        if (window.scrollY < 100) {
+          e.preventDefault();
+        }
         return;
       }
 
@@ -69,20 +77,25 @@ export function HeroSection() {
       
       if (e.deltaY > 0) {
         // Aşağı scroll - sonraki araba
-        const nextIndex = (currentIndex + 1) % carData.length;
-        setSelectedCarId(carData[nextIndex].id);
+        if (currentIndex < carData.length - 1) {
+          const nextIndex = currentIndex + 1;
+          setSelectedCarId(carData[nextIndex].id);
+          e.preventDefault();
+        }
+        // Son karttaysa, normal scroll'a izin ver
       } else {
         // Yukarı scroll - önceki araba
-        const prevIndex = currentIndex === 0 ? carData.length - 1 : currentIndex - 1;
-        setSelectedCarId(carData[prevIndex].id);
+        if (currentIndex > 0) {
+          const prevIndex = currentIndex - 1;
+          setSelectedCarId(carData[prevIndex].id);
+          e.preventDefault();
+        }
       }
 
-      // 800ms sonra tekrar scroll yapılabilir
+      // 500ms sonra tekrar scroll yapılabilir
       setTimeout(() => {
         isScrolling = false;
-      }, 350);
-
-      e.preventDefault();
+      }, 500);
     };
 
     window.addEventListener('wheel', handleWheel, { passive: false });
@@ -100,7 +113,7 @@ export function HeroSection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="relative w-full h-screen overflow-hidden"
+      className="hero-section relative w-full h-screen overflow-hidden"
     >
       {/* Background - Abstract Automotive */}
       <div className="absolute inset-0">
@@ -122,41 +135,13 @@ export function HeroSection() {
         transition={{ delay: 0.3, duration: 0.6 }}
         className="absolute top-12 left-1/2 -translate-x-1/2 z-30"
       >
-        <div className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
-          {/* Icon */}
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="100%" stopColor="#06b6d4" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M 30 8 Q 35 8 37.5 10.5 Q 40 13 40 18 L 40 22 Q 40 27 37.5 29.5 Q 35 32 30 32"
-              stroke="url(#logoGradient)"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <line x1="5" y1="15" x2="17" y2="15" stroke="url(#logoGradient)" strokeWidth="1.5" strokeLinecap="round" />
-            <line x1="2" y1="20" x2="15" y2="20" stroke="url(#logoGradient)" strokeWidth="1.5" strokeLinecap="round" />
-            <line x1="5" y1="25" x2="17" y2="25" stroke="url(#logoGradient)" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-          {/* Text */}
-          <div className="flex items-baseline">
-            <span className="text-2xl bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
-              Car
-            </span>
-            <span className="text-2xl bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
-              Lytix
-            </span>
-          </div>
+        <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
+          {/* CarLytix Logo */}
+          <img 
+            src="/carlytix-concept-a-logo.svg" 
+            alt="CarLytix Logo" 
+            className="h-[40px] w-auto drop-shadow-[0_0_10px_rgba(59,130,246,0.4)] ml-2"
+          />
         </div>
       </motion.div>
 
@@ -294,7 +279,7 @@ export function HeroSection() {
               ease: "easeInOut",
             }}
           >
-            <ChevronDown className="w-6 h-6 text-[#94a3b8]" strokeWidth={2} />
+            <ChevronDown className="w-6 h-6 text-[#94a3b8] cursor-pointer" strokeWidth={2} />
           </motion.div>
           <p className="text-xs text-[#64748b]">Keşfet</p>
         </div>

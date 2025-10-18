@@ -32,11 +32,11 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed inset-0 flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_center,#1a1f2e_0%,#0f1419_100%)]"
+      transition={{ duration: 0.5 }}
+      className="fixed inset-0 flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_center,#1a1f2e_0%,#0f1419_100%)] z-50"
     >
       {/* Noise texture overlay */}
       <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml,%3Csvg%20viewBox=%270%200%20200%20200%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter%20id=%27noiseFilter%27%3E%3CfeTurbulence%20type=%27fractalNoise%27%20baseFrequency=%270.9%27%20numOctaves=%273%27%20stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect%20width=%27100%25%27%20height=%27100%25%27%20filter=%27url(%23noiseFilter)%27/%3E%3C/svg%3E')]" />
@@ -68,59 +68,19 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
           className="absolute w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.12),transparent)] blur-[80px] pointer-events-none"
         />
 
-        {/* Logo - Icon + Text Vertical */}
+        {/* Logo - CarLytix Logo from Public */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col items-center mb-[60px]"
+          className="flex flex-col items-center mb-[20px] ml-[20px]"
         >
-          {/* Stylized C Icon */}
-          <svg
-            width="80"
-            height="80"
-            viewBox="0 0 80 80"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="drop-shadow-[0_0_20px_rgba(59,130,246,0.6)]"
-          >
-            <defs>
-              <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#3b82f6" />
-                <stop offset="100%" stopColor="#06b6d4" />
-              </linearGradient>
-            </defs>
-            {/* Drift trail C shape */}
-            <path
-              d="M 60 15 Q 70 15 75 20 Q 80 25 80 35 L 80 45 Q 80 55 75 60 Q 70 65 60 65"
-              stroke="url(#iconGradient)"
-              strokeWidth="4"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 55 20 Q 63 20 67 24 Q 71 28 71 36 L 71 44 Q 71 52 67 56 Q 63 60 55 60"
-              stroke="url(#iconGradient)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-              opacity="0.6"
-            />
-            {/* Speed lines */}
-            <line x1="10" y1="30" x2="35" y2="30" stroke="url(#iconGradient)" strokeWidth="3" strokeLinecap="round" />
-            <line x1="5" y1="40" x2="30" y2="40" stroke="url(#iconGradient)" strokeWidth="3" strokeLinecap="round" />
-            <line x1="10" y1="50" x2="35" y2="50" stroke="url(#iconGradient)" strokeWidth="3" strokeLinecap="round" />
-          </svg>
-
-          {/* CarLytix Text */}
-          <div className="mt-5 flex items-baseline gap-0">
-            <span className="text-[48px] font-normal tracking-[-0.02em] bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
-              Car
-            </span>
-            <span className="text-[48px] font-bold tracking-[-0.02em] bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
-              Lytix
-            </span>
-          </div>
+          {/* CarLytix Logo */}
+          <img 
+            src="/carlytix-concept-a-logo.svg" 
+            alt="CarLytix Logo" 
+            className="w-[320px] h-auto drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+          />
         </motion.div>
 
         {/* Loading Bar */}
