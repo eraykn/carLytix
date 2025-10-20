@@ -267,8 +267,11 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
+        onClick={() => {
+          document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+        }}
       >
-        <div className="flex flex-col items-center gap-2 px-5 py-3 rounded-full bg-white/[0.05] backdrop-blur-xl border border-white/10">
+        <div className="flex flex-col items-center gap-2 px-5 py-3 rounded-full bg-white/[0.05] backdrop-blur-xl border border-white/10 cursor-pointer">
           <motion.div
             animate={{
               y: [0, 8, 0],
@@ -279,7 +282,7 @@ export function HeroSection() {
               ease: "easeInOut",
             }}
           >
-            <ChevronDown className="w-6 h-6 text-[#94a3b8] cursor-pointer" strokeWidth={2} />
+            <ChevronDown className="w-6 h-6 text-[#94a3b8]" strokeWidth={2} />
           </motion.div>
           <p className="text-xs text-[#64748b]">Keşfet</p>
         </div>

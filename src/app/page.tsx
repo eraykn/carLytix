@@ -1,13 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    // Tarayıcı ortamında olup olmadığımızı kontrol edelim.
+    if (typeof window !== "undefined") {
+      // Eğer 'hasVisited' anahtarı sessionStorage'da yoksa, yükleme ekranını göster.
+      return !sessionStorage.getItem("hasVisited");
+    }
+    // Sunucu tarafında varsayılan olarak yükleme ekranını gösterme.
+    return false;
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem("hasVisited", "true");
+  }, []);
 
   return (
     <div className="w-full overflow-x-hidden bg-[#0f172a] relative">
