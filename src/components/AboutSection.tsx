@@ -17,6 +17,9 @@ export function AboutSection() {
 
   const ref2 = useRef(null);
   const isInView2 = useInView(ref2, { once: true, margin: "-200px" });
+
+  const ref3 = useRef(null);
+  const isInView3 = useInView(ref3, { once: true, margin: "-200px" });
   
   const [displayedText1, setDisplayedText1] = useState("");
   const fullText1 = "CarLytix, araç verisini anlamlı içgörülere dönüştüren modern ve güvenilir bir analiz platformudur. Gerçek zamanlı telemetri ve tarihsel verilerle arıza öngörüsü, bakım optimizasyonu ve performans iyileştirmesi sunar. Hazır paneller ve güçlü entegrasyonlarla karar alma süreçlerini hızlandırır, operasyonel maliyetleri düşürür. Basit, güvenli ve ölçeklenebilir altyapısıyla filoları ve bireysel kullanıcıları geleceğe taşır.";
@@ -87,7 +90,7 @@ export function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView1 ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
             className="space-y-6"
           >
             <motion.h2 
@@ -214,6 +217,54 @@ export function AboutSection() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Bölüm 3: Call to Action */}
+        <motion.div
+          ref={ref3}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView3 ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="relative rounded-3xl overflow-hidden bg-black/20 backdrop-blur-2xl border border-white/10 p-16 text-center flex flex-col items-center gap-8"
+        >
+          {/* Arka plan parlama efekti */}
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.2, 0.4, 0.2]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute -inset-24 w-[calc(100%+12rem)] h-[calc(100%+12rem)] bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.3),transparent_60%)] pointer-events-none"
+          />
+
+          {/* Logo */}
+          <motion.img
+            src="/carlytix-concept-a-logo.svg"
+            alt="CarLytix Logo"
+            className="w-64 h-auto drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView3 ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          />
+
+          {/* Metin */}
+          <motion.p
+            className="max-w-xl text-xl text-slate-300 font-light leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView3 ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            Veriyle konuş, doğru seçimi yap. CarLytix ile otomobil dünyasının geleceğini keşfet.
+          </motion.p>
+
+          {/* Buton */}
+          <motion.button initial={{ opacity: 0, scale: 0.8 }} animate={isInView3 ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.8, delay: 0.9 }} className="px-10 py-4 rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:scale-105 cursor-pointer">
+            Hemen Deneyin
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );

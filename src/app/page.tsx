@@ -5,6 +5,7 @@ import { AnimatePresence } from "motion/react";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
+import { Footer } from "@/components/Footer";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(() => {
@@ -33,6 +34,7 @@ export default function App() {
         <>
           <HeroSection />
           <AboutSection />
+          <Footer />
         </>
       )}
     </div>
