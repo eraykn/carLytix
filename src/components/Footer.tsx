@@ -1,9 +1,16 @@
 "use client";
 
 import { Github } from "lucide-react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 export function Footer() {
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="relative w-full bg-[#1e293b] border-t border-white/10 py-8 px-10">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
@@ -15,7 +22,7 @@ export function Footer() {
             className="h-10 w-auto"
           />
           <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} CarLytix. Tüm hakları saklıdır.
+            © {currentYear} CarLytix. Tüm hakları saklıdır.
           </p>
         </div>
 
