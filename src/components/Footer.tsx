@@ -2,7 +2,7 @@
 
 import { Github } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Volume2, Share2, Settings, Menu, ChevronDown } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { CarCarousel } from "./CarCarousel";
@@ -151,17 +151,20 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         className="absolute top-12 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
-      >
-        {["Anasayfa", "Karşılaştır", "İstatistikler"].map((item, index) => (
+      >{[
+          { name: "Anasayfa", href: "#" },
+          { name: "Karşılaştır", href: "/compare" },
+          { name: "İstatistikler", href: "#" },
+        ].map((item, index) => (
           <motion.a
-            key={item}
-            href="#"
+            key={item.name}
+            href={item.href}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 + index * 0.1 }}
             className="text-sm text-[#d1d5db] hover:text-[#3b82f6] transition-colors duration-300 relative group"
           >
-            {item}
+            {item.name}
             <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
           </motion.a>
         ))}

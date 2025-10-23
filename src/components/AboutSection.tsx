@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
+import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, ReactNode } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Bolt, Globe, BarChart3, ArrowRight } from "lucide-react";
