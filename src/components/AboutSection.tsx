@@ -261,7 +261,15 @@ export function AboutSection() {
           </motion.p>
 
           {/* Buton */}
-          <motion.button initial={{ opacity: 0, scale: 0.8 }} animate={isInView3 ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.8, delay: 0.9 }} className="px-10 py-4 rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:scale-105 cursor-pointer">
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView3 ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="px-10 py-4 rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:scale-105 cursor-pointer"
+            onClick={() => {
+              window.location.href = '/compare';
+            }}
+          >
             Hemen Deneyin
           </motion.button>
         </motion.div>
