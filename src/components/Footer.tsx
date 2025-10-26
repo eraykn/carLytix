@@ -42,7 +42,7 @@ export function Footer() {
             Made by Eray Kan
           </motion.p>
           <a
-            href="https://github.com/eraykn" // Burayı kendi GitHub linkinizle değiştirebilirsiniz
+            href="https://github.com/eraykn" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-white transition-colors duration-300"

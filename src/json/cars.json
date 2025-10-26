@@ -74,7 +74,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+   "photo": "/bmw-128i.webp"
   },
   {
     "id": "bmw-128i-2009",
@@ -151,7 +152,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-128i.webp"
   },
   {
     "id": "bmw-128i-2010",
@@ -228,7 +230,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-128i.webp"
   },
   {
     "id": "bmw-128i-2011",
@@ -305,7 +308,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-128i.webp"
   },
   {
     "id": "bmw-128i-2012",
@@ -382,7 +386,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-128i.webp"
   },
   {
     "id": "bmw-128i-2013",
@@ -459,7 +464,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-128i.webp"
   },
   {
     "id": "bmw-135i-2008",
@@ -536,7 +542,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-135i.webp"
   },
   {
     "id": "bmw-135i-2009",
@@ -613,7 +620,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-135i.webp"
   },
   {
     "id": "bmw-135i-2010",
@@ -690,7 +698,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-135i.webp"
   },
   {
     "id": "bmw-135i-2011",
@@ -767,7 +776,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-135i.webp"
   },
   {
     "id": "bmw-135i-2012",
@@ -844,7 +854,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-135i.webp"
   },
   {
     "id": "bmw-135i-2013",
@@ -921,7 +932,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-135i.webp"
   },
   {
     "id": "bmw-1-series-m-2011",
@@ -998,7 +1010,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-128i.webp"
   },
   {
     "id": "bmw-228i-2014",
@@ -1075,7 +1088,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-228i.webp"
   },
   {
     "id": "bmw-228i-2015",
@@ -1152,7 +1166,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-228i.webp"
   },
   {
     "id": "bmw-228i-2016",
@@ -1229,7 +1244,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-228i.webp"
   },
   {
     "id": "bmw-228i-gran-coupe-2020",
@@ -1306,7 +1322,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-228i.webp"
   },
   {
     "id": "bmw-230i-coupe-2017",
@@ -1383,7 +1400,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-228i.webp"
   },
   {
     "id": "bmw-320i-2015",
@@ -1460,7 +1478,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/bmw-320i.webp"
   },
   {
     "id": "audi-a3-2020",
@@ -1537,7 +1556,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-a3.webp"
   },
   {
     "id": "audi-a3-2023",
@@ -1614,7 +1634,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-a3.webp"
   },
   {
     "id": "audi-a3-2025",
@@ -1691,7 +1712,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-a3.webp"
   },
   {
     "id": "audi-a5-2020",
@@ -1768,7 +1790,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-a5.webp"
   },
   {
     "id": "audi-a5-2021",
@@ -1845,7 +1868,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-a5.webp"
   },
   {
     "id": "audi-a5-2022",
@@ -1922,7 +1946,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-a5.webp"
   },
   {
     "id": "audi-a5-2023",
@@ -1999,7 +2024,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-a5.webp"
   },
   {
     "id": "audi-rs6-avant-2025",
@@ -2076,7 +2102,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/audi-rs6.webp"
   },
   {
     "id": "mercedes-benz-a-class-2019",
@@ -2153,7 +2180,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/mercedes-a180.webp"
   },
   {
     "id": "mercedes-benz-a180-2020",
@@ -2230,7 +2258,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/mercedes-a180.webp"
   },
   {
     "id": "mercedes-benz-a180-2021",
@@ -2307,7 +2336,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/mercedes-a180.webp"
   },
   {
     "id": "mercedes-benz-a180-2022",
@@ -2384,7 +2414,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/mercedes-a180.webp"
   },
   {
     "id": "mercedes-benz-c200-amg-2024",
@@ -2461,7 +2492,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/mercedes-a180.webp"
   },
   {
     "id": "tesla-model-y-standard-range-2022",
@@ -2538,7 +2570,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-standard-range-2023",
@@ -2615,7 +2648,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-standard-range-2024",
@@ -2692,7 +2726,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-standard-range-2025",
@@ -2769,7 +2804,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-long-range-2020",
@@ -2849,7 +2885,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-long-range-2021",
@@ -2929,7 +2966,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-long-range-2022",
@@ -3009,7 +3047,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-long-range-2023",
@@ -3089,7 +3128,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-long-range-2024",
@@ -3169,7 +3209,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "tesla-model-y-long-range-2025",
@@ -3249,7 +3290,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/tesla-model-y.webp"
   },
   {
     "id": "togg-t10x-v2-2023",
@@ -3326,7 +3368,8 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/togg-t10x.webp"
   },
   {
     "id": "togg-t10x-v2-2024",
@@ -3403,6 +3446,7 @@
           "mevcut": true
         }
       ]
-    }
+    },
+    "photo": "/togg-t10x.webp"
   }
 ]

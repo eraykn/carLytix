@@ -3,10 +3,12 @@
 import { useMemo, useState, MouseEvent as ReactMouseEvent } from "react";
 
 import { motion } from "framer-motion";
-import { Plus, ChevronDown } from "lucide-react";
+import { Plus, ChevronDown, Menu } from "lucide-react";
 import carsData from "@/json/cars.json";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { CarDetailsPanel } from "./CarDetailsPanel";
+import { Footer } from "./Footer";
+
 type BrandName = string;
 type ModelName = string;
 
@@ -56,6 +58,7 @@ interface CarEntry {
   brand?: string;
   model?: string;
   year?: number;
+  photo?: string;
   details?: CarSpecificationMap;
   donanim?: CarEquipment;
 }
@@ -163,6 +166,29 @@ const CompareBox = ({
 
   const yearsForModel = selectedModelData ? selectedModelData.years : [];
 
+  // Find selected car for photo
+  const selectedCar = selectedBrand && selectedModel && selectedYear
+    ? carEntries.find((car) => {
+        if (
+          !car.brand ||
+          !car.model ||
+          typeof car.year !== "number"
+        ) {
+          return false;
+        }
+
+        return (
+          car.brand.trim().toLowerCase() ===
+            selectedBrand.trim().toLowerCase() &&
+          car.model.trim().toLowerCase() ===
+            selectedModel.trim().toLowerCase() &&
+          car.year === Number(selectedYear)
+        );
+      })
+    : null;
+
+  const carImageSrc = selectedCar?.photo || "/car-no-image.webp";
+
   const SelectInput = ({
     options,
     placeholder,
@@ -218,7 +244,7 @@ const CompareBox = ({
         className="w-full h-52 bg-white rounded-2xl flex items-center justify-center"
       >
         <ImageWithFallback
-          src="/car-no-image.webp"
+          src={carImageSrc}
           alt="Arac gorseli"
           className="h-80 object-contain"
         />
@@ -359,41 +385,97 @@ export function CompareSection() {
   }, [carEntries]);
 
   return (
-    <section
-      id="compare"
-      className="relative w-full min-h-screen bg-gradient-to-b from-[#1e293b] to-[#0f172a] flex items-center justify-center py-20 px-10 overflow-hidden"
-    >
-      {/* Arka Plan Efektleri */}
-      <div className="absolute inset-0 z-0">
-        {/* Background Noise */}
-        <div className="absolute inset-0 opacity-[0.02]" />
-      </div>
+    <>
+      <section
+        id="compare"
+        className="relative w-full min-h-screen bg-gradient-to-b from-[#1e293b] to-[#0f172a] flex items-center justify-center py-32 px-10 overflow-hidden"
+      >
+        {/* Arka Plan Efektleri */}
+        <div className="absolute inset-0 z-0">
+          {/* Background Noise */}
+          <div className="absolute inset-0 opacity-[0.02]" />
+        </div>
 
-      <div className="relative z-10 flex flex-col lg:flex-row items-start justify-center gap-12">
-        <CompareBox
-          title="1. Araci Ekle"
-          index={1}
-          brandOptions={brandOptions}
-          modelsByBrand={modelsByBrand}
-          carEntries={carEntries}
-        />
+        {/* Top Center Logo - Glassmorphism */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="hidden lg:block p-4 bg-white/80 backdrop-blur-md rounded-full border border-gray-200 shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="absolute top-12 left-1/2 -translate-x-1/2 z-30"
         >
-          <p className="text-2xl font-bold text-blue-500">VS</p>
+          <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
+            {/* CarLytix Logo */}
+            <img
+              src="/carlytix-concept-a-logo.svg"
+              alt="CarLytix Logo"
+              className="h-[40px] w-auto drop-shadow-[0_0_10px_rgba(59,130,246,0.4)] ml-2"
+            />
+          </div>
         </motion.div>
-        <CompareBox
-          title="2. Araci Ekle"
-          index={2}
-          brandOptions={brandOptions}
-          modelsByBrand={modelsByBrand}
-          carEntries={carEntries}
-        />
-      </div>
-    </section>
+
+        {/* Top Right Navigation - Glassmorphism */}
+        <motion.nav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="absolute top-12 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
+        >{[
+            { name: "Anasayfa", href: "/" },
+            { name: "Karşılaştır", href: "/compare" },
+            { name: "İstatistikler", href: "#" },
+          ].map((item, index) => (
+            <motion.a
+              key={item.name}
+              href={item.href}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 + index * 0.1 }}
+              className="text-sm text-[#d1d5db] hover:text-[#3b82f6] transition-colors duration-300 relative group"
+            >
+              {item.name}
+              <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
+            </motion.a>
+          ))}
+        </motion.nav>
+
+        {/* Mobile Menu Button */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="absolute top-12 right-10 z-20 md:hidden p-2 rounded-lg bg-white/[0.08] backdrop-blur-xl border border-white/[0.15] hover:bg-white/[0.18] transition-colors"
+        >
+          <Menu className="w-6 h-6 text-[#e2e8f0]" />
+        </motion.button>
+
+        <div className="relative z-10 flex flex-col lg:flex-row items-start justify-center gap-12">
+          <CompareBox
+            title="1. Araci Ekle"
+            index={1}
+            brandOptions={brandOptions}
+            modelsByBrand={modelsByBrand}
+            carEntries={carEntries}
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="hidden lg:block p-4 bg-white/80 backdrop-blur-md rounded-full border border-gray-200 shadow-lg mt-8"
+          >
+            <p className="text-2xl font-bold text-blue-500">VS</p>
+          </motion.div>
+          <CompareBox
+            title="2. Araci Ekle"
+            index={2}
+            brandOptions={brandOptions}
+            modelsByBrand={modelsByBrand}
+            carEntries={carEntries}
+          />
+          
+        </div>
+      </section>
+      <Footer />
+    </>
   );
 }
