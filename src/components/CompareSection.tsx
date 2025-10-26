@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import type { MouseEvent as ReactMouseEvent } from "react";
 import { motion, useSpring } from "framer-motion";
-import { Plus, ChevronDown } from "lucide-react";
+import { Plus, ChevronDown, Check, X } from "lucide-react";
 import carsData from "@/json/cars.json";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
@@ -18,21 +18,141 @@ type BrandModelYearMap = Record<
   }[]
 >;
 
+interface CarDetailsPanelProps {
+  general: Record<string, string>;
+  safety: Record<string, boolean>;
+}
+
+interface CarSpecificationMap {
+  motor_hacmi_l?: number | string;
+  guc_hp?: number | string;
+  tork_Nm?: number | string;
+  "0_100_kmh_s"?: number | string;
+  maksimum_hiz_kmh?: number | string;
+  yakit_tuketimi_avg_l_per_100km?: number | string;
+  cekis?: string;
+  agirlik_kg?: number | string;
+  uzunluk_mm?: number | string;
+  genislik_mm?: number | string;
+  bagaj_kapasitesi_l?: number | string;
+  pil_turu?: string;
+  elektrik_araligi_NEDC_km?: number | string;
+  elektrikli_menzil_WLTP_km?: number | string;
+  ortalama_enerji_tuketimi_kWh_per_100km?: number | string;
+  ortalama_enerji_tuketimi_WLTP_kWh_per_100km?: number | string;
+}
+
+interface CarEquipmentItem {
+  isim?: string;
+  mevcut?: boolean;
+}
+
+interface CarEquipment {
+  guvenlik?: CarEquipmentItem[];
+  konfor?: CarEquipmentItem[];
+}
+
+interface CarEntry {
+  id?: string;
+  brand?: string;
+  model?: string;
+  year?: number;
+  details?: CarSpecificationMap;
+  donanim?: CarEquipment;
+}
+
+const normalizeKey = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+
+const formatValue = (input: unknown) => {
+  if (input === null || input === undefined || input === "") {
+    return "-";
+  }
+
+  if (typeof input === "number") {
+    return Number.isFinite(input) ? input.toString() : "-";
+  }
+
+  return String(input);
+};
+
+const buildCarDetails = (car: CarEntry): CarDetailsPanelProps => {
+  const specs = car.details ?? {};
+  const equipment = [
+    ...(car.donanim?.guvenlik ?? []),
+    ...(car.donanim?.konfor ?? []),
+  ];
+
+  const hasFeature = (...keywords: string[]) =>
+    equipment.some((item) => {
+      if (!item?.mevcut || !item.isim) {
+        return false;
+      }
+      const normalized = normalizeKey(item.isim);
+      return keywords.some((key) => normalized.includes(key));
+    });
+
+  return {
+    general: {
+      motorHacmi: formatValue(specs.motor_hacmi_l),
+      motorGucu: formatValue(specs.guc_hp),
+      tork: formatValue(specs.tork_Nm),
+      hizlanma: formatValue(specs["0_100_kmh_s"]),
+      maxHiz: formatValue(specs.maksimum_hiz_kmh),
+      yakit: formatValue(specs.yakit_tuketimi_avg_l_per_100km),
+      cekis: formatValue(specs.cekis),
+      agirlik: formatValue(specs.agirlik_kg),
+      uzunluk: formatValue(specs.uzunluk_mm),
+      genislik: formatValue(specs.genislik_mm),
+      bagaj: formatValue(specs.bagaj_kapasitesi_l),
+      pil: formatValue(specs.pil_turu),
+      NEDC: formatValue(specs.elektrik_araligi_NEDC_km),
+      WLTP: formatValue(specs.elektrikli_menzil_WLTP_km),
+      ortEnerji: formatValue(specs.ortalama_enerji_tuketimi_kWh_per_100km),
+      ortEnerjiWLTP: formatValue(
+        specs.ortalama_enerji_tuketimi_WLTP_kWh_per_100km
+      ),
+    },
+    safety: {
+      ABS: hasFeature("abs"),
+      GeriGorusAynasi: hasFeature("gerigor", "gerigarayn", "gerigorusayna"),
+      LastikBasinci: hasFeature("lastikbasi", "lastikbasinc"),
+      YukusDestegi: hasFeature("yokust", "yokus"),
+      CarpismaUyarisi: hasFeature("carpisma"),
+      DortluFlasor: hasFeature("dortluflasor", "flasor"),
+      SurucuHavaYastigi: hasFeature("surucuhava", "surucuyastigi"),
+      EBD: hasFeature("ebd"),
+      FrenYardim: hasFeature("frenyardim"),
+      Isofix: hasFeature("isofix"),
+      YolcuHavaYastigi: hasFeature("yolcuhava"),
+      MerkeziKilit: hasFeature("merkezikilit"),
+      HizSabitleyici: hasFeature("hizsabitle"),
+    },
+  };
+};
+
 const CompareBox = ({
   title,
   index,
   brandOptions,
   modelsByBrand,
+  carEntries,
 }: {
   title: string;
   index: number;
   brandOptions: BrandName[];
   modelsByBrand: BrandModelYearMap;
+  carEntries: CarEntry[];
 }) => {
   const [selectedBrand, setSelectedBrand] = useState("");
-  const [selectedModel, setSelectedModel] = useState("");
-  const [selectedYear, setSelectedYear] = useState("");
-  const [hoverSide, setHoverSide] = useState<"left" | "right" | null>(null);
+  const [selectedModel, setSelectedModel] = useState("");  const [selectedYear, setSelectedYear] = useState("");  const [hoverSide, setHoverSide] = useState<"left" | "right" | null>(null);
+  const [carDetails, setCarDetails] = useState<CarDetailsPanelProps | null>(
+    null
+  );
 
   const rotateX = useSpring(0, { stiffness: 200, damping: 18 });
   const rotateY = useSpring(0, { stiffness: 200, damping: 18 });
@@ -63,7 +183,7 @@ const CompareBox = ({
   }) => (
     <div className="relative w-full">
       <select
-        className="w-full h-12 appearance-none bg-white border border-gray-200 text-gray-800 text-base px-4 pr-10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-colors disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed"
+        className="w-full h-12 appearance-none bg-white border border-gray-200 text-gray-800 text-base px-4 pr-10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-colors cursor-pointer disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed"
         aria-label={placeholder}
         value={value}
         onChange={(event) => onChange(event.target.value)}
@@ -146,7 +266,7 @@ const CompareBox = ({
         <ImageWithFallback
           src="/car-no-image.webp"
           alt="Arac gorseli"
-          className="h-100 object-contain"
+          className="h-40 object-contain"
         />
       </motion.div>
 
@@ -159,6 +279,7 @@ const CompareBox = ({
             setSelectedBrand(value);
             setSelectedModel("");
             setSelectedYear("");
+            setCarDetails(null);
           }}
         />
         <SelectInput
@@ -168,6 +289,7 @@ const CompareBox = ({
           onChange={(value) => {
             setSelectedModel(value);
             setSelectedYear("");
+            setCarDetails(null);
           }}
           disabled={!selectedBrand}
         />
@@ -175,7 +297,10 @@ const CompareBox = ({
           options={yearsForModel.map(String)}
           placeholder="Yil Secin"
           value={selectedYear}
-          onChange={setSelectedYear}
+          onChange={(value) => {
+            setSelectedYear(value);
+            setCarDetails(null);
+          }}
           disabled={!selectedModel}
         />
       </div>
@@ -184,6 +309,33 @@ const CompareBox = ({
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="w-full mt-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+        onClick={() => {
+          if (!selectedBrand || !selectedModel || !selectedYear) {
+            setCarDetails(null);
+            return;
+          }
+
+          const yearNumber = Number(selectedYear);
+          const matched = carEntries.find((item) => {
+            if (
+              !item.brand ||
+              !item.model ||
+              typeof item.year !== "number"
+            ) {
+              return false;
+            }
+
+            return (
+              item.brand.trim().toLowerCase() ===
+                selectedBrand.trim().toLowerCase() &&
+              item.model.trim().toLowerCase() ===
+                selectedModel.trim().toLowerCase() &&
+              item.year === yearNumber
+            );
+          });
+
+          setCarDetails(matched ? buildCarDetails(matched) : null);
+        }}
       >
         <Plus className="w-5 h-5" />
         <span>Ekle</span>
@@ -193,17 +345,13 @@ const CompareBox = ({
 };
 
 export function CompareSection() {
-  interface CarEntry {
-    brand?: string;
-    model?: string;
-    year?: number;
-  }
+  const carEntries = carsData as CarEntry[];
 
   const { brandOptions, modelsByBrand } = useMemo(() => {
     const brandMap = new Map<string, Map<string, number[]>>();
 
     // Build a lookup of brand -> model -> years using the JSON source.
-    (carsData as CarEntry[]).forEach((car) => {
+    carEntries.forEach((car) => {
       const brand = car.brand?.trim();
       const model = car.model?.trim();
       const year = car.year;
@@ -249,7 +397,7 @@ export function CompareSection() {
       brandOptions: sortedBrands,
       modelsByBrand: structuredModels,
     };
-  }, []);
+  }, [carEntries]);
 
   return (
     <section
@@ -268,6 +416,7 @@ export function CompareSection() {
           index={1}
           brandOptions={brandOptions}
           modelsByBrand={modelsByBrand}
+          carEntries={carEntries}
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -283,6 +432,7 @@ export function CompareSection() {
           index={2}
           brandOptions={brandOptions}
           modelsByBrand={modelsByBrand}
+          carEntries={carEntries}
         />
       </div>
     </section>
