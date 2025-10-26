@@ -1,12 +1,12 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import type { MouseEvent as ReactMouseEvent } from "react";
-import { motion, useSpring } from "framer-motion";
-import { Plus, ChevronDown, Check, X } from "lucide-react";
+import { useMemo, useState, MouseEvent as ReactMouseEvent } from "react";
+
+import { motion } from "framer-motion";
+import { Plus, ChevronDown } from "lucide-react";
 import carsData from "@/json/cars.json";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-
+import { CarDetailsPanel } from "./CarDetailsPanel";
 type BrandName = string;
 type ModelName = string;
 
@@ -49,7 +49,6 @@ interface CarEquipmentItem {
 
 interface CarEquipment {
   guvenlik?: CarEquipmentItem[];
-  konfor?: CarEquipmentItem[];
 }
 
 interface CarEntry {
@@ -82,20 +81,20 @@ const formatValue = (input: unknown) => {
 
 const buildCarDetails = (car: CarEntry): CarDetailsPanelProps => {
   const specs = car.details ?? {};
-  const equipment = [
-    ...(car.donanim?.guvenlik ?? []),
-    ...(car.donanim?.konfor ?? []),
-  ];
+  const guvenlikDonanim = car.donanim?.guvenlik ?? [];
 
-  const hasFeature = (...keywords: string[]) =>
-    equipment.some((item) => {
+  const hasFeature = (
+    donanimList: CarEquipmentItem[],
+    ...keywords: string[]
+  ) =>
+    donanimList.some((item) => {
       if (!item?.mevcut || !item.isim) {
         return false;
       }
       const normalized = normalizeKey(item.isim);
       return keywords.some((key) => normalized.includes(key));
     });
-
+  
   return {
     general: {
       motorHacmi: formatValue(specs.motor_hacmi_l),
@@ -118,19 +117,18 @@ const buildCarDetails = (car: CarEntry): CarDetailsPanelProps => {
       ),
     },
     safety: {
-      ABS: hasFeature("abs"),
-      GeriGorusAynasi: hasFeature("gerigor", "gerigarayn", "gerigorusayna"),
-      LastikBasinci: hasFeature("lastikbasi", "lastikbasinc"),
-      YukusDestegi: hasFeature("yokust", "yokus"),
-      CarpismaUyarisi: hasFeature("carpisma"),
-      DortluFlasor: hasFeature("dortluflasor", "flasor"),
-      SurucuHavaYastigi: hasFeature("surucuhava", "surucuyastigi"),
-      EBD: hasFeature("ebd"),
-      FrenYardim: hasFeature("frenyardim"),
-      Isofix: hasFeature("isofix"),
-      YolcuHavaYastigi: hasFeature("yolcuhava"),
-      MerkeziKilit: hasFeature("merkezikilit"),
-      HizSabitleyici: hasFeature("hizsabitle"),
+      ABS: hasFeature(guvenlikDonanim, "abs"),
+      GeriGorusAynasi: hasFeature(guvenlikDonanim, "gerigorusaynas"),
+      LastikBasinci: hasFeature(guvenlikDonanim, "lastikbasnc"),
+      YukusDestegi: hasFeature(guvenlikDonanim, "yokustakalks"),
+      CarpismaUyarisi: hasFeature(guvenlikDonanim, "carpsmauyar"),
+      DortluFlasor: hasFeature(guvenlikDonanim, "otomatikdortluflasor", "dortluflasor"),
+      SurucuHavaYastigi: hasFeature(guvenlikDonanim, "surucuhavayastg"),
+      EBD: hasFeature(guvenlikDonanim, "ebd"),
+      FrenYardim: hasFeature(guvenlikDonanim, "frenyardmsistemi"),
+      Isofix: hasFeature(guvenlikDonanim, "isofix"),
+      YolcuHavaYastigi: hasFeature(guvenlikDonanim, "yolcuhavayastg"),
+      MerkeziKilit: hasFeature(guvenlikDonanim, "merkezikilit"),
     },
   };
 };
@@ -153,9 +151,6 @@ const CompareBox = ({
   const [carDetails, setCarDetails] = useState<CarDetailsPanelProps | null>(
     null
   );
-
-  const rotateX = useSpring(0, { stiffness: 200, damping: 18 });
-  const rotateY = useSpring(0, { stiffness: 200, damping: 18 });
 
   const modelsForBrand =
     selectedBrand && modelsByBrand[selectedBrand]
@@ -181,13 +176,14 @@ const CompareBox = ({
     onChange: (val: string) => void;
     disabled?: boolean;
   }) => (
-    <div className="relative w-full">
+    <div className="relative w-full h-12">
       <select
-        className="w-full h-12 appearance-none bg-white border border-gray-200 text-gray-800 text-base px-4 pr-10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-colors cursor-pointer disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed"
+        className="w-full h-12 appearance-none bg-white border border-gray-200 text-gray-800 text-base px-4 pr-10 rounded-xl focus:outline-none focus:border-blue-500 focus:shadow-[0_0_0_3px_rgba(59,130,246,0.1)] transition-all duration-200 cursor-pointer disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed min-w-0 box-border absolute inset-0"
         aria-label={placeholder}
         value={value}
         onChange={(event) => onChange(event.target.value)}
         disabled={disabled}
+        style={{ fontSize: '16px' }}
       >
         <option value="" disabled hidden>
           {placeholder}
@@ -198,30 +194,11 @@ const CompareBox = ({
           </option>
         ))}
       </select>
-      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 z-10">
         <ChevronDown className="w-4 h-4" strokeWidth={2} />
       </div>
     </div>
   );
-
-  const handleMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    const percentX = x / rect.width - 0.5;
-    const percentY = y / rect.height - 0.5;
-
-    rotateX.set(percentY * -6);
-    rotateY.set(percentX * 6);
-    setHoverSide(percentX < 0 ? "left" : "right");
-  };
-
-  const resetMotion = () => {
-    rotateX.set(0);
-    rotateY.set(0);
-    setHoverSide(null);
-  };
 
   return (
     <motion.div
@@ -229,31 +206,8 @@ const CompareBox = ({
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
-      className="relative w-full max-w-md bg-white border border-gray-100 rounded-3xl shadow-xl shadow-gray-500/10 p-10 flex flex-col items-center gap-6"
-      style={{ rotateX, rotateY, transformPerspective: 900 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={resetMotion}
+      className="w-full max-w-md bg-white border border-gray-100 rounded-3xl shadow-xl shadow-gray-500/10 p-10 flex flex-col items-center gap-6"
     >
-      <motion.span
-        aria-hidden
-        className="pointer-events-none absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-blue-500/25 blur-3xl"
-        animate={
-          hoverSide === "left"
-            ? { opacity: 0.8, scale: 1.1, x: 6, y: 6 }
-            : { opacity: 0.25, scale: 0.9, x: 0, y: 0 }
-        }
-        transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      />
-      <motion.span
-        aria-hidden
-        className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-cyan-400/20 blur-3xl"
-        animate={
-          hoverSide === "right"
-            ? { opacity: 0.8, scale: 1.1, x: -6, y: 6 }
-            : { opacity: 0.25, scale: 0.9, x: 0, y: 0 }
-        }
-        transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      />
       <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
 
       <motion.div
@@ -261,12 +215,12 @@ const CompareBox = ({
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
         viewport={{ once: true }}
-        className="w-full h-44 bg-white rounded-2xl flex items-center justify-center"
+        className="w-full h-52 bg-white rounded-2xl flex items-center justify-center"
       >
         <ImageWithFallback
           src="/car-no-image.webp"
           alt="Arac gorseli"
-          className="h-40 object-contain"
+          className="h-80 object-contain"
         />
       </motion.div>
 
@@ -340,6 +294,11 @@ const CompareBox = ({
         <Plus className="w-5 h-5" />
         <span>Ekle</span>
       </motion.button>
+
+      {carDetails && (
+        <CarDetailsPanel general={carDetails.general} safety={carDetails.safety ?? {}} />
+      )}
+
     </motion.div>
   );
 };
@@ -410,7 +369,7 @@ export function CompareSection() {
         <div className="absolute inset-0 opacity-[0.02]" />
       </div>
 
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-12">
+      <div className="relative z-10 flex flex-col lg:flex-row items-start justify-center gap-12">
         <CompareBox
           title="1. Araci Ekle"
           index={1}

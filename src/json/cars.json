@@ -5,7 +5,7 @@
     "model": "128i",
     "year": 2008,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 230,
       "tork_Nm": 271,
       "0_100_kmh_s": 6.1,
@@ -25,20 +25,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -47,7 +82,7 @@
     "model": "128i",
     "year": 2009,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 230,
       "tork_Nm": 271,
       "0_100_kmh_s": 6.1,
@@ -67,20 +102,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -89,7 +159,7 @@
     "model": "128i",
     "year": 2010,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 230,
       "tork_Nm": 271,
       "0_100_kmh_s": "-",
@@ -109,20 +179,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -131,7 +236,7 @@
     "model": "128i",
     "year": 2011,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 228,
       "tork_Nm": 271,
       "0_100_kmh_s": 6.4,
@@ -151,20 +256,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -173,7 +313,7 @@
     "model": "128i",
     "year": 2012,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 230,
       "tork_Nm": 271,
       "0_100_kmh_s": 6.1,
@@ -193,20 +333,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -215,7 +390,7 @@
     "model": "128i",
     "year": 2013,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 230,
       "tork_Nm": 271,
       "0_100_kmh_s": "-",
@@ -235,20 +410,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -257,7 +467,7 @@
     "model": "135i",
     "year": 2008,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 302,
       "tork_Nm": 400,
       "0_100_kmh_s": 5.6,
@@ -277,20 +487,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -299,7 +544,7 @@
     "model": "135i",
     "year": 2009,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 302,
       "tork_Nm": 400,
       "0_100_kmh_s": 5.3,
@@ -319,20 +564,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -341,7 +621,7 @@
     "model": "135i",
     "year": 2010,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 302,
       "tork_Nm": 400,
       "0_100_kmh_s": 5.3,
@@ -361,20 +641,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -383,7 +698,7 @@
     "model": "135i",
     "year": 2011,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 306,
       "tork_Nm": 400,
       "0_100_kmh_s": 5.2,
@@ -403,20 +718,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -425,7 +775,7 @@
     "model": "135i",
     "year": 2012,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 306,
       "tork_Nm": 400,
       "0_100_kmh_s": 5.2,
@@ -445,20 +795,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -467,7 +852,7 @@
     "model": "135i",
     "year": 2013,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 306,
       "tork_Nm": 400,
       "0_100_kmh_s": 5.2,
@@ -487,20 +872,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -509,7 +929,7 @@
     "model": "1 Series M",
     "year": 2011,
     "details": {
-      "motor_hacmi_l": 3.0,
+      "motor_hacmi_l": 3,
       "guc_hp": 335,
       "tork_Nm": 450,
       "0_100_kmh_s": 4.9,
@@ -529,20 +949,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -551,7 +1006,7 @@
     "model": "228i",
     "year": 2014,
     "details": {
-      "motor_hacmi_l": 2.0,
+      "motor_hacmi_l": 2,
       "guc_hp": 245,
       "tork_Nm": 350,
       "0_100_kmh_s": 5.8,
@@ -571,20 +1026,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -593,7 +1083,7 @@
     "model": "228i",
     "year": 2015,
     "details": {
-      "motor_hacmi_l": 2.0,
+      "motor_hacmi_l": 2,
       "guc_hp": 240,
       "tork_Nm": 346,
       "0_100_kmh_s": 5.8,
@@ -613,20 +1103,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -635,7 +1160,7 @@
     "model": "228i",
     "year": 2016,
     "details": {
-      "motor_hacmi_l": 2.0,
+      "motor_hacmi_l": 2,
       "guc_hp": 240,
       "tork_Nm": 346,
       "0_100_kmh_s": 5.5,
@@ -655,20 +1180,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -677,7 +1237,7 @@
     "model": "228i Gran Coupe",
     "year": 2020,
     "details": {
-      "motor_hacmi_l": 2.0,
+      "motor_hacmi_l": 2,
       "guc_hp": 228,
       "tork_Nm": 350,
       "0_100_kmh_s": 6.3,
@@ -697,20 +1257,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -719,7 +1314,7 @@
     "model": "230i Coupe",
     "year": 2017,
     "details": {
-      "motor_hacmi_l": 2.0,
+      "motor_hacmi_l": 2,
       "guc_hp": 248,
       "tork_Nm": 350,
       "0_100_kmh_s": 5.6,
@@ -739,20 +1334,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -761,7 +1391,7 @@
     "model": "320i",
     "year": 2015,
     "details": {
-      "motor_hacmi_l": 2.0,
+      "motor_hacmi_l": 2,
       "guc_hp": 184,
       "tork_Nm": 270,
       "0_100_kmh_s": 7.3,
@@ -781,20 +1411,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": false },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": false
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -823,20 +1488,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -865,20 +1565,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -907,20 +1642,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -949,20 +1719,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -991,20 +1796,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1033,20 +1873,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1075,20 +1950,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1117,20 +2027,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1159,20 +2104,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1181,14 +2161,14 @@
     "model": "A-Class A180",
     "year": 2020,
     "details": {
-      "motor_hacmi_l": 	1.33,
+      "motor_hacmi_l": 1.33,
       "guc_hp": 136,
       "tork_Nm": 200,
       "0_100_kmh_s": 215,
       "maksimum_hiz_kmh": 9.1,
       "yakit_tuketimi_avg_l_per_100km": 5.6,
       "cekis": "FWD",
-      "agirlik_kg": 1.410,
+      "agirlik_kg": 1.41,
       "uzunluk_mm": 4.419,
       "genislik_mm": 1.796,
       "bagaj_kapasitesi_l": 370,
@@ -1201,20 +2181,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1230,7 +2245,7 @@
       "maksimum_hiz_kmh": 230,
       "yakit_tuketimi_avg_l_per_100km": 6,
       "cekis": "FWD",
-      "agirlik_kg": 1.430,
+      "agirlik_kg": 1.43,
       "uzunluk_mm": 4.419,
       "genislik_mm": 1.796,
       "bagaj_kapasitesi_l": 370,
@@ -1243,20 +2258,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1268,11 +2318,11 @@
       "motor_hacmi_l": 1.4,
       "guc_hp": 163,
       "tork_Nm": 270,
-      "0_100_kmh_s": 8.0,
+      "0_100_kmh_s": 8,
       "maksimum_hiz_kmh": 225,
       "yakit_tuketimi_avg_l_per_100km": 5.8,
       "cekis": "FWD",
-      "agirlik_kg": 1.570,
+      "agirlik_kg": 1.57,
       "uzunluk_mm": 4.419,
       "genislik_mm": 1.796,
       "bagaj_kapasitesi_l": 380,
@@ -1285,20 +2335,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": false },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": false
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1327,20 +2412,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1369,20 +2489,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1411,20 +2566,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1453,20 +2643,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1495,20 +2720,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1540,20 +2800,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1585,20 +2880,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1630,20 +2960,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1675,20 +3040,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1720,20 +3120,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1765,20 +3200,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1807,20 +3277,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   },
   {
@@ -1849,20 +3354,55 @@
     },
     "donanim": {
       "guvenlik": [
-        { "isim": "ABS", "mevcut": true },
-        { "isim": "Geri Görüş Aynası - Otomatik Kararan", "mevcut": true },
-        { "isim": "Lastik Basınç Kontrolü", "mevcut": true },
-        { "isim": "Yokuşta Kalkış Desteği", "mevcut": true },
-        { "isim": "Çarpışma Uyarı Sistemi", "mevcut": true },
-        { "isim": "Otomatik Dörtlü Flaşör", "mevcut": true },
-        { "isim": "Sürücü Hava Yastığı", "mevcut": true },
-        { "isim": "EBD", "mevcut": true },
-        { "isim": "Fren Yardım Sistemi (Brake Assist)", "mevcut": true },
-        { "isim": "Isofix", "mevcut": true },
-        { "isim": "Yolcu Hava Yastığı", "mevcut": true },
-        { "isim": "Merkezi Kilit", "mevcut": true }
-      ],
-      "konfor": [{ "isim": "Hız Sabitleme Sistemi", "mevcut": true }]
+        {
+          "isim": "ABS",
+          "mevcut": true
+        },
+        {
+          "isim": "Geri Görüş Aynası - Otomatik Kararan",
+          "mevcut": true
+        },
+        {
+          "isim": "Lastik Basınç Kontrolü",
+          "mevcut": true
+        },
+        {
+          "isim": "Yokuşta Kalkış Desteği",
+          "mevcut": true
+        },
+        {
+          "isim": "Çarpışma Uyarı Sistemi",
+          "mevcut": true
+        },
+        {
+          "isim": "Otomatik Dörtlü Flaşör",
+          "mevcut": true
+        },
+        {
+          "isim": "Sürücü Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "EBD",
+          "mevcut": true
+        },
+        {
+          "isim": "Fren Yardım Sistemi (Brake Assist)",
+          "mevcut": true
+        },
+        {
+          "isim": "Isofix",
+          "mevcut": true
+        },
+        {
+          "isim": "Yolcu Hava Yastığı",
+          "mevcut": true
+        },
+        {
+          "isim": "Merkezi Kilit",
+          "mevcut": true
+        }
+      ]
     }
   }
 ]
