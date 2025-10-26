@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import type { MouseEvent as ReactMouseEvent } from "react";
+import { motion, useSpring } from "framer-motion";
 import { Plus, ChevronDown } from "lucide-react";
 import carsData from "@/json/cars.json";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -31,6 +32,10 @@ const CompareBox = ({
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
+  const [hoverSide, setHoverSide] = useState<"left" | "right" | null>(null);
+
+  const rotateX = useSpring(0, { stiffness: 200, damping: 18 });
+  const rotateY = useSpring(0, { stiffness: 200, damping: 18 });
 
   const modelsForBrand =
     selectedBrand && modelsByBrand[selectedBrand]
@@ -58,7 +63,7 @@ const CompareBox = ({
   }) => (
     <div className="relative w-full">
       <select
-        className="w-full appearance-none bg-gray-100 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full h-12 appearance-none bg-white border border-gray-200 text-gray-800 text-base px-4 pr-10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-colors disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed"
         aria-label={placeholder}
         value={value}
         onChange={(event) => onChange(event.target.value)}
@@ -73,11 +78,30 @@ const CompareBox = ({
           </option>
         ))}
       </select>
-      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-        <ChevronDown className="w-4 h-4" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">
+        <ChevronDown className="w-4 h-4" strokeWidth={2} />
       </div>
     </div>
   );
+
+  const handleMouseMove = (event: ReactMouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const percentX = x / rect.width - 0.5;
+    const percentY = y / rect.height - 0.5;
+
+    rotateX.set(percentY * -6);
+    rotateY.set(percentX * 6);
+    setHoverSide(percentX < 0 ? "left" : "right");
+  };
+
+  const resetMotion = () => {
+    rotateX.set(0);
+    rotateY.set(0);
+    setHoverSide(null);
+  };
 
   return (
     <motion.div
@@ -85,21 +109,44 @@ const CompareBox = ({
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
-      className="w-full max-w-sm bg-white/90 backdrop-blur-2xl border border-gray-200/80 rounded-3xl shadow-2xl shadow-gray-500/10 p-8 flex flex-col items-center gap-6"
+      className="relative w-full max-w-md bg-white border border-gray-100 rounded-3xl shadow-xl shadow-gray-500/10 p-10 flex flex-col items-center gap-6"
+      style={{ rotateX, rotateY, transformPerspective: 900 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={resetMotion}
     >
-      <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
+      <motion.span
+        aria-hidden
+        className="pointer-events-none absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-blue-500/25 blur-3xl"
+        animate={
+          hoverSide === "left"
+            ? { opacity: 0.8, scale: 1.1, x: 6, y: 6 }
+            : { opacity: 0.25, scale: 0.9, x: 0, y: 0 }
+        }
+        transition={{ type: "spring", stiffness: 120, damping: 20 }}
+      />
+      <motion.span
+        aria-hidden
+        className="pointer-events-none absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-cyan-400/20 blur-3xl"
+        animate={
+          hoverSide === "right"
+            ? { opacity: 0.8, scale: 1.1, x: -6, y: 6 }
+            : { opacity: 0.25, scale: 0.9, x: 0, y: 0 }
+        }
+        transition={{ type: "spring", stiffness: 120, damping: 20 }}
+      />
+      <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
         viewport={{ once: true }}
-        className="w-full h-48 bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300"
+        className="w-full h-44 bg-white rounded-2xl flex items-center justify-center"
       >
         <ImageWithFallback
-          src="/car-no-image.png"
+          src="/car-no-image.webp"
           alt="Arac gorseli"
-          className="w-40 h-40 object-contain opacity-50"
+          className="h-100 object-contain"
         />
       </motion.div>
 
