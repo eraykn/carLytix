@@ -428,7 +428,7 @@ export function CompareSection() {
         >{[
             { name: "Anasayfa", href: "/" },
             { name: "Karşılaştır", href: "/compare" },
-            { name: "Araba Seçme", href: "#" },
+            { name: "Carlytix Asistan", href: "#" },
           ].map((item, index) => (
             <motion.a
               key={item.name}

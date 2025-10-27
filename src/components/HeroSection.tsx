@@ -154,7 +154,7 @@ export function HeroSection() {
       >{[
           { name: "Anasayfa", href: "#" },
           { name: "Karşılaştır", href: "/compare" },
-          { name: "İstatistikler", href: "#" },
+          { name: "Carlytix Asistan", href: "#" },
         ].map((item, index) => (
           <motion.a
             key={item.name}
