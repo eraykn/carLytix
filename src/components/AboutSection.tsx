@@ -129,7 +129,7 @@ export function AboutSection() {
               >
                 Keşfet
               </button>
-              <button className="px-8 py-3 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300">
+              <button className="px-8 py-3 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300 cursor-pointer">
                 Daha Fazla
               </button>
             </motion.div>
