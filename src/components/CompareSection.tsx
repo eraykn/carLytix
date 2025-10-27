@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, MouseEvent as ReactMouseEvent } from "react";
+import { useMemo, useState, MouseEvent as ReactMouseEvent, useEffect } from "react";
 
 import { motion } from "framer-motion";
 import { Plus, ChevronDown, Menu } from "lucide-react";
@@ -330,6 +330,12 @@ const CompareBox = ({
 };
 
 export function CompareSection() {
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+
   const carEntries = carsData as CarEntry[];
 
   const { brandOptions, modelsByBrand } = useMemo(() => {
@@ -422,7 +428,7 @@ export function CompareSection() {
         >{[
             { name: "Anasayfa", href: "/" },
             { name: "Karşılaştır", href: "/compare" },
-            { name: "İstatistikler", href: "#" },
+            { name: "Araba Seçme", href: "#" },
           ].map((item, index) => (
             <motion.a
               key={item.name}
@@ -430,10 +436,18 @@ export function CompareSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 + index * 0.1 }}
-              className="text-sm text-[#d1d5db] hover:text-[#3b82f6] transition-colors duration-300 relative group"
+              className={`text-sm transition-colors duration-300 relative group ${
+                currentPath === item.href
+                  ? "text-[#3b82f6]"
+                  : "text-[#d1d5db] hover:text-[#3b82f6]"
+              }`}
             >
               {item.name}
-              <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
+              <span className={`absolute bottom-[-8px] left-0 h-0.5 bg-[#3b82f6] transition-all duration-300 ${
+                currentPath === item.href
+                  ? "w-full"
+                  : "w-0 group-hover:w-full"
+              }`} />
             </motion.a>
           ))}
         </motion.nav>
