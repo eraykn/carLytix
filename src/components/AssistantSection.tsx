@@ -15,7 +15,9 @@ import {
   PlugZap,
   Wallet,
   Coins,
-  MessageCircle
+  MessageCircle,
+  Target,
+  DollarSign
 } from "lucide-react";
 import { Footer } from "./Footer";
 
@@ -24,10 +26,17 @@ export function AssistantSection() {
   const [selectedStep, setSelectedStep] = useState<string | null>(null);
   const [isTyping, setIsTyping] = useState(false);
   const [chatMessage, setChatMessage] = useState("");
+  const [budget, setBudget] = useState("");
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
   }, []);
+
+  const formatBudget = (value: string) => {
+    const num = parseInt(value.replace(/\./g, ''));
+    if (isNaN(num)) return '';
+    return num.toLocaleString('tr-TR');
+  };
 
   const categories = [
     {
@@ -196,7 +205,11 @@ export function AssistantSection() {
                 className="space-y-4"
               >
                 {/* Kategori Başlığı */}
-                <h3 className="text-xl font-semibold text-white/90 text-center">
+                <h3 className="text-xl font-semibold text-white/90 text-center flex items-center justify-center gap-2">
+                  {category.id === "usage" && <Route className="w-5 h-5 text-[#3CC6F0]" />}
+                  {category.id === "body" && <Car className="w-5 h-5 text-[#3CC6F0]" />}
+                  {category.id === "fuel" && <Fuel className="w-5 h-5 text-[#3CC6F0]" />}
+                  {category.id === "priorities" && <Target className="w-5 h-5 text-[#3CC6F0]" />}
                   {category.label}
                 </h3>
 
@@ -223,6 +236,28 @@ export function AssistantSection() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Bütçe */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 + categories.length * 0.1 }}
+            className="space-y-4"
+          >
+            <h3 className="text-xl font-semibold text-white/90 text-center flex items-center justify-center gap-2">
+              <DollarSign className="w-5 h-5 text-[#3CC6F0]" />
+              Bütçe
+            </h3>
+            <div className="flex justify-center">
+              <input
+                type="text"
+                value={budget}
+                onChange={(e) => setBudget(formatBudget(e.target.value))}
+                placeholder="Bütçenizi girin"
+                className="px-4 py-2 rounded-full border border-white/20 text-white/80 bg-white/5 hover:bg-white/10 focus:bg-white/10 focus:border-white/30 transition-all duration-300 text-sm text-center"
+              />
+            </div>
           </motion.div>
 
           {/* Kalıcı Sohbet Kutusu */}
