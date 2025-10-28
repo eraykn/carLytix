@@ -28,19 +28,6 @@ export function Footer() {
 
         {/* Social Icons */}
         <div className="flex items-center gap-4">
-          <motion.p
-            className="text-sm text-slate-300 font-medium"
-            animate={{
-              opacity: [0.6, 1, 0.6],
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            Made by Eray Kan
-          </motion.p>
           <a
             href="https://github.com/eraykn" 
             target="_blank" 
