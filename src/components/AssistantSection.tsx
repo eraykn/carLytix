@@ -553,7 +553,7 @@ export function AssistantSection() {
                 transition={{ duration: 0.35, delay: 0.1 }}
                 className="w-full max-w-md flex justify-center mt-4"
               >
-                <button
+                <motion.button
                   onClick={() => {
                     // Validation: ensure each required category has at least 1 selection
                     const missing: string[] = [];
@@ -576,11 +576,7 @@ export function AssistantSection() {
 
                     // budget check
                     const numericBudget = parseInt(budget.replace(/\./g, '')) || 0;
-                    if (numericBudget === 0) {
-                      pushToast({ title: 'Bütçe uyarısı', message: 'Lütfen bütçenizi belirtin.', type: 'warning', duration: 3000 });
-                      return;
-                    }
-                    if (numericBudget < 500000) {
+                    if (numericBudget > 0 && numericBudget < 500000) {
                       pushToast({ title: 'Bütçe uyarısı', message: 'Bütçeniz 500.000 TL altında. Lütfen gözden geçirin.', type: 'warning', duration: 3000 });
                       return;
                     }
@@ -588,11 +584,14 @@ export function AssistantSection() {
                     // If all good
                     pushToast({ title: 'Başarılı', message: 'Seçimlere göre araç önerisi hazırlanıyor.', type: 'success', duration: 3000 });
                   }}
-                  className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] shadow-lg cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] shadow-lg hover:shadow-xl transition-shadow duration-300"
                   style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial' }}
                 >
                   Araçımı bul
-                </button>
+                </motion.button>
               </motion.div>
             )}
           </AnimatePresence>
@@ -672,7 +671,7 @@ function ToastItem({ toast, onClose }: { toast: Toast; onClose: () => void }) {
         </div>
       </div>
       <div className="w-full h-1 bg-white/12 mt-3 relative" style={{ height: 3 }}>
-        <div className="absolute left-0 top-0 h-full bg-[#3CC6F0]" style={{ width: `${progress}%`, transition: 'width 120ms linear' }} />
+        <div className="absolute left-0 top-0 h-full bg-[#3CC6F0]" style={{ width: `${progress}%` }} />
       </div>
     </div>
   );
