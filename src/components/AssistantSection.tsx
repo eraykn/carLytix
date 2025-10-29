@@ -17,7 +17,8 @@ import {
   Coins,
   MessageCircle,
   Target,
-  DollarSign
+  DollarSign,
+  TurkishLira
 } from "lucide-react";
 import { Footer } from "./Footer";
 
@@ -353,27 +354,18 @@ export function AssistantSection() {
               transition={{ delay: 0.3 + index * 0.1 }}
               className={`text-sm transition-colors duration-300 relative group ${
                 currentPath === item.href
-                  ? "text-[#3CC6F0]"
+                  ? "text-[#0ea5d8]"
                   : "text-[#d1d5db] hover:text-[#3CC6F0]"
               }`}
             >
-              {item.name}
-              <span className={`absolute bottom-[-8px] left-0 h-0.5 bg-[#3CC6F0] transition-all duration-300 ${
+              {item.name === "Asistan" ? "Carlytix Asistan" : item.name}
+              <span className={`absolute bottom-[-8px] left-0 h-0.5 bg-[#0ea5d8] transition-all duration-300 ${
                 currentPath === item.href
                   ? "w-full"
                   : "w-0 group-hover:w-full"
               }`} />
             </motion.a>
           ))}
-          <motion.a
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            href="#"
-            className="text-xs text-[#94a3b8] hover:text-[#3CC6F0] transition-colors duration-300"
-          >
-            Geri Bildirim
-          </motion.a>
         </motion.nav>
 
         {/* Mobile Menu Button */}
@@ -463,13 +455,16 @@ export function AssistantSection() {
               Bütçe
             </h3>
             <div className="flex justify-center">
-              <input
-                type="text"
-                value={budget}
-                onChange={(e) => setBudget(formatBudget(e.target.value))}
-                placeholder="Bütçenizi girin"
-                className="px-4 py-2 rounded-full border border-white/20 text-white/80 bg-white/5 hover:bg-white/10 focus:bg-white/10 focus:border-white/30 transition-all duration-300 text-sm text-center"
-              />
+              <div className="relative flex items-center">
+                <input
+                  type="text"
+                  value={budget}
+                  onChange={(e) => setBudget(formatBudget(e.target.value))}
+                  placeholder="Bütçenizi girin"
+                  className="px-4 py-2 pr-10 rounded-full border border-white/20 text-white/80 bg-white/5 hover:bg-white/10 focus:bg-white/10 focus:border-white/30 transition-all duration-300 text-sm text-center"
+                />
+                <TurkishLira className="absolute right-3 w-4 h-4 text-white/60" />
+              </div>
             </div>
           </motion.div>
 
