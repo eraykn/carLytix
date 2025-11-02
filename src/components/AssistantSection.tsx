@@ -582,7 +582,7 @@ export function AssistantSection() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                   style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial' }}
                 >
                   Araçımı bul

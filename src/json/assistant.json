@@ -1,0 +1,482 @@
+[
+  {
+    "id": "citroen-ec3-aircross-max-2025-demo",
+    "brand": "Citroën",
+    "model": "ë-C3 Aircross",
+    "trim": "MAX",
+    "year": 2025,
+    "body": "SUV",
+    "fuel": "Elektrik",
+    "drivetrain": "FWD",
+    "transmission": "Tek oranlı",
+    "priceTRY": 1485000,
+    "price_updated": "2025-10-29",
+    "tags": ["Şehir içi","Uzun yol","Güvenlik","Düşük tüketim","Aile"],
+    "media": {
+      "image_main": "https://…/ec3-aircross-exterior.jpg",
+      "image_interior": "https://…/ec3-aircross-interior.jpg",
+      "brand_logo": "https://…/logos/citroen.svg"
+    },
+    "availability": {
+      "stok": "Var (demo/0-6 bin km)",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 113,
+        "tork_Nm": 125,
+        "0_100_kmh_s": 12.9,
+        "maksimum_hiz_kmh": 143
+      },
+      "ekonomi": {
+        "tuketim_l_100km": "-",
+        "co2_g_km": 0,
+        "enerji_kWh_100km": 18.3,
+        "menzil_wltp_km": 303,
+        "depo_litre": "-",
+        "batarya_kWh": 44
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4395,
+        "genislik_mm": 1795,
+        "yukseklik_mm": "-",
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": 1504,
+        "bagaj_l": "-",
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k." ,
+        "frenler": "Ön-arka disk",
+        "vites": "Tek oran"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 10.25,
+        "gosterge_paneli": "Head-up style panel",
+        "multimedia": "CarPlay & Android Auto (kablosuz)",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB-C","OTA (seçili modüller)"]
+      },
+      "konfor": {
+        "koltuklar": "Advanced Comfort koltuklar",
+        "klima": "Otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtımlı"
+      },
+      "lastik_jant": {
+        "jant_inch": 17,
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": 11,
+        "dc_kW": 100,
+        "10_80_dk": 26
+      },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": "-",
+        "yillik_tahmini_bakim_try": "-"
+      }
+    },
+    "why": "303 km WLTP ve 100 kW DC ile şehir içi/şehir dışı dengesi iyi; temel ADAS’lar ve konfor donanımı günlük güvenliği ve rahatlığı artırıyor. Demo/düşük km ilanlarla fiyat 1.5 milyon altına iniyor.",
+    "why_bullets": [
+      "Şehir içi verimlilik ve 100 kW hızlı şarj",
+      "Temel ADAS ve pratik boyutlar",
+      "Güncel multimedya (kablosuz AA/CP)",
+      "Bütçeye uygun demo stokları"
+    ],
+    "score": {
+      "toplam": 84,
+      "kriterler": {
+        "ekonomi": 88,
+        "konfor": 80,
+        "guvenlik": 78,
+        "performans": 65,
+        "teknoloji": 83
+      }
+    },
+    "links": {
+      "brosur_pdf": "https://…/e-c3-aircross-katalog.pdf",
+      "test_surusu": "https://…/citroen/test-drive",
+      "fiyat_listesi": "https://talep.citroen.com.tr/fiyat-listesi/arac/e-c3-aircross"
+    }
+  },
+  {
+    "id": "seres-3-536-kwh-2024",
+    "brand": "Seres (DFSK)",
+    "model": "Seres 3",
+    "trim": "Premium",
+    "year": 2024,
+    "body": "SUV",
+    "fuel": "Elektrik",
+    "drivetrain": "FWD",
+    "transmission": "Tek oranlı",
+    "priceTRY": 1400000,
+    "price_updated": "2025-10-29",
+    "tags": ["Şehir içi","Uzun yol","Düşük tüketim","Bütçe dostu"],
+    "media": {
+      "image_main": "https://…/seres3-exterior.jpg",
+      "image_interior": "https://…/seres3-interior.jpg",
+      "brand_logo": "https://…/logos/seres.svg"
+    },
+    "availability": {
+      "stok": "İkinci el / düşük km seçenek çok",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 163,
+        "tork_Nm": 300,
+        "0_100_kmh_s": 8.9,
+        "maksimum_hiz_kmh": 155
+      },
+      "ekonomi": {
+        "tuketim_l_100km": "-",
+        "co2_g_km": 0,
+        "enerji_kWh_100km": 18.0,
+        "menzil_wltp_km": 301,
+        "depo_litre": "-",
+        "batarya_kWh": 53.6
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4385,
+        "genislik_mm": 1850,
+        "yukseklik_mm": 1650,
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": 1690,
+        "bagaj_l": 525,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "Tek oran"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1",
+          "ozellikler": [
+            "Şerit Uyarı (donanıma bağlı)",
+            "Ön Çarpışma Uyarısı + AEB (donanıma bağlı)",
+            "Hız sabitleyici"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "-",
+        "gosterge_paneli": "Dijital",
+        "multimedia": "CarPlay & Android Auto (pazar/donanıma bağlı)",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Suni deri (pazar/donanıma bağlı)",
+        "klima": "Otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtımlı"
+      },
+      "lastik_jant": {
+        "jant_inch": 18,
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": 6.6,
+        "dc_kW": 56,
+        "10_80_dk": 45
+      },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": "-",
+        "yillik_tahmini_bakim_try": "-"
+      }
+    },
+    "why": "Elektrikli SUV olarak bütçeye en yakın seçeneklerden. 53.6 kWh batarya ve ~300 km WLTP menzil günlük kullanım ve şehir dışı molalı rotalar için yeterli. İlan piyasasında 1.4–1.5m bandında çok sayıda araç bulunuyor.",
+    "why_bullets": [
+      "Bütçeye tam uyum",
+      "163 hp ile akıcı performans",
+      "~300 km WLTP menzil",
+      "Geniş bagaj (525 L)"
+    ],
+    "score": {
+      "toplam": 78,
+      "kriterler": {
+        "ekonomi": 80,
+        "konfor": 74,
+        "guvenlik": 70,
+        "performans": 78,
+        "teknoloji": 72
+      }
+    },
+    "links": {
+      "brosur_pdf": "https://…/seres3-brosur.pdf",
+      "test_surusu": "https://…/seres/test-drive",
+      "fiyat_listesi": "https://www.sahibinden.com/arazi-suv-pickup-seres-3-serisi-3"
+    }
+  },
+  {
+    "id": "suzuki-vitara-1-4-mhev-allgrip-2021",
+    "brand": "Suzuki",
+    "model": "Vitara",
+    "trim": "1.4 Boosterjet MHEV AllGrip GLX",
+    "year": 2021,
+    "body": "SUV",
+    "fuel": "Hibrit (Mild)",
+    "drivetrain": "AWD (AllGrip)",
+    "transmission": "6AT",
+    "priceTRY": 1499000,
+    "price_updated": "2025-10-29",
+    "tags": ["Aile","Kış","Güvenlik","Düşük tüketim","Konfor","4x4"],
+    "media": {
+      "image_main": "https://…/vitara-exterior.jpg",
+      "image_interior": "https://…/vitara-interior.jpg",
+      "brand_logo": "https://…/logos/suzuki.svg"
+    },
+    "availability": {
+      "stok": "2. el / düşük km örnekleri mevcut",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 129,
+        "tork_Nm": 235,
+        "0_100_kmh_s": 10.2,
+        "maksimum_hiz_kmh": 195
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.5,
+        "co2_g_km": 128,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 47,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4185,
+        "genislik_mm": 1775,
+        "yukseklik_mm": 1595,
+        "dingil_mesafesi_mm": 2500,
+        "agirlik_kg": 1280,
+        "bagaj_l": 362,
+        "yerden_yukseklik_mm": 185,
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "AllGrip 4x4 (Auto/Snow/Sport/Lock)",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri otomatik"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "Ön çarpışma uyarısı + AEB (DSBS)",
+            "Şerit takip/uyarı",
+            "Kör nokta uyarısı",
+            "Arka çapraz trafik uyarısı",
+            "Yokuş kalkış desteği"
+          ]
+        },
+        "airbag_sayisi": 6,
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 9.0,
+        "gosterge_paneli": "Kombine dijital",
+        "multimedia": "CarPlay & Android Auto",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtımlı"
+      },
+      "lastik_jant": {
+        "jant_inch": 17,
+        "lastik_olcusu": "215/55 R17",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": "-",
+        "dc_kW": "-",
+        "10_80_dk": "-"
+      },
+      "bakim": {
+        "garanti_yil_km": "3 yıl / 100.000 km (ilk satışa göre)",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": 10000
+      }
+    },
+    "why": "Aile + kış kullanımında AllGrip 4x4 ve 'Snow/Lock' modlarıyla çekişi artırır; mild hibrit 1.4 turbo düşük tüketim sunar. ADAS güvenlik paketi ve çift bölgeli klima ile konfor da güçlüdür. B bütçesinde 2. el temiz örnekler bulunur.",
+    "why_bullets": [
+      "Kış için 4x4 AllGrip (Snow/Lock)",
+      "Düşük tüketim (~5.5 L/100 km WLTP)",
+      "ADAS: AEB, şerit, BSM, RCTA",
+      "Aileye uygun pratik boyut & 362 L bagaj"
+    ],
+    "score": {
+      "toplam": 86,
+      "kriterler": {
+        "ekonomi": 85,
+        "konfor": 80,
+        "guvenlik": 88,
+        "performans": 78,
+        "teknoloji": 78
+      }
+    },
+    "links": {
+      "brosur_pdf": "https://www.suzuki.com.tr/upi/brosur/vitara-hibrit.pdf",
+      "fiyat_listesi": "https://www.suzuki.com.tr/tr/otomobil/fiyat-listesi.html",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-hyundai-kona-1.6-crdi-hibrit-elite"
+    }
+  },
+  {
+    "id": "toyota-chr-1-8-hybrid-2019",
+    "brand": "Toyota",
+    "model": "C-HR",
+    "trim": "1.8 Hybrid e-CVT (Flame/Passion)",
+    "year": 2019,
+    "body": "SUV",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "e-CVT",
+    "priceTRY": 1450000,
+    "price_updated": "2025-10-29",
+    "tags": ["Aile","Kış","Güvenlik","Düşük tüketim","Konfor"],
+    "media": {
+      "image_main": "https://…/chr-exterior.jpg",
+      "image_interior": "https://…/chr-interior.jpg",
+      "brand_logo": "https://…/logos/toyota.svg"
+    },
+    "availability": {
+      "stok": "2. el / çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 122,
+        "tork_Nm": 163,
+        "0_100_kmh_s": 11.0,
+        "maksimum_hiz_kmh": 170
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 4.8,
+        "co2_g_km": 86,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 43,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4390,
+        "genislik_mm": 1795,
+        "yukseklik_mm": 1555,
+        "dingil_mesafesi_mm": 2640,
+        "agirlik_kg": 1505,
+        "bagaj_l": 377,
+        "yerden_yukseklik_mm": 144,
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk",
+        "vites": "e-CVT"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 (donanıma bağlı)",
+          "ozellikler": [
+            "Ön çarpışma uyarısı + AEB",
+            "Adaptif hız sabitleyici",
+            "Şerit takip asistanı",
+            "Trafik işareti algılama"
+          ]
+        },
+        "airbag_sayisi": 7,
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 8.0,
+        "gosterge_paneli": "Dijital/analog",
+        "multimedia": "CarPlay & Android Auto (MY'20+)",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtımlı"
+      },
+      "lastik_jant": {
+        "jant_inch": 17,
+        "lastik_olcusu": "215/60 R17",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": "-",
+        "dc_kW": "-",
+        "10_80_dk": "-"
+      },
+      "bakim": {
+        "garanti_yil_km": "3 yıl / 100.000 km (ilk satışa göre)",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": 11000
+      }
+    },
+    "why": "Aile kullanımı için verimli 1.8 hibrit, düşük tüketim ve Toyota Safety Sense ile yüksek güvenlik sunar. Kış koşullarında gelişmiş çekişe sahip değil; ancak kaliteli kış lastiğiyle güvenli ve konforlu sürüş sağlar. B bütçesinde çok sayıda temiz ilan bulunur.",
+    "why_bullets": [
+      "Çok düşük tüketim (~4.8 L/100 km)",
+      "Toyota Safety Sense (AEB, ACC, LTA)",
+      "377 L bagaj ve rahat arka sıra",
+      "Yaygın servis ağı ve 2. el bolluğu"
+    ],
+    "score": {
+      "toplam": 84,
+      "kriterler": {
+        "ekonomi": 92,
+        "konfor": 82,
+        "guvenlik": 86,
+        "performans": 68,
+        "teknoloji": 78
+      }
+    },
+    "links": {
+      "brosur_pdf": "https://turkiye.toyota.com.tr/middle/TOYOTA_CHR_Teknik_%C3%96zellikler_2025.pdf",
+      "model_sayfasi": "https://www.toyota.com.tr/araba-modelleri/c-hr",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-toyota-c-hr"
+    }
+  }
+]
