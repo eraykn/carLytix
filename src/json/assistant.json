@@ -478,5 +478,2680 @@
       "model_sayfasi": "https://www.toyota.com.tr/araba-modelleri/c-hr",
       "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-toyota-c-hr"
     }
+  },
+  {
+    "id": "kia-niro-1-6-hev-2022-prestige",
+    "brand": "Kia",
+    "model": "Niro",
+    "trim": "1.6 GDi HEV Prestige (DCT)",
+    "year": 2022,
+    "body": "SUV",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "6DCT",
+    "priceTRY": 1945000,
+    "price_updated": "2025-11-02",
+    "tags": ["Şehir içi","Ekonomi","Düşük tüketim","Teknoloji","Aile"],
+    "media": {
+      "image_main": "https://…/niro-exterior.jpg",
+      "image_interior": "https://…/niro-interior.jpg",
+      "brand_logo": "https://…/logos/kia.svg"
+    },
+    "availability": {
+      "stok": "2. el / çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 139,
+        "tork_Nm": "-",
+        "0_100_kmh_s": 9.6,
+        "maksimum_hiz_kmh": 168
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 4.4,
+        "co2_g_km": 100,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 42,
+        "batarya_kWh": 1.32
+      },
+      "boyutlar": {
+        "uzunluk_mm": "-",
+        "genislik_mm": "-",
+        "yukseklik_mm": "-",
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": "-",
+        "bagaj_l": "-",
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri DCT"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 (pakete bağlı)",
+          "ozellikler": [
+            "AEB (yaya/bisiklet algılamalı)",
+            "Şerit Takip + LFA",
+            "Kör Nokta Uyarısı",
+            "Arka Çapraz Trafik Uyarısı",
+            "Akıllı Hız Sabitleyici (donanıma bağlı)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "-",
+        "gosterge_paneli": "Dijital (donanıma bağlı)",
+        "multimedia": "Apple CarPlay & Android Auto",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB","OTA (seçili modüller)"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik (donanıma bağlı)",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": 16,
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": "-",
+        "dc_kW": "-",
+        "10_80_dk": "-"
+      },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": "-",
+        "yillik_tahmini_bakim_try": "-"
+      }
+    },
+    "why": "WLTP 4.4 L/100 km ile şehir içi tüketimde çok verimli; Drive Wise ADAS (AEB, LFA, BSM, RCCW) ve güncel multimedya teknolojisi günlük kullanımda güven ve konfor sağlar. İkinci el pazarında C bütçesine net şekilde düşüyor.",
+    "why_bullets": [
+      "Çok düşük tüketim (WLTP 4.4 L/100 km)",
+      "Geniş ADAS paketi (AEB/LFA/BSM/RCTA)",
+      "Düşük işletim gideri, yaygın Kore grubu servis",
+      "C bütçeye uygun, seçenek bol"
+    ],
+    "score": {
+      "toplam": 88,
+      "kriterler": {
+        "ekonomi": 94,
+        "konfor": 82,
+        "guvenlik": 84,
+        "performans": 78,
+        "teknoloji": 86
+      }
+    },
+    "links": {
+      "brosur_pdf": "https://www.kia.com/content/dam/kwcms/kme/uk/en/assets/vehicles/all-new-niro/specification/Niro_specification.pdf",
+      "teknik_genel": "https://www.ultimatespecs.com/car-specs/Kia/138171/Kia-Niro-2022-16-GDi-Hybrid.html",
+      "adas_ozet": "https://www.kiamedia.com/us/en/models/niro/2022/features",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-kia-niro"
+    }
+  },
+  {
+    "id": "honda-hrv-1-5-ehev-2023-advance",
+    "brand": "Honda",
+    "model": "HR-V",
+    "trim": "1.5 e:HEV Advance",
+    "year": 2023,
+    "body": "SUV",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "e-CVT (i-MMD)",
+    "priceTRY": 1990000,
+    "price_updated": "2025-11-02",
+    "tags": ["Şehir içi","Ekonomi","Düşük tüketim","Teknoloji","Aile"],
+    "media": {
+      "image_main": "https://…/hrv-exterior.jpg",
+      "image_interior": "https://…/hrv-interior.jpg",
+      "brand_logo": "https://…/logos/honda.svg"
+    },
+    "availability": {
+      "stok": "2. el / çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 131,
+        "tork_Nm": 253,
+        "0_100_kmh_s": 10.6,
+        "maksimum_hiz_kmh": 170
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.4,
+        "co2_g_km": 94,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 40,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": "-",
+        "genislik_mm": "-",
+        "yukseklik_mm": "-",
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": "1380-1415",
+        "bagaj_l": "304-1305",
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "e-CVT / i-MMD"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "5 (Euro NCAP, 2021)",
+        "adas": {
+          "seviye": "Seviye 2",
+          "ozellikler": [
+            "Honda SENSING (AEB, ACC, LKA, TSR)",
+            "Geniş açılı HD ön kamera",
+            "Arka kamera + park sensörleri"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "9 (donanıma bağlı)",
+        "gosterge_paneli": "7-12\" dijital",
+        "multimedia": "Kablosuz Apple CarPlay, Android Auto",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB-C"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik (Advance)",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": 18,
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": "-",
+        "dc_kW": "-",
+        "10_80_dk": "-"
+      },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": "-",
+        "yillik_tahmini_bakim_try": "-"
+      }
+    },
+    "why": "Honda SENSING ile kapsamlı ADAS, kablosuz CarPlay/Android Auto ve i-MMD hibrit mimarisiyle şehir içi akıcı-sessiz sürüş ve düşük tüketim sağlar. Türkiye’de ikinci el seçenekler C bütçesine sığıyor.",
+    "why_bullets": [
+      "WLTP birleşik 5.4 L/100 km",
+      "Sınıfında güçlü ADAS (AEB/ACC/LKA)",
+      "Kablosuz CarPlay/Android Auto",
+      "Geniş servis ağı, sorunsuz hibrit geçmişi"
+    ],
+    "score": {
+      "toplam": 87,
+      "kriterler": {
+        "ekonomi": 88,
+        "konfor": 84,
+        "guvenlik": 90,
+        "performans": 74,
+        "teknoloji": 86
+      }
+    },
+    "links": {
+      "model_sayfasi_tr": "https://www.honda.com.tr/otomobil/modeller/honda-hr-v-hibrit",
+      "teknik_veri_eu": "https://www.honda.co.uk/cars/new/hr-v-hybrid/specifications.html",
+      "wlpt_kaynak": "https://www.carfolio.com/honda-hr-v-e%3Ahev-809952",
+      "euro_ncap": "https://www.euroncap.com/en/results/honda/hr-v/45661",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-honda-hr-v-1.5-e-hev"
+    }
+  },
+  {
+    "id": "mazda-cx5-2-0-skyactivg-2015",
+    "brand": "Mazda",
+    "model": "CX-5",
+    "trim": "2.0 Skyactiv-G (Power/Sense donanımları)",
+    "year": 2015,
+    "body": "SUV",
+    "fuel": "Benzin",
+    "drivetrain": "FWD (bazı örnekler AWD)",
+    "transmission": "6AT",
+    "priceTRY": 1200000,
+    "price_updated": "2025-11-02",
+    "tags": ["Uzun yol","Konfor","Gürültü/konfor","Performans"],
+    "media": {
+      "image_main": "https://…/cx5-exterior.jpg",
+      "image_interior": "https://…/cx5-interior.jpg",
+      "brand_logo": "https://…/logos/mazda.svg"
+    },
+    "availability": {
+      "stok": "2. el / Türkiye genelinde çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 165,
+        "tork_Nm": 210,
+        "0_100_kmh_s": 10.4,
+        "maksimum_hiz_kmh": 201
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 6.4,
+        "co2_g_km": 149,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": "-",
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": "-",
+        "genislik_mm": "-",
+        "yukseklik_mm": "-",
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": "-",
+        "bagaj_l": "~500",
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD/AWD (örneğe göre)",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri otomatik"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "Kör Nokta Uyarısı (BSM)",
+            "Arka Çapraz Trafik Uyarısı (RCTA)",
+            "Şehir İçi Akıllı Fren (SCBS)",
+            "Şerit uyarı (donanıma bağlı)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "-",
+        "gosterge_paneli": "Kombine",
+        "multimedia": "Mazda Connect, Bluetooth, (donanıma bağlı Bose)",
+        "ses_sistemi": "Bose (donanıma bağlı)",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Isıtmalı (donanıma bağlı), destekli koltuk yapısı",
+        "klima": "Çift bölgeli otomatik (donanıma bağlı)",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtımlı"
+      },
+      "lastik_jant": {
+        "jant_inch": 19,
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Uygun (parça erişimi iyi)"
+      }
+    },
+    "why": "Uzun yolda sessiz kabin, konforlu koltuklar ve dengeli şasi; 165 bg 2.0 atmosferik benzinli motorun lineer karakteri ve 6AT ile sorunsuz uzun yol sürüşü. Donanıma bağlı BSM/RCTA ve Bose ile konforu yükseltir.",
+    "why_bullets": [
+      "NVH’si başarılı, uzun yol yorgunluğunu azaltır",
+      "Lineer 2.0 benzin + 6AT (sağlam ve sarsıntısız)",
+      "BSM/RCTA gibi güvenlik destekleri",
+      "A bütçeye sığan çok ilan"
+    ],
+    "score": {
+      "toplam": 85,
+      "kriterler": {
+        "ekonomi": 78,
+        "konfor": 88,
+        "guvenlik": 82,
+        "performans": 78,
+        "teknoloji": 80
+      }
+    },
+    "links": {
+      "teknik_kaynak": "https://…/cx5-specs",
+      "donanim_ozet": "https://…/cx5-features",
+      "ilanlar": "https://www.sahibinden.com/arazi-suv-pickup-mazda-cx-5"
+    }
+  },
+  {
+    "id": "renault-kadjar-1-3-tce-160-edc-2019",
+    "brand": "Renault",
+    "model": "Kadjar",
+    "trim": "1.3 TCe 160 EDC Icon/Touch Roof",
+    "year": 2019,
+    "body": "SUV",
+    "fuel": "Benzin",
+    "drivetrain": "FWD",
+    "transmission": "7EDC (çift kavrama)",
+    "priceTRY": 1240000,
+    "price_updated": "2025-11-02",
+    "tags": ["Uzun yol","Konfor","Performans","Gürültü/konfor"],
+    "media": {
+      "image_main": "https://…/kadjar-exterior.jpg",
+      "image_interior": "https://…/kadjar-interior.jpg",
+      "brand_logo": "https://…/logos/renault.svg"
+    },
+    "availability": {
+      "stok": "2. el / yaygın",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 160,
+        "tork_Nm": 270,
+        "0_100_kmh_s": 9.3,
+        "maksimum_hiz_kmh": 205
+      },
+      "ekonomi": {
+        "tuketim_l_100km": "-",
+        "co2_g_km": "-",
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": "-",
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": "-",
+        "genislik_mm": "-",
+        "yukseklik_mm": "-",
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": "-",
+        "bagaj_l": "-",
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "7 ileri EDC"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+ (pakete bağlı)",
+          "ozellikler": [
+            "AEB (pakete bağlı)",
+            "Şerit uyarı",
+            "Kör nokta uyarısı (pakete bağlı)",
+            "Ön/arka park destekleri"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "7-8 (donanıma bağlı)",
+        "gosterge_paneli": "Dijital/analog",
+        "multimedia": "R-LINK 2, Apple CarPlay & Android Auto",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Rahat sünger yapısı, ısıtma (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik (donanıma bağlı)",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": 18,
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tam boy (donanıma bağlı)"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Uygun (yaygın Renault ağı)"
+      }
+    },
+    "why": "Uzun yolda konforlu süspansiyon ve sessiz kabin; 160 bg/270 Nm ile akıcı performans ve 7 ileri EDC’nin düşük devirli seyri sayesinde yormayan sürüş. A bütçeye sığan çok sayıda ilan mevcut.",
+    "why_bullets": [
+      "160 bg + 7EDC ile rahat ve seri uzun yol",
+      "Yumuşak sürüş/NVH, ferah kabin",
+      "CarPlay/Android Auto ve pratik ADAS’lar",
+      "A bütçeye uygun geniş 2. el havuzu"
+    ],
+    "score": {
+      "toplam": 84,
+      "kriterler": {
+        "ekonomi": 76,
+        "konfor": 86,
+        "guvenlik": 80,
+        "performans": 82,
+        "teknoloji": 82
+      }
+    },
+    "links": {
+      "teknik_brosur_tr": "https://…/Brosur-Kadjar-052022.pdf",
+      "motor_performans": "https://…/kadjar-brosuru-2019.pdf",
+      "ilanlar": "https://www.sahibinden.com/arazi-suv-pickup-renault-kadjar-1.3-tce"
+    }
+  },
+  {
+    "id": "dacia-duster-1-5-bluedci-4x4-2021",
+    "brand": "Dacia",
+    "model": "Duster",
+    "trim": "1.5 Blue dCi 115 4x4 Prestige",
+    "year": 2021,
+    "body": "SUV",
+    "fuel": "Dizel",
+    "drivetrain": "4x4 (2WD/Auto/Lock)",
+    "transmission": "6MT",
+    "priceTRY": 1300000,
+    "price_updated": "2025-11-02",
+    "tags": ["Kış","Hafif arazi","Çekiş","Dayanıklılık","Ekonomi"],
+    "media": {
+      "image_main": "https://…/duster-exterior.jpg",
+      "image_interior": "https://…/duster-interior.jpg",
+      "brand_logo": "https://…/logos/dacia.svg"
+    },
+    "availability": {
+      "stok": "2. el / yaygın",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 115,
+        "tork_Nm": 260,
+        "0_100_kmh_s": 12.1,
+        "maksimum_hiz_kmh": 175
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 4.7,
+        "co2_g_km": 123,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 50,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4341,
+        "genislik_mm": 1804,
+        "yukseklik_mm": "-",
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": 1405,
+        "bagaj_l": "376-1614",
+        "yerden_yukseklik_mm": 210,
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "4x4 (2WD/Auto/Lock)",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri manuel"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1",
+          "ozellikler": [
+            "Acil Durum Fren Desteği (donanıma bağlı)",
+            "Yokuş iniş desteği",
+            "Yokuş kalkış desteği",
+            "Hız sınırlayıcı"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "-",
+        "gosterge_paneli": "Kombine",
+        "multimedia": "Apple CarPlay & Android Auto (donanıma bağlı)",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma (donanıma bağlı)",
+        "klima": "Otomatik (donanıma bağlı)",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": 17,
+        "lastik_olcusu": "215/60 R17",
+        "yedek_lastik": "Tam boy/yayın koşuluna bağlı"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Uygun (parça erişimi iyi)"
+      }
+    },
+    "why": "210 mm yerden yükseklik, 4x4'te 2WD/Auto/Lock modları ve düşük tüketimli 1.5 Blue dCi ile kış ve hafif arazi için sağlam ve ekonomik bir çözüm. Türkiye'de 4x4 dizel ilanları B bütçesine sığıyor.",
+    "why_bullets": [
+      "Gerçek 4x4 modları (2WD/Auto/Lock)",
+      "Yerden yüksek yapı (210 mm) ve iniş desteği",
+      "Düşük işletim maliyeti, yaygın bulunurluk",
+      "Hafif arazi/içerik korumaları ve pratik bagaj"
+    ],
+    "score": {
+      "toplam": 85,
+      "kriterler": {
+        "ekonomi": 90,
+        "konfor": 72,
+        "guvenlik": 78,
+        "performans": 70,
+        "teknoloji": 70
+      }
+    },
+    "links": {
+      "brosur_pdf": "https://cdn.group.renault.com/dac/tr/dacia-brochures/yeni-duster-ph2/DUSTER-HJD-PH2-BROSUR-10012024.pdf.asset.pdf/baa7f40fee.pdf",
+      "teknik_kaynak": "https://www.auto-data.net/en/dacia-duster-ii-1.5-dci-116hp-4x4-34931",
+      "cekis_modlari": "https://en.wikipedia.org/wiki/Dacia_Duster",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-dacia-duster-1.5-bluedci"
+    }
+  },
+  {
+    "id": "kia-sportage-1-6-crdi-awd-2019",
+    "brand": "Kia",
+    "model": "Sportage",
+    "trim": "1.6 CRDi 136 AWD DCT (Prestige/Elegance)",
+    "year": 2019,
+    "body": "SUV",
+    "fuel": "Dizel",
+    "drivetrain": "AWD",
+    "transmission": "7DCT",
+    "priceTRY": 1550000,
+    "price_updated": "2025-11-02",
+    "tags": ["Kış","Hafif arazi","Çekiş","Konfor","Dayanıklılık"],
+    "media": {
+      "image_main": "https://…/sportage-exterior.jpg",
+      "image_interior": "https://…/sportage-interior.jpg",
+      "brand_logo": "https://…/logos/kia.svg"
+    },
+    "availability": {
+      "stok": "2. el / yaygın",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 136,
+        "tork_Nm": 320,
+        "0_100_kmh_s": 11.2,
+        "maksimum_hiz_kmh": 180
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.0,
+        "co2_g_km": "-",
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 62,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4485,
+        "genislik_mm": 1855,
+        "yukseklik_mm": 1645,
+        "dingil_mesafesi_mm": 2670,
+        "agirlik_kg": "-",
+        "bagaj_l": "~491",
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "AWD (kilitlenebilir orta diferansiyel benzeri 4WD Lock işlevi, donanıma bağlı)",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk",
+        "vites": "7 ileri DCT"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "AEB (yaya/bisiklet algılamalı, pakete bağlı)",
+            "Şerit Takip (LKA/LFA)",
+            "Kör Nokta Uyarısı",
+            "Arka Çapraz Trafik Uyarısı",
+            "Hız sabitleyici (akıllı donanıma bağlı)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "7-8 (donanıma bağlı)",
+        "gosterge_paneli": "Kombine",
+        "multimedia": "Apple CarPlay & Android Auto",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": 18,
+        "lastik_olcusu": "225/55 R18",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Uygun (Hyundai-Kia ağı)"
+      }
+    },
+    "why": "AWD + 7DCT kombinasyonu ve 320 Nm tork kış ve hafif arazi koşullarında güven verir; WLTP'de 5.0–5.5 L/100 km bandı ekonomik. Türkiye'de 2019–2021 AWD dizel örnekleri B bütçeye net biçimde oturuyor.",
+    "why_bullets": [
+      "AWD ve 4WD Lock işlevi (donanıma bağlı)",
+      "136 bg/320 Nm ile çekiş ve akıcılık",
+      "WLTP ~5.0–5.5 L/100 km",
+      "Geniş parça/servis ağı, dayanıklılık"
+    ],
+    "score": {
+      "toplam": 86,
+      "kriterler": {
+        "ekonomi": 80,
+        "konfor": 84,
+        "guvenlik": 82,
+        "performans": 82,
+        "teknoloji": 80
+      }
+    },
+    "links": {
+      "wltp_brosur": "https://www.kia.com/content/dam/kwcms/kme/uk/en/assets/vehicles/New%20Sportage/Specification/sportage-specification.pdf",
+      "teknik_ozet": "https://www.automobile-catalog.com/car/2019/2739605/kia_sportage_1_6_crdi_136_awd.html",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-kia-sportage-1.6-crdi"
+    }
+  },
+  {
+    "id": "peugeot-5008-1-5-bluehdi-eat8-2021",
+    "brand": "Peugeot",
+    "model": "5008",
+    "trim": "1.5 BlueHDi 130 EAT8 (Allure/GT)",
+    "year": 2021,
+    "body": "SUV (7 koltuk)",
+    "fuel": "Dizel",
+    "drivetrain": "FWD",
+    "transmission": "8AT (EAT8)",
+    "priceTRY": 1790000,
+    "price_updated": "2025-11-02",
+    "tags": ["Aile","Uzun yol","Düşük tüketim","Güvenlik","Büyük bagaj"],
+    "media": {
+      "image_main": "https://…/5008-exterior.jpg",
+      "image_interior": "https://…/5008-interior.jpg",
+      "brand_logo": "https://…/logos/peugeot.svg"
+    },
+    "availability": {
+      "stok": "2. el / yaygın",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 130,
+        "tork_Nm": 300,
+        "0_100_kmh_s": 10.7,
+        "maksimum_hiz_kmh": 191
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.4,
+        "co2_g_km": 142,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": 981,
+        "depo_litre": 53,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4641,
+        "genislik_mm": 1844,
+        "yukseklik_mm": 1646,
+        "dingil_mesafesi_mm": 2840,
+        "agirlik_kg": "-",
+        "bagaj_l": "702-2150",
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 7
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "8 ileri otomatik (EAT8)"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "5 (Euro NCAP; 5008/3008 platformu)",
+        "adas": {
+          "seviye": "Seviye 2 (pakete bağlı)",
+          "ozellikler": [
+            "AEB (yaya/bisiklet/motosiklet algılamalı)",
+            "Adaptif Hız Sabitleyici",
+            "Şerit Konumlama/LKA",
+            "Kör Nokta Uyarısı",
+            "Arka Çapraz Trafik Uyarısı"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "10 (donanıma bağlı)",
+        "gosterge_paneli": "12.3\" dijital i-Cockpit",
+        "multimedia": "Apple CarPlay & Android Auto",
+        "ses_sistemi": "Hi-Fi (opsiyon)",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma/massage (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": 18,
+        "lastik_olcusu": "235/55 R18",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Uygun (Stellantis ağı)"
+      }
+    },
+    "why": "WLTP 5.4 L/100 km tüketim ve devasa bagaj (702–2150 L) ile uzun yolda aile için birebir. 7 koltuk esnekliği + Safety Pack ADAS'lar ve rahat süspansiyonla yormayan sürüş sağlar.",
+    "why_bullets": [
+      "Sınıfının en iyi bagajlarından (702–2150 L)",
+      "Ekonomik 1.5 BlueHDi + EAT8",
+      "Geniş ADAS ve 5★ güvenlik",
+      "İkinci elde bol seçenek, C bütçeye uyumlu"
+    ],
+    "score": {
+      "toplam": 89,
+      "kriterler": {
+        "ekonomi": 90,
+        "konfor": 86,
+        "guvenlik": 88,
+        "performans": 78,
+        "teknoloji": 86
+      }
+    },
+    "links": {
+      "euro_ncap": "https://www.euroncap.com/en/results/peugeot/3008%2F5008/26581",
+      "wltp_kaynak": "https://www.ultimatespecs.com/car-specs/Peugeot/121578/Peugeot-5008-2021-15-BlueHDi-130-Auto.html",
+      "bagaj_kaynak": "https://www.auto-data.net/en/peugeot-5008-ii-phase-ii-2020-1.5-bluehdi-130hp-41742",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-peugeot-5008-1.5-bluehdi"
+    }
+  },
+  {
+    "id": "hyundai-tucson-1-6-crdi-2021",
+    "brand": "Hyundai",
+    "model": "Tucson",
+    "trim": "1.6 CRDi 115/136 (Elite/Elite Plus, 4x2)",
+    "year": 2021,
+    "body": "SUV",
+    "fuel": "Dizel",
+    "drivetrain": "FWD (4x4 opsiyonlu)",
+    "transmission": "6MT veya 7DCT (136 bg MHEV)",
+    "priceTRY": 1950000,
+    "price_updated": "2025-11-02",
+    "tags": ["Aile","Uzun yol","Düşük tüketim","Güvenlik","Büyük bagaj"],
+    "media": {
+      "image_main": "https://…/tucson-exterior.jpg",
+      "image_interior": "https://…/tucson-interior.jpg",
+      "brand_logo": "https://…/logos/hyundai.svg"
+    },
+    "availability": {
+      "stok": "2. el / çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": "115 (MT) / 136 (DCT MHEV)",
+        "tork_Nm": "280–320",
+        "0_100_kmh_s": "11.8–10.2",
+        "maksimum_hiz_kmh": "180 civarı"
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.3,
+        "co2_g_km": "136–140",
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 62,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4510,
+        "genislik_mm": 1865,
+        "yukseklik_mm": 1650,
+        "dingil_mesafesi_mm": 2680,
+        "agirlik_kg": "1477–1628",
+        "bagaj_l": "598–620",
+        "yerden_yukseklik_mm": 170,
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD (baz), AWD opsiyon",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk",
+        "vites": "6MT / 7DCT"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "5 (Euro NCAP, 2021)",
+        "adas": {
+          "seviye": "Seviye 2",
+          "ozellikler": [
+            "AEB (yaya/bisiklet)",
+            "Şerit Takip + Merkezleme",
+            "Kör Nokta Uyarısı",
+            "Arka Çapraz Trafik Uyarısı",
+            "E-Call + Orta Hava Yastığı"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "10.25 (donanıma bağlı)",
+        "gosterge_paneli": "10.25\" dijital",
+        "multimedia": "Apple CarPlay & Android Auto",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB-C"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma/soğutma (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "18–19",
+        "lastik_olcusu": "235/50 R19 (donanıma bağlı)",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Uygun (Hyundai ağı)"
+      }
+    },
+    "why": "Euro NCAP 5★ güvenlik, 598–620 L bagaj ve 1.6 CRDi'nin düşük tüketimiyle uzun yol aile kullanımı için çok dengeli. Türkiye'de 2019–2022 1.6 CRDi ilanları C bütçesine net şekilde oturuyor.",
+    "why_bullets": [
+      "WLTP ~5.3–5.9 L/100 km",
+      "Büyük bagaj (598–620 L VDA)",
+      "Geniş ADAS (AEB/ACC/LKA/BSM)",
+      "Yaygın servis, bol 2. el"
+    ],
+    "score": {
+      "toplam": 88,
+      "kriterler": {
+        "ekonomi": 88,
+        "konfor": 84,
+        "guvenlik": 90,
+        "performans": 78,
+        "teknoloji": 86
+      }
+    },
+    "links": {
+      "euro_ncap": "https://www.euroncap.com/en/results/hyundai/tucson/43815",
+      "bagaj_kaynak": "https://www.auto-data.net/en/hyundai-tucson-iv-1.6-crdi-116hp-42123",
+      "wltp_kaynak": "https://autotijd.be/en/consumption/hyundai/tucson/16-crdi-115-manual-2905",
+      "teknik_pdf": "https://dmassets.hyundai.com/is/content/hyundaiautoever/TUCSON_Tech_Specpdf-1",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-hyundai-tucson-1.6-crdi"
+    }
+  },
+  {
+    "id": "porsche-macan-2-0t-2016",
+    "brand": "Porsche",
+    "model": "Macan",
+    "trim": "2.0T (AWD)",
+    "year": 2016,
+    "body": "SUV",
+    "fuel": "Benzin",
+    "drivetrain": "AWD",
+    "transmission": "7AT (PDK)",
+    "priceTRY": 2890000,
+    "price_updated": "2025-11-02",
+    "tags": ["Performans","Uzun yol","Yol tutuş","Fren","Prestij"],
+    "media": {
+      "image_main": "https://…/macan-exterior.jpg",
+      "image_interior": "https://…/macan-interior.jpg",
+      "brand_logo": "https://…/logos/porsche.svg"
+    },
+    "availability": {
+      "stok": "2. el / yaygın",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 252,
+        "tork_Nm": 370,
+        "0_100_kmh_s": 6.7,
+        "maksimum_hiz_kmh": 225
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 7.2,
+        "co2_g_km": "-",
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": "-",
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4697,
+        "genislik_mm": 1923,
+        "yukseklik_mm": 1624,
+        "dingil_mesafesi_mm": 2807,
+        "agirlik_kg": 1887,
+        "bagaj_l": 500,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "AWD (PTM)",
+        "suspansiyon_on": "Çift salıncak (opsiyon: PASM hava)",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk (opsiyon: PCCB)",
+        "vites": "7 ileri PDK"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1",
+          "ozellikler": [
+            "Ön çarpışma uyarısı + AEB (donanıma bağlı)",
+            "Kör nokta uyarısı (opsiyon)",
+            "Adaptif hız sabitleyici (opsiyon)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "-",
+        "gosterge_paneli": "Analog + TFT",
+        "multimedia": "Porsche Communication Management",
+        "ses_sistemi": "BOSE/Burmester (opsiyon)",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Sport/Comfort, ısıtma (opsiyon)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "18–21",
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Premium"
+      }
+    },
+    "why": "Sınıfının referans şasisi: dengeli AWD, net direksiyon ve güçlü frenaj. 252 bg/370 Nm ve PDK ile hem uzun yolda yüksek ritim, hem de virajda güven veriyor. Türkiye'de 2016–2017 örnekleri D bütçeye sığıyor.",
+    "why_bullets": [
+      "0–100 km/s 6.7 sn, 225 km/s son hız",
+      "Porsche şasi/PDK ile yüksek yol tutuş",
+      "Güçlü fren ve opsiyonel performans paketleri",
+      "D bütçeye uyan 2. el stok"
+    ],
+    "score": {
+      "toplam": 91,
+      "kriterler": {
+        "ekonomi": 70,
+        "konfor": 86,
+        "guvenlik": 84,
+        "performans": 92,
+        "teknoloji": 86
+      }
+    },
+    "links": {
+      "teknik_kaynak": "https://www.ultimatespecs.com/car-specs/Porsche/120848/Porsche-Macan-2019-20T.html",
+      "model_sayfasi": "https://www.porsche.com/uk/models/macan/macan-models/macan/",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-porsche-macan"
+    }
+  },
+  {
+    "id": "jaguar-fpace-2-0-250-awd-2018",
+    "brand": "Jaguar",
+    "model": "F-Pace",
+    "trim": "2.0 250 PS AWD R-Sport",
+    "year": 2018,
+    "body": "SUV",
+    "fuel": "Benzin",
+    "drivetrain": "AWD",
+    "transmission": "8AT",
+    "priceTRY": 2450000,
+    "price_updated": "2025-11-02",
+    "tags": ["Performans","Uzun yol","Yol tutuş","Fren","Bagaj"],
+    "media": {
+      "image_main": "https://…/fpace-exterior.jpg",
+      "image_interior": "https://…/fpace-interior.jpg",
+      "brand_logo": "https://…/logos/jaguar.svg"
+    },
+    "availability": {
+      "stok": "2. el / mevcut",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 250,
+        "tork_Nm": 365,
+        "0_100_kmh_s": 6.8,
+        "maksimum_hiz_kmh": 217
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 7.1,
+        "co2_g_km": 163,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": "-",
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4746,
+        "genislik_mm": 2070,
+        "yukseklik_mm": "-",
+        "dingil_mesafesi_mm": "-",
+        "agirlik_kg": 1710,
+        "bagaj_l": 650,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "AWD (tork yönlendirme)",
+        "suspansiyon_on": "Çift salıncak (alüminyum)",
+        "suspansiyon_arka": "İntegral Link",
+        "frenler": "Ön-arka disk (R-Sport: büyük çaplı)",
+        "vites": "8 ileri otomatik"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+ (pakete bağlı)",
+          "ozellikler": [
+            "AEB",
+            "Şerit uyarı/takip",
+            "Kör nokta uyarısı",
+            "Arka çapraz trafik uyarısı"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "8-10 (donanıma bağlı)",
+        "gosterge_paneli": "Dijital/analog",
+        "multimedia": "InControl, Apple CarPlay/Android Auto (MY'e bağlı)",
+        "ses_sistemi": "Meridian (opsiyon)",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Spor destekli; ısıtma (opsiyon)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "19–21",
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 16000,
+        "yillik_tahmini_bakim_try": "Premium"
+      }
+    },
+    "why": "Hafif alüminyum şasi, AWD ve tork yönlendirme ile çevik yol tutuş; 0–100 km/s 6.8 sn ve 650 L bagajla performans + aile uzun yol dengesini iyi kurar. D bütçede çok sayıda 2017–2020 benzinli AWD ilanı var.",
+    "why_bullets": [
+      "0–100 km/s 6.8 sn, 217 km/s",
+      "AWD + çok kollu arka: yüksek tutunma",
+      "650 L bagajla uzun yolda pratik",
+      "D bütçeye uyan 2. el seçenekleri"
+    ],
+    "score": {
+      "toplam": 89,
+      "kriterler": {
+        "ekonomi": 72,
+        "konfor": 85,
+        "guvenlik": 84,
+        "performans": 90,
+        "teknoloji": 84
+      }
+    },
+    "links": {
+      "teknik_kaynak": "https://www.auto-data.net/en/jaguar-f-pace-2.0t-250hp-awd-automatic-30264",
+      "alternatif_kaynak": "https://www.ultimatespecs.com/car-specs/Jaguar/109045/Jaguar-F-Pace-20-250HP-RWD-Auto.html",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-jaguar-f-pace"
+    }
+  },
+  {
+    "id": "tesla-model-y-long-range-2023",
+    "brand": "Tesla",
+    "model": "Model Y Long Range",
+    "trim": "Dual Motor AWD",
+    "year": 2023,
+    "body": "SUV",
+    "fuel": "Elektrik",
+    "drivetrain": "AWD",
+    "transmission": "Tek oranlı",
+    "priceTRY": 2250000,
+    "price_updated": "2025-11-02",
+    "tags": ["Teknoloji","Şehir içi","Düşük işletme","Konfor","ADAS"],
+    "media": {
+      "image_main": "https://…/modely-exterior.jpg",
+      "image_interior": "https://…/modely-interior.jpg",
+      "brand_logo": "https://…/logos/tesla.svg"
+    },
+    "availability": {
+      "stok": "2. el / çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": "-",
+        "tork_Nm": "-",
+        "0_100_kmh_s": 5.0,
+        "maksimum_hiz_kmh": 217
+      },
+      "ekonomi": {
+        "tuketim_l_100km": "-",
+        "co2_g_km": 0,
+        "enerji_kWh_100km": 14.2,
+        "menzil_wltp_km": 455,
+        "depo_litre": "-",
+        "batarya_kWh": 75.0
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4790,
+        "genislik_mm": 1982,
+        "yukseklik_mm": 1624,
+        "dingil_mesafesi_mm": 2807,
+        "agirlik_kg": 2033,
+        "bagaj_l": 2138,
+        "yerden_yukseklik_mm": 167,
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "AWD (çift motor)",
+        "suspansiyon_on": "Çift salıncak",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk",
+        "vites": "Tek oran"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2",
+          "ozellikler": [
+            "Autopilot (Trafiğe Duyarlı HS, Şerit Merkezleme)",
+            "Otopilot ile Navigasyon / Otomatik Şerit Değiştirme (pakete bağlı)",
+            "Ön çarpışma uyarısı + AEB",
+            "Kör nokta yardım/uyarı"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 16,
+        "gosterge_paneli": "Orta 16\" + Arka 8\" ekran",
+        "multimedia": "OTA güncellemeler, yerleşik navigasyon",
+        "ses_sistemi": "Premium (donanıma bağlı)",
+        "baglanti": ["Bluetooth","USB-C","Wi-Fi","LTE"]
+      },
+      "konfor": {
+        "koltuklar": "Isıtma/ havalandırma (pazar/donanıma bağlı)",
+        "klima": "Isı pompası + çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Akustik/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "19–20",
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": 11,
+        "dc_kW": 250,
+        "10_80_dk": "≈27 dk (Supercharger)"
+      },
+      "bakim": {
+        "garanti_yil_km": "8 yıl / 192.000 km (batarya/aktarma; bölgeye göre)",
+        "servis_araligi_km": "Periyodik sıvı yok; sarf parçalar",
+        "yillik_tahmini_bakim_try": "Düşük (pabuç/filtre/lastik)"
+      }
+    },
+    "why": "Şehir içinde tek pedallı sürüş, 250 kW Supercharger ağı ve sürekli OTA güncellemelerle teknoloji/ADAS tarafı çok güçlü. Long Range AWD, menzil+konfor dengesini şehir içi/uzun yol için ideal kuruyor.",
+    "why_bullets": [
+      "Autopilot + zengin sensör/OTA ekosistemi",
+      "14.2 kWh/100 km resmi tüketim (düşük işletme)",
+      "250 kW DC ile hızlı şarj ve güçlü ikinci el likiditesi",
+      "Geniş iç mekân ve devasa bagaj"
+    ],
+    "score": {
+      "toplam": 92,
+      "kriterler": {
+        "ekonomi": 90,
+        "konfor": 88,
+        "guvenlik": 90,
+        "performans": 86,
+        "teknoloji": 96
+      }
+    },
+    "links": {
+      "teknik_sayfa": "https://www.tesla.com/tr_tr/modely",
+      "evdb_ozet": "https://ev-database.org/car/1619/Tesla-Model-Y-Long-Range-AWD",
+      "autopilot": "https://www.tesla.com/support/autopilot",
+      "ilan_ornekleri": "https://www.sahibinden.com/tesla-model-y-long-range"
+    }
+  },
+  {
+    "id": "kia-ev6-gtline-longrange-awd-2023",
+    "brand": "Kia",
+    "model": "EV6",
+    "trim": "GT-Line Long Range AWD",
+    "year": 2023,
+    "body": "SUV",
+    "fuel": "Elektrik",
+    "drivetrain": "AWD",
+    "transmission": "Tek oranlı",
+    "priceTRY": 2675000,
+    "price_updated": "2025-11-02",
+    "tags": ["Teknoloji","Şehir içi","Düşük işletme","Konfor","ADAS","800V"],
+    "media": {
+      "image_main": "https://…/ev6-exterior.jpg",
+      "image_interior": "https://…/ev6-interior.jpg",
+      "brand_logo": "https://…/logos/kia.svg"
+    },
+    "availability": {
+      "stok": "2. el / yetkili bayi çıkışlı örnekler mevcut",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": "-",
+        "tork_Nm": "-",
+        "0_100_kmh_s": 5.2,
+        "maksimum_hiz_kmh": 185
+      },
+      "ekonomi": {
+        "tuketim_l_100km": "-",
+        "co2_g_km": 0,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": 506,
+        "depo_litre": "-",
+        "batarya_kWh": 77.4
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4680,
+        "genislik_mm": 1880,
+        "yukseklik_mm": 1550,
+        "dingil_mesafesi_mm": 2900,
+        "agirlik_kg": "-",
+        "bagaj_l": 490,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "AWD (çift motor)",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Büyük diskler, rejeneratif fren",
+        "vites": "Tek oran"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 (HDA2)",
+          "ozellikler": [
+            "Adaptif hız sabitleyici (NSCC) + şerit ortalama (LFA)",
+            "Otomatik şerit değiştirme (HDA2 don.)",
+            "Kör nokta çarpışma önleme (BCA)",
+            "Arka çapraz trafik frenleme (RCCA)",
+            "360° kamera / Uzaktan park (RSPA, don.)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "12.3 + 12.3 kavisli",
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "CarPlay/Android Auto, OTA (seçili modül)",
+        "ses_sistemi": "Meridian (donanıma bağlı)",
+        "baglanti": ["Bluetooth","USB-C","V2L"]
+      },
+      "konfor": {
+        "koltuklar": "Isıtma/soğutma (donanıma bağlı), relax modu",
+        "klima": "Isı pompası + çift bölgeli",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Akustik cam/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "19–20",
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": 11,
+        "dc_kW": 195,
+        "10_80_dk": "≈18 dk (800V mimari)"
+      },
+      "bakim": {
+        "garanti_yil_km": "7 yıl/150.000 km (Kia Avrupa politikası)",
+        "servis_araligi_km": "Düşük bakım (sarf odaklı)",
+        "yillik_tahmini_bakim_try": "Düşük"
+      }
+    },
+    "why": "Şehir içi kullanımda verimli ısı pompası, tek pedallı sürüş benzeri yüksek rejenerasyon ve **800V** mimariyle ultra hızlı şarj; HDA2 ile güçlü ADAS ve konfor odaklı iç mekân. V2L ile elektrikli cihazları besleyebilmesi de günlük hayatta avantaj.",
+    "why_bullets": [
+      "800V – 10-80% ≈18 dk DC, güçlü şehir içi pratiklik",
+      "HDA2: şerit ortalama + adaptif hız + şerit değiştirme",
+      "V2L ve geniş çift ekran kurulumu",
+      "D bütçede çok sayıda 2023–2025 ilan"
+    ],
+    "score": {
+      "toplam": 91,
+      "kriterler": {
+        "ekonomi": 88,
+        "konfor": 90,
+        "guvenlik": 90,
+        "performans": 84,
+        "teknoloji": 95
+      }
+    },
+    "links": {
+      "tr_ozellikler": "https://www.kia.com/tr/modeller/yeni-ev6/ozellikler.html",
+      "tr_teknik": "https://www.kia.com/tr/modeller/yeni-ev6/teknik-ozellikler.html",
+      "global_spec": "https://www.kiamedia.com/us/en/models/ev6/2025/specifications",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-kia-ev6-gt-line-long-range"
+    }
+  },
+  {
+    "id": "hyundai-ioniq5-longrange-rwd-2023",
+    "brand": "Hyundai",
+    "model": "IONIQ 5",
+    "trim": "Long Range 2WD (Dynamic/Progressive eşleniği)",
+    "year": 2023,
+    "body": "SUV",
+    "fuel": "Elektrik",
+    "drivetrain": "RWD",
+    "transmission": "Tek oranlı",
+    "priceTRY": 2050000,
+    "price_updated": "2025-11-02",
+    "tags": ["Uzun yol","Teknoloji","ADAS","Konfor","Düşük işletme"],
+    "media": {
+      "image_main": "https://…/ioniq5-exterior.jpg",
+      "image_interior": "https://…/ioniq5-interior.jpg",
+      "brand_logo": "https://…/logos/hyundai.svg"
+    },
+    "availability": {
+      "stok": "2. el / Türkiye'de çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 228,
+        "tork_Nm": 350,
+        "0_100_kmh_s": 7.3,
+        "maksimum_hiz_kmh": 185
+      },
+      "ekonomi": {
+        "tuketim_l_100km": "-",
+        "co2_g_km": 0,
+        "enerji_kWh_100km": 17.0,
+        "menzil_wltp_km": 507,
+        "depo_litre": "-",
+        "batarya_kWh": 74.0
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4635,
+        "genislik_mm": 1890,
+        "yukseklik_mm": 1605,
+        "dingil_mesafesi_mm": 3000,
+        "agirlik_kg": "-",
+        "bagaj_l": 527,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "RWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk (rejeneratif destekli)",
+        "vites": "Tek oran"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 (HDA2)",
+          "ozellikler": [
+            "HDA2 (şerit ortalama + adaptif hız + şerit değiştirmeye yardım)",
+            "FCA2 (AEB, yayacı/bisikletçi algılamalı)",
+            "BCA (Kör nokta çarpışma önleme)",
+            "NSCC (navigasyon bazlı akıllı hız sabitleyici)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "12.3 + 12.3",
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "OTA güncellemeler, yerleşik navigasyon",
+        "ses_sistemi": "Premium (donanıma bağlı)",
+        "baglanti": ["Bluetooth","USB-C","V2L 3.6 kW","Wi-Fi"]
+      },
+      "konfor": {
+        "koltuklar": "Isıtma/soğutma (donanıma bağlı), Relax modu",
+        "klima": "Isı pompası + çift bölgeli",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Akustik/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "19–20",
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": 11,
+        "dc_kW": 350,
+        "10_80_dk": "≈18 dk (800V mimari)"
+      },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": "Düşük bakım (sarf odaklı)",
+        "yillik_tahmini_bakim_try": "Düşük"
+      }
+    },
+    "why": "WLTP 507 km menzil ve 800V altyapı sayesinde uzun yolda dur-kalksız plan; HDA2 ile seviye 2 sürüş desteği; geniş iç mekân ve ısı pompasıyla konfor. Türkiye'de 2024–2025 ilanları C bütçeye sığıyor.",
+    "why_bullets": [
+      "WLTP 507 km; gerçek kullanımda ~390 km EVDB",
+      "HDA2: şerit ortalama + adaptif hız + şerit değişim yardımı",
+      "800V ve ≈18 dk 10–80% hızlı şarj",
+      "V2L ile cihaz besleme, OTA ekosistemi"
+    ],
+    "score": {
+      "toplam": 92,
+      "kriterler": {
+        "ekonomi": 88,
+        "konfor": 90,
+        "guvenlik": 90,
+        "performans": 86,
+        "teknoloji": 96
+      }
+    },
+    "links": {
+      "evdb": "https://ev-database.org/car/1662/Hyundai-IONIQ-5-Long-Range-2WD",
+      "adas_ozellikleri": "https://www.hyundai.com/uk/en/models/ioniq5/features.html",
+      "trim_bilgi": "https://www.hyundai.com/eu/en/models/ioniq5/trims.html",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-hyundai-ioniq-5/istanbul"
+    }
+  },
+  {
+    "id": "kia-niro-ev-64-8kwh-2023",
+    "brand": "Kia",
+    "model": "Niro EV",
+    "trim": "64.8 kWh (Prestige/Elegance benzeri)",
+    "year": 2023,
+    "body": "SUV",
+    "fuel": "Elektrik",
+    "drivetrain": "FWD",
+    "transmission": "Tek oranlı",
+    "priceTRY": 1700000,
+    "price_updated": "2025-11-02",
+    "tags": ["Uzun yol","Teknoloji","ADAS","Konfor","Düşük işletme"],
+    "media": {
+      "image_main": "https://…/niroev-exterior.jpg",
+      "image_interior": "https://…/niroev-interior.jpg",
+      "brand_logo": "https://…/logos/kia.svg"
+    },
+    "availability": {
+      "stok": "2. el / Türkiye'de çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 204,
+        "tork_Nm": 255,
+        "0_100_kmh_s": 7.8,
+        "maksimum_hiz_kmh": 167
+      },
+      "ekonomi": {
+        "tuketim_l_100km": "-",
+        "co2_g_km": 0,
+        "enerji_kWh_100km": 16.2,
+        "menzil_wltp_km": 460,
+        "depo_litre": "-",
+        "batarya_kWh": 64.8
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4420,
+        "genislik_mm": 1825,
+        "yukseklik_mm": 1570,
+        "dingil_mesafesi_mm": 2720,
+        "agirlik_kg": "-",
+        "bagaj_l": 475,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk (rejeneratif)",
+        "vites": "Tek oran"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 (HDA/HDA2 donanıma bağlı)",
+          "ozellikler": [
+            "AEB (yaya/bisikletçi algılamalı)",
+            "LFA/LKA (şerit takip/ort. yardım)",
+            "BCA (Kör nokta çarpışma önleme)",
+            "RCCA (Arka çapraz trafik çarpışma önleme)",
+            "HDA (otoyol sürüş asistanı)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "10.25 + 10.25 (donanıma bağlı 12.3 + 12.3)",
+        "gosterge_paneli": "Dijital",
+        "multimedia": "CarPlay/Android Auto; OTA (seçili modüller)",
+        "ses_sistemi": "Premium (donanıma bağlı)",
+        "baglanti": ["Bluetooth","USB-C","V2L 3.6 kW"]
+      },
+      "konfor": {
+        "koltuklar": "Isıtma/soğutma (donanıma bağlı)",
+        "klima": "Isı pompası (donanıma bağlı) + çift bölgeli",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "17",
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": {
+        "ac_kW": 11,
+        "dc_kW": 100,
+        "10_80_dk": "≈43 dk (DC max.)"
+      },
+      "bakim": {
+        "garanti_yil_km": "7 yıl / 150.000 km (Kia Avrupa politikası)",
+        "servis_araligi_km": "Düşük bakım (sarf odaklı)",
+        "yillik_tahmini_bakim_try": "Düşük"
+      }
+    },
+    "why": "WLTP ~460 km menzil, V2L ve kapsamlı ADAS ile şehir içi + uzun yol pratik; kompakt dış boyutlara karşın 475 L bagaj ve konfor odaklı donanım. TR ikinci elde C bütçenin ortasında çok örnek var.",
+    "why_bullets": [
+      "WLTP 455–460 km; EVDB gerçek ~385 km",
+      "HDA/HDA2, BCA, RCCA, LFA gibi kapsamlı ADAS",
+      "11 kW AC + 100 kW DC; V2L ile kullanım esnekliği",
+      "C bütçeye net uyum, yüksek bulunurluk"
+    ],
+    "score": {
+      "toplam": 89,
+      "kriterler": {
+        "ekonomi": 88,
+        "konfor": 86,
+        "guvenlik": 88,
+        "performans": 80,
+        "teknoloji": 90
+      }
+    },
+    "links": {
+      "evdb": "https://ev-database.org/car/1666/Kia-Niro-EV",
+      "wltp_menzil": "https://www.carexpert.com.au/car-reviews/2023-kia-niro-ev-gt-line-review",
+      "adas_aciklama": "https://www.kia.com/uk/electric-hybrid-cars/inspired-by-kia/highway-driving-assist/",
+      "brosur": "https://kia.com.cy/wp-content/uploads/2023/01/NIRO_Jan_2023_Brochure.pdf",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-kia-niro-ev"
+    }
+  },
+  {
+    "id": "toyota-chr-1-8-hybrid-2021",
+    "brand": "Toyota",
+    "model": "C-HR",
+    "trim": "1.8 Hybrid e-CVT (Flame/Passion X-Pack)",
+    "year": 2021,
+    "body": "Crossover",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "e-CVT",
+    "priceTRY": 1590000,
+    "price_updated": "2025-11-03",
+    "tags": ["Aile","Şehir içi","Düşük tüketim","Güvenlik","Konfor"],
+    "media": {
+      "image_main": "https://…/chr-exterior.jpg",
+      "image_interior": "https://…/chr-interior.jpg",
+      "brand_logo": "https://…/logos/toyota.svg"
+    },
+    "availability": {
+      "stok": "2. el / Türkiye'de çok seçenek",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 122,
+        "tork_Nm": "-",
+        "0_100_kmh_s": 11.0,
+        "maksimum_hiz_kmh": 175
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 4.8,
+        "co2_g_km": 109,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 43,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4362,
+        "genislik_mm": 1832,
+        "yukseklik_mm": 1558,
+        "dingil_mesafesi_mm": 2640,
+        "agirlik_kg": "-",
+        "bagaj_l": 388,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çift salıncak",
+        "frenler": "Ön-arka disk",
+        "vites": "e-CVT"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 (Toyota Safety Sense)",
+          "ozellikler": [
+            "AEB (yaya/bisiklet algılamalı)",
+            "Şerit Takip + Şerit Ortalama",
+            "Adaptif Hız Sabitleyici",
+            "Kör Nokta Uyarısı (donanıma bağlı)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "8–12.3 (donanıma bağlı)",
+        "gosterge_paneli": "Dijital",
+        "multimedia": "CarPlay/Android Auto",
+        "ses_sistemi": "JBL (opsiyon)",
+        "baglanti": ["Bluetooth","USB-C"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "18",
+        "lastik_olcusu": "225/50 R18",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Düşük (hibrit)"
+      }
+    },
+    "why": "Şehir içi için çok verimli hibrit, 388 L bagaj ve güçlü Toyota Safety Sense ile aile kullanımına uygun. 2020–2022 örnekler B bütçe bandında bolca bulunuyor.",
+    "why_bullets": [
+      "WLTP birleşik ~4.8 L/100 km",
+      "388 L bagaj (şehir içi pratik)",
+      "Geniş ADAS paketi, konforlu süspansiyon",
+      "2. elde çok sayıda seçenek"
+    ],
+    "score": {
+      "toplam": 88,
+      "kriterler": {
+        "ekonomi": 92,
+        "konfor": 83,
+        "guvenlik": 88,
+        "performans": 72,
+        "teknoloji": 82
+      }
+    },
+    "links": {
+      "tr_ozellik": "https://www.toyota.com.tr/araba-modelleri/c-hr/ozellikler",
+      "teknik_pdf": "https://turkiye.toyota.com.tr/middle/TOYOTA_CHR_Teknik_%C3%96zellikler_2025.pdf",
+      "wltp_kaynak": "https://www.ultimatespecs.com/car-specs/Toyota/137260/Toyota-C-HR-II-18-Hybrid.html",
+      "ilan_ornekleri": "https://www.arabam.com/ikinci-el/arazi-suv-pick-up/toyota-c-hr-1-8-hybrid"
+    }
+  },
+  {
+    "id": "suzuki-s-cross-1-4-mhev-2022",
+    "brand": "Suzuki",
+    "model": "S-Cross",
+    "trim": "1.4 Boosterjet 48V Mild Hybrid (4x2/AllGrip)",
+    "year": 2022,
+    "body": "Crossover",
+    "fuel": "Hibrit (Mild)",
+    "drivetrain": "FWD (AllGrip AWD opsiyon)",
+    "transmission": "6AT/6MT",
+    "priceTRY": 1550000,
+    "price_updated": "2025-11-03",
+    "tags": ["Aile","Şehir içi","Düşük tüketim","Güvenlik","Geniş bagaj"],
+    "media": {
+      "image_main": "https://…/scross-exterior.jpg",
+      "image_interior": "https://…/scross-interior.jpg",
+      "brand_logo": "https://…/logos/suzuki.svg"
+    },
+    "availability": {
+      "stok": "2. el / Türkiye'de bol",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 129,
+        "tork_Nm": 235,
+        "0_100_kmh_s": 9.5,
+        "maksimum_hiz_kmh": 195
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.3,
+        "co2_g_km": 120,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 47,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4300,
+        "genislik_mm": 1785,
+        "yukseklik_mm": 1585,
+        "dingil_mesafesi_mm": 2600,
+        "agirlik_kg": "-",
+        "bagaj_l": 430,
+        "yerden_yukseklik_mm": 180,
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD (AWD AllGrip opsiyon)",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön-arka disk",
+        "vites": "6MT/6AT"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "AEB (Dual Sensor Brake Support)",
+            "Şerit uyarı/takip",
+            "Adaptif hız sabitleyici (donanıma bağlı)",
+            "Kör nokta uyarısı + Arka çapraz trafik uyarısı"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "7–9",
+        "gosterge_paneli": "Kombine",
+        "multimedia": "CarPlay/Android Auto",
+        "ses_sistemi": "-",
+        "baglanti": ["Bluetooth","USB"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik (donanıma bağlı)",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "17",
+        "lastik_olcusu": "215/55 R17",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "-",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Düşük (mild hybrid)"
+      }
+    },
+    "why": "Aile için geniş iç mekân ve **430 L bagaj**; mild-hibrit verimliliğiyle şehir içinde düşük tüketim. Donanımına göre AEB/ACC gibi güvenlik yardımcıları var. 2022–2023 örnekler B bütçeye rahat sığıyor.",
+    "why_bullets": [
+      "WLTP birleşik ~5.3–5.4 L/100 km",
+      "430 L bagaj ve 180 mm yerden yükseklik",
+      "Şehir içi konforlu sürüş, uygun bakım",
+      "B bütçede çok ilan"
+    ],
+    "score": {
+      "toplam": 86,
+      "kriterler": {
+        "ekonomi": 86,
+        "konfor": 82,
+        "guvenlik": 82,
+        "performans": 78,
+        "teknoloji": 78
+      }
+    },
+    "links": {
+      "tr_sayfa": "https://www.suzuki.com.tr/tr/otomobil/s-cross.html",
+      "wltp_kaynak": "https://www.auto-data.net/en/suzuki-s-cross-iii-1.4-boosterjet-129hp-mild-hybrid-45132",
+      "bagaj_kaynak_pdf": "https://www.globalsuzuki.com/globalnews/2021/pdf/1125.pdf",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-suzuki-s-cross"
+    }
+  },
+  {
+    "id": "toyota-corolla-cross-1-8-hybrid-2023",
+    "brand": "Toyota",
+    "model": "Corolla Cross",
+    "trim": "1.8 Hybrid e-CVT (Flame/Passion)",
+    "year": 2023,
+    "body": "Crossover",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "e-CVT",
+    "priceTRY": 2065000,
+    "price_updated": "2025-11-03",
+    "tags": ["Uzun yol","Karma kullanım","Konfor","Düşük tüketim","Güvenlik"],
+    "media": {
+      "image_main": "https://…/corollacross-exterior.jpg",
+      "image_interior": "https://…/corollacross-interior.jpg",
+      "brand_logo": "https://…/logos/toyota.svg"
+    },
+    "availability": {
+      "stok": "2. el / yaygın",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 122,
+        "tork_Nm": "-",
+        "0_100_kmh_s": 11.2,
+        "maksimum_hiz_kmh": 170
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.0,
+        "co2_g_km": 113,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 43,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4460,
+        "genislik_mm": 1825,
+        "yukseklik_mm": 1620,
+        "dingil_mesafesi_mm": 2640,
+        "agirlik_kg": "-",
+        "bagaj_l": 436,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çift salıncak",
+        "frenler": "Ön-arka disk",
+        "vites": "e-CVT"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Toyota T-Mate / Safety Sense (Seviye 2 işlevler)",
+          "ozellikler": [
+            "AEB (yaya/bisiklet algılamalı)",
+            "Adaptif Hız Sabitleyici",
+            "Şerit Takip/Ortalama (LTA)",
+            "Kör Nokta Uyarısı + Arka Çapraz Trafik Uyarısı"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "8–12.3 (donanıma bağlı)",
+        "gosterge_paneli": "Dijital",
+        "multimedia": "Apple CarPlay & Android Auto",
+        "ses_sistemi": "JBL (opsiyon)",
+        "baglanti": ["Bluetooth","USB-C"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": 18,
+        "lastik_olcusu": "225/50 R18",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "3 yıl / 100.000 km (ilk satışa göre)",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Düşük"
+      }
+    },
+    "why": "Şehir içi + uzun yol karmasında düşük tüketim ve olgun sürüş; Toyota T-Mate (Safety Sense) ile kapsamlı ADAS; aile için yeterli bagaj ve geniş arka sıra. Bugünkü ilanlar C bütçeye uyuyor.",
+    "why_bullets": [
+      "WLTP ~5.0 L/100 km hibrit ekonomi",
+      "T-Mate: AEB, ACC, LTA, BSM, RCTA",
+      "Rahat süspansiyon ve sessiz kabin",
+      "TR'de çok sayıda 2. el seçenek"
+    ],
+    "score": {
+      "toplam": 90,
+      "kriterler": {
+        "ekonomi": 92,
+        "konfor": 86,
+        "guvenlik": 90,
+        "performans": 74,
+        "teknoloji": 84
+      }
+    },
+    "links": {
+      "brosur_pdf": "https://www.toyota.com.tr/content/dam/toyota/nmsc/turkey/cars/e-brosur/corolla-cross/Corolla-Cross-Hybrid-Teknik-ve-Donanim-Ozellikleri.pdf",
+      "model_sayfasi": "https://www.toyota.com.tr/araba-modelleri/corolla-cross-hybrid",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-toyota-corolla-cross-1.8-hybrid"
+    }
+  },
+  {
+    "id": "nissan-qashqai-1-5-e-power-2023",
+    "brand": "Nissan",
+    "model": "Qashqai",
+    "trim": "1.5 e-POWER 190 PS (Skypack/Platinum)",
+    "year": 2023,
+    "body": "Crossover",
+    "fuel": "Hibrit (seri hibrit)",
+    "drivetrain": "FWD",
+    "transmission": "Tek oran (redüksiyon dişli)",
+    "priceTRY": 1990000,
+    "price_updated": "2025-11-03",
+    "tags": ["Uzun yol","Karma kullanım","Konfor","Düşük tüketim","ADAS"],
+    "media": {
+      "image_main": "https://…/qashqai-epower-exterior.jpg",
+      "image_interior": "https://…/qashqai-epower-interior.jpg",
+      "brand_logo": "https://…/logos/nissan.svg"
+    },
+    "availability": {
+      "stok": "2. el / yaygın",
+      "teslim_suresi_hafta": 0
+    },
+    "specs": {
+      "performans": {
+        "guc_hp": 190,
+        "tork_Nm": 330,
+        "0_100_kmh_s": 7.9,
+        "maksimum_hiz_kmh": 180
+      },
+      "ekonomi": {
+        "tuketim_l_100km": 5.3,
+        "co2_g_km": 119,
+        "enerji_kWh_100km": "-",
+        "menzil_wltp_km": "-",
+        "depo_litre": 55,
+        "batarya_kWh": "-"
+      },
+      "boyutlar": {
+        "uzunluk_mm": 4425,
+        "genislik_mm": 1835,
+        "yukseklik_mm": 1625,
+        "dingil_mesafesi_mm": 2665,
+        "agirlik_kg": "-",
+        "bagaj_l": 504,
+        "yerden_yukseklik_mm": "-",
+        "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "FWD (e-POWER elektrik tahrik)",
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Çok kollu",
+        "frenler": "Ön-arka disk (rejeneratif)",
+        "vites": "Tek oran"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "ProPILOT (Seviye 2)",
+          "ozellikler": [
+            "Adaptif hız sabitleyici (Navi-link)",
+            "Şerit ortalama (LKA/LFA)",
+            "AEB (yaya/bisikletçi algılamalı)",
+            "Kör nokta çarpışma önleme (BSI)",
+            "Arka çapraz trafik frenleme (RCCA)"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "12.3 + 12.3 (donanıma bağlı)",
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto",
+        "ses_sistemi": "Bose (donanıma bağlı)",
+        "baglanti": ["Bluetooth","USB-C"]
+      },
+      "konfor": {
+        "koltuklar": "Ön ısıtma (donanıma bağlı)",
+        "klima": "Çift bölgeli otomatik",
+        "gürültü_kabin_db": "-",
+        "cam_tipi": "Isı/UV yalıtım"
+      },
+      "lastik_jant": {
+        "jant_inch": "18–20",
+        "lastik_olcusu": "-",
+        "yedek_lastik": "Tamir kiti"
+      },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": {
+        "garanti_yil_km": "3 yıl / 100.000 km (ilk satışa göre)",
+        "servis_araligi_km": 15000,
+        "yillik_tahmini_bakim_try": "Düşük"
+      }
+    },
+    "why": "Elektrik motoru tahriki sayesinde şehir içi akıcı ve sessiz; ProPILOT (navi-link) ile uzun yolda gelişmiş ADAS; 504 L bagaj ve çok kollu arka süspansiyonla konfor. Bugün C bütçeye inen ilanlar bulunuyor.",
+    "why_bullets": [
+      "WLTP ~5.3 L/100 km, 0–100 km/s 7.9 sn",
+      "ProPILOT: ACC + şerit ortalama + navi-link",
+      "504 L bagaj; arka çok kollu süspansiyon",
+      "C aralığında çok sayıda 2. el"
+    ],
+    "score": {
+      "toplam": 90,
+      "kriterler": {
+        "ekonomi": 86,
+        "konfor": 88,
+        "guvenlik": 90,
+        "performans": 84,
+        "teknoloji": 86
+      }
+    },
+    "links": {
+      "model_sayfasi_tr": "https://www.nissan.com.tr/modeller/binek-araclar/yeni-nissan-qashqai.html",
+      "surus_teknolojileri": "https://www.nissan.com.tr/modeller/binek-araclar/yeni-nissan-qashqai/surus-teknolojileri.html",
+      "uk_epower": "https://www.nissan.co.uk/vehicles/new-vehicles/qashqai.html",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-nissan-qashqai-1.5-e-power"
+    }
+  },
+  {
+    "id": "peugeot-2008-1-2-puretech-eat8-2022",
+    "brand": "Peugeot",
+    "model": "2008",
+    "trim": "1.2 PureTech 130 EAT8 (Allure/GT)",
+    "year": 2022,
+    "body": "Crossover",
+    "fuel": "Benzin",
+    "drivetrain": "FWD",
+    "transmission": "8AT (EAT8)",
+    "priceTRY": 1510000,
+    "price_updated": "2025-11-03",
+    "tags": ["Şehir içi","Konfor","Manevra","Düşük gürültü","ADAS"],
+    "media": {
+      "image_main": "https://…/2008-exterior.jpg",
+      "image_interior": "https://…/2008-interior.jpg",
+      "brand_logo": "https://…/logos/peugeot.svg"
+    },
+    "availability": { "stok": "2. el / yaygın", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 130, "tork_Nm": 230, "0_100_kmh_s": 9.4, "maksimum_hiz_kmh": 198 },
+      "ekonomi": { "tuketim_l_100km": 5.6, "co2_g_km": "-", "enerji_kWh_100km": "-", "menzil_wltp_km": "-", "depo_litre": "-", "batarya_kWh": "-" },
+      "boyutlar": { "uzunluk_mm": 4304, "genislik_mm": 1775, "yukseklik_mm": "-", "dingil_mesafesi_mm": "-", "agirlik_kg": 1280, "bagaj_l": 434, "yerden_yukseklik_mm": "-", "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Burulma k.", "frenler": "Ön-arka disk", "vites": "8 ileri otomatik" },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 işlevler",
+          "ozellikler": ["Adaptif hız sabitleyici (Stop&Go, donanıma bağlı)", "Şerit konumlama/LKA", "Aktif fren (AEB)", "Kör nokta uyarısı"]
+        },
+        "airbag_sayisi": "-", "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "7–10", "gosterge_paneli": "i-Cockpit (dijital)", "multimedia": "CarPlay & Android Auto", "ses_sistemi": "-", "baglanti": ["Bluetooth","USB"] },
+      "konfor": { "koltuklar": "Ön ısıtma (donanıma bağlı)", "klima": "Çift bölgeli otomatik (donanıma bağlı)", "gürültü_kabin_db": "-", "cam_tipi": "Isı/UV yalıtım" },
+      "lastik_jant": { "jant_inch": "17–18", "lastik_olcusu": "-", "yedek_lastik": "Tamir kiti" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "garanti_yil_km": "-", "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Uygun" }
+    },
+    "why": "Şehir içi için kompakt dış, geniş bagaj (434 L) ve sessiz 3 silindir + EAT8'le akıcı sürüş. ACC+LKA+AEB gibi ADAS'lar, yumuşak direksiyon ve dar dönüşlerle manevrası kolay. TR'de 2022 Allure/GT ilanları B banda oturuyor.",
+    "why_bullets": [
+      "434 L bagaj; sınıfı için ferah kabin",
+      "EAT8 ile sarsıntısız ve sessiz sürüş",
+      "ACC/LKA/AEB/BSM (donanıma bağlı)",
+      "İlanlar ~1.50–1.85 mn TL; B bütçeye uygun"
+    ],
+    "score": { "toplam": 88, "kriterler": { "ekonomi": 82, "konfor": 86, "guvenlik": 85, "performans": 80, "teknoloji": 82 } },
+    "links": {
+      "teknik_kaynak": "https://www.ultimatespecs.com/car-specs/Peugeot/136348/Peugeot-2008-II-(2023)-12-PureTech-130-EAT8.html",
+      "bagaj_kaynak": "https://www.auto-data.net/en/peugeot-2008-ii-facelift-2023-1.2-puretech-130hp-automatic-48804",
+      "adas_brosur": "https://www.media.stellantis.com/uploads/uk/model-pricelist/peugeot2008priceandspecaug2023-6502ddeff1c7e.pdf",
+      "ilan_ornekleri": "https://www.toyota.com.tr/ikinci-el/arac-detay.peugeot-2008-2022-suv-otomatik-benzin-c7268f6c-a835-45db-9faa-1c7c2d51dd2e"
+    }
+  },
+  {
+    "id": "renault-captur-1-3-tce-edc-2021",
+    "brand": "Renault",
+    "model": "Captur",
+    "trim": "1.3 TCe 140/130 EDC (Touch/Icon)",
+    "year": 2021,
+    "body": "Crossover",
+    "fuel": "Benzin",
+    "drivetrain": "FWD",
+    "transmission": "7DCT (EDC)",
+    "priceTRY": 1390000,
+    "price_updated": "2025-11-03",
+    "tags": ["Şehir içi","Konfor","Manevra","Düşük gürültü","ADAS"],
+    "media": {
+      "image_main": "https://…/captur-exterior.jpg",
+      "image_interior": "https://…/captur-interior.jpg",
+      "brand_logo": "https://…/logos/renault.svg"
+    },
+    "availability": { "stok": "2. el / çok seçenek", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": "130–140", "tork_Nm": "240–260", "0_100_kmh_s": 9.2, "maksimum_hiz_kmh": 196 },
+      "ekonomi": { "tuketim_l_100km": 5.9, "co2_g_km": 133, "enerji_kWh_100km": "-", "menzil_wltp_km": "-", "depo_litre": "-", "batarya_kWh": "-" },
+      "boyutlar": { "uzunluk_mm": 4227, "genislik_mm": 1797, "yukseklik_mm": "-", "dingil_mesafesi_mm": "-", "agirlik_kg": 1259, "bagaj_l": "536 (ayarli zeminle)", "yerden_yukseklik_mm": "-", "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Burulma k.", "frenler": "Ön-arka disk", "vites": "7 ileri çift kavrama" },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1–2 işlevler (pakete bağlı)",
+          "ozellikler": ["AEB (yaya/bisiklet algılamalı)", "Şerit takip/ort.", "Kör nokta uyarısı", "Arka çapraz trafik uyarı/fren (don.)", "Trafik işareti algılama"]
+        },
+        "airbag_sayisi": "-", "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "7–9.3", "gosterge_paneli": "Dijital", "multimedia": "CarPlay & Android Auto", "ses_sistemi": "-", "baglanti": ["Bluetooth","USB"] },
+      "konfor": { "koltuklar": "Ön ısıtma (donanıma bağlı)", "klima": "Çift bölgeli otomatik (donanıma bağlı)", "gürültü_kabin_db": "-", "cam_tipi": "Isı/UV yalıtım" },
+      "lastik_jant": { "jant_inch": "17–18", "lastik_olcusu": "-", "yedek_lastik": "Tamir kiti" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "garanti_yil_km": "-", "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Uygun" }
+    },
+    "why": "Şehir içinde yumuşak süspansiyon, sessiz kabin ve 7DCT ile akıcı; ayarlı zeminle **536 L**'ye kadar bagaj ve geniş arka sıra aileyi rahat ettirir. AEB/LKA/BSM/RCTA gibi ADAS'larla güvenli; ilanlar B bütçeye net uyuyor.",
+    "why_bullets": [
+      "536 L'e kadar esnek bagaj (kayar arka koltuk)",
+      "9.2 sn 0–100 ve 5.9 L/100 km WLTP",
+      "AEB, LKA, BSM, RCTA (donanıma bağlı)",
+      "İlanlar ~1.30–1.50 mn TL"
+    ],
+    "score": { "toplam": 87, "kriterler": { "ekonomi": 82, "konfor": 86, "guvenlik": 84, "performans": 79, "teknoloji": 80 } },
+    "links": {
+      "teknik_kaynak": "https://www.auto-data.net/en/renault-captur-ii-1.3-tce-140hp-edc-41888",
+      "bagaj_kaynak": "https://www.auto-data.net/en/renault-captur-ii-1.3-tce-130hp-edc-gpf-37823",
+      "adas_brosur": "https://media.adtorqueedge.com/new-cars/renault-au/captur/brochure.pdf",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-renault-captur-1.3-tce"
+    }
+  },
+  {
+    "id": "porsche-macan-2-0t-2016-awd-pdk",
+    "brand": "Porsche",
+    "model": "Macan",
+    "trim": "2.0T AWD PDK",
+    "year": 2016,
+    "body": "Crossover/SUV",
+    "fuel": "Benzin",
+    "drivetrain": "AWD",
+    "transmission": "7AT (PDK)",
+    "priceTRY": 3000000,
+    "price_updated": "2025-11-03",
+    "tags": ["Performans","Uzun yol","Yol tutuş","Fren"],
+    "media": {
+      "image_main": "https://…/macan-exterior.jpg",
+      "image_interior": "https://…/macan-interior.jpg",
+      "brand_logo": "https://…/logos/porsche.svg"
+    },
+    "availability": { "stok": "2. el / mevcut", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 252, "tork_Nm": 370, "0_100_kmh_s": 6.7, "maksimum_hiz_kmh": 229 },
+      "ekonomi": { "tuketim_l_100km": 7.2, "co2_g_km": 172, "enerji_kWh_100km": "-", "menzil_wltp_km": "-", "depo_litre": "-", "batarya_kWh": "-" },
+      "boyutlar": { "uzunluk_mm": 4697, "genislik_mm": 1923, "yukseklik_mm": 1624, "dingil_mesafesi_mm": 2807, "agirlik_kg": 1770, "bagaj_l": "500-1500", "yerden_yukseklik_mm": "-", "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "AWD (PTM)", "suspansiyon_on": "Çift salıncak", "suspansiyon_arka": "Çok kollu", "frenler": "Ön-arka disk (PCCB opsiyonu)", "vites": "7 ileri PDK" },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": { "seviye": "Seviye 1+", "ozellikler": ["AEB (opsiyon)", "Adaptif hız sabitleyici (opsiyon)", "Kör nokta uyarısı (opsiyon)"] },
+        "airbag_sayisi": "-", "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "-", "gosterge_paneli": "Analog+TFT", "multimedia": "PCM", "ses_sistemi": "BOSE/Burmester (opsiyon)", "baglanti": ["Bluetooth","USB"] },
+      "konfor": { "koltuklar": "Sport/Comfort, ısıtma (opsiyon)", "klima": "Çift bölgeli otomatik", "gürültü_kabin_db": "-", "cam_tipi": "Isı/UV yalıtım" },
+      "lastik_jant": { "jant_inch": "18–21", "lastik_olcusu": "-", "yedek_lastik": "Tamir kiti" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "garanti_yil_km": "-", "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Premium" }
+    },
+    "why": "Sınıfının referans şasisi, hızlı PDK ve dengeli AWD ile yüksek yol tutuş ve güçlü frenaj. 0–100 km/s 6.7 sn'lik performans uzun yolda ritmi korur; Türkiye'de 2016 örnekleri D bütçe sınırında bulunabiliyor.",
+    "why_bullets": [
+      "0–100 km/s: 6.7 sn, 229 km/s son hız",
+      "Net direksiyon, dengeli şasi, güçlü fren opsiyonları",
+      "PDK ile hızlı ve sarsıntısız vites",
+      "TR ilanlarında ~3.0 mn TL seviyesinde örnekler"
+    ],
+    "score": { "toplam": 91, "kriterler": { "ekonomi": 70, "konfor": 86, "guvenlik": 84, "performans": 92, "teknoloji": 86 } },
+    "links": {
+      "teknik_kaynak": "https://www.auto-data.net/en/porsche-macan-i-95b-2.0-252hp-pdk-25487",
+      "alternatif_kaynak": "https://porsche.drive.place/macan/i/group_offroad_5d/234506",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-porsche-macan-macan?pagingOffset=40"
+    }
+  },
+  {
+    "id": "alfa-romeo-stelvio-2-0t-q4-280-2019",
+    "brand": "Alfa Romeo",
+    "model": "Stelvio",
+    "trim": "2.0 Turbo 280 Q4 AT8 (Veloce benzeri)",
+    "year": 2019,
+    "body": "Crossover/SUV",
+    "fuel": "Benzin",
+    "drivetrain": "AWD (Q4)",
+    "transmission": "8AT",
+    "priceTRY": 2950000,
+    "price_updated": "2025-11-03",
+    "tags": ["Performans","Uzun yol","Yol tutuş","Fren"],
+    "media": {
+      "image_main": "https://…/stelvio-exterior.jpg",
+      "image_interior": "https://…/stelvio-interior.jpg",
+      "brand_logo": "https://…/logos/alfa.svg"
+    },
+    "availability": { "stok": "2. el / mevcut", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 280, "tork_Nm": 400, "0_100_kmh_s": 5.7, "maksimum_hiz_kmh": 230 },
+      "ekonomi": { "tuketim_l_100km": 7.1, "co2_g_km": "-", "enerji_kWh_100km": "-", "menzil_wltp_km": "-", "depo_litre": "-", "batarya_kWh": "-" },
+      "boyutlar": { "uzunluk_mm": 4687, "genislik_mm": 1903, "yukseklik_mm": "-", "dingil_mesafesi_mm": "-", "agirlik_kg": 1710, "bagaj_l": 525, "yerden_yukseklik_mm": "-", "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "Q4 AWD (arkadan itiş odaklı)", "suspansiyon_on": "Çift salıncak (alüminyum)", "suspansiyon_arka": "İntegral Link", "frenler": "Büyük diskler, opsiyon Brembo", "vites": "8 ileri AT" },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": { "seviye": "Seviye 1–2 işlevler", "ozellikler": ["AEB", "Şerit yardım", "Kör nokta uyarısı", "Adaptif hız sabitleyici (donanıma bağlı)"] },
+        "airbag_sayisi": "-", "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "8.8", "gosterge_paneli": "Analog + TFT", "multimedia": "CarPlay/Android Auto", "ses_sistemi": "Harman/Kardon (opsiyon)", "baglanti": ["Bluetooth","USB"] },
+      "konfor": { "koltuklar": "Spor koltuklar, ısıtma (opsiyon)", "klima": "Çift bölgeli otomatik", "gürültü_kabin_db": "-", "cam_tipi": "Isı/UV yalıtım" },
+      "lastik_jant": { "jant_inch": "19–21", "lastik_olcusu": "-", "yedek_lastik": "Tamir kiti" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "garanti_yil_km": "-", "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Premium" }
+    },
+    "why": "Alüminyum yoğun şasi, arkadan itiş karakterli Q4 ve hızlı 8AT ile segmentte en çevik yol tutuşlardan biri; 0–100 km/s 5.7 sn. Ölçülen 100–0 km fren mesafesi ~34 m civarı; uzun yolda da stabil ve keyifli.",
+    "why_bullets": [
+      "0–100 km/s: 5.7 sn, 230 km/s",
+      "Q4 AWD + çift salıncak/Integral Link şasi",
+      "Güçlü frenaj (100–0 km/h ≈34 m)",
+      "TR ilanlarında 2.95–3.95 mn TL; D bandına inenler mevcut"
+    ],
+    "score": { "toplam": 92, "kriterler": { "ekonomi": 72, "konfor": 85, "guvenlik": 84, "performans": 94, "teknoloji": 84 } },
+    "links": {
+      "0_100_kaynak": "https://www.ultimatespecs.com/car-specs/Alfa-Romeo/134323/Alfa-Romeo-Stelvio-2023-20-Turbo-16V-Q4-AT8.html",
+      "fren_kaynak": "https://fastestlaps.com/models/alfa-romeo-stelvio-2-0t-q4-super",
+      "ilan_ornekleri": "https://www.sahibinden.com/arazi-suv-pickup-alfa-romeo-stelvio-2.0"
+    }
+  },
+  {
+    "id": "toyota-corolla-1-8-hybrid-ecvt-2023",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "trim": "1.8 Hybrid e-CVT (Dream/Flame X-Pack)",
+    "year": 2023,
+    "body": "Sedan",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "e-CVT",
+    "priceTRY": 1550000,
+    "price_updated": "2025-11-03",
+    "tags": ["Şehir içi","Ekonomi","Güvenlik","Uygun bakım"],
+    "media": {
+      "image_main": "https://…/corolla-hybrid-exterior.jpg",
+      "image_interior": "https://…/corolla-hybrid-interior.jpg",
+      "brand_logo": "https://…/logos/toyota.svg"
+    },
+    "availability": { "stok": "2. el / yaygın", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 140, "tork_Nm": "-", "0_100_kmh_s": 9.3, "maksimum_hiz_kmh": 180 },
+      "ekonomi": { "tuketim_l_100km": 4.4, "co2_g_km": 100, "enerji_kWh_100km": "-", "menzil_wltp_km": "-", "depo_litre": 43, "batarya_kWh": "-" },
+      "boyutlar": { "uzunluk_mm": 4630, "genislik_mm": 1780, "yukseklik_mm": 1435, "dingil_mesafesi_mm": 2700, "agirlik_kg": "-", "bagaj_l": 471, "yerden_yukseklik_mm": "-", "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Çok kollu", "frenler": "Ön-arka disk", "vites": "e-CVT" },
+      "güvenlik": {
+        "ncap_yildiz": "5★ (2019 Corolla platformu)",
+        "adas": {
+          "seviye": "Toyota Safety Sense 3 (Seviye 2 işlevler)",
+          "ozellikler": ["AEB (yaya/bisiklet/motosiklet algılamalı)", "Adaptif hız sabitleyici", "Şerit takip/şerit ortalama", "Kör nokta uyarısı (donanıma bağlı)"]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "10.5 (donanıma bağlı)", "gosterge_paneli": "7–12.3 dijital", "multimedia": "CarPlay/Android Auto", "ses_sistemi": "-", "baglanti": ["Bluetooth","USB-C"] },
+      "konfor": { "koltuklar": "Ön ısıtma (donanıma bağlı)", "klima": "Çift bölgeli otomatik", "gürültü_kabin_db": "-", "cam_tipi": "Isı/UV yalıtım" },
+      "lastik_jant": { "jant_inch": "16–17", "lastik_olcusu": "-", "yedek_lastik": "Tamir kiti" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "garanti_yil_km": "3 yıl/100.000 km (ilk satışa göre)", "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Uygun (hibrit/benzinli sarf)" }
+    },
+    "why": "Şehir içi verimlilikte sınıf lideri; TSS3 ile geniş ADAS; 471 L bagaj ve çok kollu arka süspansiyonla konforlu. TR'de 2021–2024 hibrit ilanları çoğunlukla B bütçeye sığıyor.",
+    "why_bullets": [
+      "WLTP ~4.4–4.5 L/100 km",
+      "TSS3: AEB+ACC+LTA/LKA",
+      "471 L bagaj, rahat süspansiyon",
+      "Periyodik bakım maliyetleri makul"
+    ],
+    "score": { "toplam": 91, "kriterler": { "ekonomi": 94, "konfor": 84, "guvenlik": 90, "performans": 78, "teknoloji": 82 } },
+    "links": {
+      "brosur_pdf": "https://www.toyota.com.tr/content/dam/toyota/nmsc/turkey/cars/e-brosur/corolla/TOYOTA_YeniCorolla_Teknik_Ozellikler_2024.pdf",
+      "safety_sense": "https://www.toyota.com.tr/toyota-dunyasi/toyota-safety-sense",
+      "ncap": "https://www.euroncap.com/en/results/toyota/corolla/35878",
+      "ilan_ornekleri": "https://www.sahibinden.com/toyota-corolla-1.8-hybrid"
+    }
+  },
+  {
+    "id": "hyundai-ioniq-1-6-gdi-hybrid-dct-2018",
+    "brand": "Hyundai",
+    "model": "Ioniq Hybrid",
+    "trim": "1.6 GDi DCT (Elite/Elite Plus)",
+    "year": 2018,
+    "body": "Sedan (liftback)",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "6DCT (çift kavrama)",
+    "priceTRY": 1250000,
+    "price_updated": "2025-11-03",
+    "tags": ["Şehir içi","Ekonomi","Güvenlik","Uygun bakım"],
+    "media": {
+      "image_main": "https://…/ioniq-hybrid-exterior.jpg",
+      "image_interior": "https://…/ioniq-hybrid-interior.jpg",
+      "brand_logo": "https://…/logos/hyundai.svg"
+    },
+    "availability": { "stok": "2. el / bulunuyor", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 141, "tork_Nm": 265, "0_100_kmh_s": 10.8, "maksimum_hiz_kmh": 185 },
+      "ekonomi": { "tuketim_l_100km": 3.9, "co2_g_km": "≈92–100", "enerji_kWh_100km": "-", "menzil_wltp_km": "-", "depo_litre": 45, "batarya_kWh": "1.56" },
+      "boyutlar": { "uzunluk_mm": 4470, "genislik_mm": 1820, "yukseklik_mm": 1450, "dingil_mesafesi_mm": 2700, "agirlik_kg": "-", "bagaj_l": "443 (arka koltuk yukarı)", "yerden_yukseklik_mm": "-", "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Çok kollu", "frenler": "Ön-arka disk (rejeneratif)", "vites": "6 ileri DCT" },
+      "güvenlik": {
+        "ncap_yildiz": "5★ (2016)",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": ["AEB (yüksek hızda etkili)", "Şerit uyarı/yardım", "Akıllı hız sınırlayıcı/ACC (donanıma bağlı)"]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "8–10.25 (pazar donanımına göre)", "gosterge_paneli": "Dijital/yarı dijital", "multimedia": "CarPlay & Android Auto", "ses_sistemi": "-", "baglanti": ["Bluetooth","USB"] },
+      "konfor": { "koltuklar": "Ön ısıtma (donanıma bağlı)", "klima": "Çift bölgeli otomatik", "gürültü_kabin_db": "-", "cam_tipi": "Isı/UV yalıtım" },
+      "lastik_jant": { "jant_inch": "16–17", "lastik_olcusu": "-", "yedek_lastik": "Tamir kiti" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "garanti_yil_km": "-", "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Uygun (Hyundai ağı, parça erişimi iyi)" }
+    },
+    "why": "Çok düşük tüketim ve hafif yapı sayesinde şehir içi/şehirlerarası ekonomik kullanım; Euro NCAP 5★ ve AEB/LKA gibi donanımlar güven veriyor. İlan fiyatları B bandının alt-orta kısmında bulunabiliyor.",
+    "why_bullets": [
+      "WLTP/NEDC ~3.4–4.1 L/100 km",
+      "Euro NCAP 5★, AEB & şerit destek",
+      "DCT ile verimli ve tepkili sürüş",
+      "TR'de ₺1.22–1.30 mn aralığında örnekler"
+    ],
+    "score": { "toplam": 88, "kriterler": { "ekonomi": 95, "konfor": 80, "guvenlik": 85, "performans": 74, "teknoloji": 78 } },
+    "links": {
+      "brochure_int": "https://autocatalogarchive.com/wp-content/uploads/2020/03/Hyundai-Ioniq-2020-INT.pdf",
+      "ncap": "https://www.euroncap.com/en/results/hyundai/ioniq/25556",
+      "hyundai_news_ncap": "https://www.hyundai.news/uk/articles/press-releases/safe-and-sound-all-new-ioniq-achieves-five-star-euro-ncap-rating.html",
+      "ilan_ornekleri": "https://www.arabam.com/ikinci-el/otomobil/hyundai-ioniq-hibrit"
+    }
+  },
+  {
+    "id": "toyota-camry-2-5-hybrid-2020",
+    "brand": "Toyota",
+    "model": "Camry",
+    "trim": "2.5 Hybrid (European spec, e-CVT)",
+    "year": 2019,
+    "body": "Sedan",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "e-CVT",
+    "priceTRY": 2050000,
+    "price_updated": "2025-11-03",
+    "tags": ["Uzun yol","Konfor","Düşük tüketim","Güvenlik","ADAS"],
+    "media": {
+      "image_main": "https://…/camry-hybrid-exterior.jpg",
+      "image_interior": "https://…/camry-hybrid-interior.jpg",
+      "brand_logo": "https://…/logos/toyota.svg"
+    },
+    "availability": { "stok": "2. el / Türkiye'de mevcut", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 218, "tork_Nm": "-", "0_100_kmh_s": 8.3, "maksimum_hiz_kmh": 180 },
+      "ekonomi": { "tuketim_l_100km": 5.3, "co2_g_km": "≈120–125 (WLTP)", "depo_litre": 50 },
+      "boyutlar": { "uzunluk_mm": 4885, "genislik_mm": 1840, "yukseklik_mm": 1445, "dingil_mesafesi_mm": 2825, "bagaj_l": 524, "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Çift salıncak", "frenler": "Ön havalı/arka katı disk" },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Toyota Safety Sense (Seviye 2 işlevler)",
+          "ozellikler": [
+            "Adaptif Hız Sabitleyici (full-range)",
+            "Şerit Takip/Şerit Ortalaması (LTA)",
+            "AEB (yaya/bisiklet + kavşak dönüş asistanı)",
+            "Kör Nokta Uyarısı + Arka Çapraz Trafik Freni (donanıma bağlı)"
+          ]
+        },
+        "airbag_sayisi": 7,
+        "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "8–9", "gosterge_paneli": "7\" TFT", "multimedia": "CarPlay/Android Auto", "ses_sistemi": "JBL (ops.)" },
+      "konfor": { "koltuklar": "Isıtma/soğutma (donanıma bağlı), elektrikli", "klima": "Çift bölgeli", "gürültü_kabin_db": "Rafine NVH" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Uygun (Toyota ağı)" }
+    },
+    "why": "Geniş kabin ve çift salıncak arka süspansiyonla yüksek konfor; WLTP birleşik ~5.3 L/100 km tüketimle uzun yolda ekonomik; TSS ile kapsamlı ADAS. Türkiye'de 2019–2020 örnekleri C bandına sığan ilanlarla bulunuyor.",
+    "why_bullets": [
+      "WLTP birleşik ~5.3–5.6 L/100 km",
+      "LTA+ACC+AEB (kavşak asist.)",
+      "Geniş arka sıra ve 524 L bagaj",
+      "TR'de ~₺1.85–2.55 mn ilanlar (C bandına uygun örnek var)"
+    ],
+    "score": { "toplam": 91, "kriterler": { "ekonomi": 88, "konfor": 92, "guvenlik": 90, "performans": 80, "teknoloji": 82 } },
+    "links": {
+      "teknik_brosur": "https://autocatalogarchive.com/wp-content/uploads/2022/06/Toyota-Camry-2021-EU.pdf",
+      "wltp_detay": "https://media.toyota.co.uk/wp-content/uploads/sites/5/2021/03/1614162882210222MCamryTechSpec.pdf",
+      "tss_aciklama": "https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/1614162877210222MCamryFullRelease.pdf",
+      "ilan_ornekleri": "https://www.sahibinden.com/toyota-camry-2.5-hybrid-passion"
+    }
+  },
+  {
+    "id": "honda-civic-ehev-2-0-2022",
+    "brand": "Honda",
+    "model": "Civic",
+    "trim": "2.0 e:HEV (e-CVT benzeri i-MMD)",
+    "year": 2022,
+    "body": "Sedan (fastback)",
+    "fuel": "Hibrit",
+    "drivetrain": "FWD",
+    "transmission": "Elektrifikasyonlu tek oran (i-MMD)",
+    "priceTRY": 1900000,
+    "price_updated": "2025-11-03",
+    "tags": ["Uzun yol","Konfor","Düşük tüketim","ADAS"],
+    "media": {
+      "image_main": "https://…/civic-ehev-exterior.jpg",
+      "image_interior": "https://…/civic-ehev-interior.jpg",
+      "brand_logo": "https://…/logos/honda.svg"
+    },
+    "availability": { "stok": "2. el / bulunuyor", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 184, "tork_Nm": 315, "0_100_kmh_s": 7.8, "maksimum_hiz_kmh": 180 },
+      "ekonomi": { "tuketim_l_100km": 4.7, "co2_g_km": "≈108–114 (WLTP)", "depo_litre": 40 },
+      "boyutlar": { "uzunluk_mm": 4551, "genislik_mm": 1802, "yukseklik_mm": 1415, "dingil_mesafesi_mm": 2730, "bagaj_l": 410, "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Çok kollu", "frenler": "Ön-arka disk (rejeneratif)" },
+      "güvenlik": {
+        "ncap_yildiz": "5★ (2022)",
+        "adas": {
+          "seviye": "Honda Sensing (Seviye 2 işlevler)",
+          "ozellikler": [
+            "Adaptif Hız Sabitleyici",
+            "Şerit Merkezi Takip (LKA/LFA)",
+            "AEB (yaya/bisiklet algılamalı)",
+            "Trafik İşareti Tanıma"
+          ]
+        },
+        "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "9 + 10.2 (donanıma bağlı)", "multimedia": "CarPlay/Android Auto", "ses_sistemi": "Bose (ops.)" },
+      "konfor": { "koltuklar": "Ön ısıtma (donanıma bağlı)", "klima": "Çift bölgeli otomatik", "gürültü_kabin_db": "İyi izolasyon" },
+      "şarj": { "ac_kW": "-", "dc_kW": "-", "10_80_dk": "-" },
+      "bakim": { "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Uygun (Honda ağı)" }
+    },
+    "why": "i-MMD yapısı uzun yolda sessiz ve düşük devir; WLTP ~4.7–5.0 L/100 km ile çok ekonomik. 5★ Euro NCAP ve kapsamlı Honda Sensing ADAS ile güvenli; C bandına uygun çok sayıda 2022–2023 ilanı bulunuyor.",
+    "why_bullets": [
+      "WLTP birleşik ~4.7–5.0 L/100 km",
+      "5★ Euro NCAP (2022)",
+      "Konforlu yol tutuş, sessiz kabin",
+      "TR'de 1.8–2.1 mn TL arası örnekler"
+    ],
+    "score": { "toplam": 90, "kriterler": { "ekonomi": 94, "konfor": 84, "guvenlik": 90, "performans": 82, "teknoloji": 84 } },
+    "links": {
+      "honda_wltp": "https://www.honda.co.uk/cars/new/civic-hybrid/overview.html",
+      "wltp_detay": "https://www.auto-data.net/en/honda-civic-xi-2.0-i-mmd-184hp-ehev-e-cvt-46986",
+      "ncap_2022": "https://www.euroncap.com/en/results/honda/civic/47744",
+      "ilan_ornekleri": "https://www.sahibinden.com/honda-civic/istanbul"
+    }
+  },
+  {
+    "id": "peugeot-508-gt-225-2019",
+    "brand": "Peugeot",
+    "model": "508",
+    "trim": "GT 1.6 PureTech 225 EAT8",
+    "year": 2019,
+    "body": "Sedan (Fastback)",
+    "fuel": "Benzin",
+    "drivetrain": "FWD",
+    "transmission": "8AT (EAT8)",
+    "priceTRY": 1650000,
+    "price_updated": "2025-11-03",
+    "tags": ["Uzun yol","Konfor","Performans","Yol tutuş","Fren","ADAS"],
+    "media": {
+      "image_main": "https://…/508-gt-exterior.jpg",
+      "image_interior": "https://…/508-gt-interior.jpg",
+      "brand_logo": "https://…/logos/peugeot.svg"
+    },
+    "availability": { "stok": "2. el / Türkiye'de mevcut", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 225, "tork_Nm": 300, "0_100_kmh_s": 7.3, "maksimum_hiz_kmh": 250 },
+      "ekonomi": { "tuketim_l_100km": 5.6, "co2_g_km": "≈130–131 (WLTP)", "depo_litre": 62 },
+      "boyutlar": { "uzunluk_mm": 4750, "genislik_mm": 1859, "yukseklik_mm": 1403, "dingil_mesafesi_mm": 2793, "bagaj_l": 487, "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Çok kollu", "frenler": "Ön 330 mm havalı/Arka 290 mm disk" },
+      "güvenlik": {
+        "ncap_yildiz": "5★ (2018)",
+        "adas": {
+          "seviye": "Seviye 2 işlevler",
+          "ozellikler": [
+            "Adaptif Hız Sabitleyici (ACC Stop)",
+            "Şerit Konumlandırma/LKA",
+            "AEB (AEBS3; yaya/bisiklet algılamalı)",
+            "Kör Nokta Uyarısı",
+            "Trafik İşareti Tanıma"
+          ]
+        },
+        "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "10\"", "gosterge_paneli": "12.3\" dijital i-Cockpit", "multimedia": "CarPlay/Android Auto", "ses_sistemi": "Focal (ops.)" },
+      "konfor": { "koltuklar": "AGR onaylı spor koltuklar (ısıtma/masaj ops.)", "klima": "Çift bölgeli", "gürültü_kabin_db": "İyi NVH" },
+      "lastik_jant": { "jant_inch": 18, "lastik_olcusu": "235/45 R18" },
+      "bakim": { "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Mak. orta" }
+    },
+    "why": "225 hp + çok kollu arka süspansiyon ve 330 mm ön disklerle uzun yolda güven veren denge; GT donanım fren ve yol tutuşta güçlü. ADAS paketi (ACC, LKA, AEB) uzun yol yorgunluğunu azaltır.",
+    "why_bullets": [
+      "0-100 km/s ~7.3 sn, 250 km/s son hız",
+      "Önde 330 mm havalı disk, artta 290 mm",
+      "ACC Stop + LKA + AEB (AEBS3) standart/opsiyon paketlerle",
+      "İlanlar B bandı sınırında (~₺1.64–1.75 mn) — pazarlıkla hedeflenebilir"
+    ],
+    "score": { "toplam": 90, "kriterler": { "performans": 86, "yol_tutusu": 88, "fren": 88, "konfor": 86, "teknoloji": 88 } },
+    "links": {
+      "brosur_pdf": "https://autocatalogarchive.com/wp-content/uploads/2019/08/Peugeot-508-2019-UK.pdf",
+      "adas_ozet": "https://www.charterspeugeot.com/wp-content/uploads/sites/15/2019/07/new-peugeot-508-prices-specifications-brochure-july-2019.pdf",
+      "ncap": "https://cdn.euroncap.com/media/85435/euroncap-2018-peugeot-508-datasheet.pdf",
+      "fiyat_ornekleri": "https://www.sahibinden.com/peugeot-508-1.6-puretech-gt"
+    }
+  },
+  {
+    "id": "ford-mondeo-2-0-ecoboost-240-2017",
+    "brand": "Ford",
+    "model": "Mondeo",
+    "trim": "2.0 EcoBoost 240 (Vignale/ Titanium benzeri donanımlar)",
+    "year": 2017,
+    "body": "Sedan",
+    "fuel": "Benzin",
+    "drivetrain": "FWD",
+    "transmission": "6AT",
+    "priceTRY": 1450000,
+    "price_updated": "2025-11-03",
+    "tags": ["Uzun yol","Konfor","Performans","Yol tutuş","Fren","ADAS","Bütçe-dostu"],
+    "media": {
+      "image_main": "https://…/mondeo-ecoboost-exterior.jpg",
+      "image_interior": "https://…/mondeo-ecoboost-interior.jpg",
+      "brand_logo": "https://…/logos/ford.svg"
+    },
+    "availability": { "stok": "2. el / Türkiye'de mevcut (sınırlı)", "teslim_suresi_hafta": 0 },
+    "specs": {
+      "performans": { "guc_hp": 240, "tork_Nm": 345, "0_100_kmh_s": 7.9, "maksimum_hiz_kmh": 240 },
+      "ekonomi": { "tuketim_l_100km": 7.3, "co2_g_km": "≈169 (NEDC)", "depo_litre": 62 },
+      "boyutlar": { "uzunluk_mm": 4871, "genislik_mm": 1852, "yukseklik_mm": 1482, "dingil_mesafesi_mm": 2850, "bagaj_l": 429, "oturma_kapasitesi": 5 },
+      "guc_aktarma": { "cekis": "FWD", "suspansiyon_on": "MacPherson", "suspansiyon_arka": "Çok kollu Control Blade", "frenler": "Ön-arka disk" },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 2 işlevler",
+          "ozellikler": [
+            "Pre-Collision Assist (AEB, yaya/bisiklet)",
+            "Adaptif Hız Sabitleyici",
+            "Şerit Takip/Şerit Hizalama (LKA)",
+            "Trafik İşareti Tanıma"
+          ]
+        },
+        "isofix": true
+      },
+      "teknoloji": { "ekran_inch": "8–10 (pakete göre)", "gosterge_paneli": "10\" TFT (Vignale)", "multimedia": "SYNC + CarPlay/Android Auto (pakete bağlı)", "ses_sistemi": "Sony/B&O (pakete bağlı)" },
+      "konfor": { "koltuklar": "Ön ısıtmalı, bel destekli (hafıza ops.)", "klima": "Çift bölgeli otomatik", "gürültü_kabin_db": "Uzun yol için iyi NVH" },
+      "lastik_jant": { "jant_inch": 18, "lastik_olcusu": "235/45 R18" },
+      "bakim": { "servis_araligi_km": 15000, "yillik_tahmini_bakim_try": "Uygun-Orta" }
+    },
+    "why": "D-segment şasi, çok kollu arka düzen ve güçlü 240 hp motor ile uzun yolda rahat hızlanma ve stabilite; Ford'un Pre-Collision Assist + LKA + ACC kombinasyonu güven veriyor. İkinci elde B bütçesine sığan performanslı seçeneklerden.",
+    "why_bullets": [
+      "0-100 km/s ~7.9 sn, 240 km/s",
+      "Çok kollu arka süspansiyon: uzun yolda stabil",
+      "AEB + LKA + ACC mevcut",
+      "TR'de ilanlar genelde B bandında bulunabiliyor"
+    ],
+    "score": { "toplam": 84, "kriterler": { "performans": 78, "yol_tutusu": 82, "fren": 80, "konfor": 86, "teknoloji": 80 } },
+    "links": {
+      "brosur_pdf": "https://autocatalogarchive.com/wp-content/uploads/2018/02/Ford-Mondeo-2017-UK.pdf",
+      "pre_collision": "https://nd-mediagallery2-public-production.s3.amazonaws.com/8f231bad4a390eda0fcac53bbb0e1873/bro_mondeo.pdf",
+      "pre_collision_owner": "https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?variantid=7983",
+      "performans_kaynak": "https://www.automobile-catalog.com/performance/2018/2083355/ford_mondeo_5-dr_2_0_ecoboost_240.html",
+      "fiyat_ornekleri": "https://www.sahibinden.com/ford-mondeo/istanbul"
+    }
   }
 ]
