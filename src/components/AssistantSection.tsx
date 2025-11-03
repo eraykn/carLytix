@@ -62,7 +62,7 @@ export function AssistantSection() {
     {
       id: "usage",
       label: "Arazi/Kullanım",
-      options: ["Şehir içi", "Uzun yol", "Karma", "Off-road/hafif arazi", "Kış şartları", "Aile odaklı" , "Sport"],
+      options: ["Şehir içi", "Uzun yol", "Karma", "Kış şartları", "Aile odaklı" , "Sport"],
       minSelect: 1,
       maxSelect: 2
     },
@@ -103,10 +103,6 @@ export function AssistantSection() {
       "Karma": {
         added: "Anladım. Karma kullanım seçildi; denge ve esnekliği öne çıkarıyorum.",
         removed: "Karma kaldırıldı; ilgili ağırlıkları geri çektim."
-      },
-      "Off-road/hafif arazi": {
-        added: "Not aldım. Hafif arazi eklendi; yerden yükseklik ve çekişi öne çıkarıyorum.",
-        removed: "Off-road/hafif arazi kaldırıldı; ilgili ağırlıkları geri çektim."
       },
       "Kış şartları": {
         added: "Tamam. Kış şartları işaretlendi; güvenlik ve çekişi öne çıkarıyorum.",
