@@ -15,8 +15,13 @@
       "Şehir içi",
       "Uzun yol",
       "Güvenlik",
+      "Karma",
+      "Kış şartları",
+      "Performans",
+      "Konfor",
+      "Teknoloji/ADAS",
       "Düşük tüketim",
-      "Aile"
+      "Aile Odaklı"
     ],
     "media": {
       "image_main": "/car/yeni_e_c3_ac_e_icon_54cfa115cc.webp",
@@ -131,7 +136,7 @@
   },
   {
     "id": "seres-3-536-kwh-2024",
-    "brand": "Seres (DFSK)",
+    "brand": "Seres",
     "model": "Seres 3",
     "trim": "Premium",
     "year": 2024,
@@ -145,7 +150,13 @@
       "Şehir içi",
       "Uzun yol",
       "Düşük tüketim",
-      "Bütçe dostu"
+      "Güvenlik",
+      "Karma",
+      "Kış şartları",
+      "Performans",
+      "Konfor",
+      "Teknoloji/ADAS",
+      "Aile Odaklı"
     ],
     "media": {
       "image_main": "/car/seres-3-side-shot-white-123.jpg",
@@ -269,12 +280,15 @@
     "priceTRY": 1499000,
     "price_updated": "2025-10-29",
     "tags": [
-      "Aile",
-      "Kış",
+      "Aile Odaklı",
+      "Şehir içi",
+      "Uzun yol",
+      "Karma",
+      "Kış şartları",
+      "Teknoloji/ADAS",
       "Güvenlik",
       "Düşük tüketim",
-      "Konfor",
-      "4x4"
+      "Konfor"
     ],
     "media": {
       "image_main": "/car/suzuki-vitara.webp",
@@ -399,8 +413,11 @@
     "priceTRY": 1450000,
     "price_updated": "2025-10-29",
     "tags": [
-      "Aile",
-      "Kış",
+      "Aile odaklı",
+      "Şehir içi",
+      "Uzun yol",
+      "Karma",
+      "Kış şartları",
       "Güvenlik",
       "Düşük tüketim",
       "Konfor"
@@ -529,10 +546,13 @@
     "price_updated": "2025-11-02",
     "tags": [
       "Şehir içi",
-      "Ekonomi",
+      "Uygun bakım",
       "Düşük tüketim",
-      "Teknoloji",
-      "Aile"
+      "Teknoloji/ADAS",
+      "Aile odaklı",
+      "Konfor",
+      "Performans",
+      "Güvenlik"
     ],
     "media": {
       "image_main": "/car/kia-niro.jpeg",
@@ -661,10 +681,16 @@
     "price_updated": "2025-11-02",
     "tags": [
       "Şehir içi",
-      "Ekonomi",
+      "Uzun yol",
+      "Karma",
+      "Kış şartları",
+      "Uygun bakım",
       "Düşük tüketim",
-      "Teknoloji",
-      "Aile"
+      "Teknoloji/ADAS",
+      "Aile odaklı",
+      "Konfor",
+      "Performans",
+      "Güvenlik"
     ],
     "media": {
       "image_main": "/car/honda-civic-ehev.webp",
@@ -791,6 +817,12 @@
     "price_updated": "2025-11-02",
     "tags": [
       "Uzun yol",
+      "Karma",
+      "Uygun bakım",
+      "Düşük tüketim",
+      "Teknoloji/ADAS",
+      "Aile odaklı",
+      "Güvenlik",
       "Konfor",
       "Gürültü/konfor",
       "Performans"
@@ -919,9 +951,15 @@
     "price_updated": "2025-11-02",
     "tags": [
       "Uzun yol",
+      "Karma",
+      "Uygun bakım",
+      "Düşük tüketim",
+      "Teknoloji/ADAS",
+      "Aile odaklı",
+      "Güvenlik",
+      "Şehir içi",
       "Konfor",
-      "Performans",
-      "Gürültü/konfor"
+      "Performans"
     ],
     "media": {
       "image_main": "/car/renault-kadjar-2019.png",
@@ -1046,11 +1084,14 @@
     "priceTRY": 1300000,
     "price_updated": "2025-11-02",
     "tags": [
-      "Kış",
-      "Hafif arazi",
-      "Çekiş",
-      "Dayanıklılık",
-      "Ekonomi"
+      "Kış şartları",
+      "Şehir içi",
+      "Uygun bakım",
+      "Düşük tüketim",
+      "Teknoloji/ADAS",
+      "Aile odaklı",
+      "Konfor",
+      "Uygun bakım"
     ],
     "media": {
       "image_main": "/car/dacia-duster.png",
@@ -1176,11 +1217,15 @@
     "priceTRY": 1550000,
     "price_updated": "2025-11-02",
     "tags": [
-      "Kış",
-      "Hafif arazi",
-      "Çekiş",
-      "Konfor",
-      "Dayanıklılık"
+      "Kış şartları",
+      "Uzun yol",
+      "Karma",
+      "Şehir içi",
+      "Uygun bakım",
+      "Düşük tüketim",
+      "Uygun bakım",
+      "Aile odaklı",
+      "Konfor"
     ],
     "media": {
       "image_main": "/car/kia-sportage-1.6.jpg",
@@ -1306,11 +1351,16 @@
     "priceTRY": 1790000,
     "price_updated": "2025-11-02",
     "tags": [
-      "Aile",
+      "Aile odaklı",
+    "Karma",
+    "Şehir içi",
+    "Karma",
+    "Teknoloji/ADAS",
+    "Konfor",
+    "Kış şartları",
       "Uzun yol",
       "Düşük tüketim",
-      "Güvenlik",
-      "Büyük bagaj"
+      "Güvenlik"
     ],
     "media": {
       "image_main": "/car/peugeot-5008.png",
@@ -1441,7 +1491,10 @@
       "Uzun yol",
       "Düşük tüketim",
       "Güvenlik",
-      "Büyük bagaj"
+      "Teknoloji/ADAS",
+      "Karma",
+      "Şehir içi",
+      "Konfor"
     ],
     "media": {
       "image_main": "/car/hyundai-tucson-1.6.png",
@@ -1571,9 +1624,13 @@
     "tags": [
       "Performans",
       "Uzun yol",
-      "Yol tutuş",
-      "Fren",
-      "Prestij"
+      "Şehir içi",
+      "Teknoloji/ADAS",
+      "Konfor",
+      "Kış şartları",
+      "Güvenlik",
+      "Aile odaklı",
+      "Sport"
     ],
     "media": {
       "image_main": "/car/porsche-macan-2016.webp",
@@ -1699,9 +1756,12 @@
     "tags": [
       "Performans",
       "Uzun yol",
-      "Yol tutuş",
-      "Fren",
-      "Bagaj"
+      "Şehir içi",
+      "Teknoloji/ADAS",
+      "Konfor",
+      "Kış şartları",
+      "Güvenlik",
+      "Aile odaklı"
     ],
     "media": {
       "image_main": "/car/jaguar-f-pace.png",
@@ -1826,11 +1886,15 @@
     "priceTRY": 2250000,
     "price_updated": "2025-11-02",
     "tags": [
-      "Teknoloji",
       "Şehir içi",
-      "Düşük işletme",
+      "Performans",
+      "Kış şartları",
+      "Uzun yol",
+      "Düşük tüketim",
+      "Güvenlik",
+      "Teknoloji/ADAS",
+      "Aile odaklı",
       "Konfor",
-      "ADAS",
       "Sport"
     ],
     "media": {
@@ -1959,12 +2023,15 @@
     "priceTRY": 2675000,
     "price_updated": "2025-11-02",
     "tags": [
-      "Teknoloji",
       "Şehir içi",
-      "Düşük işletme",
-      "Konfor",
-      "ADAS",
-      "800V"
+      "Performans",
+      "Kış şartları",
+      "Uzun yol",
+      "Düşük tüketim",
+      "Güvenlik",
+      "Teknoloji/ADAS",
+      "Aile odaklı",
+      "Konfor"
     ],
     "media": {
       "image_main": "/car/kia-ev6-gtline.png",
@@ -2093,8 +2160,7 @@
     "price_updated": "2025-11-02",
     "tags": [
       "Uzun yol",
-      "Teknoloji",
-      "ADAS",
+      "Teknoloji/ADAS",
       "Konfor",
       "Düşük işletme"
     ],

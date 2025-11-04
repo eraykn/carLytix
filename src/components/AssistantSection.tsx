@@ -21,6 +21,8 @@ import {
   TurkishLira
 } from "lucide-react";
 import { Footer } from "./Footer";
+import { CarRecommendationCard, CarRecommendation } from "./CarRecommendationCard";
+import { filterCars, type CarFilterCriteria } from "@/utils/carFiltering";
 
 // Minimal toast types
 type Toast = {
@@ -39,6 +41,7 @@ export function AssistantSection() {
   const [typedMessage, setTypedMessage] = useState("");
   const [budget, setBudget] = useState("");
   const [toasts, setToasts] = useState<Toast[]>([]);
+  const [recommendedCar, setRecommendedCar] = useState<CarRecommendation | null>(null);
 
   const pushToast = (t: Omit<Toast, 'id'>) => {
     const id = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
@@ -83,7 +86,7 @@ export function AssistantSection() {
     {
       id: "priorities",
       label: "Öncelikler",
-      options: ["Güvenlik", "Düşük tüketim", "Performans", "Konfor", "Teknoloji/ADASC", "Uygun bakım"],
+      options: ["Güvenlik", "Düşük tüketim", "Performans", "Konfor", "Teknoloji/ADAS", "Uygun bakım"],
       minSelect: 1,
       maxSelect: 5
     }
@@ -572,8 +575,45 @@ export function AssistantSection() {
                       return;
                     }
 
-                    // If all good
-                    pushToast({ title: 'Başarılı', message: 'Seçimlere göre araç önerisi hazırlanıyor.', type: 'success', duration: 3000 });
+                    // Prepare filter criteria
+                    const criteria: CarFilterCriteria = {
+                      budget: numericBudget,
+                      body: selectedStep.body?.[0],
+                      fuel: selectedStep.fuel?.[0],
+                      usage: selectedStep.usage || [],
+                      priorities: selectedStep.priorities || []
+                    };
+
+                    // Filter cars - artık her zaman sonuç döndürür
+                    const results = filterCars(criteria);
+
+                    // Get the first (best match) car
+                    setRecommendedCar(results[0] as CarRecommendation);
+                    
+                    // Eşleşme skoruna göre mesaj
+                    const matchScore = (results[0] as any).matchScore || 0;
+                    if (matchScore > 150) {
+                      pushToast({ 
+                        title: 'Mükemmel eşleşme!', 
+                        message: 'Tüm kriterlerinize uygun araç bulundu!', 
+                        type: 'success', 
+                        duration: 3000 
+                      });
+                    } else if (matchScore > 80) {
+                      pushToast({ 
+                        title: 'İyi eşleşme', 
+                        message: 'Kriterlerinize çok uygun bir araç bulundu.', 
+                        type: 'success', 
+                        duration: 3000 
+                      });
+                    } else {
+                      pushToast({ 
+                        title: 'Öneri bulundu', 
+                        message: 'Size en yakın araç önerisi hazırlandı.', 
+                        type: 'info', 
+                        duration: 3000 
+                      });
+                    }
                   }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -583,6 +623,32 @@ export function AssistantSection() {
                 >
                   Araçımı bul
                 </motion.button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Car Recommendation Card - Replaces button when car is found */}
+          <AnimatePresence mode="wait">
+            {recommendedCar && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="relative z-10 mt-8 w-full max-w-md mx-auto"
+              >
+                <CarRecommendationCard 
+                  car={recommendedCar}
+                  onLearnMore={() => {
+                    // TODO: Navigate to car details page or show more info
+                    pushToast({ 
+                      title: 'Detaylar', 
+                      message: 'Araç detay sayfası yakında eklenecek!', 
+                      type: 'info', 
+                      duration: 3000 
+                    });
+                  }}
+                />
               </motion.div>
             )}
           </AnimatePresence>
