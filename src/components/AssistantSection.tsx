@@ -81,7 +81,7 @@ export function AssistantSection() {
       label: "Yakıt/Enerji",
       options: ["Elektrikli", "Benzin", "Dizel", "Hibrit"],
       minSelect: 1,
-      maxSelect: 2
+      maxSelect: 1
     },
     {
       id: "priorities",
@@ -189,6 +189,11 @@ export function AssistantSection() {
   };
 
   const handleStepClick = (categoryId: string, option: string) => {
+    // Eğer öneri kartı gösteriliyorsa, kapat
+    if (recommendedCar) {
+      setRecommendedCar(null);
+    }
+    
     const previousSelections = selectedStep[categoryId] || [];
     const wasPreviouslySelected = previousSelections.includes(option);
     
@@ -275,7 +280,7 @@ export function AssistantSection() {
         
         // Limit uyarısı ekleme (usage, fuel ve priorities için)
         if ((categoryId === "usage" || categoryId === "fuel" || categoryId === "priorities") && isNowSelected && category && currentSelections.length >= category.maxSelect) {
-          const maxText = categoryId === "usage" ? "2" : categoryId === "fuel" ? "2" : "5";
+          const maxText = categoryId === "usage" ? "2" : categoryId === "fuel" ? "1" : "5";
           const typeText = categoryId === "usage" ? "kullanım" : categoryId === "fuel" ? "yakıt türü" : "öncelik";
           message += ` En fazla ${maxText} ${typeText} seçebilirsin; fazlası öneriyi seyreltiyor.`;
         }
@@ -458,7 +463,13 @@ export function AssistantSection() {
                 <input
                   type="text"
                   value={budget}
-                  onChange={(e) => setBudget(formatBudget(e.target.value))}
+                  onChange={(e) => {
+                    // Eğer öneri kartı gösteriliyorsa, kapat
+                    if (recommendedCar) {
+                      setRecommendedCar(null);
+                    }
+                    setBudget(formatBudget(e.target.value));
+                  }}
                   placeholder="Bütçenizi girin"
                   className="px-4 py-2 pr-10 rounded-full border border-white/20 text-white/80 bg-white/5 hover:bg-white/10 focus:bg-white/10 focus:border-white/30 transition-all duration-300 text-sm text-center"
                 />
@@ -568,10 +579,24 @@ export function AssistantSection() {
                       return;
                     }
 
-                    // budget check
+                    // budget check - bütçe zorunlu
                     const numericBudget = parseInt(budget.replace(/\./g, '')) || 0;
-                    if (numericBudget > 0 && numericBudget < 500000) {
-                      pushToast({ title: 'Bütçe uyarısı', message: 'Bütçeniz 500.000 TL altında. Lütfen gözden geçirin.', type: 'warning', duration: 3000 });
+                    if (numericBudget === 0 || !budget) {
+                      pushToast({ 
+                        title: 'Bütçe gerekli', 
+                        message: 'Lütfen bütçenizi girin. Örnek: 1.500.000', 
+                        type: 'warning', 
+                        duration: 3000 
+                      });
+                      return;
+                    }
+                    if (numericBudget < 500000) {
+                      pushToast({ 
+                        title: 'Bütçe uyarısı', 
+                        message: 'Bütçeniz 500.000 TL altında. Lütfen gözden geçirin.', 
+                        type: 'warning', 
+                        duration: 3000 
+                      });
                       return;
                     }
 

@@ -196,7 +196,7 @@ export function CarRecommendationCard({ car, onLearnMore }: CarRecommendationCar
             <div className="absolute inset-0 bg-gradient-to-r from-[#0ea5d8] via-[#1ba5db] to-[#2db7f5] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             {/* Content */}
-            <div className="relative z-10 flex items-center justify-between">
+            <div className="relative z-10 flex items-center justify-between cursor-pointer">
               <span className="text-base tracking-wide font-extrabold">Neden bu araç?</span>
               <div className="flex items-center gap-2">
                 <span className="text-xs opacity-80 font-medium">Detaylar</span>
