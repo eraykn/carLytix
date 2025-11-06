@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { usePageCurtain } from "@/hooks/usePageCurtain";
 
 export interface CarRecommendation {
   id: string;
@@ -44,6 +45,18 @@ interface CarRecommendationCardProps {
 }
 
 export function CarRecommendationCard({ car, onLearnMore }: CarRecommendationCardProps) {
+  const { navigateWithCurtain, isTransitioning } = usePageCurtain();
+
+  const handleLearnMore = () => {
+    // Prevent multiple clicks during transition
+    if (isTransitioning) return;
+
+    // Navigate with curtain transition
+    navigateWithCurtain(`/assistant/recommended?id=${car.id}`, () => {
+      if (onLearnMore) onLearnMore();
+    });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -53,7 +66,7 @@ export function CarRecommendationCard({ car, onLearnMore }: CarRecommendationCar
         type: "spring", 
         stiffness: 300, 
         damping: 25,
-        duration: 0.5 
+        duration: 0.5
       }}
       className="w-full max-w-md mx-auto"
     >
@@ -187,7 +200,7 @@ export function CarRecommendationCard({ car, onLearnMore }: CarRecommendationCar
         {/* CTA Button - Modern */}
         <div className="relative z-10 px-6 pb-6">
           <motion.button
-            onClick={onLearnMore}
+            onClick={handleLearnMore}
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="w-full group relative overflow-hidden bg-gradient-to-r from-[#2db7f5] via-[#1ba5db] to-[#0ea5d8] text-white font-bold py-4 px-6 rounded-2xl shadow-xl shadow-[#2db7f5]/20 hover:shadow-2xl hover:shadow-[#2db7f5]/40 transition-all duration-300"

@@ -1898,7 +1898,7 @@
       "Sport"
     ],
     "media": {
-      "image_main": "/car/tesla-model-y.jpg",
+      "image_main": "/car/tesla-model-y.png",
       "image_interior": "https://…/modely-interior.jpg",
       "brand_logo": "/logo/Tesla-Logo.png"
     },
@@ -8508,7 +8508,7 @@
       "Hızlı şarj"
     ],
     "media": {
-      "image_main": "/car/tesla-model-y.jpg",
+      "image_main": "/car/tesla-model-y.png",
       "brand_logo": "/logo/Tesla-Logo.png"
     },
     "availability": {
