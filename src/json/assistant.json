@@ -566,7 +566,7 @@
     "specs": {
       "performans": {
         "guc_hp": 139,
-        "tork_Nm": "-",
+        "tork_Nm": 265,
         "0_100_kmh_s": 9.6,
         "maksimum_hiz_kmh": 168
       },
@@ -1352,12 +1352,12 @@
     "price_updated": "2025-11-02",
     "tags": [
       "Aile odaklı",
-    "Karma",
-    "Şehir içi",
-    "Karma",
-    "Teknoloji/ADAS",
-    "Konfor",
-    "Kış şartları",
+      "Karma",
+      "Şehir içi",
+      "Karma",
+      "Teknoloji/ADAS",
+      "Konfor",
+      "Kış şartları",
       "Uzun yol",
       "Düşük tüketim",
       "Güvenlik"
@@ -1509,8 +1509,8 @@
       "performans": {
         "guc_hp": "115 (MT) / 136 (DCT MHEV)",
         "tork_Nm": "280–320",
-        "0_100_kmh_s": "11.8–10.2",
-        "maksimum_hiz_kmh": "180 civarı"
+        "0_100_kmh_s": 10.2,
+        "maksimum_hiz_kmh": 180
       },
       "ekonomi": {
         "tuketim_l_100km": 5.3,
@@ -1908,8 +1908,8 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "-",
-        "tork_Nm": "-",
+        "guc_hp": 425,
+        "tork_Nm": 475,
         "0_100_kmh_s": 5,
         "maksimum_hiz_kmh": 217
       },
@@ -2044,8 +2044,8 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "-",
-        "tork_Nm": "-",
+        "guc_hp": 585,
+        "tork_Nm": 740,
         "0_100_kmh_s": 5.2,
         "maksimum_hiz_kmh": 185
       },
@@ -2441,7 +2441,7 @@
     "specs": {
       "performans": {
         "guc_hp": 122,
-        "tork_Nm": "-",
+        "tork_Nm": 190,
         "0_100_kmh_s": 11,
         "maksimum_hiz_kmh": 175
       },
@@ -2701,7 +2701,7 @@
     "specs": {
       "performans": {
         "guc_hp": 122,
-        "tork_Nm": "-",
+        "tork_Nm": 142,
         "0_100_kmh_s": 11.2,
         "maksimum_hiz_kmh": 170
       },
@@ -3090,8 +3090,8 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "130–140",
-        "tork_Nm": "240–260",
+        "guc_hp": 140,
+        "tork_Nm": 260,
         "0_100_kmh_s": 9.2,
         "maksimum_hiz_kmh": 196
       },
@@ -3476,7 +3476,7 @@
     "specs": {
       "performans": {
         "guc_hp": 140,
-        "tork_Nm": "-",
+        "tork_Nm": 142,
         "0_100_kmh_s": 9.3,
         "maksimum_hiz_kmh": 180
       },
@@ -3734,7 +3734,7 @@
     "specs": {
       "performans": {
         "guc_hp": 218,
-        "tork_Nm": "-",
+        "tork_Nm": 221,
         "0_100_kmh_s": 8.3,
         "maksimum_hiz_kmh": 180
       },
@@ -3755,7 +3755,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Çift salıncak",
-        "frenler": "Ön havalı/arka katı disk"
+        "frenler": "Ön havalı/arka katı disk",
+        "vites": "6 ileri DCT"
       },
       "güvenlik": {
         "ncap_yildiz": "-",
@@ -3867,7 +3868,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Çok kollu",
-        "frenler": "Ön-arka disk (rejeneratif)"
+        "frenler": "Ön-arka disk (rejeneratif)",
+        "vites": "6 ileri DCT"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (2022)",
@@ -3880,7 +3882,8 @@
             "Trafik İşareti Tanıma"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "9 + 10.2 (donanıma bağlı)",
@@ -3979,7 +3982,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Çok kollu",
-        "frenler": "Ön 330 mm havalı/Arka 290 mm disk"
+        "frenler": "Ön 330 mm havalı/Arka 290 mm disk",
+        "vites": "6 ileri DCT"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (2018)",
@@ -3993,7 +3997,8 @@
             "Trafik İşareti Tanıma"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "10\"",
@@ -4093,7 +4098,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Çok kollu Control Blade",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri DCT"
       },
       "güvenlik": {
         "ncap_yildiz": "-",
@@ -4106,7 +4112,8 @@
             "Trafik İşareti Tanıma"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "8–10 (pakete göre)",
@@ -4210,7 +4217,9 @@
             "Hız sınırlayıcı"
           ]
         },
-        "airbag_sayisi": "6 (pakete göre)"
+        "airbag_sayisi": "6 (pakete göre)",
+        "ncap_yildiz": "-",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "8–10.25",
@@ -4223,6 +4232,13 @@
       "bakim": {
         "servis_araligi_km": 15000,
         "yillik_tahmini_bakim_try": "Uygun (Hyundai ağı)"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekiş (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Burulma kirişli (torsiyon beam)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "CVT otomatik"
       }
     },
     "why": "1.6 atmosferik + CVT kombinasyonu şehir içinde çok ekonomik ve sorunsuz. CarPlay/Android Auto gibi güncel bağlantılar var; servis ağı yaygın ve parça maliyetleri makul. TR ilanları çoğunlukla A bandına sığıyor.",
@@ -4278,8 +4294,8 @@
       "performans": {
         "guc_hp": 100,
         "tork_Nm": 190,
-        "0_100_kmh_s": "≈11.8",
-        "maksimum_hiz_kmh": "~192"
+        "0_100_kmh_s": 11.8,
+        "maksimum_hiz_kmh": 199
       },
       "ekonomi": {
         "tuketim_l_100km": "≈5.5–6.0 (karma)",
@@ -4303,7 +4319,9 @@
             "Hız sınırlayıcı"
           ]
         },
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "-",
+        "ncap_yildiz": "-",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "7–10\"",
@@ -4316,6 +4334,13 @@
       "bakim": {
         "servis_araligi_km": 15000,
         "yillik_tahmini_bakim_try": "Çok uygun (parça/işçilik erişilebilir)"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Burulma kirişli (torsiyon beam)",
+        "frenler": "Ön disk – Arka kampana",
+        "vites": "5 ileri manuel"
       }
     },
     "why": "Alım-satımı kolay, parçası bol ve ucuz; 1.0 FireFly düşük tüketimle şehir içi maliyetini düşürür. 520 L bagaj ve CarPlay teknolojisi günlük kullanımda avantaj. A bandındaki en hesaplı seçeneklerden.",
@@ -4390,7 +4415,8 @@
         "cekis": "xDrive AWD",
         "suspansiyon_on": "Çift mafsallı",
         "suspansiyon_arka": "Beş kollu",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri DCT"
       },
       "güvenlik": {
         "adas": {
@@ -4401,7 +4427,9 @@
             "Şerit uyarı/yardım"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
       },
       "kış_konfor": {
         "koltuk_isitma_on": true,
@@ -4472,7 +4500,8 @@
         "cekis": "quattro AWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Çok kollu",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri DCT"
       },
       "güvenlik": {
         "adas": {
@@ -4483,7 +4512,9 @@
             "Şerit takip/yardım"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
       },
       "kış_konfor": {
         "koltuk_isitma_on": true,
@@ -4535,10 +4566,10 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "150-190",
-        "tork_Nm": "340-400",
-        "0_100_kmh_s": "≈8.9–8.0",
-        "maksimum_hiz_kmh": "≈220+"
+        "guc_hp": 150,
+        "tork_Nm": 360,
+        "0_100_kmh_s": 8.4,
+        "maksimum_hiz_kmh": 238
       },
       "ekonomi": {
         "tuketim_l_100km": "≈4.5–5.2 (WLTP)",
@@ -4565,7 +4596,15 @@
             "Kör nokta uyarısı (ops.)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekiş (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "7 vites DSG otomatik"
       }
     },
     "why": "Sınıfının zirvesi 625 L bagaj (koltuklar yatınca 1760 L), arka diz mesafesi çok geniş; dizelde ~4.5–5.2 L/100 km; AEB/ACC/şerit destekli 5★ Euro NCAP güvenliği ile aile-uzun yol için ideal.",
@@ -4623,10 +4662,10 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "150-190",
-        "tork_Nm": "340-400",
-        "0_100_kmh_s": "≈8.7–7.9",
-        "maksimum_hiz_kmh": "≈220+"
+        "guc_hp": 190,
+        "tork_Nm": 400,
+        "0_100_kmh_s": 7.9,
+        "maksimum_hiz_kmh": 220
       },
       "ekonomi": {
         "tuketim_l_100km": "≈4.6–5.0 (karma)",
@@ -4653,7 +4692,15 @@
             "Kör nokta uyarısı (ops.)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "7 vites DSG otomatik"
       }
     },
     "why": "586 L'lik dev bagaj, geniş arka sıra ve çok iyi uzun yol konforu; 2.0 TDI ile ~4.6–5.0 L/100 km; 5★ Euro NCAP ve kapsamlı ADAS. Türkiye'de 2018 2.0 TDI ilanları C bandına oturuyor.",
@@ -4710,10 +4757,10 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "-",
-        "tork_Nm": "-",
-        "0_100_kmh_s": "≈6.1–4.4 (RWD–LR)",
-        "maksimum_hiz_kmh": "≈201–217"
+        "guc_hp": 271,
+        "tork_Nm": 420,
+        "0_100_kmh_s": 5.2,
+        "maksimum_hiz_kmh": 217
       },
       "ekonomi": {
         "enerji_kWh_100km": "verime iyi",
@@ -4738,7 +4785,8 @@
             "Şerit değiştirme yardımı (EAP/FSD paketine bağlı)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": 15,
@@ -4759,6 +4807,13 @@
         "ac_kW": 11,
         "dc_kW": "Max 170–250",
         "10_80_dk": "≈25–30 dk (Supercharger koşullarına bağlı)"
+      },
+      "guc_aktarma": {
+        "cekis": "Arka çekişli (RWD)",
+        "suspansiyon_on": "Çift salıncak (Double Wishbone)",
+        "suspansiyon_arka": "Çok kollu süspansiyon (Multi-Link)",
+        "frenler": "4­-Teker disk frenler (ön/arka havalandırmalı)",
+        "vites": "Tek kademeli sabit oranlı vites (1-speed direct drive)"
       }
     },
     "why": "Güncel **Autopilot** yazılımı ve sürekli **OTA** güncellemeleriyle en zengin teknoloji/ADAS ekosistemlerinden biri; ısı pompası ve sessiz kabinle uzun yolda rafine. 2. el **₺1.85 mn** civarı çok sayıda ilan var (C bütçeye uygun).",
@@ -4814,9 +4869,9 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "≈151–228 (pakete göre)",
-        "tork_Nm": "≈350",
-        "0_100_kmh_s": "≈7.4 (RWD 77 kWh)",
+        "guc_hp": "151–228 (pakete göre)",
+        "tork_Nm": 350,
+        "0_100_kmh_s": 7.4,
         "maksimum_hiz_kmh": 185
       },
       "ekonomi": {
@@ -4844,7 +4899,8 @@
             "BCA (kör nokta çarpışma önleme) + RCCA"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "12.3 + 12.3",
@@ -4864,6 +4920,13 @@
         "ac_kW": 11,
         "dc_kW": "Max 233",
         "10_80_dk": "≈18–25 dk koşullara bağlı"
+      },
+      "guc_aktarma": {
+        "cekis": "Arka çekişli (RWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "Euro NCAP 'Best in Class' ünvanlı güvenlik, **HDA2** ile güçlü ADAS ve 'Relaxation' koltuklar sayesinde yüksek konfor. Aerodinamik tasarım sessiz ve verimli uzun yol sağlıyor. TR ikinci elde **₺1.70–2.13 mn** aralığı C bütçeye uyuyor.",
@@ -4932,11 +4995,11 @@
         "bagaj_l": 561
       },
       "guc_aktarma": {
-        "cekis": "AWD",
-        "suspansiyon_on": "Adaptif amortisörlü",
-        "suspansiyon_arka": "Bağımsız çok kollu",
-        "frenler": "Büyük diskler, performans kaliperleri",
-        "lastik": "20\" performans lastikleri"
+        "cekis": "Tüm tekerlekten çekiş (AWD)",
+        "suspansiyon_on": "Çift salıncak (Double Wishbone)",
+        "suspansiyon_arka": "Çok kollu süspansiyon (Multi-Link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed direct drive)"
       },
       "güvenlik": {
         "ncap_yildiz": 5,
@@ -5053,6 +5116,7 @@
         "suspansiyon_on": "Öhlins ayarlanabilir amortisör (Perf. Pack)",
         "suspansiyon_arka": "Öhlins DFV",
         "frenler": "Brembo 4 piston ön + rejeneratif",
+        "vites": "6 ileri DCT",
         "lastik": "20\" forged + yüksek tutuş lastik"
       },
       "güvenlik": {
@@ -5153,7 +5217,7 @@
     "specs": {
       "performans": {
         "guc_hp": 116,
-        "tork_Nm": "-",
+        "tork_Nm": 120,
         "0_100_kmh_s": 9.7,
         "maksimum_hiz_kmh": 175
       },
@@ -5175,7 +5239,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma k.",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "e-CVT"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (2020)",
@@ -5187,7 +5252,8 @@
             "Şerit takip/ortalama"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "8–10.5 (donanıma bağlı)",
@@ -5256,7 +5322,7 @@
     "specs": {
       "performans": {
         "guc_hp": 136,
-        "tork_Nm": "-",
+        "tork_Nm": 150,
         "0_100_kmh_s": 10.9,
         "maksimum_hiz_kmh": 180
       },
@@ -5276,7 +5342,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma k.",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "e-CVT"
       },
       "güvenlik": {
         "adas": {
@@ -5287,7 +5354,9 @@
             "Uzun far asistanı"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "7\" civarı",
@@ -5379,7 +5448,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma kiriş",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "multimode automatic"
       },
       "güvenlik": {
         "adas": {
@@ -5392,7 +5462,9 @@
             "ACC (E-Tech'te opsiyon)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "7–9.3",
@@ -5461,8 +5533,8 @@
     "specs": {
       "performans": {
         "guc_hp": 122,
-        "tork_Nm": "-",
-        "0_100_kmh_s": "≈9.5–10.0",
+        "tork_Nm": 162,
+        "0_100_kmh_s": 9.5,
         "maksimum_hiz_kmh": 175
       },
       "ekonomi": {
@@ -5484,7 +5556,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma kiriş",
-        "frenler": "Ön-arka disk (rej.)"
+        "frenler": "Ön-arka disk (rej.)",
+        "vites": "e-CVT"
       },
       "güvenlik": {
         "adas": {
@@ -5496,7 +5569,9 @@
             "Trafik işareti tanıma"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "9 + 7",
@@ -5584,7 +5659,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma k.",
-        "frenler": "Ön havalı/arka (pakete göre) disk"
+        "frenler": "Ön havalı/arka (pakete göre) disk",
+        "vites": "6 ileri manuel"
       },
       "güvenlik": {
         "adas": {
@@ -5594,7 +5670,9 @@
             "Şerit uyarı/yardım"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "multimedia": "CarPlay/Android Auto (pakete bağlı)",
@@ -5674,8 +5752,10 @@
       },
       "guc_aktarma": {
         "cekis": "FWD",
-        "suspansiyon": "Spor ayarlı FR",
-        "frenler": "Ön havalı/arka kampana veya disk (donanıma göre)"
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön havalı/arka (pakete göre) disk",
+        "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
         "adas": {
@@ -5685,7 +5765,10 @@
             "Şerit takip uyarı/yardım",
             "Hız sınırlayıcı"
           ]
-        }
+        },
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "teknoloji": {
         "multimedia": "CarPlay/Android Auto",
@@ -5749,8 +5832,8 @@
       "performans": {
         "guc_hp": 110,
         "tork_Nm": 200,
-        "0_100_kmh_s": "≈10.2",
-        "maksimum_hiz_kmh": "≈202"
+        "0_100_kmh_s": 10.2,
+        "maksimum_hiz_kmh": 202
       },
       "ekonomi": {
         "tuketim_l_100km": "≈5.3–5.7 (WLTP)",
@@ -5767,8 +5850,10 @@
       },
       "guc_aktarma": {
         "cekis": "FWD",
-        "suspansiyon_arka": "Burulma/çok kollu (motor gücüne bağlı)",
-        "frenler": "Ön-arka disk"
+        "suspansiyon_on": "MacPherson",
+        "suspansiyon_arka": "Burulma k.",
+        "frenler": "Ön havalı/arka (pakete göre) disk",
+        "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (Golf 8)",
@@ -5783,7 +5868,8 @@
             "Area View (ops.)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "10\" sınıfı",
@@ -5882,7 +5968,8 @@
             "Emergency Assist (paket)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "8–10.25",
@@ -5896,6 +5983,13 @@
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
         "süspansiyon": "DSG ile uzun yolda akıcı",
         "gürültü_kabin_db": "sınıf için iyi"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "7 ileri DSG otomatik"
       }
     },
     "why": "Golf'ün MQB-A0 kardeşi; **WLTP ~5.3–5.6 L/100 km** ile ekonomik, 467 L bagajla uzun yolda pratik. **AEB + Lane Assist** standartlarında güçlü; **ACC/Adaptive Lane Assist** bulunan paketlerle uzun yol ADAS'ı tamamlanır. TR'de fiyatlar B bandına rahat sığıyor.",
@@ -5952,8 +6046,8 @@
       "performans": {
         "guc_hp": 100,
         "tork_Nm": 260,
-        "0_100_kmh_s": "≈11.0–11.6",
-        "maksimum_hiz_kmh": "≈185"
+        "0_100_kmh_s": 11.6,
+        "maksimum_hiz_kmh": 185
       },
       "ekonomi": {
         "tuketim_l_100km": "≈4.1–4.3 (WLTP)",
@@ -5971,7 +6065,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma kiriş",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "6 ileri manuel şanzıman"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (2019; not: yarı iletken kıtlığı döneminde bazı alt donanımlarda radar/AEB eksik olabilir)",
@@ -5984,7 +6079,8 @@
             "ACC (pakete bağlı)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "kış_konfor": {
         "koltuk_isitma_on": "donanıma bağlı",
@@ -6065,7 +6161,8 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma kiriş",
-        "frenler": "Ön havalı/arka disk (donanıma bağlı)"
+        "frenler": "Ön havalı/arka disk (donanıma bağlı)",
+        "vites": "5 ileri manuel"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (2017)",
@@ -6077,7 +6174,8 @@
             "Yorgunluk tespiti"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "kış_konfor": {
         "koltuk_isitma_on": "donanıma bağlı",
@@ -6160,11 +6258,22 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma/çok kollu (motora göre)",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (Octavia serisi)",
-        "isofix": true
+        "isofix": true,
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "Serit Takip/Uyari",
+            "On Carpisma Uyarisi + Otonom Fren",
+            "Trafik Isareti Tanima",
+            "Arka kamera + On/Arka park sensorleri"
+          ]
+        },
+        "airbag_sayisi": "-"
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -6227,8 +6336,8 @@
       "performans": {
         "guc_hp": 130,
         "tork_Nm": 300,
-        "0_100_kmh_s": "≈10.0–10.5",
-        "maksimum_hiz_kmh": "≈200+"
+        "0_100_kmh_s": 10.5,
+        "maksimum_hiz_kmh": 203
       },
       "ekonomi": {
         "tuketim_l_100km": "≈3.9–4.8 WLTP (sürüş döngüsüne göre)",
@@ -6248,11 +6357,22 @@
         "cekis": "FWD",
         "suspansiyon_on": "MacPherson",
         "suspansiyon_arka": "Burulma kiriş",
-        "frenler": "Ön-arka disk"
+        "frenler": "Ön-arka disk",
+        "vites": "8 ileri otomatik (EAT8)"
       },
       "güvenlik": {
         "ncap_yildiz": "5★ (308 jenerasyonuna göre değişir)",
-        "isofix": true
+        "isofix": true,
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "Serit Takip/Uyari",
+            "On Carpisma Uyarisi + Otonom Fren",
+            "Trafik Isareti Tanima",
+            "Arka kamera + On/Arka park sensorleri"
+          ]
+        },
+        "airbag_sayisi": "-"
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -6313,8 +6433,8 @@
     "specs": {
       "performans": {
         "guc_hp": 136,
-        "tork_Nm": "-",
-        "0_100_kmh_s": "≈8.1–8.3",
+        "tork_Nm": 142,
+        "0_100_kmh_s": 8.3,
         "maksimum_hiz_kmh": 150
       },
       "ekonomi": {
@@ -6340,7 +6460,8 @@
           ]
         },
         "ncap_yildiz": "—",
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "10\"",
@@ -6356,6 +6477,13 @@
         "ac_kW": 11,
         "dc_kW": "100–115",
         "10_80_dk": "≈25–30 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli redüksiyonlu şanzıman"
       }
     },
     "why": "Şehir içi verimlilik ve kapsamlı ADAS paketleriyle (AEB, şerit, ACC) güçlü; 50–51 kWh batarya ve ~400 km WLTP ile günlük kullanımda menzil kaygısını azaltır. 2024 GT ilanları B bütçesine oturuyor.",
@@ -6412,7 +6540,7 @@
     "specs": {
       "performans": {
         "guc_hp": 100,
-        "tork_Nm": "-",
+        "tork_Nm": 135,
         "0_100_kmh_s": 7,
         "maksimum_hiz_kmh": 160
       },
@@ -6439,7 +6567,8 @@
           ]
         },
         "ncap_yildiz": "—",
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "12.8 dönebilen",
@@ -6455,6 +6584,13 @@
         "ac_kW": 7.4,
         "dc_kW": "≈60–88 (pakete göre)",
         "10_80_dk": "≈26–30 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Burulma kirişli (torsiyon beam) / Genişletilmiş menzilli varyantta çok kollu süspansiyon",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "Şehir içi odaklı verimlilik, **427 km WLTP** menzil ve LFP **Blade Battery** ile düşük işletme maliyeti; **ICC (adaptif hız sabitleyici), AEB, LKA** gibi ADAS'lar standart. TR fiyatları B bandına uyuyor.",
@@ -6510,8 +6646,8 @@
     "specs": {
       "performans": {
         "guc_hp": 204,
-        "tork_Nm": "-",
-        "0_100_kmh_s": "≈7.9",
+        "tork_Nm": 160,
+        "0_100_kmh_s": 7.9,
         "maksimum_hiz_kmh": 160
       },
       "ekonomi": {
@@ -6535,7 +6671,10 @@
             "Front Assist (AEB)",
             "Lane Assist"
           ]
-        }
+        },
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "10–12",
@@ -6555,6 +6694,13 @@
         "ac_kW": 11,
         "dc_kW": "125-170 (versiyona göre)",
         "10_80_dk": "≈30 dk (uygun koşullarda)"
+      },
+      "guc_aktarma": {
+        "cekis": "Arka çekişli (RWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "77 kWh batarya ile **~547–549 km WLTP** menzil ve **Travel Assist + ACC** ile uzun yolda çok rahat. TR'de **₺1.63–1.90 mn** aralığında birçok Pro/Pro S ilanı mevcut (C bandına uyuyor).",
@@ -6610,8 +6756,8 @@
     "specs": {
       "performans": {
         "guc_hp": 204,
-        "tork_Nm": "-",
-        "0_100_kmh_s": "≈8.1 (204 PS)",
+        "tork_Nm": 160,
+        "0_100_kmh_s": 8.1,
         "maksimum_hiz_kmh": 160
       },
       "ekonomi": {
@@ -6635,7 +6781,10 @@
             "Lane Assist",
             "Blind Spot (ops.)"
           ]
-        }
+        },
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "12",
@@ -6656,6 +6805,13 @@
         "ac_kW": 11,
         "dc_kW": 170,
         "10_80_dk": "≈30 dk (uygun koşullarda)"
+      },
+      "guc_aktarma": {
+        "cekis": "Arka çekişli (RWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "ID.3 ile aynı MEB altyapısı; **WLTP 551 km** ile uzun menzilli. **Travel Assist + ACC + AEB** paketi ve sportif-rafine süspansiyon ayarıyla otoyolda konforlu. TR'de **~₺1.90 mn** seviyesinde 77 kWh ilanları mevcut (C bandı).",
@@ -6711,9 +6867,9 @@
     "specs": {
       "performans": {
         "guc_hp": 140,
-        "tork_Nm": "-",
+        "tork_Nm": 164,
         "0_100_kmh_s": 9.4,
-        "maksimum_hiz_kmh": "≈180"
+        "maksimum_hiz_kmh": 180
       },
       "ekonomi": {
         "tuketim_l_100km": "≈4.5–4.9 (WLTP)",
@@ -6739,7 +6895,15 @@
             "Şerit takip/orta"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "e-CVT otomatik"
       }
     },
     "why": "Sınıfının en büyük bagajlarından **~596 L**, tam hibritin şehir içi düşük tüketimi (≈4.5–4.9 L/100 km WLTP) ve **Euro NCAP 5★** ile aile/uzun yol için ideal. TR'de Touring Sports ilanı az, fakat bütçe aralığında hibrit Corolla'lar yaygın.",
@@ -6797,9 +6961,9 @@
     "specs": {
       "performans": {
         "guc_hp": 136,
-        "tork_Nm": "-",
-        "0_100_kmh_s": "≈11.2",
-        "maksimum_hiz_kmh": "≈175"
+        "tork_Nm": 170,
+        "0_100_kmh_s": 11.2,
+        "maksimum_hiz_kmh": 175
       },
       "ekonomi": {
         "tuketim_l_100km": "≈4.0–4.3 (NEDC/WLTP yakın)",
@@ -6825,7 +6989,15 @@
             "Uzun far asistanı"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "e-CVT otomatik"
       }
     },
     "why": "**530 L** bagaj ve düşük hibrit tüketimi ile aile/şehir içi-uzun yol dengesinde çok iyi. **Toyota Safety Sense**'li donanımlarda AEB/şerit uyarı mevcut. TR'de Touring Sports hibrit ilanları sınırlı ama B bandına sığan örnek bulunabiliyor.",
@@ -6881,8 +7053,8 @@
     "specs": {
       "performans": {
         "guc_hp": 156,
-        "tork_Nm": "-",
-        "0_100_kmh_s": "≈9.8",
+        "tork_Nm": 170,
+        "0_100_kmh_s": 9.8,
         "maksimum_hiz_kmh": 170
       },
       "ekonomi": {
@@ -6908,7 +7080,10 @@
             "Kör nokta uyarısı",
             "Trafik işaretleri tanıma"
           ]
-        }
+        },
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "10 + 10 i-Toggles",
@@ -6928,6 +7103,13 @@
         "ac_kW": 11,
         "dc_kW": 100,
         "10_80_dk": "≈30 dk (koşullara bağlı)"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "Gerçek bir **elektrikli station** gövde; **≈415 km WLTP** menzil, 11 kW AC + 100 kW DC şarj ve kapsamlı ADAS seti ile uzun yolda konforlu ve güvenli. Büyük bagaj (548–1574 L) aile için çok pratik.",
@@ -6999,7 +7181,10 @@
             "Kör nokta izleme",
             "Matrix LED (Intelli-Lux) farlar"
           ]
-        }
+        },
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "10 + 10 Pure Panel",
@@ -7019,6 +7204,13 @@
         "ac_kW": 11,
         "dc_kW": 100,
         "10_80_dk": "≈30 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "Station gövdede **~413 km WLTP** menzil, **Intelli-Drive ADAS** (ACC/şerit/AEB/BSM) ve **Matrix LED** farlarla güvenli uzun yol. 516–1553 L bagaj ile aile kullanımında pratik.",
@@ -7065,8 +7257,8 @@
       "performans": {
         "guc_hp": 130,
         "tork_Nm": 230,
-        "0_100_kmh_s": "≈9.7–10.0",
-        "maksimum_hiz_kmh": "≈210"
+        "0_100_kmh_s": 9.7,
+        "maksimum_hiz_kmh": 210
       },
       "ekonomi": {
         "tuketim_l_100km": "≈5.5–6.0 (WLTP karma)",
@@ -7092,7 +7284,16 @@
             "Kör nokta uyarısı"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "8 ileri otomatik (EAT8)"
       }
     },
     "why": "Şehir içinde büyük bagaj + kısa dönüş çapı dengesini iyi kurar: **608 L** bagajıyla eşyayı rahat taşır, **≈10.7 m** dönüş çapıyla dar sokak/otoparkta pratik. PSA parça/servis ağı yaygın, bakım masrafı makul.",
@@ -7148,10 +7349,10 @@
     },
     "specs": {
       "performans": {
-        "guc_hp": "110–145",
-        "tork_Nm": "220–250",
-        "0_100_kmh_s": "≈10.6–9.4",
-        "maksimum_hiz_kmh": "≈200"
+        "guc_hp": 145,
+        "tork_Nm": 250,
+        "0_100_kmh_s": 9.4,
+        "maksimum_hiz_kmh": 200
       },
       "ekonomi": {
         "tuketim_l_100km": "≈5.5–6.2 (WLTP karma)",
@@ -7177,7 +7378,16 @@
             "ACC (pakete bağlı)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Burulma kirişli (torsiyon beam)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "6 ileri manuel"
       }
     },
     "why": "Şehir içi yükleme-pratikliği için geniş ağzı ve **540–1630 L** bagaj hacmi güçlü. **11.1 m** dönüş çapı manevrada rahat. Opel servis/ parça ağı yaygın, bakım maliyeti makul.",
@@ -7252,6 +7462,27 @@
       "boyutlar": {
         "bagaj_l": "611 (yaklaşık, Variant)",
         "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (4MOTION / AWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "7 ileri DSG otomatik"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "Serit Takip/Uyari",
+            "On Carpisma Uyarisi + Otonom Fren",
+            "Trafik Isareti Tanima",
+            "Arka kamera + On/Arka park sensorleri"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
       }
     },
     "güvenlik_teknoloji": {
@@ -7336,6 +7567,27 @@
       "boyutlar": {
         "bagaj_l": "620 civarı (ST)",
         "oturma_kapasitesi": 5
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (4Drive / AWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön ve arka disk frenler",
+        "vites": "7 ileri DSG otomatik"
+      },
+      "güvenlik": {
+        "ncap_yildiz": "-",
+        "adas": {
+          "seviye": "Seviye 1+",
+          "ozellikler": [
+            "Serit Takip/Uyari",
+            "On Carpisma Uyarisi + Otonom Fren",
+            "Trafik Isareti Tanima",
+            "Arka kamera + On/Arka park sensorleri"
+          ]
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
       }
     },
     "güvenlik_teknoloji": {
@@ -7420,12 +7672,22 @@
             "AEB (Front Assist)",
             "Şerit yardım",
             "ACC (pakete bağlı)"
-          ]
-        }
+          ],
+          "seviye": "Seviye 1+"
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "kış_artıları": {
         "cekis_destek": "ASR/ESC + XDS (elektronik diferansiyel)",
         "lastik_oneri": "Kaliteli kış lastiği ile belirgin tutunma artışı"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "7 ileri DSG otomatik"
       }
     },
     "why": "605 L bagaj ve ~4.1–4.2 L/100 km tüketim uzun yolda çok ekonomik. Golf'ün 2019'da 5★ Euro NCAP alıp 2022'de güncel protokollerle tekrar 5★'ı koruması güvenlikte güçlü. Nadir de olsa 4Motion bulunabiliyor; kış şartlarında çekiş avantajı.",
@@ -7484,7 +7746,7 @@
       "performans": {
         "guc_hp": 130,
         "tork_Nm": 300,
-        "0_100_kmh_s": "≈10.9",
+        "0_100_kmh_s": 10.9,
         "maksimum_hiz_kmh": 207
       },
       "ekonomi": {
@@ -7507,12 +7769,22 @@
             "Şerit konumlandırma/yardım",
             "ACC (pakete bağlı)",
             "Kör nokta uyarısı"
-          ]
-        }
+          ],
+          "seviye": "Seviye 1+"
+        },
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "kış_artıları": {
         "cekis_destek": "Grip/ESP modları + kış lastiği ile yüksek tutunma",
         "far": "LED/Matrix donanımlı versiyonlar"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "8 ileri otomatik (EAT8)"
       }
     },
     "why": "EAT8 ile düşük devir, **WLTP ~4.9 L/100 km**; **608–1634 L** bagajla aile/uzun yol için çok pratik. **Euro NCAP 5★ (2022)** ve kapsamlı ADAS. Kışta kaliteli kış lastiği + ESP modlarıyla çekiş güvenli.",
@@ -7569,8 +7841,8 @@
       "performans": {
         "guc_hp": 150,
         "tork_Nm": 360,
-        "0_100_kmh_s": "≈8.8–9.3",
-        "maksimum_hiz_kmh": "≈222"
+        "0_100_kmh_s": 8.8,
+        "maksimum_hiz_kmh": 222
       },
       "ekonomi": {
         "tuketim_l_100km": "≈4.4–4.9 WLTP (kombine)",
@@ -7591,9 +7863,18 @@
             "AEB (Front Assist)",
             "Şerit takip/orta",
             "ACC (pakete bağlı)"
-          ]
+          ],
+          "seviye": "Seviye 1+"
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "7 ileri DSG otomatik"
       }
     },
     "why": "Sınıfının zirvesi **640 L** bagaj ve **~4.4–4.9 L/100 km WLTP** ile büyük aile/uzun yol senaryolarında hem pratik hem ekonomik. Yumuşak süspansiyon/izolasyon ve TDI + DSG kombinasyonu uzun menzilde çok rahat.",
@@ -7652,8 +7933,8 @@
       "performans": {
         "guc_hp": 150,
         "tork_Nm": 340,
-        "0_100_kmh_s": "≈8.9",
-        "maksimum_hiz_kmh": "≈220–223"
+        "0_100_kmh_s": 8.9,
+        "maksimum_hiz_kmh": 220
       },
       "ekonomi": {
         "tuketim_l_100km": "≈4.8–4.9 WLTP (kombine)",
@@ -7674,9 +7955,19 @@
             "AEB (Front Assist)",
             "Şerit takip/orta",
             "Kör nokta uyarısı (pakete bağlı)"
-          ]
+          ],
+          "seviye": "Seviye 1+"
         },
-        "isofix": true
+        "isofix": true,
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "7 ileri DSG otomatik"
       }
     },
     "why": "Uzun yol konforu ve sessizliği ile ünlü Passat'ta **650 L** bagaj (koltuklar yatınca ~1780 L) ve **~4.8–4.9 L/100 km WLTP**. Geniş iç mekân + koltuk/izolasyon kalitesiyle ailece uzun rota için çok rahat.",
@@ -7735,7 +8026,8 @@
     "specs": {
       "performans": {
         "guc_hp": 156,
-        "0_100_kmh_s": "≈9.8",
+        "tork_Nm": 270,
+        "0_100_kmh_s": 9.8,
         "maksimum_hiz_kmh": 170
       },
       "ekonomi": {
@@ -7760,7 +8052,10 @@
             "AEB (yaya/bisiklet)",
             "Kör nokta uyarısı"
           ]
-        }
+        },
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "konfor": {
         "koltuklar": "AGR destek/ısıtma (pakete bağlı)",
@@ -7771,6 +8066,13 @@
         "ac_kW": 11,
         "dc_kW": 100,
         "10_80_dk": "≈30 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön ve arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı redüksiyon şanzıman (1-speed)"
       }
     },
     "why": "Station gövdede **≈415 km WLTP** menzil, kapsamlı ADAS ve iyi NVH ile uzun yolda sakin/sessiz sürüş. 548–1574 L bagaj aile için çok pratik.",
@@ -7843,7 +8145,10 @@
             "Kör nokta izleme",
             "Matrix LED (Intelli-Lux, donanıma bağlı)"
           ]
-        }
+        },
+        "ncap_yildiz": "-",
+        "airbag_sayisi": "-",
+        "isofix": true
       },
       "konfor": {
         "koltuklar": "AGR ergonomik koltuklar (ops.)",
@@ -7854,6 +8159,13 @@
         "ac_kW": 11,
         "dc_kW": 100,
         "10_80_dk": "≈30 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "**≈413 km WLTP** menzil, **Intelli-Drive** ADAS ve **Matrix LED** farlarla uzun yolda güvenli/rahat. 516–1553 L bagajla aile yüklerini kolay taşır.",
@@ -7901,7 +8213,7 @@
       "performans": {
         "guc_hp": 286,
         "tork_Nm": 545,
-        "0_100_kmh_s": "≈7.5–7.9",
+        "0_100_kmh_s": 7.9,
         "maksimum_hiz_kmh": 180
       },
       "ekonomi": {
@@ -7928,7 +8240,8 @@
             "Kör nokta uyarısı (ops.)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "15\"",
@@ -7949,6 +8262,13 @@
         "ac_kW": 11,
         "dc_kW": "175–200",
         "10_80_dk": "≈25–30 dk (uygun koşullarda)"
+      },
+      "guc_aktarma": {
+        "cekis": "Arka çekişli (RWD)",
+        "suspansiyon_on": "Bağımsız MacPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "Şehir içi/aile kullanımında düşük işletme maliyeti, **605–1714 L** bagaj ve **IQ.DRIVE** destekleriyle çok rahat ve güvenli. Pro S 86 kWh ile WLTP menzil üst sınıfta; uzun yol + sessizlik için ideal.",
@@ -8008,8 +8328,8 @@
     "specs": {
       "performans": {
         "guc_hp": 483,
-        "tork_Nm": "≈700",
-        "0_100_kmh_s": "≈4.0",
+        "tork_Nm": 700,
+        "0_100_kmh_s": 4,
         "maksimum_hiz_kmh": 200
       },
       "ekonomi": {
@@ -8036,7 +8356,8 @@
             "Otoyol pilot işlevleri"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "12.8 merkez + dijital sürücü",
@@ -8052,6 +8373,13 @@
         "ac_kW": 11,
         "dc_kW": "≈140–180",
         "10_80_dk": "≈30 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (AWD)",
+        "suspansiyon_on": "Bağımsız çok kollu süspansiyon (multi-link)",
+        "suspansiyon_arka": "Bağımsız çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka havalandırmalı disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "Şehir içi ve aile için pratik **450–1300 L** bagaj, güçlü **ADAS** ve sessiz kabin. **100 kWh** long range ile WLTP ~580 km; AWD çekişi ıslak/kışta güven veriyor. Düşük işletme maliyeti + OTA destekli yazılım ek avantaj.",
@@ -8139,7 +8467,8 @@
             "Side Collision Avoidance"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "10.25\" veya 12.3\" (iDrive 7)",
@@ -8153,6 +8482,13 @@
         "koltuklar": "Sport koltuklar (M paket)",
         "klima": "Otomatik iklim",
         "gürültü_kabin": "iyi NVH, uzun yolda sessiz"
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (xDrive / AWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön ve arka disk frenler",
+        "vites": "8 ileri otomatik Steptronic Sport"
       }
     },
     "why": "xDrive çekiş + M ayarlı şasi ile **0–100 4.4 sn** ve yüksek hızda nötr denge. **348/345 mm** diskli M Sport fren kendi sınıfında güçlü ısıl kapasite sunar. Uzun yolda 'Driving Assistant Professional' ile yorgunluk azalır.",
@@ -8242,7 +8578,8 @@
             "AEB (Active Brake Assist)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "11.9\" merkez + 12.3\" dijital gösterge",
@@ -8257,6 +8594,13 @@
         "koltuklar": "AMG Performance koltuklar",
         "klima": "Thermotronic otomatik",
         "gürültü_kabin": "iyi NVH"
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (4MATIC / AWD)",
+        "suspansiyon_on": "Bağımsız dört kollu süspansiyon",
+        "suspansiyon_arka": "Bağımsız çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "9 ileri otomatik (AMG SPEEDSHIFT MCT 9G)"
       }
     },
     "why": "AMG şasisi, **arka aks yönlendirme** ve **370×36 mm** ön disklerle yüksek tempoda güçlü frenaj ve viraj stabilitesi. **0–100 4.6 sn** ve 4MATIC çekiş uzun yolda güven veren hızlanma sunar.",
@@ -8347,7 +8691,8 @@
             "Şerit takip uyarısı (ops.)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "8\" veya 9.2\" (donanıma göre)",
@@ -8361,6 +8706,13 @@
         "koltuklar": "Sport koltuklar (GTI)",
         "klima": "Climatronic",
         "gürültü_kabin": "iyi NVH (17\" tur lastiğiyle düşük)"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Burulma kirişli (torsiyon beam)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "6 ileri DSG otomatik"
       }
     },
     "why": "Şehir içinde **10.6 m** dönüş çapı ve küçük gövdeyle çok çevik; **0–100 6.7 sn** ile performansı yüksek. XDS çekiş kontrolü ve DSG'nin hızlı oranları, düşük hızlardan itibaren atik tepki veriyor.",
@@ -8450,7 +8802,8 @@
             "Rear camera (ops.)"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "6.5\" veya 8.8\" (donanıma göre)",
@@ -8464,6 +8817,13 @@
         "koltuklar": "Sport koltuklar",
         "klima": "Otomatik klima",
         "gürültü_kabin": "iyi (17\" lastik + kaliteli yalıtım)"
+      },
+      "guc_aktarma": {
+        "cekis": "Önden çekişli (FWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Burulma kirişli (torsiyon beam)",
+        "frenler": "Ön disk – Arka disk",
+        "vites": "7 ileri Steptronic otomatik (opsiyonel manuel 6 ileri)"
       }
     },
     "why": "Kısa gövde ve **10.8 m** dönüş çapıyla şehirde manevrası çok kolay. **0–100 6.8 sn** ile canlı performans; çok kollu arka süspansiyon ve direkt direksiyon, virajlarda çeviklik sağlıyor.",
@@ -8548,7 +8908,8 @@
             "Kör nokta uyarısı"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "15.4\" merkez",
@@ -8569,6 +8930,13 @@
         "ac_kW": 11,
         "dc_kW": 250,
         "10_80_dk": "≈25 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (AWD)",
+        "suspansiyon_on": "Çift salıncak (Double Wishbone)",
+        "suspansiyon_arka": "Bağımsız çok kollu süspansiyon (Multi-Link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "AWD, 3.5 sn 0–100 ve adaptif süspansiyonla yüksek tempoda stabil; 580 km WLTP ve 250 kW Supercharge uzun yolu kolaylaştırır. Autopilot şehirlerarası akışta yorgunluğu azaltır.",
@@ -8653,7 +9021,8 @@
             "BLIS"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "9\" merkez + 12.3\" dijital gösterge",
@@ -8674,6 +9043,13 @@
         "ac_kW": 11,
         "dc_kW": "maks. ≈200",
         "10_80_dk": "≈28–30 dk"
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (AWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
       }
     },
     "why": "AWD ve 4.8 sn 0–100 ile çok atak; **Pilot Assist** otoyolda direksiyon/mesafe yardımı sağlar. Euro NCAP 5★ güvenlik ve iyi NVH ile uzun yol ve şehir içi konforu yüksektir.",
@@ -8730,7 +9106,7 @@
     "specs": {
       "performans": {
         "guc_hp": 197,
-        "tork_Nm": "-",
+        "tork_Nm": 221,
         "0_100_kmh_s": 8.1,
         "maksimum_hiz_kmh": 180
       },
@@ -8762,7 +9138,8 @@
             "Kör nokta"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "12.3\" merkez",
@@ -8777,6 +9154,13 @@
         "koltuklar": "Sport/ısıtmalı",
         "klima": "Çift bölgeli",
         "gürültü_kabin": "iyi NVH (hibrit düşük devir)"
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (e-AWD / AWD-i)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Bağımsız çok kollu süspansiyon",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "e-CVT otomatik"
       }
     },
     "why": "Yeni 2.0 hibritin 197 hp gücü ve GR Sport şasi ayarı şehirler-arası/şehir içi 'karma' kullanımda çeviklik verirken, WLTP ~5 L/100 km ile ekonomi tarafını güçlü tutar. TSS 3.0 ve konfor donanımı günlük kullanımda rahat.",
@@ -8833,7 +9217,7 @@
       "performans": {
         "guc_hp": 190,
         "tork_Nm": 320,
-        "0_100_kmh_s": "7.4–7.6",
+        "0_100_kmh_s": 7.6,
         "maksimum_hiz_kmh": 232
       },
       "ekonomi": {
@@ -8864,7 +9248,8 @@
             "Kör nokta"
           ]
         },
-        "isofix": true
+        "isofix": true,
+        "airbag_sayisi": "-"
       },
       "teknoloji": {
         "ekran_inch": "10\" (Style/Sportline)",
@@ -8882,6 +9267,13 @@
       "pratiklik": {
         "bagaj_ozel": "Çift kat taban/kanca/ayırıcı",
         "arka_koltuk": "60:40 (ortadan geçiş)"
+      },
+      "guc_aktarma": {
+        "cekis": "Tüm tekerlekten çekişli (4×4 / AWD)",
+        "suspansiyon_on": "Bağımsız McPherson",
+        "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
+        "frenler": "Ön–Arka disk frenler",
+        "vites": "7 ileri DSG otomatik"
       }
     },
     "why": "190 hp TSI + çok kollu arka süspansiyon 'sportif aile' kullanımında dengeli hızlanma ve güven veren fren ile öne çıkar. **640 L** bagaj günlük/aile yüklerini çok rahat taşır; DSG uzun yolda düşük devirle sessizdir.",
