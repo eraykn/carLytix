@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowLeft, Zap, Shield, Cpu, Gauge, Settings, Star, Sparkles } from "lucide-react";
+import { ArrowLeft, Zap, Shield, Cpu, Gauge, Settings, Star, Sparkles, Check, X } from "lucide-react";
 import { usePageCurtain } from "@/hooks/usePageCurtain";
 
 interface CarData {
@@ -339,6 +339,184 @@ function SpecCard({
   color: string;
   delay: number;
 }) {
+  // Special rendering for Teknoloji section
+  if (title === "Teknoloji") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay }}
+        className="mb-8 last:mb-0"
+      >
+        <div className="group relative bg-slate-900/50 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/10 overflow-hidden">
+          {/* Animated gradient background */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+          
+          {/* Header */}
+          <div className="relative z-10 flex items-center gap-4 mb-6">
+            <div className={`p-4 rounded-2xl bg-gradient-to-br ${color} text-white shadow-lg`}>
+              {icon}
+            </div>
+            <h4 className="text-3xl font-black text-white">{title}</h4>
+          </div>
+
+          {/* Main Tech Specs Grid */}
+          <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-6">
+            {data.ekran_inch && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Ekran Inch</p>
+                <p className="text-lg font-black text-white">{data.ekran_inch}</p>
+              </div>
+            )}
+            {data.dijital_gosterge_inch && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Dijital Gösterge Inch</p>
+                <p className="text-lg font-black text-white">{data.dijital_gosterge_inch}</p>
+              </div>
+            )}
+            {data.gosterge_paneli && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Gösterge Paneli</p>
+                <p className="text-lg font-black text-white">{data.gosterge_paneli}</p>
+              </div>
+            )}
+            {data.multimedia && (
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Multimedia</p>
+                <p className="text-lg font-black text-white">{data.multimedia}</p>
+              </div>
+            )}
+          </div>
+
+          {/* Kamera & Sensör Box */}
+          {(data.kamera_sistemi || data.park_asistani) && (
+            <div className="relative z-10 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5 mb-6">
+              <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-4">Kamera & Sensör</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {data.kamera_sistemi && (
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
+                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Kamera Sistemi</p>
+                    <p className="text-base font-black text-white">{data.kamera_sistemi}</p>
+                  </div>
+                )}
+                {data.park_asistani && (
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
+                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Park Asistanı</p>
+                    <p className="text-base font-black text-white">{data.park_asistani}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Isıtma Box */}
+          {data.isitma && (
+            <div className="relative z-10 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
+              <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-4">Isıtma</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {data.isitma.klima && (
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
+                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Klima</p>
+                    <p className="text-base font-black text-white">{data.isitma.klima}</p>
+                  </div>
+                )}
+                {data.isitma.koltuk_isitma_on !== undefined && (
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
+                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Koltuk Isıtma Ön</p>
+                    <div className="flex items-center gap-2">
+                      {data.isitma.koltuk_isitma_on ? (
+                        <Check className="w-6 h-6 text-green-400" />
+                      ) : (
+                        <X className="w-6 h-6 text-red-400" />
+                      )}
+                    </div>
+                  </div>
+                )}
+                {data.isitma.koltuk_isitma_arka !== undefined && (
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
+                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Koltuk Isıtma Arka</p>
+                    <div className="flex items-center gap-2">
+                      {data.isitma.koltuk_isitma_arka ? (
+                        <Check className="w-6 h-6 text-green-400" />
+                      ) : (
+                        <X className="w-6 h-6 text-red-400" />
+                      )}
+                    </div>
+                  </div>
+                )}
+                {data.isitma.direksiyon_isitma !== undefined && (
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
+                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Direksiyon Isıtma</p>
+                    <div className="flex items-center gap-2">
+                      {data.isitma.direksiyon_isitma ? (
+                        <Check className="w-6 h-6 text-green-400" />
+                      ) : (
+                        <X className="w-6 h-6 text-red-400" />
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Decorative corner accents */}
+          <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${color} opacity-5 rounded-bl-full`} />
+          <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${color} opacity-5 rounded-tr-full`} />
+        </div>
+      </motion.div>
+    );
+  }
+
+  // Function to render nested data for other sections
+  const renderNestedData = (obj: any, parentKey: string = ''): React.ReactElement[] => {
+    const elements: React.ReactElement[] = [];
+    
+    Object.entries(obj).forEach(([key, value]: [string, any]) => {
+      const fullKey = parentKey ? `${parentKey}_${key}` : key;
+      
+      // Skip arrays and nested objects for main grid
+      if (Array.isArray(value)) return;
+      if (typeof value === 'object' && value !== null) {
+        // Recursively handle nested objects
+        const nestedElements = renderNestedData(value, fullKey);
+        elements.push(...nestedElements);
+        return;
+      }
+      
+      // Format key for display
+      const formattedKey = key
+        .replace(/_/g, ' ')
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+      elements.push(
+        <div key={fullKey} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">
+            {formattedKey}
+          </p>
+          {typeof value === 'boolean' ? (
+            <div className="flex items-center gap-2">
+              {value ? (
+                <Check className="w-6 h-6 text-green-400" />
+              ) : (
+                <X className="w-6 h-6 text-red-400" />
+              )}
+            </div>
+          ) : (
+            <p className="text-lg font-black text-white">
+              {value?.toString() || '-'}
+            </p>
+          )}
+        </div>
+      );
+    });
+    
+    return elements;
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -361,31 +539,10 @@ function SpecCard({
 
         {/* Data Grid */}
         <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {Object.entries(data).map(([key, value]: [string, any]) => {
-            // Skip nested objects and arrays for now
-            if (typeof value === 'object') return null;
-            
-            // Format key for display
-            const formattedKey = key
-              .replace(/_/g, ' ')
-              .split(' ')
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(' ');
-
-            return (
-              <div key={key} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
-                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">
-                  {formattedKey}
-                </p>
-                <p className="text-lg font-black text-white">
-                  {value?.toString() || '-'}
-                </p>
-              </div>
-            );
-          })}
+          {renderNestedData(data)}
 
           {/* Handle nested ADAS features */}
-          {data.adas?.ozellikler && (
+          {data.adas?.ozellikler && Array.isArray(data.adas.ozellikler) && (
             <div className="col-span-2 md:col-span-3 lg:col-span-4 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
               <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-3">
                 ADAS Özellikleri
@@ -394,7 +551,7 @@ function SpecCard({
                 {data.adas.ozellikler.map((feature: string, index: number) => (
                   <span
                     key={index}
-                    className={`px-4 py-2 bg-gradient-to-r ${color} text-white text-sm font-semibold rounded-full shadow-md`}
+                    className="px-4 py-2 bg-white/5 hover:bg-white/10 text-white text-sm font-semibold rounded-full shadow-md border border-white/5 transition-colors"
                   >
                     {feature}
                   </span>
@@ -404,7 +561,7 @@ function SpecCard({
           )}
 
           {/* Handle teknoloji baglanti */}
-          {data.baglanti && (
+          {data.baglanti && Array.isArray(data.baglanti) && (
             <div className="col-span-2 md:col-span-3 lg:col-span-4 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
               <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-3">
                 Bağlantı Seçenekleri
