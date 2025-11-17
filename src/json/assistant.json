@@ -65,29 +65,34 @@
         "vites": "Tek oran"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1+",
+          "seviye": "Seviye 2",
           "ozellikler": [
             "Şerit Takip/Uyarı",
             "Ön Çarpışma Uyarısı + Otonom Fren",
             "Trafik İşareti Tanıma",
-            "Arka kamera + Ön/Arka park sensörleri"
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
         "ekran_inch": 10.25,
-        "gosterge_paneli": "Head-up style panel",
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
         "multimedia": "CarPlay & Android Auto (kablosuz)",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "OTA (seçili modüller)"
-        ]
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön/arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Advanced Comfort koltuklar",
@@ -202,25 +207,31 @@
       "güvenlik": {
         "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 1",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "Şerit Uyarı (donanıma bağlı)",
-            "Ön Çarpışma Uyarısı + AEB (donanıma bağlı)",
-            "Hız sabitleyici"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "-",
-        "gosterge_paneli": "Dijital",
-        "multimedia": "CarPlay & Android Auto (pazar/donanıma bağlı)",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 10.25,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Suni deri (pazar/donanıma bağlı)",
@@ -347,13 +358,18 @@
       },
       "teknoloji": {
         "ekran_inch": 9,
-        "gosterge_paneli": "Kombine dijital",
-        "multimedia": "CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + 4.2\" renkli bilgi ekranı",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu) – 9\" dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
@@ -466,7 +482,7 @@
       "güvenlik": {
         "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 2 (donanıma bağlı)",
+          "seviye": "Seviye 2",
           "ozellikler": [
             "Ön çarpışma uyarısı + AEB",
             "Adaptif hız sabitleyici",
@@ -479,13 +495,18 @@
       },
       "teknoloji": {
         "ekran_inch": 8,
-        "gosterge_paneli": "Dijital/analog",
-        "multimedia": "CarPlay & Android Auto (MY'20+)",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT renkli ekran",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
@@ -598,7 +619,7 @@
       "güvenlik": {
         "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 2 (pakete bağlı)",
+          "seviye": "Seviye 2",
           "ozellikler": [
             "AEB (yaya/bisiklet algılamalı)",
             "Şerit Takip + LFA",
@@ -607,19 +628,23 @@
             "Akıllı Hız Sabitleyici (donanıma bağlı)"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "-",
-        "gosterge_paneli": "Dijital (donanıma bağlı)",
-        "multimedia": "Apple CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "OTA (seçili modüller)"
-        ]
+        "ekran_inch": 10.25,
+        "dijital_gosterge_inch": 10.25,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -734,7 +759,7 @@
         "vites": "e-CVT / i-MMD"
       },
       "güvenlik": {
-        "ncap_yildiz": "5 (Euro NCAP, 2021)",
+        "ncap_yildiz": "5★ (Euro NCAP, 2021)",
         "adas": {
           "seviye": "Seviye 2",
           "ozellikler": [
@@ -743,18 +768,23 @@
             "Arka kamera + park sensörleri"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "9 (donanıma bağlı)",
-        "gosterge_paneli": "7-12\" dijital",
-        "multimedia": "Kablosuz Apple CarPlay, Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 9,
+        "dijital_gosterge_inch": 7,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
@@ -879,18 +909,23 @@
             "Şerit uyarı (donanıma bağlı)"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "-",
-        "gosterge_paneli": "Kombine",
-        "multimedia": "Mazda Connect, Bluetooth, (donanıma bağlı Bose)",
-        "ses_sistemi": "Bose (donanıma bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 7,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgi ekranı",
+        "multimedia": "Bluetooth multimedya sistemi (Apple CarPlay & Android Auto opsiyonel/sonraki model yıllarında)",
+        "kamera_sistemi": "Geri görüş kamerası (opsiyonel olabilir)",
+        "park_asistani": "Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Isıtmalı (donanıma bağlı), destekli koltuk yapısı",
@@ -1003,28 +1038,34 @@
         "vites": "7 ileri EDC"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1+ (pakete bağlı)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (pakete bağlı)",
-            "Şerit uyarı",
-            "Kör nokta uyarısı (pakete bağlı)",
-            "Ön/arka park destekleri"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7-8 (donanıma bağlı)",
-        "gosterge_paneli": "Dijital/analog",
-        "multimedia": "R-LINK 2, Apple CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 7,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgi ekranı",
+        "multimedia": "Apple CarPlay & Android Auto, 7” multimedya sistemli",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Rahat sünger yapısı, ısıtma (donanıma bağlı)",
@@ -1145,18 +1186,23 @@
             "Hız sınırlayıcı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "-",
-        "gosterge_paneli": "Kombine",
-        "multimedia": "Apple CarPlay & Android Auto (donanıma bağlı)",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu) – 8\" dokunmatik sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Tek bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -1273,25 +1319,30 @@
         "adas": {
           "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (yaya/bisiklet algılamalı, pakete bağlı)",
-            "Şerit Takip (LKA/LFA)",
-            "Kör Nokta Uyarısı",
-            "Arka Çapraz Trafik Uyarısı",
-            "Hız sabitleyici (akıllı donanıma bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7-8 (donanıma bağlı)",
-        "gosterge_paneli": "Kombine",
-        "multimedia": "Apple CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 7,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtmalı (donanıma bağlı)",
@@ -1404,29 +1455,34 @@
         "vites": "8 ileri otomatik (EAT8)"
       },
       "güvenlik": {
-        "ncap_yildiz": "5 (Euro NCAP; 5008/3008 platformu)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (pakete bağlı)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisiklet/motosiklet algılamalı)",
-            "Adaptif Hız Sabitleyici",
-            "Şerit Konumlama/LKA",
-            "Kör Nokta Uyarısı",
-            "Arka Çapraz Trafik Uyarısı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10 (donanıma bağlı)",
-        "gosterge_paneli": "12.3\" dijital i-Cockpit",
-        "multimedia": "Apple CarPlay & Android Auto",
-        "ses_sistemi": "Hi-Fi (opsiyon)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 10,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu) – 10\" dokunmatik ekranlı sistem",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma/massage (donanıma bağlı)",
@@ -1538,29 +1594,34 @@
         "vites": "6MT / 7DCT"
       },
       "güvenlik": {
-        "ncap_yildiz": "5 (Euro NCAP, 2021)",
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisiklet)",
-            "Şerit Takip + Merkezleme",
-            "Kör Nokta Uyarısı",
-            "Arka Çapraz Trafik Uyarısı",
-            "E-Call + Orta Hava Yastığı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10.25 (donanıma bağlı)",
-        "gosterge_paneli": "10.25\" dijital",
-        "multimedia": "Apple CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 12.3,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 12.3\" dokunmatik ekranlı bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma/soğutma (donanıma bağlı)",
@@ -1676,25 +1737,32 @@
       "güvenlik": {
         "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 1",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "Ön çarpışma uyarısı + AEB (donanıma bağlı)",
-            "Kör nokta uyarısı (opsiyon)",
-            "Adaptif hız sabitleyici (opsiyon)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "-",
-        "gosterge_paneli": "Analog + TFT",
-        "multimedia": "Porsche Communication Management",
-        "ses_sistemi": "BOSE/Burmester (opsiyon)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 7,
+        "dijital_gosterge_inch": 4.6,
+        "gosterge_paneli": "Analog + TFT bilgi ekranı",
+        "multimedia": "Porsche Communication Management (PCM) – navigasyonlu multimedya sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Sport/Comfort, ısıtma (opsiyon)",
@@ -1805,28 +1873,34 @@
         "vites": "8 ileri otomatik"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1+ (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB",
-            "Şerit uyarı/takip",
-            "Kör nokta uyarısı",
-            "Arka çapraz trafik uyarısı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "8-10 (donanıma bağlı)",
-        "gosterge_paneli": "Dijital/analog",
-        "multimedia": "InControl, Apple CarPlay/Android Auto (MY'e bağlı)",
-        "ses_sistemi": "Meridian (opsiyon)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 10,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 10\" dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Spor destekli; ısıtma (opsiyon)",
@@ -1939,30 +2013,34 @@
         "vites": "Tek oran"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 2",
           "ozellikler": [
-            "Autopilot (Trafiğe Duyarlı HS, Şerit Merkezleme)",
-            "Otopilot ile Navigasyon / Otomatik Şerit Değiştirme (pakete bağlı)",
-            "Ön çarpışma uyarısı + AEB",
-            "Kör nokta yardım/uyarı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": 16,
-        "gosterge_paneli": "Orta 16\" + Arka 8\" ekran",
-        "multimedia": "OTA güncellemeler, yerleşik navigasyon",
-        "ses_sistemi": "Premium (donanıma bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "Wi-Fi",
-          "LTE"
-        ]
+        "ekran_inch": 15.4,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destek sınırlı)",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtma/ havalandırma (pazar/donanıma bağlı)",
@@ -2075,30 +2153,34 @@
         "vites": "Tek oran"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (HDA2)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif hız sabitleyici (NSCC) + şerit ortalama (LFA)",
-            "Otomatik şerit değiştirme (HDA2 don.)",
-            "Kör nokta çarpışma önleme (BCA)",
-            "Arka çapraz trafik frenleme (RCCA)",
-            "360° kamera / Uzaktan park (RSPA, don.)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "12.3 + 12.3 kavisli",
+        "ekran_inch": 12.3,
+        "dijital_gosterge_inch": 12.3,
         "gosterge_paneli": "Tam dijital",
-        "multimedia": "CarPlay/Android Auto, OTA (seçili modül)",
-        "ses_sistemi": "Meridian (donanıma bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "V2L"
-        ]
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz) + Meridian ses sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otonom park desteği",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtma/soğutma (donanıma bağlı), relax modu",
@@ -2206,30 +2288,34 @@
         "vites": "Tek oran"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (HDA2)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "HDA2 (şerit ortalama + adaptif hız + şerit değiştirmeye yardım)",
-            "FCA2 (AEB, yayacı/bisikletçi algılamalı)",
-            "BCA (Kör nokta çarpışma önleme)",
-            "NSCC (navigasyon bazlı akıllı hız sabitleyici)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "12.3 + 12.3",
+        "ekran_inch": 12.3,
+        "dijital_gosterge_inch": 12.3,
         "gosterge_paneli": "Tam dijital",
-        "multimedia": "OTA güncellemeler, yerleşik navigasyon",
-        "ses_sistemi": "Premium (donanıma bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "V2L 3.6 kW",
-          "Wi-Fi"
-        ]
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destekli) + 12,3\" bilgi-eğlence ekranı",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + akıllı park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtma/soğutma (donanıma bağlı), Relax modu",
@@ -2338,30 +2424,34 @@
         "vites": "Tek oran"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (HDA/HDA2 donanıma bağlı)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisikletçi algılamalı)",
-            "LFA/LKA (şerit takip/ort. yardım)",
-            "BCA (Kör nokta çarpışma önleme)",
-            "RCCA (Arka çapraz trafik çarpışma önleme)",
-            "HDA (otoyol sürüş asistanı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10.25 + 10.25 (donanıma bağlı 12.3 + 12.3)",
-        "gosterge_paneli": "Dijital",
-        "multimedia": "CarPlay/Android Auto; OTA (seçili modüller)",
-        "ses_sistemi": "Premium (donanıma bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "V2L 3.6 kW"
-        ]
+        "ekran_inch": 10.25,
+        "dijital_gosterge_inch": 10.25,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destekli)",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtma/soğutma (donanıma bağlı)",
@@ -2471,28 +2561,34 @@
         "vites": "e-CVT"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (Toyota Safety Sense)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisiklet algılamalı)",
-            "Şerit Takip + Şerit Ortalama",
-            "Adaptif Hız Sabitleyici",
-            "Kör Nokta Uyarısı (donanıma bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 6,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "8–12.3 (donanıma bağlı)",
-        "gosterge_paneli": "Dijital",
-        "multimedia": "CarPlay/Android Auto",
-        "ses_sistemi": "JBL (opsiyon)",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu) – 8\" dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -2605,24 +2701,30 @@
         "adas": {
           "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Dual Sensor Brake Support)",
-            "Şerit uyarı/takip",
-            "Adaptif hız sabitleyici (donanıma bağlı)",
-            "Kör nokta uyarısı + Arka çapraz trafik uyarısı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": 7,
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7–9",
-        "gosterge_paneli": "Kombine",
-        "multimedia": "CarPlay/Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 9,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgi ekranı",
+        "multimedia": "Apple CarPlay & Android Auto – 9\" dokunmatik multimedya sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -2733,26 +2835,32 @@
       "güvenlik": {
         "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Toyota T-Mate / Safety Sense (Seviye 2 işlevler)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisiklet algılamalı)",
-            "Adaptif Hız Sabitleyici",
-            "Şerit Takip/Ortalama (LTA)",
-            "Kör Nokta Uyarısı + Arka Çapraz Trafik Uyarısı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "7",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "8–12.3 (donanıma bağlı)",
-        "gosterge_paneli": "Dijital",
-        "multimedia": "Apple CarPlay & Android Auto",
-        "ses_sistemi": "JBL (opsiyon)",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 10.5,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (10.5\" dokunmatik ekranlı sistem)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -2860,29 +2968,34 @@
         "vites": "Tek oran"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "ProPILOT (Seviye 2)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif hız sabitleyici (Navi-link)",
-            "Şerit ortalama (LKA/LFA)",
-            "AEB (yaya/bisikletçi algılamalı)",
-            "Kör nokta çarpışma önleme (BSI)",
-            "Arka çapraz trafik frenleme (RCCA)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "12.3 + 12.3 (donanıma bağlı)",
+        "ekran_inch": 12.3,
+        "dijital_gosterge_inch": 12.3,
         "gosterge_paneli": "Tam dijital",
-        "multimedia": "Apple CarPlay & Android Auto",
-        "ses_sistemi": "Bose (donanıma bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ]
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destekli) – 12.3\" bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + akıllı park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -2991,28 +3104,34 @@
         "vites": "8 ileri otomatik"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 işlevler",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif hız sabitleyici (Stop&Go, donanıma bağlı)",
-            "Şerit konumlama/LKA",
-            "Aktif fren (AEB)",
-            "Kör nokta uyarısı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7–10",
-        "gosterge_paneli": "i-Cockpit (dijital)",
-        "multimedia": "CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 10,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 10” dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -3121,29 +3240,34 @@
         "vites": "7 ileri çift kavrama"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 işlevler (pakete bağlı)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisiklet algılamalı)",
-            "Şerit takip/ort.",
-            "Kör nokta uyarısı",
-            "Arka çapraz trafik uyarı/fren (don.)",
-            "Trafik işareti algılama"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7–9.3",
-        "gosterge_paneli": "Dijital",
-        "multimedia": "CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 9.3,
+        "dijital_gosterge_inch": 7,
+        "gosterge_paneli": "Analog + 7\" TFT bilgi ekranı",
+        "multimedia": "Apple CarPlay & Android Auto – 9.3\" dikey dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -3251,27 +3375,34 @@
         "vites": "7 ileri PDK"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (opsiyon)",
-            "Adaptif hız sabitleyici (opsiyon)",
-            "Kör nokta uyarısı (opsiyon)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "-",
-        "gosterge_paneli": "Analog+TFT",
-        "multimedia": "PCM",
-        "ses_sistemi": "BOSE/Burmester (opsiyon)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 7,
+        "dijital_gosterge_inch": 4.6,
+        "gosterge_paneli": "Analog + TFT bilgi ekranı",
+        "multimedia": "Porsche Communication Management (PCM) – dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Sport/Comfort, ısıtma (opsiyon)",
@@ -3378,28 +3509,34 @@
         "vites": "8 ileri AT"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 işlevler",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB",
-            "Şerit yardım",
-            "Kör nokta uyarısı",
-            "Adaptif hız sabitleyici (donanıma bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "8.8",
-        "gosterge_paneli": "Analog + TFT",
-        "multimedia": "CarPlay/Android Auto",
-        "ses_sistemi": "Harman/Kardon (opsiyon)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 8.8,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 8.8\" dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Spor koltuklar, ısıtma (opsiyon)",
@@ -3506,28 +3643,34 @@
         "vites": "e-CVT"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2019 Corolla platformu)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Toyota Safety Sense 3 (Seviye 2 işlevler)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisiklet/motosiklet algılamalı)",
-            "Adaptif hız sabitleyici",
-            "Şerit takip/şerit ortalama",
-            "Kör nokta uyarısı (donanıma bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10.5 (donanıma bağlı)",
-        "gosterge_paneli": "7–12.3 dijital",
-        "multimedia": "CarPlay/Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 10.5,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 10.5\" dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -3635,27 +3778,34 @@
         "vites": "6 ileri DCT"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2016)",
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (yüksek hızda etkili)",
-            "Şerit uyarı/yardım",
-            "Akıllı hız sınırlayıcı/ACC (donanıma bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "8–10.25 (pazar donanımına göre)",
-        "gosterge_paneli": "Dijital/yarı dijital",
-        "multimedia": "CarPlay & Android Auto",
-        "ses_sistemi": "-",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu) – 8\" dokunmatik ekranlı bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -3761,15 +3911,16 @@
       "güvenlik": {
         "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Toyota Safety Sense (Seviye 2 işlevler)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif Hız Sabitleyici (full-range)",
-            "Şerit Takip/Şerit Ortalaması (LTA)",
-            "AEB (yaya/bisiklet + kavşak dönüş asistanı)",
-            "Kör Nokta Uyarısı + Arka Çapraz Trafik Freni (donanıma bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": 7,
+        "airbag_sayisi": "7",
         "isofix": true
       },
       "teknoloji": {
@@ -3872,23 +4023,34 @@
         "vites": "6 ileri DCT"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2022)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Honda Sensing (Seviye 2 işlevler)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif Hız Sabitleyici",
-            "Şerit Merkezi Takip (LKA/LFA)",
-            "AEB (yaya/bisiklet algılamalı)",
-            "Trafik İşareti Tanıma"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "10",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "9 + 10.2 (donanıma bağlı)",
+        "dijital_gosterge_inch": "7",
+        "gosterge_paneli": "Dijital gösterge",
         "multimedia": "CarPlay/Android Auto",
-        "ses_sistemi": "Bose (ops.)"
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -3986,25 +4148,34 @@
         "vites": "6 ileri DCT"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2018)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 işlevler",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "Adaptif Hız Sabitleyici (ACC Stop)",
-            "Şerit Konumlandırma/LKA",
-            "AEB (AEBS3; yaya/bisiklet algılamalı)",
-            "Kör Nokta Uyarısı",
-            "Trafik İşareti Tanıma"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10\"",
+        "ekran_inch": "10",
+        "dijital_gosterge_inch": "12.3",
         "gosterge_paneli": "12.3\" dijital i-Cockpit",
         "multimedia": "CarPlay/Android Auto",
-        "ses_sistemi": "Focal (ops.)"
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "AGR onaylı spor koltuklar (ısıtma/masaj ops.)",
@@ -4102,24 +4273,34 @@
         "vites": "6 ileri DCT"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 işlevler",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "Pre-Collision Assist (AEB, yaya/bisiklet)",
-            "Adaptif Hız Sabitleyici",
-            "Şerit Takip/Şerit Hizalama (LKA)",
-            "Trafik İşareti Tanıma"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "8–10 (pakete göre)",
+        "dijital_gosterge_inch": "10",
         "gosterge_paneli": "10\" TFT (Vignale)",
         "multimedia": "SYNC + CarPlay/Android Auto (pakete bağlı)",
-        "ses_sistemi": "Sony/B&O (pakete bağlı)"
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtmalı, bel destekli (hafıza ops.)",
@@ -4209,25 +4390,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 1",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "Ön çarpışma uyarı/fren (pakete bağlı)",
-            "Şerit takip/yardım",
-            "Hız sınırlayıcı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "6 (pakete göre)",
-        "ncap_yildiz": "-",
+        "airbag_sayisi": "8",
         "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "8–10.25",
+        "dijital_gosterge_inch": "4.2",
+        "gosterge_paneli": "Analog + TFT",
         "multimedia": "Apple CarPlay & Android Auto",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Otomatik klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -4311,25 +4501,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "3★",
         "adas": {
-          "seviye": "Seviye 1",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (pakete bağlı)",
-            "Şerit takip uyarı",
-            "Hız sınırlayıcı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-",
-        "ncap_yildiz": "-",
+        "airbag_sayisi": "8",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7–10\"",
+        "ekran_inch": "7–10",
+        "dijital_gosterge_inch": "3.5",
+        "gosterge_paneli": "Analog",
         "multimedia": "CarPlay & Android Auto (kablosuz donanıma bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Manuel klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -4419,17 +4618,34 @@
         "vites": "6 ileri DCT"
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 işlevler (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (pakete bağlı)",
-            "Adaptif hız sabitleyici (ACC)",
-            "Şerit uyarı/yardım"
+            "Kör Nokta Uyarısı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "6.5",
+        "dijital_gosterge_inch": "5.7",
+        "gosterge_paneli": "5.7\" TFT",
+        "multimedia": "iDrive + CarPlay/Android Auto",
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "kış_konfor": {
         "koltuk_isitma_on": true,
@@ -4504,17 +4720,34 @@
         "vites": "6 ileri DCT"
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 işlevler (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Audi pre sense)",
-            "ACC",
-            "Şerit takip/yardım"
+            "Kör Nokta Uyarısı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "8.3",
+        "dijital_gosterge_inch": "7",
+        "gosterge_paneli": "7\" Virtual Cockpit",
+        "multimedia": "MMI + CarPlay/Android Auto",
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "kış_konfor": {
         "koltuk_isitma_on": true,
@@ -4586,18 +4819,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2015; 2024 nesli de 5★)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 işlevler (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Front Assist)",
-            "Adaptif hız sabitleyici",
-            "Şerit destek",
-            "Kör nokta uyarısı (ops.)"
+            "Otonom Acil Frenleme (AEB)",
+            "Kör Nokta Uyarısı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Şerit Takip/Uyarı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "6",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "8",
+        "dijital_gosterge_inch": "10.25",
+        "gosterge_paneli": "10.25\" Virtual Cockpit",
+        "multimedia": "Bolero + CarPlay/Android Auto",
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Otomatik klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "guc_aktarma": {
         "cekis": "Önden çekiş (FWD)",
@@ -4682,18 +4931,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2014; 2024 yeni nesil de 5★)",
+        "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 1–2 işlevler (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB",
-            "Adaptif hız sabitleyici",
-            "Şerit takip/konumlandırma",
-            "Kör nokta uyarısı (ops.)"
+            "Otonom Acil Frenleme (AEB)",
+            "Kör Nokta Uyarısı",
+            "Ön Çarpışma Uyarısı",
+            "Şerit Takip/Uyarı",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "6",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": "8",
+        "dijital_gosterge_inch": "12.3",
+        "gosterge_paneli": "12.3\" Active Info Display",
+        "multimedia": "Composition Media + CarPlay/Android Auto",
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Otomatik klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "guc_aktarma": {
         "cekis": "Önden çekişli (FWD)",
@@ -4775,28 +5040,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "Euro NCAP 5★ (2025 değerlendirmesi: AO 90%, CA 93%, SA 87%)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (Autopilot)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Traffic-Aware Cruise Control",
-            "Autosteer (şerit orta)",
-            "AEB",
-            "Şerit değiştirme yardımı (EAP/FSD paketine bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "8",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": 15,
-        "ota": true,
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "Wi-Fi/LTE"
-        ],
-        "ses_sistemi": "Premium (donanıma bağlı)"
+        "dijital_gosterge_inch": "-",
+        "gosterge_paneli": "15\" Touchscreen",
+        "multimedia": "Tesla OS + OTA",
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Isı pompası, çift bölgeli",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön/arka ısıtma (donanıma bağlı), havalandırma yeni kasada ops.",
@@ -4889,27 +5160,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "Euro NCAP 5★ (2022) – 'Best in Class' (Large Family Car)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (Hyundai SmartSense / HDA2)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "HDA2 (şerit orta + şerit değiştirme yardım)",
-            "NSCC (navigasyon uyumlu ACC)",
-            "FCA (yaya/bisiklet/kavşak)",
-            "BCA (kör nokta çarpışma önleme) + RCCA"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "12.3 + 12.3",
-        "ota": "Seçili modüller",
-        "ses_sistemi": "BOSE (pakete bağlı)",
-        "baglanti": [
-          "Bluelink",
-          "CarPlay/AA"
-        ]
+        "dijital_gosterge_inch": "12.3",
+        "gosterge_paneli": "12.3\" Digital Cluster",
+        "multimedia": "Bluelink + CarPlay/Android Auto",
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Isı pompası (pakete bağlı)",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Relaxation (ön) + ısıtma/soğutma (donanıma bağlı)",
@@ -5002,27 +5280,34 @@
         "vites": "Tek kademeli sabit oranlı şanzıman (1-speed direct drive)"
       },
       "güvenlik": {
-        "ncap_yildiz": 5,
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif Hız Sabitleyici",
-            "Şerit Orta. + Şerit Değiştirme Uyarı",
-            "Ön Çarpışma Uyarısı + Otonom Fren"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": 8,
+        "airbag_sayisi": "8",
         "isofix": true
       },
       "teknoloji": {
         "ekran_inch": 15.4,
-        "arka_ekran_inch": 8,
+        "dijital_gosterge_inch": "-",
+        "gosterge_paneli": "15.4\" Touchscreen",
         "multimedia": "CarPlay (uyumlu çözümler) & OTA",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C x2",
-          "OTA güncelleme"
-        ]
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Spor koltuklar, ısıtmalı",
@@ -5120,27 +5405,34 @@
         "lastik": "20\" forged + yüksek tutuş lastik"
       },
       "güvenlik": {
-        "ncap_yildiz": 5,
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif Hız Sabitleyici",
-            "Şerit Orta./Şerit Değiştirme Uyarı",
-            "AEB (yayacı & bisikletli)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": 8,
+        "airbag_sayisi": "7",
         "isofix": true
       },
       "teknoloji": {
         "ekran_inch": 11.2,
+        "dijital_gosterge_inch": "12.3",
         "gosterge_paneli": "12.3\" dijital",
         "multimedia": "Android Automotive OS, OTA",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "OTA"
-        ]
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli; ısı pompası ops.",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Isıtmalı, elektrikli",
@@ -5243,25 +5535,34 @@
         "vites": "e-CVT"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2020)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Toyota Safety Sense (Seviye 2 işlevler)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (yaya/bisiklet)",
-            "Adaptif hız sabitleyici",
-            "Şerit takip/ortalama"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
         "ekran_inch": "8–10.5 (donanıma bağlı)",
+        "dijital_gosterge_inch": "4.2",
+        "gosterge_paneli": "Analog + TFT",
         "multimedia": "CarPlay/Android Auto",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "kamera_sistemi": "Arka kamera",
+        "park_asistani": "Ön/Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Otomatik klima",
+          "koltuk_isitma_on": false,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -5346,25 +5647,34 @@
         "vites": "e-CVT"
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Toyota Safety Sense (donanıma bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Pre-Collision)",
-            "Şerit takip uyarı",
-            "Uzun far asistanı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "6",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7\" civarı",
-        "multimedia": "CarPlay/Android Auto (sonraki ünitelerde/aftermarket)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Bluetooth & USB multimedya sistemi (Apple CarPlay & Android Auto opsiyonel olabilir)",
+        "kamera_sistemi": "Geri görüş kamerası (opsiyonel olabilir)",
+        "park_asistani": "Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Manuel veya tek bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -5452,28 +5762,36 @@
         "vites": "multimode automatic"
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (şehir içi/dışı)",
-            "Şerit takip/LDW+LKA",
-            "Trafik işaretleri tanıma",
-            "Akıllı hız asistanı",
-            "ACC (E-Tech'te opsiyon)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı",
+            "Adaptif Hız Sabitleyici (Stop&Go)",
+            "Arka Çapraz Trafik Uyarısı"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "8",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "7–9.3",
-        "multimedia": "Easy Link, CarPlay/Android Auto",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "OTA (seçili)"
-        ]
+        "ekran_inch": 9.3,
+        "dijital_gosterge_inch": 10,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destekli) – 9.3\" dokunmatik multimedya ekranı",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -5560,27 +5878,34 @@
         "vites": "e-CVT"
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Honda Sensing (Seviye 2 işlevler)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (yaya/bisiklet)",
-            "Adaptif hız sabitleyici",
-            "Şerit ortalama (LFA/LKAS)",
-            "Trafik işareti tanıma"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "10",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "9 + 7",
-        "multimedia": "Kablosuz Apple CarPlay / Android Auto",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "OTA (seçili)"
-        ]
+        "ekran_inch": 9,
+        "dijital_gosterge_inch": 7,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu destekli)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -5663,23 +5988,34 @@
         "vites": "6 ileri manuel"
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (pakete bağlı)",
-            "Şerit uyarı/yardım"
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Şerit Takip/Uyarı",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı",
+            "Trafik İşareti Tanıma"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
-        "multimedia": "CarPlay/Android Auto (pakete bağlı)",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ]
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto destekli 8\" dokunmatik sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Elektronik iklim kontrollü klima (EATC)",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       }
     },
     "why": "Sınıfının en çeviklerinden: 0–100 ~8.6–9.0 sn ve ~10.05 m dönüş çapı ile dar sokak/parkta rahat; ST-Line şasi ve direksiyon ayarı şehir içi 'dinamik' kullanımda canlı his verir.",
@@ -5758,25 +6094,34 @@
         "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Front Assist)",
-            "Şerit takip uyarı/yardım",
-            "Hız sınırlayıcı"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı",
+            "Adaptif Hız Sabitleyici"
           ]
         },
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "8",
         "isofix": true
       },
       "teknoloji": {
-        "multimedia": "CarPlay/Android Auto",
-        "baglanti": [
-          "Bluetooth",
-          "USB"
-        ],
-        "ekran_inch": "8–9.2 (donanıma göre)"
+        "ekran_inch": 9.3,
+        "dijital_gosterge_inch": 8,
+        "gosterge_paneli": "Analog + TFT renkli ekran",
+        "multimedia": "Apple CarPlay & Android Auto – kablosuz destekli 9.3\" dokunmatik multimedya sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       }
     },
     "why": "7-ileri DSG + 115 bg/200 Nm yapı şehir içi ara hızlanmaları diri tutar; FR şasiyle yol tutuşu sıkı ve yönlendirmesi net. 10.4 m dönüş çapı park/mani̇vrada avantaj, kabin yalıtımı sınıf ortalamasının iyi tarafında.",
@@ -5856,29 +6201,34 @@
         "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (Golf 8)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 işlevler",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "Travel Assist (yarı otonom sürüş)",
-            "ACC (Adaptif Hız Sabitleyici)",
-            "Front Assist (AEB)",
-            "Lane Assist",
-            "Side Assist (ops.)",
-            "Area View (ops.)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10\" sınıfı",
-        "multimedia": "CarPlay/Android Auto",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ],
-        "ses_sistemi": "Harman Kardon (ops.)"
+        "ekran_inch": 10.25,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 10.25\" dokunmatik ekranlı sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (pakete bağlı)",
@@ -5957,27 +6307,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (Scala)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Front Assist)",
-            "Adaptive Cruise Control (paket)",
-            "Lane Assist/Adaptive Lane Assist",
-            "Driver Alert",
-            "Emergency Assist (paket)"
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (Front Assist + Yaya Algılama)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı (Blind Spot Monitor) + Arka Çapraz Trafik Uyarısı",
+            "Arka kamera + Ön/Arka Park Sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "9",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "8–10.25",
-        "multimedia": "CarPlay/Android Auto",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 9.2,
+        "dijital_gosterge_inch": 8,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – kablosuz destekli 9.2\" dokunmatik multimedya sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park yardımı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -6069,18 +6426,34 @@
         "vites": "6 ileri manuel şanzıman"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2019; not: yarı iletken kıtlığı döneminde bazı alt donanımlarda radar/AEB eksik olabilir)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1–2 (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Pre-Collision)",
-            "Şerit takip/yardım",
-            "Hız sınırı/işaret tanıma",
-            "ACC (pakete bağlı)"
+            "Otonom Acil Frenleme",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "8",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 9.3,
+        "dijital_gosterge_inch": 7,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto – 9.3\" dokunmatik multimedya sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "kış_konfor": {
         "koltuk_isitma_on": "donanıma bağlı",
@@ -6165,17 +6538,34 @@
         "vites": "5 ileri manuel"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2017)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "Front Assist (AEB)",
-            "Şerit uyarı/yardım (pakete bağlı)",
-            "Yorgunluk tespiti"
+            "Ön Çarpışma Uyarısı + Otonom Fren (Front Assist)",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "6",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto – kablolu destekli",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Manuel klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "kış_konfor": {
         "koltuk_isitma_on": "donanıma bağlı",
@@ -6262,18 +6652,34 @@
         "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (Octavia serisi)",
-        "isofix": true,
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 1+",
           "ozellikler": [
-            "Serit Takip/Uyari",
-            "On Carpisma Uyarisi + Otonom Fren",
-            "Trafik Isareti Tanima",
-            "Arka kamera + On/Arka park sensorleri"
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (AEB)",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto – kablolu destekli dokunmatik multimedya sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -6361,18 +6767,34 @@
         "vites": "8 ileri otomatik (EAT8)"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (308 jenerasyonuna göre değişir)",
-        "isofix": true,
+        "ncap_yildiz": "-",
         "adas": {
           "seviye": "Seviye 1+",
           "ozellikler": [
-            "Serit Takip/Uyari",
-            "On Carpisma Uyarisi + Otonom Fren",
-            "Trafik Isareti Tanima",
-            "Arka kamera + On/Arka park sensorleri"
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 10,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 10\" dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "bakim": {
         "servis_araligi_km": 15000,
@@ -6450,23 +6872,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "4★",
         "adas": {
-          "seviye": "Seviye 2 (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Front Assist)",
-            "Şerit takip/şerit ortalama",
-            "Trafik işareti tanıma",
-            "ACC (pakete bağlı)"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "ncap_yildiz": "—",
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10\"",
-        "multimedia": "CarPlay/Android Auto",
-        "ota": "seçili modüller"
+        "ekran_inch": 10,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destekli)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -6557,23 +6990,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 2",
           "ozellikler": [
-            "Adaptif hız sabitleyici (ICC)",
-            "AEB",
-            "Şerit takip/şerit ortalama",
-            "Akıllı uzun far"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "ncap_yildiz": "—",
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "6",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "12.8 dönebilen",
-        "multimedia": "CarPlay/Android Auto (pazarına göre)",
-        "ota": "var"
+        "ekran_inch": 10.1,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 10.1\" dönebilen dokunmatik ekran",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + akıllı park yardımı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Ön ısıtma (donanıma bağlı)",
@@ -6663,27 +7107,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 2 (IQ.DRIVE)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Travel Assist (yarı otonom şerit/ACC)",
-            "ACC (Adaptif hız sabitleyici)",
-            "Front Assist (AEB)",
-            "Lane Assist"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "7",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10–12",
-        "ota": true,
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "App-Connect"
-        ]
+        "ekran_inch": 10.25,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 10.25\" dokunmatik ekranlı bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtma (donanıma bağlı)",
@@ -6773,27 +7224,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
           "seviye": "Seviye 2",
-          "ozellikler": [
-            "Travel Assist (şerit orta+ACC)",
-            "Front Assist (AEB)",
-            "Lane Assist",
-            "Blind Spot (ops.)"
+          "özellikler": [
+            "Ön Çarpışma Uyarısı + Otonom Frenleme",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Adaptif Hız Sabitleyici",
+            "Kör Nokta Uyarısı",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "12",
-        "ota": true,
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "Wireless CarPlay/AA"
-        ]
+        "ekran_inch": 12,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – kablosuz destekli bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtma (donanıma bağlı)",
@@ -6886,17 +7344,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2019)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Toyota Safety Sense",
-          "ozellikler": [
-            "AEB (yaya/bisiklet)",
-            "Adaptif hız sabitleyici",
-            "Şerit takip/orta"
+          "seviye": "Seviye 1+",
+          "özellikler": [
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto (kablolu destekli)",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "guc_aktarma": {
         "cekis": "Önden çekişli (FWD)",
@@ -6980,17 +7455,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (Auris 2013; TS için aynı seviye beklentisi)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Toyota Safety Sense (pakete bağlı)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (PCS)",
-            "Şerit uyarı",
-            "Uzun far asistanı"
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (Toyota Safety Sense)",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 8,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Bluetooth & USB multimedya sistemi (Apple CarPlay & Android Auto opsiyonel olabilir)",
+        "kamera_sistemi": "Geri görüş kamerası (opsiyonel olabilir)",
+        "park_asistani": "Arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Tek veya çift bölgeli otomatik klima (seviye-pakete bağlı)",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "guc_aktarma": {
         "cekis": "Önden çekişli (FWD)",
@@ -7071,28 +7563,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 2",
-          "ozellikler": [
-            "ACC (Adaptif hız sabitleyici)",
-            "Şerit konumlandırma/koruma",
-            "AEB (yaya/bisiklet)",
-            "Kör nokta uyarısı",
-            "Trafik işaretleri tanıma"
+          "seviye": "Seviye 1+",
+          "özellikler": [
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "7",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10 + 10 i-Toggles",
-        "ota": "seçili modüller",
-        "baglanti": [
-          "CarPlay/AA",
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 10,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destekli) – 10\" dokunmatik ekranlı bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park yardımı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "AGR destekli/ısıtma (donanıma bağlı)",
@@ -7172,28 +7670,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "4★",
         "adas": {
-          "seviye": "Seviye 2 (Opel Intelli-Drive)",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "ACC (dur-kalk)",
-            "Şerit takip/orta",
-            "AEB",
-            "Kör nokta izleme",
-            "Matrix LED (Intelli-Lux) farlar"
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "6",
         "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10 + 10 Pure Panel",
-        "ota": "seçili modüller",
-        "baglanti": [
-          "CarPlay/AA",
-          "Bluetooth",
-          "USB-C"
-        ]
+        "ekran_inch": 10,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + akıllı park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "AGR ergonomik koltuklar (donanıma bağlı)",
@@ -7275,18 +7779,34 @@
         "donus_capi_m": 10.7
       },
       "güvenlik": {
+        "ncap_yildiz": "4★",
         "adas": {
-          "seviye": "Seviye 2 (pakete bağlı)",
-          "ozellikler": [
-            "ACC (Adaptif hız sabitleyici)",
-            "Şerit konumlandırma/koruma",
-            "AEB (yaya/bisiklet)",
-            "Kör nokta uyarısı"
+          "seviye": "Seviye 1+",
+          "özellikler": [
+            "Otonom Acil Frenleme (AEB)",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "ISOFIX"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "8",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 10.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – dokunmatik 10\" multimedya sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "guc_aktarma": {
         "cekis": "Önden çekişli (FWD)",
@@ -7369,18 +7889,34 @@
         "donus_capi_m": 11.1
       },
       "güvenlik": {
+        "ncap_yildiz": "4★",
         "adas": {
-          "seviye": "Seviye 1–2 (pakete bağlı)",
-          "ozellikler": [
-            "AEB (Front Assist)",
-            "Şerit takip/orta",
-            "Kör nokta uyarı",
-            "ACC (pakete bağlı)"
+          "seviye": "Seviye 1+",
+          "özellikler": [
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
           ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 8.0,
+        "dijital_gosterge_inch": 4.2,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "Apple CarPlay & Android Auto destekli dokunmatik sistem",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "guc_aktarma": {
         "cekis": "Önden çekişli (FWD)",
@@ -7471,18 +8007,34 @@
         "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1+",
-          "ozellikler": [
-            "Serit Takip/Uyari",
-            "On Carpisma Uyarisi + Otonom Fren",
-            "Trafik Isareti Tanima",
-            "Arka kamera + On/Arka park sensorleri"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Ön Çarpışma Uyarısı + Otonom Fren (AEB)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "9",
         "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 10.25,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto destekli dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       }
     },
     "güvenlik_teknoloji": {
@@ -7576,18 +8128,34 @@
         "vites": "7 ileri DSG otomatik"
       },
       "güvenlik": {
-        "ncap_yildiz": "-",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Seviye 1+",
-          "ozellikler": [
-            "Serit Takip/Uyari",
-            "On Carpisma Uyarisi + Otonom Fren",
-            "Trafik Isareti Tanima",
-            "Arka kamera + On/Arka park sensorleri"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Adaptive Cruise Control Predictive",
+            "Lane Assist Plus (Şerit Takip/Uyarı)",
+            "Front Assist + Otonom Frenleme",
+            "Traffic Sign Recognition (Trafik İşareti Tanıma)",
+            "Side Assist + Exit Assist (Kör Nokta Uyarısı + Çıkış Uyarısı)"
           ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "8",
         "isofix": true
+      },
+      "teknoloji": {
+        "ekran_inch": 10.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – kablosuz destekli 10\" dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       }
     },
     "güvenlik_teknoloji": {
@@ -7666,16 +8234,18 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (Golf, 2019/2022 güncel protokollerle teyit)",
+        "ncap_yildiz": "5★",
         "adas": {
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Front Assist)",
-            "Şerit yardım",
-            "ACC (pakete bağlı)"
-          ],
-          "seviye": "Seviye 1+"
+            "Ön Çarpışma Uyarısı + Otonom Fren (AEB)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı",
+            "Arka kamera + Ön/Arka park sensörleri"
+          ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "8",
         "isofix": true
       },
       "kış_artıları": {
@@ -7688,6 +8258,21 @@
         "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
         "frenler": "Ön disk – Arka disk",
         "vites": "7 ileri DSG otomatik"
+      },
+      "teknoloji": {
+        "ekran_inch": 8.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       }
     },
     "why": "605 L bagaj ve ~4.1–4.2 L/100 km tüketim uzun yolda çok ekonomik. Golf'ün 2019'da 5★ Euro NCAP alıp 2022'de güncel protokollerle tekrar 5★'ı koruması güvenlikte güçlü. Nadir de olsa 4Motion bulunabiliyor; kış şartlarında çekiş avantajı.",
@@ -7762,17 +8347,18 @@
         "yukseklik_mm": 1442
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (308, 2022)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "ozellikler": [
-            "AEB (yaya/bisiklet)",
-            "Şerit konumlandırma/yardım",
-            "ACC (pakete bağlı)",
-            "Kör nokta uyarısı"
-          ],
-          "seviye": "Seviye 1+"
+          "seviye": "Seviye 1+",
+          "özellikler": [
+            "Otonom Acil Frenleme (AEB)",
+            "Şerit Takip/Uyarı (Lane Keep Assist)",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)"
+          ]
         },
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "7",
         "isofix": true
       },
       "kış_artıları": {
@@ -7785,6 +8371,21 @@
         "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
         "frenler": "Ön disk – Arka disk",
         "vites": "8 ileri otomatik (EAT8)"
+      },
+      "teknoloji": {
+        "ekran_inch": 10.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto (kablosuz destekli) – 10\" dokunmatik ekranlı bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park yardımı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       }
     },
     "why": "EAT8 ile düşük devir, **WLTP ~4.9 L/100 km**; **608–1634 L** bagajla aile/uzun yol için çok pratik. **Euro NCAP 5★ (2022)** ve kapsamlı ADAS. Kışta kaliteli kış lastiği + ESP modlarıyla çekiş güvenli.",
@@ -7857,17 +8458,19 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2022 Octavia)",
+        "ncap_yildiz": "5★",
         "adas": {
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "AEB (Front Assist)",
-            "Şerit takip/orta",
-            "ACC (pakete bağlı)"
-          ],
-          "seviye": "Seviye 1+"
+            "Ön Çarpışma Uyarısı + Otonom Frenleme",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri",
+            "Kör Nokta Uyarısı"
+          ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "guc_aktarma": {
         "cekis": "Önden çekişli (FWD)",
@@ -7875,6 +8478,21 @@
         "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
         "frenler": "Ön disk – Arka disk",
         "vites": "7 ileri DSG otomatik"
+      },
+      "teknoloji": {
+        "ekran_inch": 8.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       }
     },
     "why": "Sınıfının zirvesi **640 L** bagaj ve **~4.4–4.9 L/100 km WLTP** ile büyük aile/uzun yol senaryolarında hem pratik hem ekonomik. Yumuşak süspansiyon/izolasyon ve TDI + DSG kombinasyonu uzun menzilde çok rahat.",
@@ -7949,18 +8567,19 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "5★",
         "adas": {
-          "ozellikler": [
-            "ACC (Travel Assist ile)",
-            "AEB (Front Assist)",
-            "Şerit takip/orta",
-            "Kör nokta uyarısı (pakete bağlı)"
-          ],
-          "seviye": "Seviye 1+"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Ön Çarpışma Uyarısı + Otonom Fren (Front Assist) – yaya ve bisiklet algılama ile",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Adaptif Hız Sabitleyici (ACC) Stop&Go",
+            "Kör Nokta Uyarısı (Side Assist) + Çapraz Trafik Uyarısı",
+            "Arka kamera + Ön/Arka park sensörleri"
+          ]
         },
-        "isofix": true,
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "10",
+        "isofix": true
       },
       "guc_aktarma": {
         "cekis": "Önden çekişli (FWD)",
@@ -7968,6 +8587,21 @@
         "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
         "frenler": "Ön–Arka disk frenler",
         "vites": "7 ileri DSG otomatik"
+      },
+      "teknoloji": {
+        "ekran_inch": 8.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       }
     },
     "why": "Uzun yol konforu ve sessizliği ile ünlü Passat'ta **650 L** bagaj (koltuklar yatınca ~1780 L) ve **~4.8–4.9 L/100 km WLTP**. Geniş iç mekân + koltuk/izolasyon kalitesiyle ailece uzun rota için çok rahat.",
@@ -8044,17 +8678,18 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "4★",
         "adas": {
-          "seviye": "Seviye 2",
+          "seviye": "Seviye 1+",
           "ozellikler": [
-            "ACC (Stop&Go)",
-            "Şerit konumlandırma/yardım",
-            "AEB (yaya/bisiklet)",
-            "Kör nokta uyarısı"
+            "Otonom Acil Frenleme (AEB)",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı",
+            "Adaptif Hız Sabitleyici (Stop&Go)"
           ]
         },
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "8",
         "isofix": true
       },
       "konfor": {
@@ -8073,6 +8708,21 @@
         "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
         "frenler": "Ön ve arka disk frenler",
         "vites": "Tek kademeli sabit oranlı redüksiyon şanzıman (1-speed)"
+      },
+      "teknoloji": {
+        "ekran_inch": 10.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – kablosuz destekli",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       }
     },
     "why": "Station gövdede **≈415 km WLTP** menzil, kapsamlı ADAS ve iyi NVH ile uzun yolda sakin/sessiz sürüş. 548–1574 L bagaj aile için çok pratik.",
@@ -8136,18 +8786,18 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
+        "ncap_yildiz": "-",
         "adas": {
-          "seviye": "Seviye 2 (Intelli-Drive)",
-          "ozellikler": [
-            "ACC (dur-kalk)",
-            "Şerit takip/orta",
-            "AEB",
-            "Kör nokta izleme",
-            "Matrix LED (Intelli-Lux, donanıma bağlı)"
+          "seviye": "Seviye 1+",
+          "özellikler": [
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "ncap_yildiz": "-",
-        "airbag_sayisi": "-",
+        "airbag_sayisi": "7",
         "isofix": true
       },
       "konfor": {
@@ -8166,6 +8816,21 @@
         "suspansiyon_arka": "Çok kollu süspansiyon (multi-link)",
         "frenler": "Ön–Arka disk frenler",
         "vites": "Tek kademeli sabit oranlı şanzıman (1-speed reduction gear)"
+      },
+      "teknoloji": {
+        "ekran_inch": 10.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – kablosuz destekli bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + akıllı park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       }
     },
     "why": "**≈413 km WLTP** menzil, **Intelli-Drive** ADAS ve **Matrix LED** farlarla uzun yolda güvenli/rahat. 516–1553 L bagajla aile yüklerini kolay taşır.",
@@ -8230,28 +8895,35 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (ID.7, 2023)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "IQ.DRIVE (Seviye 2)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Travel Assist (şerit orta+ACC)",
-            "AEB (Front Assist)",
-            "Şerit takip",
-            "Kör nokta uyarısı (ops.)"
+            "Adaptif Hız Sabitleyici (Predictive ACC)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (AEB) Yaya ve Bisiklet Algılamalı",
+            "Kör Nokta Uyarısı (Side Assist) + Çapraz Trafik Uyarısı",
+            "Trafik İşareti Tanıma",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "8",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "15\"",
-        "ota": true,
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "App-Connect"
-        ],
-        "cam_tavan": "SmartGlass (ops.)"
+        "ekran_inch": 15.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto + 15\" dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift veya üç bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "ErgoActive masajlı (ops.)",
@@ -8346,23 +9018,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (ET5, 2023; Touring ile paylaşılan yapı)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "NIO AD (Seviye 2+)",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "ACC/ICA",
-            "AEB",
-            "Şerit takip/orta",
-            "Otoyol pilot işlevleri"
+            "Adaptif Hız Sabitleyici (ACC)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (AEB)",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)",
+            "Trafik İşareti Tanıma"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "8",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "12.8 merkez + dijital sürücü",
-        "ota": true,
-        "ses": "Dolby Atmos 7.1.4"
+        "ekran_inch": 12.8,
+        "dijital_gosterge_inch": 10.2,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Kablosuz Apple CarPlay & Android Auto + yatay 12.8\" dokunmatik ekranlı bilgi-eğlence sistemi (2024 güncellemesi)",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtma/soğutma (donanıma bağlı)",
@@ -8458,25 +9141,34 @@
         "bagaj_l": 480
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (G20, 2019)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Driving Assistant Professional",
-          "ozellikler": [
-            "ACC (Stop&Go)",
-            "Steering & Lane Control",
-            "Side Collision Avoidance"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (AEB)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "8",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10.25\" veya 12.3\" (iDrive 7)",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "Wireless CarPlay"
-        ]
+        "ekran_inch": 10.25,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto destekli bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Sport koltuklar (M paket)",
@@ -8569,26 +9261,34 @@
         "bagaj_l": 455
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (W206, değerlendirme devam ediyor)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Mercedes-Benz Driving Assistance Package",
-          "ozellikler": [
-            "Distronic ACC (Stop&Go)",
-            "Şerit takip/orta",
-            "AEB (Active Brake Assist)"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Aktif Fren Destek Sistemi (Active Brake Assist) – yaya algılamalı",
+            "Şerit Takip/Uyarı (Lane Keeping Assist)",
+            "Kör Nokta Uyarısı (Blind Spot Assist) + Çıkış Uyarısı",
+            "Adaptif Hız Sabitleyici (Distronic / Active Distance Assist)",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "10",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "11.9\" merkez + 12.3\" dijital gösterge",
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "Wireless CarPlay/Android Auto"
-        ],
-        "ses": "Burmester (ops.)"
+        "ekran_inch": 12.3,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital 'MbUX'",
+        "multimedia": "Apple CarPlay & Android Auto – kablosuz destekli bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "AMG Performance koltuklar",
@@ -8682,25 +9382,34 @@
         "arka": "Disk"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (Polo VI, 2017)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Front Assist + City Emergency Braking",
-          "ozellikler": [
-            "AEB",
-            "Adaptive Cruise Control (ops.)",
-            "Şerit takip uyarısı (ops.)"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Ön Çarpışma Uyarısı + Otonom Fren (Front Assist)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "8\" veya 9.2\" (donanıma göre)",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "App-Connect"
-        ]
+        "ekran_inch": 8.0,
+        "dijital_gosterge_inch": 10.3,
+        "gosterge_paneli": "Tam dijital 'Active Info Display'",
+        "multimedia": "Apple CarPlay & Android Auto – dokunmatik ekranlı bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Sport koltuklar (GTI)",
@@ -8793,25 +9502,34 @@
         "arka": "Disk"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (F56, 2014)",
+        "ncap_yildiz": "4★",
         "adas": {
-          "seviye": "Front Collision Warning + City Braking",
-          "ozellikler": [
-            "AEB",
-            "Parking sensors (ops.)",
-            "Rear camera (ops.)"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (AEB)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "6.5\" veya 8.8\" (donanıma göre)",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "MINI Connected"
-        ]
+        "ekran_inch": 8.8,
+        "dijital_gosterge_inch": 5.0,
+        "gosterge_paneli": "Analog + TFT bilgilendirme ekranı",
+        "multimedia": "MINI Connected 8,8\" dokunmatik ekranlı sistem – Apple CarPlay (opsiyonel)",
+        "kamera_sistemi": "Geri görüş kamerası (opsiyonel)",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": false,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": false
+        }
       },
       "konfor": {
         "koltuklar": "Sport koltuklar",
@@ -8899,27 +9617,34 @@
         "fren": "Büyük diskler (Performance)"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (2022)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Autopilot (Temel)",
-          "ozellikler": [
-            "ACC + Şerit Takip (Autosteer)",
-            "Otomatik acil fren",
-            "Kör nokta uyarısı"
+          "seviye": "Seviye 2",
+          "özellikler": [
+            "Şerit Takip/Uyarı",
+            "Ön Çarpışma Uyarısı + Otonom Fren",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "6",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "15.4\" merkez",
-        "ota": true,
-        "baglanti": [
-          "Bluetooth",
-          "USB-C",
-          "Wi-Fi"
-        ],
-        "ses": "Premium audio (14 hoparlör)"
+        "ekran_inch": 15.4,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – 15.4\" dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtmalı ön/arka koltuklar",
@@ -9011,28 +9736,34 @@
         "oturma_kapasitesi": 5
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (EC40/C40 Recharge, 2022)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Pilot Assist",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "Pilot Assist (ACC + şerit orta)",
-            "AEB (yaya/bisiklet)",
-            "Kör nokta uyarısı",
-            "BLIS"
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (AEB)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "7",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "9\" merkez + 12.3\" dijital gösterge",
-        "ota": true,
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "Apple CarPlay/Android Auto"
-        ],
-        "ses": "Harman Kardon (ops.)"
+        "ekran_inch": 12.3,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto + 12.3\" dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Isıtmalı ön koltuklar",
@@ -9128,27 +9859,34 @@
         "direksiyon": "Sport oran"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (C-HR, değerlendirme yenileniyor)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Toyota Safety Sense 3",
+          "seviye": "Seviye 2",
           "ozellikler": [
-            "AEB (yaya/bisiklet)",
-            "ACC (Stop&Go)",
-            "Şerit orta/şerit takip",
-            "Kör nokta"
+            "Ön Çarpışma Uyarısı + Otonom Frenleme",
+            "Şerit Takip/Uyarı",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "10",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "12.3\" merkez",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "Apple CarPlay/Android Auto"
-        ],
-        "ses": "JBL (GR Sport pakette)"
+        "ekran_inch": 12.3,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Kablosuz Apple CarPlay & Android Auto – 12.3\" dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "360° çevre görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri + otomatik park asistanı",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": true,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Sport/ısıtmalı",
@@ -9238,26 +9976,34 @@
         "lastik_oneri": "225/45 R18 UHP"
       },
       "güvenlik": {
-        "ncap_yildiz": "5★ (Octavia, 2020)",
+        "ncap_yildiz": "5★",
         "adas": {
-          "seviye": "Front Assist + Travel Assist (pakete bağlı)",
-          "ozellikler": [
-            "AEB (Front Assist)",
-            "ACC (pakete bağlı)",
-            "Şerit takip/orta",
-            "Kör nokta"
+          "seviye": "Seviye 1+",
+          "özellikler": [
+            "Ön Çarpışma Uyarısı + Otonom Frenleme (AEB)",
+            "Şerit Takip/Uyarı (Lane Assist)",
+            "Trafik İşareti Tanıma",
+            "Kör Nokta Uyarısı (Blind Spot Monitor)",
+            "Arka kamera + Ön/Arka park sensörleri"
           ]
         },
-        "isofix": true,
-        "airbag_sayisi": "-"
+        "airbag_sayisi": "10",
+        "isofix": true
       },
       "teknoloji": {
-        "ekran_inch": "10\" (Style/Sportline)",
-        "baglanti": [
-          "Bluetooth",
-          "USB",
-          "SmartLink (CarPlay/Android Auto)"
-        ]
+        "ekran_inch": 8.0,
+        "dijital_gosterge_inch": 12.3,
+        "gosterge_paneli": "Tam dijital",
+        "multimedia": "Apple CarPlay & Android Auto – dokunmatik bilgi-eğlence sistemi",
+        "kamera_sistemi": "Geri görüş kamerası",
+        "park_asistani": "Ön ve arka park sensörleri",
+        "kablosuz_sarj": true,
+        "isitma": {
+          "klima": "Çift bölgeli otomatik klima",
+          "koltuk_isitma_on": true,
+          "koltuk_isitma_arka": false,
+          "direksiyon_isitma": true
+        }
       },
       "konfor": {
         "koltuklar": "Sportline koltuklar (Sportline trim)",

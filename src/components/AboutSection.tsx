@@ -41,7 +41,7 @@ export function AboutSection() {
     if (isInView2 && displayedText2.length < fullText2.length) {
       const timeout = setTimeout(() => {
         setDisplayedText2(fullText2.slice(0, displayedText2.length + 1));
-      }, 12); // Biraz daha yavaş bir efekt için 12ms
+      }, 12);
 
       return () => clearTimeout(timeout);
     }
