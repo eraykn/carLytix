@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
-import { ArrowLeft, Zap, Shield, Cpu, Gauge, Settings, Star, Sparkles, Check, X } from "lucide-react";
+import { ArrowLeft, Zap, Shield, Cpu, Gauge, Settings, Star, Sparkles, Check, X, Car, TurkishLira, Armchair } from "lucide-react";
 import { usePageCurtain } from "@/hooks/usePageCurtain";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface CarData {
   id: string;
@@ -28,6 +29,16 @@ interface CarData {
     güvenlik?: any;
     teknoloji?: any;
     konfor?: any;
+  };
+  score?: {
+    toplam: number;
+    kriterler: {
+      ekonomi: number;
+      konfor: number;
+      guvenlik: number;
+      performans: number;
+      teknoloji: number;
+    };
   };
   why?: string;
 }
@@ -102,7 +113,7 @@ export default function RecommendedCarPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="absolute top-8 left-8 z-20"
+          className="absolute top-4 left-8 z-20"
         >
           <motion.button
             onClick={handleBackClick}
@@ -122,7 +133,7 @@ export default function RecommendedCarPage() {
           initial={{ opacity: 0, scale: 0.8, y: -50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-          className="absolute top-8 right-8 z-20"
+          className="absolute top-4 right-8 z-20"
         >
           <div className="relative bg-gray-100/90 backdrop-blur-xl p-8 rounded-3xl shadow-lg border border-gray-200/50">
             <Image
@@ -136,14 +147,14 @@ export default function RecommendedCarPage() {
         </motion.div>
 
         {/* Car Name & Info - Compact */}
-        <div className="relative z-10 pt-32 pb-8 px-8">
+        <div className="relative z-10 pt-24 pb-2 px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="max-w-6xl mx-auto"
           >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-3">
               <Sparkles className="w-5 h-5 text-[#2db7f5]" />
               <span className="text-sm font-bold text-[#2db7f5] tracking-wide uppercase">
                 Carlytix Önerisi
@@ -154,7 +165,7 @@ export default function RecommendedCarPage() {
               {carData.brand} {carData.model}
             </h1>
             
-            <div className="flex items-center gap-3 text-base mb-8">
+            <div className="flex items-center gap-3 text-base mb-4">
               <span className="text-gray-600 font-semibold">{carData.year}</span>
               <span className="w-1 h-1 rounded-full bg-gray-400" />
               <span className="text-[#2db7f5] font-bold">{carData.trim}</span>
@@ -249,52 +260,140 @@ export default function RecommendedCarPage() {
         </div>
       </section>
 
-      {/* Why Section - Premium Design */}
-      <section className="relative py-24 px-8 bg-gradient-to-br from-slate-900 to-slate-800 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-[#2db7f5]/20 to-transparent rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-[#0ea5d8]/20 to-transparent rounded-full blur-3xl animate-pulse delay-700" />
-        </div>
+      {/* CarLytix Score Section - Compact */}
+      {carData.score && (
+        <section className="relative py-12 px-8 bg-[#0f172a]">
+          <div className="max-w-7xl mx-auto">
+            {/* Header with Title on Side */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-3 mb-8"
+            >
+              <Sparkles className="w-5 h-5 text-[#2db7f5]" />
+              <h3 className="text-2xl font-bold text-white">CarLytix Puanlaması</h3>
+            </motion.div>
 
+            {/* Total Score - In Box */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex justify-center mb-6"
+            >
+              <div className="group relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-xl p-6 border border-[#2db7f5]/20 hover:border-[#2db7f5]/40 transition-all duration-300 overflow-hidden">
+                {/* Subtle hover effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2db7f5]/0 to-[#0ea5d8]/0 group-hover:from-[#2db7f5]/5 group-hover:to-[#0ea5d8]/5 transition-all duration-300" />
+                
+                <div className="relative z-10 flex flex-col items-center text-center gap-3">
+                  <p className="text-sm text-white/50 font-medium">Toplam Puan</p>
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 rounded-lg bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] text-white">
+                      <Car className="w-6 h-6" />
+                    </div>
+                    <div className="flex items-baseline gap-2">
+                      <AnimatedCounter
+                        value={carData.score.toplam}
+                        className="text-5xl font-black text-white"
+                      />
+                      <span className="text-xl text-white/40 font-bold">/ 100</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Score Cards Container - Centered and Evenly Spaced */}
+            <div className="flex justify-center">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl">
+                {/* Ekonomi */}
+                <CompactScoreCard
+                  icon={<TurkishLira className="w-5 h-5" />}
+                  title="Ekonomi"
+                  score={carData.score.kriterler.ekonomi}
+                  delay={0.2}
+                />
+
+                {/* Konfor */}
+                <CompactScoreCard
+                  icon={<Armchair className="w-5 h-5" />}
+                  title="Konfor"
+                  score={carData.score.kriterler.konfor}
+                  delay={0.3}
+                />
+
+                {/* Güvenlik */}
+                <CompactScoreCard
+                  icon={<Shield className="w-5 h-5" />}
+                  title="Güvenlik"
+                  score={carData.score.kriterler.guvenlik}
+                  delay={0.4}
+                />
+
+                {/* Performans */}
+                <CompactScoreCard
+                  icon={<Gauge className="w-5 h-5" />}
+                  title="Performans"
+                  score={carData.score.kriterler.performans}
+                  delay={0.5}
+                />
+
+                {/* Teknoloji */}
+                <CompactScoreCard
+                  icon={<Cpu className="w-5 h-5" />}
+                  title="Teknoloji"
+                  score={carData.score.kriterler.teknoloji}
+                  delay={0.6}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Why Section - Tesla/Polestar Premium Design with Satoshi */}
+      <section className="relative py-16 px-8 bg-[#0f172a]">
         <div className="relative z-10 max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-xl px-8 py-4 rounded-full border border-white/20 mb-8">
-              <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
-              <span className="text-2xl font-black text-white tracking-wide">
-                NEDEN BU ARAÇ?
-              </span>
-              <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#2db7f5]/20 via-[#0ea5d8]/20 to-[#2db7f5]/20 blur-3xl" />
-            
-            {/* Content Card */}
-            <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl p-12 border border-white/20 shadow-2xl">
-              <Zap className="w-16 h-16 text-[#2db7f5] mb-6 mx-auto" />
-              
-              <p className="text-2xl leading-relaxed text-white/95 text-center font-medium">
-                {carData.why || "Bu araç, kriterlerinize en uygun seçenek olarak önerilmektedir."}
-              </p>
+            {/* Premium Glass Card */}
+            <div className="relative bg-white/[0.03] backdrop-blur-xl rounded-[24px] border border-white/[0.08] overflow-hidden shadow-2xl shadow-black/20">
+              {/* Subtle Top Strip */}
+              <div className="bg-gradient-to-r from-[#2db7f5]/10 to-[#0ea5d8]/10 px-8 py-4 border-b border-white/[0.05]">
+                <div className="flex items-center gap-4">
+                  {/* Premium Logo Container */}
+                  {carData.media.brand_logo && (
+                    <div className="bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-lg ring-1 ring-black/5">
+                      <Image
+                        src={carData.media.brand_logo}
+                        alt={carData.brand}
+                        width={40}
+                        height={40}
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
+                  {/* Satoshi Font Title */}
+                  <h3 className="font-satoshi text-base font-semibold text-white/80 tracking-wide">
+                    Neden Bu Araç?
+                  </h3>
+                </div>
+              </div>
 
-              {/* Decorative elements */}
-              <div className="absolute top-6 left-6 w-12 h-12 border-l-4 border-t-4 border-[#2db7f5]/50 rounded-tl-2xl" />
-              <div className="absolute bottom-6 right-6 w-12 h-12 border-r-4 border-b-4 border-[#2db7f5]/50 rounded-br-2xl" />
+              {/* Clean Content Area */}
+              <div className="px-8 py-10">
+                <p className="font-satoshi text-lg leading-relaxed text-white/85 font-normal">
+                  {carData.why || "Bu araç, kriterlerinize en uygun seçenek olarak önerilmektedir."}
+                </p>
+              </div>
             </div>
           </motion.div>
 
@@ -492,10 +591,29 @@ function SpecCard({
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
 
+      // Check if this is a field that needs a tooltip
+      const needsTooltip = key === 'ncap_yildiz' || key === 'isofix';
+      const tooltipText = key === 'ncap_yildiz' 
+        ? "NCAP yıldızı, bir aracın bağımsız çarpışma testlerindeki genel güvenlik puanıdır" 
+        : "ISOFIX, çocuk koltuklarının araca güvenli ve standart bir şekilde sabitlenmesini sağlayan bağlantı sistemidir";
+
       elements.push(
         <div key={fullKey} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
           <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">
             {formattedKey}
+            {needsTooltip && (
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span className="ml-1 text-blue-400 cursor-help">*</span>
+                </TooltipTrigger>
+                <TooltipContent 
+                  side="top" 
+                  className="bg-slate-800 border border-white/10 text-white max-w-xs"
+                >
+                  {tooltipText}
+                </TooltipContent>
+              </Tooltip>
+            )}
           </p>
           {typeof value === 'boolean' ? (
             <div className="flex items-center gap-2">
@@ -583,6 +701,170 @@ function SpecCard({
         {/* Decorative corner accents */}
         <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${color} opacity-5 rounded-bl-full`} />
         <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${color} opacity-5 rounded-tr-full`} />
+      </div>
+    </motion.div>
+  );
+}
+
+// Animated Counter Component
+function AnimatedCounter({ 
+  value, 
+  className = "" 
+}: { 
+  value: number; 
+  className?: string; 
+}) {
+  const [displayValue, setDisplayValue] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const spanRef = useState<HTMLSpanElement | null>(null);
+
+  useEffect(() => {
+    if (hasAnimated) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            const duration = 2000; // 2 seconds
+            const startTime = Date.now();
+            const startValue = 0;
+            
+            const updateCounter = () => {
+              const currentTime = Date.now();
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Easing function for smooth animation
+              const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+              const current = Math.round(startValue + (value - startValue) * easeOutQuart);
+              
+              setDisplayValue(current);
+              
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              }
+            };
+            
+            requestAnimationFrame(updateCounter);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = spanRef[0];
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [value, hasAnimated, spanRef]);
+
+  return <span ref={(el) => { spanRef[0] = el; }} className={className}>{displayValue}</span>;
+}
+
+// Score Card Component
+function ScoreCard({ 
+  icon, 
+  title, 
+  score, 
+  delay,
+  fullWidth = false
+}: { 
+  icon: React.ReactNode; 
+  title: string; 
+  score: number; 
+  delay: number;
+  fullWidth?: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay }}
+      className={fullWidth ? "w-full" : ""}
+    >
+      <div className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-[#2db7f5]/20 hover:border-[#2db7f5]/40 overflow-hidden">
+        {/* Hover glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2db7f5]/0 to-[#0ea5d8]/0 group-hover:from-[#2db7f5]/10 group-hover:to-[#0ea5d8]/10 transition-all duration-500" />
+        
+        <div className="relative z-10 flex flex-col items-center text-center">
+          {/* Icon */}
+          <div className="p-4 rounded-2xl bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] text-white shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
+            {icon}
+          </div>
+          
+          {/* Title */}
+          <h5 className="text-xl font-bold text-white/70 mb-3">{title}</h5>
+          
+          {/* Score with animated counter */}
+          <div className="flex items-baseline gap-2">
+            <AnimatedCounter
+              value={score}
+              className="text-5xl font-black text-white"
+            />
+            <span className="text-2xl text-white/50 font-bold">/ 100</span>
+          </div>
+        </div>
+
+        {/* Decorative corner */}
+        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#2db7f5]/20 to-transparent rounded-bl-full" />
+        <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-[#0ea5d8]/20 to-transparent rounded-tr-full" />
+      </div>
+    </motion.div>
+  );
+}
+
+// Compact Score Card Component
+function CompactScoreCard({ 
+  icon, 
+  title, 
+  score, 
+  delay,
+  className = ""
+}: { 
+  icon: React.ReactNode; 
+  title: string; 
+  score: number; 
+  delay: number;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay }}
+      className={className}
+    >
+      <div className="group relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-xl p-5 border border-[#2db7f5]/20 hover:border-[#2db7f5]/40 transition-all duration-300 overflow-hidden">
+        {/* Subtle hover effect */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2db7f5]/0 to-[#0ea5d8]/0 group-hover:from-[#2db7f5]/5 group-hover:to-[#0ea5d8]/5 transition-all duration-300" />
+        
+        <div className="relative z-10 flex flex-col items-center text-center gap-3">
+          {/* Icon */}
+          <div className="p-3 rounded-lg bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] text-white">
+            {icon}
+          </div>
+          
+          {/* Title */}
+          <p className="text-sm font-semibold text-white/60">{title}</p>
+          
+          {/* Score */}
+          <div className="flex items-baseline gap-1">
+            <AnimatedCounter
+              value={score}
+              className="text-3xl font-black text-white"
+            />
+            <span className="text-sm text-white/40 font-bold">/ 100</span>
+          </div>
+        </div>
       </div>
     </motion.div>
   );

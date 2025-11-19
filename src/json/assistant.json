@@ -4208,12 +4208,12 @@
       "İlanlar B bandı sınırında (~₺1.64–1.75 mn) — pazarlıkla hedeflenebilir"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 82,
       "kriterler": {
-        "performans": 86,
-        "yol_tutusu": 88,
-        "fren": 88,
-        "konfor": 86,
+        "ekonomi": 78,
+        "konfor": 84,
+        "guvenlik": 82,
+        "performans": 76,
         "teknoloji": 88
       }
     },
@@ -4333,13 +4333,13 @@
       "TR'de ilanlar genelde B bandında bulunabiliyor"
     ],
     "score": {
-      "toplam": 84,
+      "toplam": 80,
       "kriterler": {
-        "performans": 78,
-        "yol_tutusu": 82,
-        "fren": 80,
-        "konfor": 86,
-        "teknoloji": 80
+        "ekonomi": 70,
+        "konfor": 82,
+        "guvenlik": 76,
+        "performans": 85,
+        "teknoloji": 77
       }
     },
     "links": {
@@ -4448,13 +4448,13 @@
       "İlanlar ~₺1.06–1.43 mn"
     ],
     "score": {
-      "toplam": 86,
+      "toplam": 83,
       "kriterler": {
-        "ekonomi": 88,
-        "konfor": 80,
-        "guvenlik": 78,
-        "performans": 74,
-        "teknoloji": 82
+        "ekonomi": 80,
+        "konfor": 85,
+        "guvenlik": 82,
+        "performans": 75,
+        "teknoloji": 90
       }
     },
     "links": {
@@ -4559,13 +4559,13 @@
       "İlanlar ~₺0.85–1.00 mn"
     ],
     "score": {
-      "toplam": 83,
+      "toplam": 79,
       "kriterler": {
-        "ekonomi": 86,
-        "konfor": 74,
-        "guvenlik": 74,
-        "performans": 70,
-        "teknoloji": 78
+        "ekonomi": 80,
+        "konfor": 75,
+        "guvenlik": 78,
+        "performans": 72,
+        "teknoloji": 91
       }
     },
     "links": {
@@ -4669,6 +4669,16 @@
       "ACC/AEB dâhil sürüş destekleri (pakete bağlı)",
       "TR ilanları: ~₺1.25–1.55 mn"
     ],
+    "score": {
+      "toplam": 83,
+      "kriterler": {
+        "ekonomi": 80,
+        "konfor": 85,
+        "guvenlik": 82,
+        "performans": 84,
+        "teknoloji": 81
+      }
+    },
     "links": {
       "teknik_brosur": "https://cdn.dealereprocess.org/cdn/brochures/bmw/2016-3series.pdf",
       "ekipman_isi": "https://www.bmwbrochures.co.uk/0114/BMW_3S_Saloon_F30/files/inc/b39c6705b1.pdf",
@@ -4771,6 +4781,16 @@
       "AEB (pre sense) + ACC + şerit destek",
       "TR ilanları: ~₺1.30–1.50 mn"
     ],
+    "score": {
+      "toplam": 84,
+      "kriterler": {
+        "ekonomi": 81,
+        "konfor": 86,
+        "guvenlik": 83,
+        "performans": 85,
+        "teknoloji": 83
+      }
+    },
     "links": {
       "0_100_tuketim": "https://www.epey.com/araba/2017-audi-a4-2-0-tdi-190-hp-quattro-s-tronic-design-4x4.html",
       "ekipman_isi": "https://press.audi.co.uk/assets/documents/original/13005-AudiUK00016137AudiA4andA4AvantPricing.pdf",
@@ -4873,13 +4893,13 @@
       "TR'de 2018 2.0 TDI ilanları ~₺1.50 mn seviyesinden başlıyor"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 85,
       "kriterler": {
-        "bagaj": 98,
-        "ekonomi": 88,
-        "guvenlik": 90,
-        "konfor": 90,
-        "teknoloji": 84
+        "ekonomi": 84,
+        "konfor": 88,
+        "guvenlik": 83,
+        "performans": 80,
+        "teknoloji": 85
       }
     },
     "links": {
@@ -4985,13 +5005,13 @@
       "TR ilanları ~₺1.45–2.25 mn aralığı (C bandına uygun)"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 84,
       "kriterler": {
-        "bagaj": 94,
-        "ekonomi": 88,
-        "guvenlik": 90,
-        "konfor": 88,
-        "teknoloji": 84
+        "ekonomi": 82,
+        "konfor": 86,
+        "guvenlik": 83,
+        "performans": 81,
+        "teknoloji": 86
       }
     },
     "links": {
@@ -5104,13 +5124,13 @@
       "TR'de Model 3 ilanları C bandında yaygın"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 90,
       "kriterler": {
-        "teknoloji": 96,
-        "konfor": 88,
+        "ekonomi": 88,
+        "konfor": 89,
         "guvenlik": 92,
-        "ekonomi": 86,
-        "gürültü": 90
+        "performans": 90,
+        "teknoloji": 91
       }
     },
     "links": {
@@ -5224,13 +5244,13 @@
       "TR'de ilanlar ~₺1.70–2.13 mn"
     ],
     "score": {
-      "toplam": 93,
+      "toplam": 88,
       "kriterler": {
-        "teknoloji": 94,
-        "konfor": 92,
-        "guvenlik": 93,
-        "ekonomi": 88,
-        "gürültü": 92
+        "ekonomi": 90,
+        "konfor": 87,
+        "guvenlik": 88,
+        "performans": 84,
+        "teknoloji": 92
       }
     },
     "links": {
@@ -5343,13 +5363,13 @@
       "Güvenlik: Euro NCAP 5★ ve kapsamlı ADAS"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 91,
       "kriterler": {
-        "performans": 98,
-        "yol_tutusu": 90,
-        "fren": 90,
-        "konfor": 85,
-        "adas": 88
+        "ekonomi": 88,
+        "konfor": 90,
+        "guvenlik": 92,
+        "performans": 95,
+        "teknoloji": 91
       }
     },
     "links": {
@@ -5470,11 +5490,11 @@
     "score": {
       "toplam": 89,
       "kriterler": {
-        "performans": 90,
-        "yol_tutusu": 92,
-        "fren": 90,
-        "konfor": 85,
-        "adas": 87
+        "ekonomi": 88,
+        "konfor": 90,
+        "guvenlik": 87,
+        "performans": 92,
+        "teknoloji": 90
       }
     },
     "links": {
@@ -5586,13 +5606,13 @@
       "Uygun bakım ve yaygın servis"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 81,
       "kriterler": {
-        "ekonomi": 94,
-        "manevra": 92,
-        "guvenlik": 90,
-        "bakim": 88,
-        "teknoloji": 82
+        "ekonomi": 88,
+        "konfor": 76,
+        "guvenlik": 80,
+        "performans": 72,
+        "teknoloji": 80
       }
     },
     "links": {
@@ -5698,13 +5718,13 @@
       "TR'de 975.000–1.24 mn TL bandında çok ilan"
     ],
     "score": {
-      "toplam": 86,
+      "toplam": 80,
       "kriterler": {
-        "ekonomi": 92,
-        "manevra": 84,
-        "guvenlik": 80,
-        "bakim": 88,
-        "teknoloji": 72
+        "ekonomi": 85,
+        "konfor": 78,
+        "guvenlik": 76,
+        "performans": 70,
+        "teknoloji": 81
       }
     },
     "links": {
@@ -5815,13 +5835,13 @@
       "İlanlar: ~₺1.34–1.56 mn (B bütçe)"
     ],
     "score": {
-      "toplam": 89,
+      "toplam": 84,
       "kriterler": {
-        "ekonomi": 92,
-        "bakim": 86,
-        "teknoloji": 86,
-        "guvenlik": 86,
-        "manevra": 84
+        "ekonomi": 88,
+        "konfor": 80,
+        "guvenlik": 82,
+        "performans": 78,
+        "teknoloji": 88
       }
     },
     "links": {
@@ -5929,13 +5949,13 @@
       "İlanlar: ~₺1.39–1.69 mn"
     ],
     "score": {
-      "toplam": 88,
+      "toplam": 83,
       "kriterler": {
-        "ekonomi": 92,
-        "bakim": 86,
-        "teknoloji": 86,
-        "guvenlik": 85,
-        "manevra": 84
+        "ekonomi": 86,
+        "konfor": 80,
+        "guvenlik": 82,
+        "performans": 78,
+        "teknoloji": 86
       }
     },
     "links": {
@@ -6035,13 +6055,13 @@
       "TR'de çok sayıda ilan A bandında"
     ],
     "score": {
-      "toplam": 88,
+      "toplam": 78,
       "kriterler": {
-        "performans": 86,
-        "manevra": 92,
-        "gürültü": 78,
-        "konfor": 76,
-        "teknoloji": 78
+        "ekonomi": 75,
+        "konfor": 74,
+        "guvenlik": 76,
+        "performans": 80,
+        "teknoloji": 85
       }
     },
     "links": {
@@ -6141,13 +6161,13 @@
       "TR'de FR/Style DSG ilanları A–B sınırında"
     ],
     "score": {
-      "toplam": 86,
+      "toplam": 81,
       "kriterler": {
-        "performans": 82,
-        "manevra": 90,
-        "gürültü": 78,
-        "konfor": 76,
-        "teknoloji": 82
+        "ekonomi": 84,
+        "konfor": 78,
+        "guvenlik": 80,
+        "performans": 75,
+        "teknoloji": 87
       }
     },
     "links": {
@@ -6253,13 +6273,13 @@
       "TR'de 1.55–1.70 mn TL bandında çok ilan"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 83,
       "kriterler": {
-        "ekonomi": 88,
-        "konfor": 90,
-        "ADAS": 92,
-        "gürültü": 86,
-        "performans": 78
+        "ekonomi": 82,
+        "konfor": 84,
+        "guvenlik": 80,
+        "performans": 78,
+        "teknoloji": 88
       }
     },
     "links": {
@@ -6366,13 +6386,13 @@
       "TR'de 1.28–1.50 mn TL aralığında yaygın ilan"
     ],
     "score": {
-      "toplam": 88,
+      "toplam": 82,
       "kriterler": {
-        "ekonomi": 90,
-        "konfor": 84,
-        "ADAS": 84,
-        "gürültü": 82,
-        "performans": 76
+        "ekonomi": 80,
+        "konfor": 83,
+        "guvenlik": 81,
+        "performans": 78,
+        "teknoloji": 88
       }
     },
     "links": {
@@ -6478,13 +6498,13 @@
       "TR ilanları genelde ₺0.85–1.05 mn (A bütçe içinde)"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 80,
       "kriterler": {
-        "ekonomi": 94,
-        "cekis": 84,
-        "guvenlik": 90,
-        "manevra": 88,
-        "konfor": 80
+        "ekonomi": 87,
+        "konfor": 75,
+        "guvenlik": 80,
+        "performans": 73,
+        "teknoloji": 75
       }
     },
     "links": {
@@ -6589,13 +6609,13 @@
       "Dönüş çapı ≈10.4 m, kolay park"
     ],
     "score": {
-      "toplam": 88,
+      "toplam": 79,
       "kriterler": {
-        "ekonomi": 90,
-        "cekis": 82,
-        "guvenlik": 86,
-        "manevra": 90,
-        "konfor": 78
+        "ekonomi": 82,
+        "konfor": 76,
+        "guvenlik": 78,
+        "performans": 74,
+        "teknoloji": 80
       }
     },
     "links": {
@@ -6703,13 +6723,13 @@
       "TR ilanları B bandında yaygın (≈₺1.28–1.35 mn)"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 84,
       "kriterler": {
-        "ekonomi": 90,
-        "bagaj": 98,
-        "bakim": 86,
-        "konfor": 88,
-        "guvenlik": 86
+        "ekonomi": 85,
+        "konfor": 83,
+        "guvenlik": 82,
+        "performans": 78,
+        "teknoloji": 88
       }
     },
     "links": {
@@ -6818,13 +6838,13 @@
       "TR'de 2019–2021 ilanları A/B sınırında (~₺1.10–1.41 mn+)"
     ],
     "score": {
-      "toplam": 89,
+      "toplam": 83,
       "kriterler": {
-        "ekonomi": 92,
-        "bagaj": 88,
-        "bakim": 84,
-        "konfor": 85,
-        "guvenlik": 82
+        "ekonomi": 84,
+        "konfor": 82,
+        "guvenlik": 80,
+        "performans": 79,
+        "teknoloji": 87
       }
     },
     "links": {
@@ -6936,13 +6956,13 @@
       "TR'de 2024 GT ilanları ~₺1.31–1.60 mn"
     ],
     "score": {
-      "toplam": 91,
+      "toplam": 88,
       "kriterler": {
-        "teknoloji": 90,
-        "adas": 88,
         "ekonomi": 90,
-        "gürültü": 88,
-        "konfor": 86
+        "konfor": 86,
+        "guvenlik": 88,
+        "performans": 84,
+        "teknoloji": 92
       }
     },
     "links": {
@@ -7054,13 +7074,13 @@
       "TR'de ~₺1.30–1.40 mn seviyeleri görülebiliyor"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 87,
       "kriterler": {
-        "teknoloji": 88,
-        "adas": 88,
-        "ekonomi": 92,
-        "gürültü": 86,
-        "konfor": 84
+        "ekonomi": 90,
+        "konfor": 85,
+        "guvenlik": 88,
+        "performans": 84,
+        "teknoloji": 91
       }
     },
     "links": {
@@ -7171,13 +7191,13 @@
       "TR 2. elde yaygın ve C bandına uygun fiyat"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 87,
       "kriterler": {
-        "menzil": 94,
-        "ADAS": 90,
-        "konfor": 88,
-        "gürültü": 88,
-        "ekonomi": 86
+        "ekonomi": 91,
+        "konfor": 85,
+        "guvenlik": 88,
+        "performans": 83,
+        "teknoloji": 90
       }
     },
     "links": {
@@ -7289,13 +7309,13 @@
       "TR'de 77 kWh ilanları ~₺1.90 mn"
     ],
     "score": {
-      "toplam": 91,
+      "toplam": 88,
       "kriterler": {
-        "menzil": 93,
-        "ADAS": 90,
-        "konfor": 88,
-        "gürültü": 88,
-        "ekonomi": 86
+        "ekonomi": 91,
+        "konfor": 85,
+        "guvenlik": 88,
+        "performans": 87,
+        "teknoloji": 90
       }
     },
     "links": {
@@ -7398,13 +7418,13 @@
       "TR'de hibrit Corolla fiyatları B bandında"
     ],
     "score": {
-      "toplam": 93,
+      "toplam": 82,
       "kriterler": {
-        "bagaj": 95,
-        "ekonomi": 90,
-        "guvenlik": 92,
-        "konfor": 88,
-        "teknoloji": 85
+        "ekonomi": 86,
+        "konfor": 79,
+        "guvenlik": 80,
+        "performans": 75,
+        "teknoloji": 88
       }
     },
     "links": {
@@ -7509,13 +7529,13 @@
       "TR'de TS ilanları sınırlı; fiyat B bandına oturabiliyor"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 80,
       "kriterler": {
-        "bagaj": 92,
-        "ekonomi": 90,
-        "guvenlik": 86,
-        "konfor": 84,
-        "bakim": 86
+        "ekonomi": 88,
+        "konfor": 76,
+        "guvenlik": 77,
+        "performans": 72,
+        "teknoloji": 78
       }
     },
     "links": {
@@ -7626,6 +7646,16 @@
       "548 L bagaj (koltuklar yatınca 1574 L)",
       "Sessiz, uzun yol odaklı sürüş"
     ],
+    "score": {
+      "toplam": 86,
+      "kriterler": {
+        "ekonomi": 90,
+        "konfor": 85,
+        "guvenlik": 84,
+        "performans": 75,
+        "teknoloji": 88
+      }
+    },
     "links": {
       "wltp_resmi": "Peugeot UK – E-308 SW, up to 258 miles WLTP.",
       "model_sayfa": "Peugeot UK – E-308 SW elektrikli versiyon"
@@ -7733,6 +7763,16 @@
       "516 L bagaj (maks. ≈1553 L)",
       "Rahat ve sessiz uzun yol karakteri"
     ],
+    "score": {
+      "toplam": 85,
+      "kriterler": {
+        "ekonomi": 89,
+        "konfor": 84,
+        "guvenlik": 82,
+        "performans": 76,
+        "teknoloji": 87
+      }
+    },
     "links": {
       "wltp_ve_spec": "UltimateSpecs – Astra ST Electric WLTP 413 km ve teknik",
       "evdb_gercek_aralik": "EV-Database – Astra Sports Tourer Electric gerçek aralık/performans",
@@ -7833,13 +7873,13 @@
       "ACC + şerit desteği ile güvenlik/rahatlık"
     ],
     "score": {
-      "toplam": 91,
+      "toplam": 84,
       "kriterler": {
-        "bagaj": 94,
-        "manevra": 88,
-        "bakim": 86,
-        "konfor": 86,
-        "guvenlik": 85
+        "ekonomi": 85,
+        "konfor": 83,
+        "guvenlik": 82,
+        "performans": 78,
+        "teknoloji": 89
       }
     },
     "links": {
@@ -7943,13 +7983,13 @@
       "Yaygın Opel servis ağı → uygun bakım"
     ],
     "score": {
-      "toplam": 89,
+      "toplam": 82,
       "kriterler": {
-        "bagaj": 92,
-        "manevra": 84,
-        "bakim": 86,
-        "konfor": 84,
-        "guvenlik": 83
+        "ekonomi": 80,
+        "konfor": 83,
+        "guvenlik": 81,
+        "performans": 78,
+        "teknoloji": 86
       }
     },
     "links": {
@@ -8063,13 +8103,13 @@
       "DCC ile konfor–performans ayarı"
     ],
     "score": {
-      "toplam": 94,
+      "toplam": 90,
       "kriterler": {
-        "performans": 95,
-        "yol_tutusu": 93,
-        "fren": 94,
-        "konfor": 86,
-        "teknoloji": 88
+        "ekonomi": 70,
+        "konfor": 88,
+        "guvenlik": 89,
+        "performans": 96,
+        "teknoloji": 87
       }
     },
     "links": {
@@ -8184,13 +8224,13 @@
       "Geniş bagaj (aile + performans dengesi)"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 88,
       "kriterler": {
-        "performans": 93,
-        "yol_tutusu": 92,
-        "fren": 90,
-        "konfor": 85,
-        "teknoloji": 86
+        "ekonomi": 75,
+        "konfor": 86,
+        "guvenlik": 84,
+        "performans": 92,
+        "teknoloji": 91
       }
     },
     "links": {
@@ -8292,13 +8332,13 @@
       "4Motion opsiyonu (nadir) → çekiş artısı"
     ],
     "score": {
-      "toplam": 91,
+      "toplam": 84,
       "kriterler": {
-        "tuketim": 93,
-        "cekis": 86,
-        "guvenlik": 90,
-        "bagaj": 90,
-        "konfor": 85
+        "ekonomi": 85,
+        "konfor": 82,
+        "guvenlik": 80,
+        "performans": 78,
+        "teknoloji": 87
       }
     },
     "links": {
@@ -8405,13 +8445,13 @@
       "EAT8 ile akıcı/sakin uzun yol"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 84,
       "kriterler": {
-        "tuketim": 92,
-        "cekis": 82,
-        "guvenlik": 90,
-        "bagaj": 93,
-        "konfor": 86
+        "ekonomi": 86,
+        "konfor": 82,
+        "guvenlik": 80,
+        "performans": 79,
+        "teknoloji": 89
       }
     },
     "links": {
@@ -8512,13 +8552,13 @@
       "TR'de C bandına uyan çok ilan"
     ],
     "score": {
-      "toplam": 93,
+      "toplam": 84,
       "kriterler": {
-        "bagaj": 95,
-        "ekonomi": 92,
-        "konfor": 88,
-        "guvenlik": 90,
-        "teknoloji": 85
+        "ekonomi": 83,
+        "konfor": 85,
+        "guvenlik": 82,
+        "performans": 80,
+        "teknoloji": 87
       }
     },
     "links": {
@@ -8621,13 +8661,13 @@
       "TR 2. elde C bandına sığan çok sayıda örnek"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 84,
       "kriterler": {
-        "bagaj": 96,
-        "ekonomi": 90,
-        "konfor": 92,
-        "guvenlik": 86,
-        "teknoloji": 86
+        "ekonomi": 83,
+        "konfor": 85,
+        "guvenlik": 82,
+        "performans": 80,
+        "teknoloji": 84
       }
     },
     "links": {
@@ -8741,6 +8781,16 @@
       "11 kW AC & 100 kW DC",
       "Sessiz kabin, geniş bagaj (548–1574 L)"
     ],
+    "score": {
+      "toplam": 86,
+      "kriterler": {
+        "ekonomi": 90,
+        "konfor": 85,
+        "guvenlik": 84,
+        "performans": 75,
+        "teknoloji": 88
+      }
+    },
     "links": {
       "wltp_resmi": "Peugeot UK – E-308 SW up to 258 miles WLTP",
       "ek_basin": "Stellantis/Peugeot basın – E-308(E-308 SW) 156 hp, 258 mil WLTP"
@@ -8849,6 +8899,16 @@
       "11 kW AC & 100 kW DC",
       "Bagaj 516–1553 L"
     ],
+    "score": {
+      "toplam": 85,
+      "kriterler": {
+        "ekonomi": 89,
+        "konfor": 84,
+        "guvenlik": 82,
+        "performans": 76,
+        "teknoloji": 87
+      }
+    },
     "links": {
       "wltp_basin": "Stellantis/Opel basın – Astra ST Electric WLTP 413 km, 54 kWh",
       "model_overview": "Opel EU/CY sayfası – Astra Sports Tourer Electric genel bakış"
@@ -8960,12 +9020,12 @@
       "200 kW'a kadar DC, 86 kWh batarya → düşük işletme"
     ],
     "score": {
-      "toplam": 94,
+      "toplam": 87,
       "kriterler": {
-        "isletme": 92,
-        "guvenlik": 92,
-        "konfor": 93,
-        "bagaj": 95,
+        "ekonomi": 89,
+        "konfor": 86,
+        "guvenlik": 88,
+        "performans": 84,
         "teknoloji": 92
       }
     },
@@ -9082,13 +9142,13 @@
       "~580 km WLTP (100 kWh); AWD çekiş"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 89,
       "kriterler": {
-        "isletme": 90,
-        "guvenlik": 90,
-        "konfor": 90,
-        "bagaj": 86,
-        "teknoloji": 92
+        "ekonomi": 90,
+        "konfor": 87,
+        "guvenlik": 88,
+        "performans": 92,
+        "teknoloji": 91
       }
     },
     "links": {
@@ -9192,7 +9252,7 @@
         "vites": "8 ileri otomatik Steptronic Sport"
       }
     },
-    "why": "xDrive çekiş + M ayarlı şasi ile **0–100 4.4 sn** ve yüksek hızda nötr denge. **348/345 mm** diskli M Sport fren kendi sınıfında güçlü ısıl kapasite sunar. Uzun yolda 'Driving Assistant Professional' ile yorgunluk azalır.",
+    "why": "3.0L turbo sıralı 6 silindir ve xDrive’ın sağladığı yüksek tutunma, uzun yolda ve sport modda kusursuz ivmelenme sunar. M Performance şasisi, frenleri ve adaptif süspansiyonu sayesinde dengeli, güven veren bir sürüş karakteri vardır. 2021 model yılı, teknoloji ve ADAS donanımlarının en olgun seviyede olduğu dönemdir; performans + konfor dengesini net şekilde karşılar.",
     "why_bullets": [
       "B58 6 silindir: akıcı güç, 4.4 sn 0–100",
       "M Sport fren: 348/345 mm disk",
@@ -9200,12 +9260,12 @@
       "Uzun yolda sessiz, 8AT ile düşük devir"
     ],
     "score": {
-      "toplam": 94,
+      "toplam": 86,
       "kriterler": {
-        "performans": 95,
-        "yol_tutusu": 93,
-        "fren": 92,
-        "konfor": 86,
+        "ekonomi": 72,
+        "konfor": 83,
+        "guvenlik": 84,
+        "performans": 92,
         "teknoloji": 88
       }
     },
@@ -9320,13 +9380,13 @@
       "AMG RIDE CONTROL ile ayarlanabilir konfor"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 88,
       "kriterler": {
-        "performans": 93,
-        "yol_tutusu": 92,
-        "fren": 91,
+        "ekonomi": 73,
         "konfor": 85,
-        "teknoloji": 87
+        "guvenlik": 88,
+        "performans": 94,
+        "teknoloji": 92
       }
     },
     "links": {
@@ -9441,13 +9501,13 @@
       "NVH iyi; 17\" tur lastiğiyle kabin gürültüsü düşer"
     ],
     "score": {
-      "toplam": 91,
+      "toplam": 83,
       "kriterler": {
-        "performans": 92,
-        "manevra": 92,
-        "gürültü": 84,
+        "ekonomi": 78,
         "konfor": 82,
-        "teknoloji": 84
+        "guvenlik": 80,
+        "performans": 85,
+        "teknoloji": 87
       }
     },
     "links": {
@@ -9561,13 +9621,13 @@
       "17\" tur lastiği + kaliteli yalıtım pedleriyle NVH iyileşir"
     ],
     "score": {
-      "toplam": 90,
+      "toplam": 83,
       "kriterler": {
-        "performans": 90,
-        "manevra": 92,
-        "gürültü": 83,
-        "konfor": 82,
-        "teknoloji": 80
+        "ekonomi": 77,
+        "konfor": 81,
+        "guvenlik": 80,
+        "performans": 87,
+        "teknoloji": 86
       }
     },
     "links": {
@@ -9681,13 +9741,13 @@
       "TR ilanlarında D bandına uygun örnekler"
     ],
     "score": {
-      "toplam": 93,
+      "toplam": 90,
       "kriterler": {
-        "performans": 96,
-        "yol_tutusu": 91,
-        "teknoloji": 94,
-        "menzil": 90,
-        "sarj": 94
+        "ekonomi": 89,
+        "konfor": 88,
+        "guvenlik": 91,
+        "performans": 94,
+        "teknoloji": 93
       }
     },
     "links": {
@@ -9800,13 +9860,13 @@
       "TR'de Twin AWD ilanları D bandında sık"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 88,
       "kriterler": {
-        "performans": 93,
-        "guvenlik": 95,
-        "konfor": 90,
-        "teknoloji": 89,
-        "menzil": 88
+        "ekonomi": 90,
+        "konfor": 86,
+        "guvenlik": 88,
+        "performans": 84,
+        "teknoloji": 92
       }
     },
     "links": {
@@ -9918,13 +9978,13 @@
       "TSS 3.0 (ACC + şerit orta) → güvenlik/konfor"
     ],
     "score": {
-      "toplam": 91,
+      "toplam": 86,
       "kriterler": {
-        "denge": 93,
-        "yol_tutusu": 88,
-        "konfor": 86,
-        "teknoloji": 86,
-        "ekonomi": 92
+        "ekonomi": 89,
+        "konfor": 84,
+        "guvenlik": 87,
+        "performans": 82,
+        "teknoloji": 88
       }
     },
     "links": {
@@ -10039,13 +10099,13 @@
       "Havalı ön diskler → dayanıklı frenaj"
     ],
     "score": {
-      "toplam": 92,
+      "toplam": 84,
       "kriterler": {
-        "performans": 88,
-        "bagaj": 95,
-        "fren": 88,
-        "konfor": 90,
-        "teknoloji": 85
+        "ekonomi": 83,
+        "konfor": 85,
+        "guvenlik": 84,
+        "performans": 85,
+        "teknoloji": 82
       }
     },
     "links": {
