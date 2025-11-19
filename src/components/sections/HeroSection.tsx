@@ -2,51 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Volume2, Share2, Settings, Menu, ChevronDown } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { CarCarousel } from "./CarCarousel";
+import { ImageWithFallback } from "@/components/common/ImageWithFallback";
+import { CarCarousel } from "@/components/car/CarCarousel";
 import { useState, useEffect, useRef } from "react";
-
-const carData = [
-  {
-    id: "01",
-    model: "911 GT3 RS",
-    brand: "Porsche",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1080&auto=format&fit=crop",
-    accentColor: "#3b82f6",
-  },
-  {
-    id: "02",
-    model: "M4 Comp",
-    brand: "BMW",
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1080&auto=format&fit=crop",
-    accentColor: "#10b981",
-  },
-  {
-    id: "03",
-    model: "Range Rover Sport",
-    brand: "Land Rover",
-    image: "https://images.unsplash.com/photo-1563720360172-67b8f3dce741?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&h=1600",
-    accentColor: "#8b5cf6",
-  },
-  {
-    id: "04",
-    model: "RS6",
-    brand: "Audi",
-    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&h=1600",
-    accentColor: "#ef4444",
-  },
-  {
-    id: "05",
-    model: "AMG GT 63",
-    brand: "Mercedes",
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxNZXJjZWRlcyUyMEFNRyUyMEdUfGVufDF8fHx8MTc2MDIwMDI5M3ww&ixlib=rb-4.1.0&q=80&w=1080",
-    accentColor: "#06b6d4",
-  },
-];
+import { heroCarData } from "@/lib/constants/carData";
 
 export function HeroSection() {
   const [selectedCarId, setSelectedCarId] = useState("01");
-  const selectedCar = carData.find((car) => car.id === selectedCarId) || carData[0];
+  const selectedCar = heroCarData.find((car) => car.id === selectedCarId) || heroCarData[0];
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastScrollTimeRef = useRef(0);
 
@@ -73,13 +36,13 @@ export function HeroSection() {
       isScrolling = true;
       lastScrollTimeRef.current = now;
 
-      const currentIndex = carData.findIndex((car) => car.id === selectedCarId);
+      const currentIndex = heroCarData.findIndex((car) => car.id === selectedCarId);
       
       if (e.deltaY > 0) {
         // Aşağı scroll - sonraki araba
-        if (currentIndex < carData.length - 1) {
+        if (currentIndex < heroCarData.length - 1) {
           const nextIndex = currentIndex + 1;
-          setSelectedCarId(carData[nextIndex].id);
+          setSelectedCarId(heroCarData[nextIndex].id);
           e.preventDefault();
         }
         // Son karttaysa, normal scroll'a izin ver
@@ -87,7 +50,7 @@ export function HeroSection() {
         // Yukarı scroll - önceki araba
         if (currentIndex > 0) {
           const prevIndex = currentIndex - 1;
-          setSelectedCarId(carData[prevIndex].id);
+          setSelectedCarId(heroCarData[prevIndex].id);
           e.preventDefault();
         }
       }
@@ -138,7 +101,7 @@ export function HeroSection() {
         <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
           {/* CarLytix Logo */}
           <img 
-            src="/carlytix-concept-a-logo.svg" 
+            src="/images/brands/carlytix-concept-a-logo.svg" 
             alt="CarLytix Logo" 
             className="h-[40px] w-auto drop-shadow-[0_0_10px_rgba(59,130,246,0.4)] ml-2"
           />
@@ -187,7 +150,7 @@ export function HeroSection() {
         transition={{ delay: 0.5, duration: 0.8 }}
         className="absolute left-10 top-[180px] z-10"
       >
-        <CarCarousel cars={carData} selectedId={selectedCarId} onSelect={setSelectedCarId} />
+        <CarCarousel cars={heroCarData} selectedId={selectedCarId} onSelect={setSelectedCarId} />
       </motion.div>
 
       {/* Center-Right - Main Car in Glassmorphism Frame */}

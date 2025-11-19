@@ -77,7 +77,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         >
           {/* CarLytix Logo */}
           <img 
-            src="/carlytix-concept-a-logo.svg" 
+            src="/images/brands/carlytix-concept-a-logo.svg" 
             alt="CarLytix Logo" 
             className="w-[320px] h-auto drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]"
           />

@@ -1,5 +1,5 @@
-import assistantData from '@/json/assistant.json';
-import { normalizeCarData, normalizeCarTags, suggestTagsFromCarData } from './tagMapping';
+import assistantData from '@/lib/data/assistant.json';
+import { normalizeCarData, normalizeCarTags, suggestTagsFromCarData } from '@/lib/utils/tagMapping';
 
 // Bütçe tanımları (TRY)
 export const BUDGET_RANGES = {

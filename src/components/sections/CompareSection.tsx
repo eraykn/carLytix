@@ -4,10 +4,10 @@ import { useMemo, useState, MouseEvent as ReactMouseEvent, useEffect } from "rea
 
 import { motion } from "framer-motion";
 import { Plus, ChevronDown, Menu } from "lucide-react";
-import carsData from "@/json/cars.json";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { CarDetailsPanel } from "./CarDetailsPanel";
-import { Footer } from "./Footer";
+import carsData from "@/lib/data/cars.json";
+import { ImageWithFallback } from "@/components/common/ImageWithFallback";
+import { CarDetailsPanel } from "@/components/car/CarDetailsPanel";
+import { Footer } from "@/components/common/Footer";
 
 type BrandName = string;
 type ModelName = string;
@@ -98,8 +98,14 @@ const buildCarDetails = (car: CarEntry): CarDetailsPanelProps => {
       return keywords.some((key) => normalized.includes(key));
     });
   
+  // Fotoğraf yolunu düzelt - eğer / ile başlıyorsa /images/cars/ ekle
+  const photoPath = car.photo 
+    ? (car.photo.startsWith('/images/') ? car.photo : `/images/cars${car.photo}`)
+    : "/images/cars/car-no-image.webp";
+
   return {
     general: {
+      photo: photoPath,
       motorHacmi: formatValue(specs.motor_hacmi_l),
       motorGucu: formatValue(specs.guc_hp),
       tork: formatValue(specs.tork_Nm),
@@ -187,7 +193,17 @@ const CompareBox = ({
       })
     : null;
 
-  const carImageSrc = selectedCar?.photo || "/car-no-image.webp";
+  // carDetails eklendiğinde de fotoğrafı güncelle
+  // Fotoğraf yollarını düzelt
+  const normalizePhotoPath = (path?: string) => {
+    if (!path) return "/images/cars/car-no-image.webp";
+    if (path.startsWith('/images/')) return path;
+    return `/images/cars${path}`;
+  };
+
+  const carImageSrc = carDetails?.general?.photo 
+    || normalizePhotoPath(selectedCar?.photo) 
+    || "/images/cars/car-no-image.webp";
 
   const SelectInput = ({
     options,
@@ -232,21 +248,21 @@ const CompareBox = ({
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
-      className="w-full max-w-md bg-white border border-gray-100 rounded-3xl shadow-xl shadow-gray-500/10 p-10 flex flex-col items-center gap-6"
+      className="w-full max-w-sm lg:max-w-md xl:max-w-lg bg-white border border-gray-100 rounded-3xl shadow-xl shadow-gray-500/10 p-8 lg:p-10 flex flex-col items-center gap-6"
     >
-      <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
+      <h3 className="text-xl lg:text-2xl font-semibold text-gray-900">{title}</h3>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
         viewport={{ once: true }}
-        className="w-full h-52 bg-white rounded-2xl flex items-center justify-center"
+        className="w-full h-56 lg:h-64 bg-gray-50 rounded-2xl flex items-center justify-center overflow-hidden"
       >
         <ImageWithFallback
           src={carImageSrc}
           alt="Arac gorseli"
-          className="h-80 object-contain"
+          className="w-full h-full object-contain p-2"
         />
       </motion.div>
 
@@ -412,7 +428,7 @@ export function CompareSection() {
           <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
             {/* CarLytix Logo */}
             <img
-              src="/carlytix-concept-a-logo.svg"
+              src="/images/brands/carlytix-concept-a-logo.svg"
               alt="CarLytix Logo"
               className="h-[40px] w-auto drop-shadow-[0_0_10px_rgba(59,130,246,0.4)] ml-2"
             />

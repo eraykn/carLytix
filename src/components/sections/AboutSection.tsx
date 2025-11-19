@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, ReactNode } from "react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { Bolt, Globe, BarChart3, ArrowRight } from "lucide-react";
 
 interface FeatureItemProps {
@@ -242,7 +242,7 @@ export function AboutSection() {
 
           {/* Logo */}
           <motion.img
-            src="/carlytix-concept-a-logo.svg"
+            src="/images/brands/carlytix-concept-a-logo.svg"
             alt="CarLytix Logo"
             className="w-64 h-auto drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]"
             initial={{ opacity: 0, scale: 0.8 }}

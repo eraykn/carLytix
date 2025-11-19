@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { TransitionLayer } from "@/components/TransitionLayer";
+import { TransitionLayer } from "@/components/common/TransitionLayer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

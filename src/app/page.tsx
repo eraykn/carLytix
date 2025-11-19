@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
-import { LoadingScreen } from "@/components/LoadingScreen";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { Footer } from "@/components/Footer";
+import { LoadingScreen } from "@/components/common/LoadingScreen";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { Footer } from "@/components/common/Footer";
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(() => {

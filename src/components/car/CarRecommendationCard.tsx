@@ -84,7 +84,7 @@ export function CarRecommendationCard({ car, onLearnMore }: CarRecommendationCar
             <div className="relative group flex-shrink-0">
               {/* Logo */}
               <Image
-                src="/carlytix-concept-a-logo.svg"
+                src="/images/brands/carlytix-concept-a-logo.svg"
                 alt="Carlytix"
                 width={160}
                 height={60}

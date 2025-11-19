@@ -4,7 +4,7 @@
  */
 
 import { normalizeCarTags, mapTag, suggestTagsFromCarData } from './tagMapping';
-import assistantData from '@/json/assistant.json';
+import assistantData from '@/lib/data/assistant.json';
 
 console.log('🏷️  TAG MAPPING TEST\n');
 

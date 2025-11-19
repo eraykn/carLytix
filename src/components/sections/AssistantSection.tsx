@@ -20,9 +20,9 @@ import {
   DollarSign,
   TurkishLira
 } from "lucide-react";
-import { Footer } from "./Footer";
-import { CarRecommendationCard, CarRecommendation } from "./CarRecommendationCard";
-import { filterCars, type CarFilterCriteria } from "@/utils/carFiltering";
+import { Footer } from "@/components/common/Footer";
+import { CarRecommendationCard, CarRecommendation } from "@/components/car/CarRecommendationCard";
+import { filterCars, type CarFilterCriteria } from "@/lib/utils/carFiltering";
 
 // Minimal toast types
 type Toast = {
@@ -332,7 +332,7 @@ export function AssistantSection() {
         >
           <div className="flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
             <img
-              src="/carlytix-concept-a-logo.svg"
+              src="/images/brands/carlytix-concept-a-logo.svg"
               alt="CarLytix Logo"
               className="h-[36px] w-auto drop-shadow-[0_0_10px_rgba(60,198,240,0.4)] ml-2"
             />

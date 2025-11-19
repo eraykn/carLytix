@@ -1,6 +1,6 @@
 "use client";
 
-import { CompareSection } from "@/components/CompareSection";
+import { CompareSection } from "@/components/sections/CompareSection";
 
 export default function ComparePage() {
   return <CompareSection />;

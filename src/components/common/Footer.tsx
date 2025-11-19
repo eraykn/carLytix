@@ -17,7 +17,7 @@ export function Footer() {
         {/* Logo and Copyright */}
         <div className="flex flex-col sm:flex-row items-center gap-4">
           <img 
-            src="/carlytix-concept-a-logo.svg" 
+            src="/images/brands/carlytix-concept-a-logo.svg" 
             alt="CarLytix Logo" 
             className="h-10 w-auto"
           />

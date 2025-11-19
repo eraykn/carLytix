@@ -58,7 +58,7 @@ export default function RecommendedCarPage() {
     const carId = searchParams.get("id");
     if (carId) {
       // Load car data from assistant.json
-      import("@/json/assistant.json").then((data) => {
+      import("@/lib/data/assistant.json").then((data) => {
         const car = data.default.find((c: any) => c.id === carId);
         if (car) {
           setCarData(car);
