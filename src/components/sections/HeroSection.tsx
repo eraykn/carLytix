@@ -114,10 +114,11 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         className="absolute top-12 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
-      >{[
-          { name: "Anasayfa", href: "#" },
-          { name: "Karşılaştır", href: "/compare" },
-          { name: "Carlytix Asistan", href: "/assistant" },
+        >{[
+          { name: "Main Menu", href: "#" },
+          { name: "Compare", href: "/compare" },
+          { name: "CarLytix Assistant", href: "/assistant" },
+          { name: "About Us", href: "/aboutus" },
         ].map((item, index) => (
           <motion.a
             key={item.name}
@@ -200,32 +201,6 @@ export function HeroSection() {
           </div>
         </motion.div>
       </div>
-
-      {/* Bottom Right - Control Icons (Glassmorphism) */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.9, duration: 0.6 }}
-        className="absolute bottom-8 right-8 z-20 flex items-center gap-3"
-      >
-        {[
-          { icon: Volume2, label: "Ses" },
-          { icon: Share2, label: "Paylaş" },
-          { icon: Settings, label: "Ayarlar" },
-        ].map((item, index) => (
-          <motion.button
-            key={item.label}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1 + index * 0.1 }}
-            whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.18)" }}
-            className="w-10 h-10 rounded-full bg-white/[0.08] backdrop-blur-xl border border-white/[0.15] flex items-center justify-center transition-all duration-300 hover:border-[#3b82f6]"
-            aria-label={item.label}
-          >
-            <item.icon className="w-5 h-5 text-[#e2e8f0] group-hover:text-[#3b82f6]" strokeWidth={2} />
-          </motion.button>
-        ))}
-      </motion.div>
 
       {/* Scroll Indicator - Bottom Center */}
       <motion.div

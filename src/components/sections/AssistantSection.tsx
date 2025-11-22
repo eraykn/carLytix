@@ -346,9 +346,10 @@ export function AssistantSection() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="absolute top-8 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
         >{[
-            { name: "Anasayfa", href: "/" },
-            { name: "Karşılaştır", href: "/compare" },
-            { name: "Asistan", href: "/assistant" },
+            { name: "Main Menu", href: "/" },
+            { name: "Compare", href: "/compare" },
+            { name: "CarLytix Assistant", href: "/assistant" },
+            { name: "About Us", href: "/aboutus" },
           ].map((item, index) => (
             <motion.a
               key={item.name}
@@ -687,7 +688,7 @@ export function AssistantSection() {
           >
             <div className="flex items-center gap-2">
               <MessageCircle className="w-4 h-4 text-[#3CC6F0]" />
-              <span className="text-sm">Güncel veriler (Ekim 2025)</span>
+              <span className="text-sm">Güncel veriler (Aralık 2025)</span>
             </div>
             <div className="flex items-center gap-2">
               <MessageCircle className="w-4 h-4 text-[#3CC6F0]" />

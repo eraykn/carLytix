@@ -442,9 +442,10 @@ export function CompareSection() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="absolute top-12 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
         >{[
-            { name: "Anasayfa", href: "/" },
-            { name: "Karşılaştır", href: "/compare" },
-            { name: "Carlytix Asistan", href: "/assistant" },
+            { name: "Main Menu", href: "/" },
+            { name: "Compare", href: "/compare" },
+            { name: "CarLytix Assistant", href: "/assistant" },
+            { name: "About Us", href: "/aboutus" },
           ].map((item, index) => (
             <motion.a
               key={item.name}
