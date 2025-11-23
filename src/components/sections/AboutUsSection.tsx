@@ -2,11 +2,12 @@
 
 import type React from "react"
 
-import { useEffect, useState, useRef, useMemo } from "react"
+import { useEffect, useState, useRef, useMemo, useCallback } from "react"
 import dynamic from "next/dynamic"
 import type { GlobeMethods } from "react-globe.gl"
 import * as THREE from "three"
-import { Users, Target, Smile } from "lucide-react"
+import { Users, Target, Smile, Quote, ChevronDown, Menu } from "lucide-react"
+import { motion } from "framer-motion"
 
 const Globe = dynamic(() => import("react-globe.gl"), {
   ssr: false,
@@ -83,11 +84,14 @@ const MIDDLE_EAST_CITIES = [
 
 export default function GlobeVisualization() {
   const globeEl = useRef<GlobeMethods | undefined>(undefined)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [countries, setCountries] = useState({ features: [] })
   const [arcs, setArcs] = useState<any[]>([])
   const [rings, setRings] = useState<any[]>([ISTANBUL_COORDS])
   const [mounted, setMounted] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
+  const [isZoomedClose, setIsZoomedClose] = useState(false)
+  const [showGlobeUI, setShowGlobeUI] = useState(false)
 
   const [globeSize, setGlobeSize] = useState({ width: 0, height: 0 })
 
@@ -103,6 +107,26 @@ export default function GlobeVisualization() {
     updateSize()
     window.addEventListener("resize", updateSize)
     return () => window.removeEventListener("resize", updateSize)
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollContainerRef.current) {
+        const scrollTop = scrollContainerRef.current.scrollTop
+        const viewportHeight = window.innerHeight
+        if (scrollTop > viewportHeight * 0.5) {
+          setShowGlobeUI(true)
+        } else {
+          setShowGlobeUI(false)
+        }
+      }
+    }
+
+    const container = scrollContainerRef.current
+    if (container) {
+      container.addEventListener("scroll", handleScroll)
+    }
+    return () => container?.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
@@ -156,103 +180,285 @@ export default function GlobeVisualization() {
     })
   }, [])
 
+  const getPolygonCapColor = useCallback(() => "#047857", [])
+  const getPolygonSideColor = useCallback(() => "#064e3b", [])
+  const getPolygonStrokeColor = useCallback(() => "#022c22", [])
+  const getRingColor = useCallback(() => "#ffffff", [])
+  const getArcDashAnimateTime = useCallback((d: any) => d.dashAnimateTime, [])
+  const getArcDashInitialGap = useCallback(() => Math.random() * 5, [])
+
   if (!mounted) return null
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-slate-950 flex items-center justify-center">
-      <div className="absolute inset-0 pointer-events-none">
+    <div
+      ref={scrollContainerRef}
+      className="relative w-full h-screen overflow-y-auto overflow-x-hidden bg-slate-950 snap-y snap-mandatory scroll-smooth"
+    >
+      <div className="fixed inset-0 pointer-events-none z-0">
         <StarsBackground />
       </div>
 
-      <div
-        className={`absolute left-8 top-1/2 -translate-y-1/2 z-30 transition-opacity duration-300 flex flex-col gap-6 ${
-          isDragging ? "opacity-0" : "opacity-100"
-        }`}
+      {/* Top Center Logo - Glassmorphism */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        className="fixed top-12 left-1/2 -translate-x-1/2 z-50"
       >
-        <InfoCard
-          icon={<Smile className="w-8 h-8" strokeWidth={1.5} />}
-          value="4.8/5"
-          label="User Satisfaction Score"
-        />
+        <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
+          {/* CarLytix Logo */}
+          <img 
+            src="/images/brands/carlytix-concept-a-logo.svg" 
+            alt="CarLytix Logo" 
+            className="h-[40px] w-auto drop-shadow-[0_0_10px_rgba(59,130,246,0.4)] ml-2"
+          />
+        </div>
+      </motion.div>
 
-        <InfoCard icon={<Users className="w-8 h-8" strokeWidth={1.5} />} value="12,500" label="Daily Unique Visitors" />
-
-        <InfoCard
-          icon={<Target className="w-8 h-8" strokeWidth={1.5} />}
-          value="92%"
-          label="Recommendation Match Score"
-        />
-      </div>
-
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[15%] pointer-events-auto" />
-        <div className="absolute bottom-0 left-0 w-full h-[15%] pointer-events-auto" />
-        <div className="absolute top-[15%] left-0 w-[25%] h-[70%] pointer-events-auto" />
-        <div className="absolute top-[15%] right-0 w-[25%] h-[70%] pointer-events-auto" />
-      </div>
-
-      <div
-        className="relative z-10"
-        onPointerDown={() => setIsDragging(true)}
-        onPointerUp={() => setIsDragging(false)}
-        onPointerLeave={() => setIsDragging(false)}
-        style={{
-          width: globeSize.width,
-          height: globeSize.height,
-        }}
+      {/* Top Right Navigation - Glassmorphism */}
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+        className="fixed top-12 right-10 z-40 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
       >
-        <Globe
-          ref={globeEl}
-          width={globeSize.width}
-          height={globeSize.height}
-          backgroundColor="rgba(0,0,0,0)"
-          globeImageUrl={null}
-          globeMaterial={globeMaterial}
-          polygonsData={countries.features}
-          polygonCapColor={() => "#047857"}
-          polygonSideColor={() => "#064e3b"}
-          polygonStrokeColor={() => "#022c22"}
-          polygonAltitude={0.01}
-          atmosphereColor="#3b82f6"
-          atmosphereAltitude={0.15}
-          arcsData={arcs}
-          arcColor="color"
-          arcDashLength={0.4}
-          arcDashGap={10}
-          arcDashInitialGap={() => Math.random() * 5}
-          arcDashAnimateTime={(d: any) => d.dashAnimateTime}
-          arcStroke={0.5}
-          arcAltitudeAutoScale={0.5}
-          ringsData={rings}
-          ringColor={() => "#ffffff"}
-          ringMaxRadius={5}
-          ringPropagationSpeed={5}
-          ringRepeatPeriod={1000}
-          onGlobeReady={() => {
-            if (globeEl.current) {
-              const controls = globeEl.current.controls() as any
+        {[
+          { name: "Main Menu", href: "/" },
+          { name: "Compare", href: "/compare" },
+          { name: "CarLytix Assistant", href: "/assistant" },
+          { name: "About Us", href: "/aboutus" },
+        ].map((item, index) => (
+          <motion.a
+            key={item.name}
+            href={item.href}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 + index * 0.1 }}
+            className="text-sm text-[#d1d5db] hover:text-[#3b82f6] transition-colors duration-300 relative group"
+          >
+            {item.name}
+            <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
+          </motion.a>
+        ))}
+      </motion.nav>
 
-              controls.autoRotate = true
-              controls.autoRotateSpeed = 0.5
+      {/* Mobile Menu Button */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="fixed top-12 right-10 z-40 md:hidden p-2 rounded-lg bg-white/[0.08] backdrop-blur-xl border border-white/[0.15] hover:bg-white/[0.18] transition-colors"
+      >
+        <Menu className="w-6 h-6 text-[#e2e8f0]" />
+      </motion.button>
 
-              controls.enableDamping = true
-              controls.dampingFactor = 0.1
+      {/* Section 1: About Carlytix - Full Screen */}
+      <section className="relative w-full h-screen flex flex-col items-center justify-center z-10 snap-start shrink-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/20 via-transparent to-slate-950/40 pointer-events-none" />
 
-              controls.minDistance = 150
-              controls.maxDistance = 400
+        <div className="flex flex-col items-center text-center max-w-5xl px-6 z-20 relative">
+          {/* Tag */}
+          <div className="flex items-center gap-2 mb-8">
+            <div className="w-12 h-px bg-emerald-500/50"></div>
+            <span className="text-emerald-400 font-mono text-xs tracking-[0.4em] font-bold uppercase drop-shadow-[0_0_15px_rgba(52,211,153,0.4)]">
+              ABOUT CARLYTIX
+            </span>
+            <div className="w-12 h-px bg-emerald-500/50"></div>
+          </div>
 
-              globeEl.current.pointOfView({ lat: 41, lng: 28, altitude: 2.5 }, 1000)
-            }
-          }}
-        />
-      </div>
+          {/* Main Heading */}
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
+            Akıllı Araç{" "}
+            <span className="bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+              Analitiği
+            </span>{" "}
+            ile
+            <br />
+            Daha İyi{" "}
+            <span className="bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-300 bg-clip-text text-transparent">
+              Seçimler
+            </span>{" "}
+            Yapın
+          </h1>
 
-      <div className="absolute top-10 left-10 z-30 pointer-events-none">
-        <h1 className="text-4xl font-bold text-white tracking-tighter drop-shadow-lg">
-          GLOBAL <span className="text-emerald-400">CONNECT</span>
-        </h1>
-        <p className="text-emerald-200/70 mt-2 text-sm font-mono">ISTANBUL HUB ACTIVE /// MONITORING SIGNALS</p>
-      </div>
+          {/* Divider */}
+          <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mb-8"></div>
+
+          {/* Description */}
+          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light tracking-wide">
+            Carlytix, reklamlar ya da sponsorluklar yerine binlerce veri noktası üzerinden sürücüleri ihtiyaçlarına en
+            uygun araçlarla eşleştiren bağımsız bir otomotiv analiz platformudur.
+          </p>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30">
+          <span className="text-emerald-400/50 text-xs font-mono tracking-widest">SCROLL DOWN</span>
+          <div className="animate-bounce text-emerald-400/60">
+            <ChevronDown size={28} strokeWidth={1.5} />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 1b: Founder Note - Before Globe */}
+      <section className="relative w-full min-h-screen flex items-center justify-center z-10 snap-start shrink-0 py-20">
+        <div className="max-w-3xl px-6 z-20 relative">
+          {/* Founder Note */}
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-emerald-400 font-mono text-xs tracking-[0.4em] font-bold uppercase mb-8 drop-shadow-[0_0_15px_rgba(52,211,153,0.4)]">
+                FOUNDER. NOTE
+              </h2>
+              <div className="bg-slate-900/60 backdrop-blur-xl border border-emerald-500/30 rounded-2xl p-10 shadow-[0_20px_40px_-10px_rgba(16,185,129,0.1)]">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="p-4 bg-emerald-500/10 rounded-full flex-shrink-0">
+                    <Quote className="w-6 h-6 text-emerald-400" strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white mb-2">Eray Kan</h3>
+                    <p className="text-emerald-400/70 text-sm font-mono tracking-wider">Founder & Developer</p>
+                  </div>
+                </div>
+
+                <div className="space-y-6 text-base text-slate-300 leading-relaxed">
+                  <p className="text-white/80">
+                    "Ben Eray Kan, Carlytix'i sıfırdan geliştiren tek yazılımcıyım. Amacım, araç satın alma sürecindeki
+                    belirsizlikleri ortadan kaldırarak, kullanıcıların kararlarını net veriler ve akıllı analizlerle
+                    desteklemek."
+                  </p>
+                  <p className="border-t border-emerald-500/20 pt-6 italic text-emerald-100/60">
+                    "Carlytix, yerel bir proje olarak başladı ancak hedefi sınırların ötesine geçerek dünya genelinde
+                    sürücülere daha doğru öneriler sunmak."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Globe Visualization - Full Screen */}
+      <section className="relative w-full h-screen z-10 snap-start shrink-0 overflow-hidden">
+        {/* Top Left Logo & Status - Only visible when in Globe section */}
+        <div
+          className={`absolute left-8 top-8 z-30 transition-all duration-700 ${
+            isDragging || isZoomedClose
+              ? "opacity-0 translate-x-[-20px] pointer-events-none"
+              : "opacity-100 translate-x-0"
+          }`}
+        >
+          <div className="flex flex-col gap-2">
+            {/* Logo */}
+            <img 
+              src="/images/brands/carlytix-concept-a-logo.svg" 
+              alt="CarLytix Logo" 
+              className="h-20 w-auto"
+            />
+            {/* Status Text */}
+            <div className="text-xs font-mono text-slate-400 tracking-wider">
+              <span className="text-emerald-400 font-bold">ISTANBUL HUB ACTIVE</span>
+              <span className="text-slate-500 mx-2">///</span>
+              <span className="text-blue-400">MONITORING SIGNALS</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Left Info Cards - Only visible when in Globe section */}
+        <div
+          className={`absolute left-12 top-1/2 -translate-y-1/2 z-30 transition-all duration-700 flex flex-col gap-6 ${
+            isDragging || isZoomedClose
+              ? "opacity-0 translate-x-[-20px] pointer-events-none"
+              : "opacity-100 translate-x-0"
+          }`}
+        >
+          <InfoCard
+            icon={<Smile className="w-8 h-8" strokeWidth={1.5} />}
+            value="4.8/5"
+            label="User Satisfaction Score"
+          />
+
+          <InfoCard
+            icon={<Users className="w-8 h-8" strokeWidth={1.5} />}
+            value="12,500"
+            label="Daily Unique Visitors"
+          />
+
+          <InfoCard
+            icon={<Target className="w-8 h-8" strokeWidth={1.5} />}
+            value="92%"
+            label="Recommendation Match Score"
+          />
+        </div>
+
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          {/* Interaction Masks */}
+          <div className="absolute top-0 left-0 w-full h-[15%] pointer-events-auto" />
+          <div className="absolute bottom-0 left-0 w-full h-[15%] pointer-events-auto" />
+          <div className="absolute top-[15%] left-0 w-[25%] h-[70%] pointer-events-auto" />
+          <div className="absolute top-[15%] right-0 w-[25%] h-[70%] pointer-events-auto" />
+        </div>
+
+        <div
+          className="relative z-10 w-full h-full flex items-center justify-center"
+          onPointerDown={() => setIsDragging(true)}
+          onPointerUp={() => setIsDragging(false)}
+          onPointerLeave={() => setIsDragging(false)}
+        >
+          <Globe
+            ref={globeEl}
+            width={globeSize.width}
+            height={globeSize.height}
+            backgroundColor="rgba(0,0,0,0)"
+            globeImageUrl={null}
+            globeMaterial={globeMaterial}
+            polygonsData={countries.features}
+            polygonCapColor={getPolygonCapColor}
+            polygonSideColor={getPolygonSideColor}
+            polygonStrokeColor={getPolygonStrokeColor}
+            polygonAltitude={0.01}
+            atmosphereColor="#3b82f6"
+            atmosphereAltitude={0.15}
+            arcsData={arcs}
+            arcColor="color"
+            arcDashLength={0.4}
+            arcDashGap={10}
+            arcDashInitialGap={getArcDashInitialGap}
+            arcDashAnimateTime={getArcDashAnimateTime}
+            arcStroke={0.5}
+            arcAltitudeAutoScale={0.5}
+            ringsData={rings}
+            ringColor={getRingColor}
+            ringMaxRadius={5}
+            ringPropagationSpeed={5}
+            ringRepeatPeriod={1000}
+            onGlobeReady={() => {
+              if (globeEl.current) {
+                const controls = globeEl.current.controls() as any
+
+                controls.autoRotate = true
+                controls.autoRotateSpeed = 0.5
+
+                controls.enableDamping = true
+                controls.dampingFactor = 0.1
+
+                controls.minDistance = 150
+                controls.maxDistance = 400
+
+                controls.addEventListener("change", () => {
+                  const distance = controls.getDistance()
+                  if (distance < 220) {
+                    setIsZoomedClose(true)
+                  } else {
+                    setIsZoomedClose(false)
+                  }
+                })
+
+                globeEl.current.pointOfView({ lat: 41, lng: 28, altitude: 2.5 }, 1000)
+              }
+            }}
+          />
+        </div>
+      </section>
     </div>
   )
 }
