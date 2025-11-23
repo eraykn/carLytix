@@ -6,7 +6,7 @@ import { useEffect, useState, useRef, useMemo, useCallback } from "react"
 import dynamic from "next/dynamic"
 import type { GlobeMethods } from "react-globe.gl"
 import * as THREE from "three"
-import { Users, Target, Smile, Quote, ChevronDown, Menu } from "lucide-react"
+import { Users, Target, Smile, Quote, ChevronDown, Menu, Bot } from "lucide-react"
 import { motion } from "framer-motion"
 
 const Globe = dynamic(() => import("react-globe.gl"), {
@@ -85,6 +85,7 @@ const MIDDLE_EAST_CITIES = [
 export default function GlobeVisualization() {
   const globeEl = useRef<GlobeMethods | undefined>(undefined)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const listenerRef = useRef<(() => void) | null>(null)
   const [countries, setCountries] = useState({ features: [] })
   const [arcs, setArcs] = useState<any[]>([])
   const [rings, setRings] = useState<any[]>([ISTANBUL_COORDS])
@@ -94,6 +95,47 @@ export default function GlobeVisualization() {
   const [showGlobeUI, setShowGlobeUI] = useState(false)
 
   const [globeSize, setGlobeSize] = useState({ width: 0, height: 0 })
+
+  const setupGlobeControls = useCallback(() => {
+    if (!globeEl.current) return
+
+    const controls = globeEl.current.controls() as any
+    const camera = globeEl.current.camera()
+
+    if (!controls || !camera) return
+
+    // 1. LİMİTLERİ ZORLA (Her çağrıldığında tekrar uygular)
+    controls.minDistance = 150
+    controls.maxDistance = 400
+    controls.enableDamping = true
+    controls.dampingFactor = 0.1
+    controls.autoRotate = true
+    controls.autoRotateSpeed = 0.5
+
+    // 2. ESKİ LISTENER VARSA SİL (Duplicate/Çakışma önleme)
+    if (listenerRef.current) {
+      controls.removeEventListener("change", listenerRef.current)
+    }
+
+    // 3. YENİ LISTENER OLUŞTUR
+    const handleCameraChange = () => {
+      if (camera.position) {
+        // Three.js native fonksiyonu ile mesafe ölçümü (daha stabil)
+        const dist = camera.position.length()
+        const isClose = dist < 220
+        
+        // State update optimization
+        setIsZoomedClose((prev) => (prev !== isClose ? isClose : prev))
+      }
+    }
+
+    // 4. LISTENER'I KAYDET VE EKLE
+    listenerRef.current = handleCameraChange
+    controls.addEventListener("change", handleCameraChange)
+    
+    // 5. Kontrolü güncelle ki ayarlar hemen işlesin
+    controls.update()
+  }, [])
 
   useEffect(() => {
     setMounted(true)
@@ -128,6 +170,15 @@ export default function GlobeVisualization() {
     }
     return () => container?.removeEventListener("scroll", handleScroll)
   }, [])
+
+  useEffect(() => {
+    // Biraz gecikmeli çalıştır ki Globe tamamen render olsun
+    const timeout = setTimeout(() => {
+      setupGlobeControls()
+    }, 100)
+
+    return () => clearTimeout(timeout)
+  }, [globeSize, setupGlobeControls])
 
   useEffect(() => {
     fetch(
@@ -203,7 +254,11 @@ export default function GlobeVisualization() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="fixed top-12 left-1/2 -translate-x-1/2 z-50"
+        className={`fixed top-12 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 ${
+          showGlobeUI && (isDragging || isZoomedClose)
+            ? "opacity-0 -translate-y-4 pointer-events-none"
+            : "opacity-100 translate-y-0"
+        }`}
       >
         <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
           {/* CarLytix Logo */}
@@ -220,7 +275,11 @@ export default function GlobeVisualization() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="fixed top-12 right-10 z-40 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
+        className={`fixed top-12 right-10 z-40 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] transition-all duration-700 ${
+          showGlobeUI && (isDragging || isZoomedClose)
+            ? "opacity-0 translate-x-4 pointer-events-none"
+            : "opacity-100 translate-x-0"
+        }`}
       >
         {[
           { name: "Main Menu", href: "/" },
@@ -247,7 +306,11 @@ export default function GlobeVisualization() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="fixed top-12 right-10 z-40 md:hidden p-2 rounded-lg bg-white/[0.08] backdrop-blur-xl border border-white/[0.15] hover:bg-white/[0.18] transition-colors"
+        className={`fixed top-12 right-10 z-40 md:hidden p-2 rounded-lg bg-white/[0.08] backdrop-blur-xl border border-white/[0.15] hover:bg-white/[0.18] transition-all duration-700 ${
+          showGlobeUI && (isDragging || isZoomedClose)
+            ? "opacity-0 translate-x-4 pointer-events-none"
+            : "opacity-100 translate-x-0"
+        }`}
       >
         <Menu className="w-6 h-6 text-[#e2e8f0]" />
       </motion.button>
@@ -388,6 +451,12 @@ export default function GlobeVisualization() {
             value="92%"
             label="Recommendation Match Score"
           />
+
+          <InfoCard
+            icon={<Bot className="w-8 h-8" strokeWidth={1.5} />}
+            value="<1s"
+            label="AI Processing Time"
+          />
         </div>
 
         <div className="absolute inset-0 z-20 pointer-events-none">
@@ -433,27 +502,10 @@ export default function GlobeVisualization() {
             ringRepeatPeriod={1000}
             onGlobeReady={() => {
               if (globeEl.current) {
-                const controls = globeEl.current.controls() as any
-
-                controls.autoRotate = true
-                controls.autoRotateSpeed = 0.5
-
-                controls.enableDamping = true
-                controls.dampingFactor = 0.1
-
-                controls.minDistance = 150
-                controls.maxDistance = 400
-
-                controls.addEventListener("change", () => {
-                  const distance = controls.getDistance()
-                  if (distance < 220) {
-                    setIsZoomedClose(true)
-                  } else {
-                    setIsZoomedClose(false)
-                  }
-                })
-
-                globeEl.current.pointOfView({ lat: 41, lng: 28, altitude: 2.5 }, 1000)
+                // İlk açılış pozisyonu - İstanbul'a odaklı, animasyonsuz
+                globeEl.current.pointOfView({ lat: 41.0082, lng: 28.9784, altitude: 1.8 }, 0)
+                // Kontrolleri ayarla
+                setupGlobeControls()
               }
             }}
           />
