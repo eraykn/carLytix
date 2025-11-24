@@ -8,6 +8,10 @@ import type { GlobeMethods } from "react-globe.gl"
 import * as THREE from "three"
 import { Users, Target, Smile, Quote, ChevronDown, Menu, Bot } from "lucide-react"
 import { motion } from "framer-motion"
+import { Marquee } from "@/components/ui/marquee"
+import { NumberTicker } from "@/components/ui/number-ticker"
+import { BorderBeam } from "@/components/ui/border-beam"
+import { RippleButton } from "@/components/ui/ripple-button"
 
 const Globe = dynamic(() => import("react-globe.gl"), {
   ssr: false,
@@ -82,6 +86,69 @@ const MIDDLE_EAST_CITIES = [
   { lat: 31.9454, lng: 35.9284, name: "Amman" },
 ]
 
+const reviews = [
+  {
+    name: "Mehmet Yılmaz",
+    username: "@mehmetyilmaz",
+    body: "CarLytix sayesinde hayalimdeki arabayı buldum. Veriler gerçekten çok detaylı ve güvenilir!",
+    img: "https://avatar.vercel.sh/mehmet",
+  },
+  {
+    name: "Ayşe Demir",
+    username: "@aysedemir",
+    body: "Araç karşılaştırma özelliği muhteşem. Artık hangi modeli alacağımı net bir şekilde biliyorum.",
+    img: "https://avatar.vercel.sh/ayse",
+  },
+  {
+    name: "Can Öztürk",
+    username: "@canozturk",
+    body: "AI asistanı çok faydalı, sorularıma anında cevap veriyor. Gerçekten etkileyici bir platform!",
+    img: "https://avatar.vercel.sh/can",
+  },
+  {
+    name: "Zeynep Kaya",
+    username: "@zeynepkaya",
+    body: "Sadece fiyat değil, teknoloji ve güvenlik özelliklerini de analiz etmesi harika.",
+    img: "https://avatar.vercel.sh/zeynep",
+  },
+  {
+    name: "Burak Arslan",
+    username: "@burakarslan",
+    body: "Performans analizleri sayesinde aracımın gerçek potansiyelini keşfettim. Teşekkürler CarLytix!",
+    img: "https://avatar.vercel.sh/burak",
+  },
+  {
+    name: "Elif Şahin",
+    username: "@elifsahin",
+    body: "Sponsorsuz ve objektif yorumlar için tek adres. Güvenle tercih ediyorum.",
+    img: "https://avatar.vercel.sh/elif",
+  },
+  {
+    name: "Taha Bulut",
+    username: "@tahacloud",
+    body: "Benim kullanım tarzımı anlaması şaşırttı, önerdiği araç tam olarak beklentime uydu.",
+    img: "https://avatar.vercel.sh/ahmet",
+  },
+  {
+    name: "Selin Aydın",
+    username: "@selinaydin",
+    body: "Arayüz çok kullanıcı dostu ve modern. Her şey çok akıcı çalışıyor.",
+    img: "https://avatar.vercel.sh/selin",
+  },
+  {
+    name: "Emre Yıldız",
+    username: "@emreyildiz",
+    body: "Teknik detaylar mühendis gözüyle hazırlanmış. Gerçekten kaliteli bir iş çıkarmışsınız!",
+    img: "https://avatar.vercel.sh/emre",
+  },
+  {
+    name: "Deniz Koç",
+    username: "@denizkoc",
+    body: "CarLytix olmadan araç almayın! Benim için oyun değiştirici bir platform oldu.",
+    img: "https://avatar.vercel.sh/deniz",
+  },
+]
+
 export default function GlobeVisualization() {
   const globeEl = useRef<GlobeMethods | undefined>(undefined)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -95,6 +162,80 @@ export default function GlobeVisualization() {
   const [showGlobeUI, setShowGlobeUI] = useState(false)
 
   const [globeSize, setGlobeSize] = useState({ width: 0, height: 0 })
+
+  // Form validation state
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  })
+  const [errors, setErrors] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  })
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const newErrors = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    }
+
+    // First Name validation
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required"
+    } else if (formData.firstName.length > 15) {
+      newErrors.firstName = "First name must be 15 characters or less"
+    }
+
+    // Last Name validation
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required"
+    } else if (formData.lastName.length > 15) {
+      newErrors.lastName = "Last name must be 15 characters or less"
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = "Please enter a valid email"
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required"
+    }
+
+    setErrors(newErrors)
+
+    // If no errors, submit form
+    if (!Object.values(newErrors).some((error) => error !== "")) {
+      console.log("Form submitted:", formData)
+      // Add your form submission logic here
+    }
+  }
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { id, value } = e.target
+    setFormData((prev) => ({ ...prev, [id]: value }))
+    // Clear error when user starts typing
+    if (errors[id as keyof typeof errors]) {
+      setErrors((prev) => ({ ...prev, [id]: "" }))
+    }
+  }
 
   const setupGlobeControls = useCallback(() => {
     if (!globeEl.current) return
@@ -348,10 +489,19 @@ export default function GlobeVisualization() {
           <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mb-8"></div>
 
           {/* Description */}
-          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light tracking-wide">
+          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light tracking-wide mb-12">
             Carlytix, reklamlar ya da sponsorluklar yerine binlerce veri noktası üzerinden sürücüleri ihtiyaçlarına en
             uygun araçlarla eşleştiren bağımsız bir otomotiv analiz platformudur.
           </p>
+
+          {/* User Reviews Marquee */}
+          <div className="w-full max-w-6xl">
+            <Marquee pauseOnHover className="[--duration:30s]">
+              {reviews.map((review) => (
+                <ReviewCard key={review.username} {...review} />
+              ))}
+            </Marquee>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
@@ -436,19 +586,22 @@ export default function GlobeVisualization() {
         >
           <InfoCard
             icon={<Smile className="w-8 h-8" strokeWidth={1.5} />}
-            value="4.8/5"
+            number={4.8}
+            suffix="/5"
+            decimalPlaces={1}
             label="User Satisfaction Score"
           />
 
           <InfoCard
             icon={<Users className="w-8 h-8" strokeWidth={1.5} />}
-            value="12,500"
+            number={12500}
             label="Daily Unique Visitors"
           />
 
           <InfoCard
             icon={<Target className="w-8 h-8" strokeWidth={1.5} />}
-            value="92%"
+            number={92}
+            suffix="%"
             label="Recommendation Match Score"
           />
 
@@ -509,6 +662,138 @@ export default function GlobeVisualization() {
               }
             }}
           />
+        </div>
+      </section>
+
+      {/* Section 3: Get in Touch - Full Screen */}
+      <section className="relative w-full h-screen flex flex-col items-center justify-center z-10 snap-start shrink-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/20 via-transparent to-slate-950/40 pointer-events-none" />
+
+        <div className="flex flex-col items-center text-center max-w-5xl px-6 z-20 relative">
+          {/* Tag */}
+          <div className="flex items-center gap-2 mb-8">
+            <div className="w-12 h-px bg-emerald-500/50"></div>
+            <span className="text-emerald-400 font-mono text-xs tracking-[0.4em] font-bold uppercase drop-shadow-[0_0_15px_rgba(52,211,153,0.4)]">
+              GET IN TOUCH
+            </span>
+            <div className="w-12 h-px bg-emerald-500/50"></div>
+          </div>
+
+          {/* Description */}
+          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto font-light tracking-wide mb-12">
+            Her türlü iş birliği, soru ve iletişim talepleriniz için bizimle bağlantıya geçebilirsiniz.
+          </p>
+
+          {/* Contact Form Box */}
+          <div className="relative w-full max-w-2xl">
+            <div className="relative rounded-2xl bg-slate-900/60 backdrop-blur-xl border border-emerald-500/30 p-8 shadow-[0_20px_40px_-10px_rgba(16,185,129,0.1)]">
+              <BorderBeam size={250} duration={12} delay={9} colorFrom="#10b981" colorTo="#06b6d4" />
+              
+              <div className="space-y-6">
+                {/* First Name & Last Name */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-emerald-400 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      maxLength={15}
+                      className={`w-full px-4 py-3 rounded-lg bg-slate-800/50 border ${
+                        errors.firstName
+                          ? "border-red-500/50 focus:border-red-500"
+                          : "border-emerald-500/20 focus:border-emerald-500/50"
+                      } text-white placeholder-slate-400 focus:outline-none transition-colors`}
+                      placeholder="Ahmet"
+                    />
+                    {errors.firstName && (
+                      <p className="mt-1 text-sm text-red-400">{errors.firstName}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-emerald-400 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      maxLength={15}
+                      className={`w-full px-4 py-3 rounded-lg bg-slate-800/50 border ${
+                        errors.lastName
+                          ? "border-red-500/50 focus:border-red-500"
+                          : "border-emerald-500/20 focus:border-emerald-500/50"
+                      } text-white placeholder-slate-400 focus:outline-none transition-colors`}
+                      placeholder="Çelik"
+                    />
+                    {errors.lastName && (
+                      <p className="mt-1 text-sm text-red-400">{errors.lastName}</p>
+                    )}
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-emerald-400 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-3 rounded-lg bg-slate-800/50 border ${
+                      errors.email
+                        ? "border-red-500/50 focus:border-red-500"
+                        : "border-emerald-500/20 focus:border-emerald-500/50"
+                    } text-white placeholder-slate-400 focus:outline-none transition-colors`}
+                    placeholder="ahmet.celik@example.com"
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-400">{errors.email}</p>
+                  )}
+                </div>
+
+                {/* Your Message */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-emerald-400 mb-2">
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    rows={4}
+                    className={`w-full px-4 py-3 rounded-lg bg-slate-800/50 border ${
+                      errors.message
+                        ? "border-red-500/50 focus:border-red-500"
+                        : "border-emerald-500/20 focus:border-emerald-500/50"
+                    } text-white placeholder-slate-400 focus:outline-none transition-colors resize-none`}
+                    placeholder="Tell us about your project..."
+                  />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-400">{errors.message}</p>
+                  )}
+                </div>
+
+                {/* Submit Button */}
+                <div className="flex justify-center">
+                  <RippleButton
+                    onClick={handleSubmit}
+                    rippleColor="#10b981"
+                    duration="1500ms"
+                    className="bg-slate-900/60 backdrop-blur-xl border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 hover:text-emerald-300 font-medium px-8 py-3 text-lg transition-all"
+                  >
+                    Touch
+                  </RippleButton>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -592,7 +877,7 @@ function StarsBackground() {
   return <canvas ref={canvasRef} className="w-full h-full absolute inset-0" />
 }
 
-function InfoCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
+function InfoCard({ icon, value, label, number, suffix, decimalPlaces }: { icon: React.ReactNode; value?: string; label: string; number?: number; suffix?: string; decimalPlaces?: number }) {
   return (
     <div className="flex items-center gap-4 p-6 rounded-xl bg-slate-900/80 backdrop-blur-md border border-emerald-500/30 shadow-[0_0_30px_-5px_rgba(16,185,129,0.3)] w-[340px]">
       <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_-3px_rgba(16,185,129,0.2)]">
@@ -600,12 +885,34 @@ function InfoCard({ icon, value, label }: { icon: React.ReactNode; value: string
       </div>
       <div className="flex flex-col">
         <span className="text-3xl font-bold text-white tracking-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]">
-          {value}
+          {number !== undefined ? (
+            <>
+              <NumberTicker value={number} decimalPlaces={decimalPlaces || 0} className="text-white" />
+              {suffix && <span className="text-white">{suffix}</span>}
+            </>
+          ) : (
+            value
+          )}
         </span>
         <span className="text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase leading-tight mt-1">
           {label}
         </span>
       </div>
     </div>
+  )
+}
+
+function ReviewCard({ img, name, username, body }: { img: string; name: string; username: string; body: string }) {
+  return (
+    <figure className="relative w-80 cursor-pointer overflow-hidden rounded-xl border p-4 border-emerald-500/30 bg-slate-900/60 backdrop-blur-xl hover:bg-slate-900/80 transition-all">
+      <div className="flex flex-row items-center gap-2">
+        <img className="rounded-full" width="40" height="40" alt="" src={img} />
+        <div className="flex flex-col">
+          <figcaption className="text-sm font-medium text-white">{name}</figcaption>
+          <p className="text-xs font-medium text-emerald-400/70">{username}</p>
+        </div>
+      </div>
+      <blockquote className="mt-2 text-sm text-slate-300">{body}</blockquote>
+    </figure>
   )
 }
