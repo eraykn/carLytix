@@ -696,7 +696,7 @@ export function AssistantSection() {
             </div>
             <div className="flex items-center gap-2">
               <MessageCircle className="w-4 h-4 text-[#3CC6F0]" />
-              <span className="text-sm">Hızlı (≤ 30 sn)</span>
+              <span className="text-sm">Hızlı (≤ 5s)</span>
             </div>
           </motion.div>
         </div>
