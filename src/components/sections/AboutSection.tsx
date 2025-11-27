@@ -4,7 +4,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, ReactNode } from "react";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { Bolt, Globe, BarChart3, ArrowRight } from "lucide-react";
-import { Highlighter } from "@/components/ui/highlighter";
 
 interface FeatureItemProps {
   icon: ReactNode;
@@ -103,11 +102,9 @@ export function AboutSection() {
               <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
                 Neden{" "}
               </span>
-              <Highlighter action="underline" color="#3b82f6" isView={true}>
-                <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent font-bold">
-                  CarLytix
-                </span>
-              </Highlighter>
+              <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent font-bold">
+                CarLytix
+              </span>
               <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
                 ?
               </span>
