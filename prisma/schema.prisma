@@ -1,3 +1,5 @@
+// prisma/schema.prisma
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,23 +9,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// --- MEVCUT COMPARE TABLOLARI ---
 model Brand {
-  id   String @id @default(cuid())
-  name String @unique
-  cars Car[]
+  id    String @id @default(cuid())
+  name  String @unique
+  cars  Car[]
 }
 
 model Car {
-  id         String            @id @default(cuid())
-  modelName  String
-  year       Int
-  imageUrl   String?
-  brandId    String
-  createdAt  DateTime          @default(now())
-  originalId String?
-  brand      Brand             @relation(fields: [brandId], references: [id])
-  features   SecurityFeature[]
-  specs      TechnicalSpecs?
+  id          String         @id @default(cuid())
+  modelName   String
+  year        Int
+  imageUrl    String?
+  brandId     String
+  createdAt   DateTime       @default(now())
+  originalId  String?
+  brand       Brand          @relation(fields: [brandId], references: [id])
+  features    SecurityFeature[]
+  specs       TechnicalSpecs?
 }
 
 model TechnicalSpecs {
@@ -52,4 +55,75 @@ model SecurityFeature {
   isAvailable Boolean
   carId       String
   car         Car     @relation(fields: [carId], references: [id], onDelete: Cascade)
+}
+
+// --- YENİ: ASSISTANT SAYFASI İÇİN ÖZEL TABLO ---
+model AssistantCar {
+  id          String   @id @default(cuid())
+  originalId  String   @unique // JSON'daki ID
+
+  // Temel Bilgiler
+  brand       String
+  model       String
+  trim        String?
+  year        Int
+  body        String   // SUV, Sedan
+  fuel        String   // Elektrik
+  drivetrain  String   // FWD
+  transmission String  // Tek oranlı
+  price       Int      
+  
+  // Filtreleme Alanları
+  tags        String[] // ["Şehir içi", "Aile Odaklı"]
+
+  // Görseller
+  imageMain     String?
+  imageInterior String?
+  brandLogo     String?
+
+  // Puanlar
+  scoreTotal       Int?
+  scoreEconomy     Int?
+  scoreComfort     Int?
+  scoreSafety      Int?
+  scorePerformance Int?
+  scoreTechnology  Int?
+
+  // Neden Bu Araç?
+  whyText     String?  @db.Text
+  whyBullets  String[]
+
+  // Detaylar (JSON olarak)
+  specs       Json?    
+  
+  createdAt   DateTime @default(now())
+}
+
+// --- KULLANICI OTURUMU VE SEÇİMLERİ ---
+model UserSession {
+  id            String   @id @default(cuid())
+  
+  // Kullanıcı seçimleri
+  usageTags     String[] // ["Şehir içi", "Uzun yol"]
+  bodyType      String?  // "SUV"
+  fuelType      String?  // "Elektrikli"
+  priorityTags  String[] // ["Güvenlik", "Düşük tüketim"]
+  budget        Int?     // 2000000
+  
+  // Seçim geçmişi (her adımı JSON olarak saklayabiliriz)
+  selectionHistory Json?  // Tüm seçim adımlarının kaydı
+  
+  // Önerilen araçlar
+  recommendedCarIds String[] // Önerilen araç ID'leri
+  selectedCarId     String?  // Kullanıcının seçtiği araç ID'si
+  
+  // Oturum bilgileri
+  deviceFingerprint String?  // Tarayıcı parmak izi (opsiyonel)
+  ipAddress         String?  // IP adresi (opsiyonel)
+  userAgent         String?  // Tarayıcı bilgisi
+  
+  // Zaman damgaları
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  completedAt  DateTime? // Öneri alındığında
 }

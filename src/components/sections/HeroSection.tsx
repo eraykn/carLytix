@@ -117,7 +117,8 @@ export function HeroSection() {
         >{[
           { name: "Main Menu", href: "#" },
           { name: "Compare", href: "/compare" },
-          { name: "CarLytix Assistant", href: "/assistant" },
+          { name: "CarLytix Match", href: "/assistant" },
+          { name: "CarLytix AI", href: "/ai" },
           { name: "About Us", href: "/aboutus" },
         ].map((item, index) => (
           <motion.a

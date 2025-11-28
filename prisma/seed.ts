@@ -4,94 +4,65 @@ import path from 'path'
 
 const prisma = new PrismaClient()
 
-// --- YENİ YARDIMCI FONKSİYONLAR (Type-Safe) ---
-
-// Sadece Tam Sayı (Int) döndürür veya null
-const asInt = (val: any): number | null => {
-  if (val === undefined || val === null || val === '-' || val === '') return null;
-  const num = parseInt(val);
-  return isNaN(num) ? null : num;
-}
-
-// Sadece Ondalıklı Sayı (Float) döndürür veya null
-const asFloat = (val: any): number | null => {
-  if (val === undefined || val === null || val === '-' || val === '') return null;
-  // Virgül varsa noktaya çevir (bazı JSON'larda 5,4 gelebilir)
-  const cleanVal = String(val).replace(',', '.');
-  const num = parseFloat(cleanVal);
-  return isNaN(num) ? null : num;
-}
-
-// Sadece Yazı (String) döndürür veya null
-const asString = (val: any): string | null => {
-  if (val === undefined || val === null || val === '-' || val === '') return null;
-  return String(val);
-}
-
 async function main() {
-  console.log('🚀 Veri aktarımı başlıyor...')
+  console.log('🤖 Assistant verileri yükleniyor...')
 
-  const jsonPath = path.join(process.cwd(), 'cars.json'); 
+  // 1. JSON dosyasını oku
+  const jsonPath = path.join(process.cwd(), 'assistant.json'); 
+  const rawData = fs.readFileSync(jsonPath, 'utf-8');
+  const jsonData = JSON.parse(rawData);
   
-  try {
-    const rawData = fs.readFileSync(jsonPath, 'utf-8');
-    const carsData = JSON.parse(rawData);
+  // Dizi mi tek obje mi kontrol et
+  const carsData = Array.isArray(jsonData) ? jsonData : [jsonData];
 
-    console.log(`📦 Toplam ${carsData.length} araç bulundu. Veritabanına işleniyor...`);
+  console.log(`📦 ${carsData.length} araç işleniyor...`);
 
-    for (const item of carsData) {
-      const details = item.details || {};
-      const donanim = item.donanim?.guvenlik || [];
+  for (const item of carsData) {
+    const score = item.score || {};
+    const criteria = score.kriterler || {};
+    const media = item.media || {};
 
-      await prisma.car.create({
-        data: {
-          originalId: item.id,
-          modelName: item.model,
-          year: item.year,
-          imageUrl: item.photo,
-          
-          brand: {
-            connectOrCreate: {
-              where: { name: item.brand },
-              create: { name: item.brand }
-            }
-          },
+    // 2. AssistantCar tablosuna kaydet
+    await prisma.assistantCar.upsert({
+      where: { originalId: item.id },
+      update: {}, // Varsa dokunma
+      create: {
+        originalId: item.id,
+        brand: item.brand,
+        model: item.model,
+        trim: item.trim,
+        year: item.year,
+        body: item.body,
+        fuel: item.fuel,
+        drivetrain: item.drivetrain,
+        transmission: item.transmission,
+        price: item.priceTRY,
+        
+        // Etiketler
+        tags: item.tags || [],
 
-          specs: {
-            create: {
-              // Artık her alan için özel fonksiyon kullanıyoruz:
-              engineVolume: asFloat(details.motor_hacmi_l),
-              horsepower: asInt(details.guc_hp),
-              torque: asInt(details.tork_Nm),
-              acceleration: asFloat(details['0_100_kmh_s']),
-              topSpeed: asInt(details.maksimum_hiz_kmh),
-              fuelConsumption: asFloat(details.yakit_tuketimi_avg_l_per_100km),
-              driveTrain: asString(details.cekis),
-              
-              weight: asInt(details.agirlik_kg),
-              length: asInt(details.uzunluk_mm),
-              width: asInt(details.genislik_mm),
-              luggageCapacity: asInt(details.bagaj_kapasitesi_l),
-              
-              batteryType: asString(details.pil_turu),
-              electricRange: asInt(details.elektrikli_menzil_WLTP_km) || asInt(details.elektrik_araligi_NEDC_km),
-              chargingTime: asString(details.sarj_suresi_h)
-            }
-          },
+        // Görseller
+        imageMain: media.image_main,
+        imageInterior: media.image_interior,
+        brandLogo: media.brand_logo,
 
-          features: {
-            create: donanim.map((feature: any) => ({
-              name: feature.isim,
-              isAvailable: feature.mevcut
-            }))
-          }
-        }
-      })
-    }
-    console.log(`✅ Tüm işlemler hatasız tamamlandı!`);
-  
-  } catch (error) {
-    console.error("❌ Bir hata oluştu:", error);
+        // Puanlar
+        scoreTotal: score.toplam,
+        scoreEconomy: criteria.ekonomi,
+        scoreComfort: criteria.konfor,
+        scoreSafety: criteria.guvenlik,
+        scorePerformance: criteria.performans,
+        scoreTechnology: criteria.teknoloji,
+
+        // Neden Metinleri
+        whyText: item.why,
+        whyBullets: item.why_bullets || [],
+
+        // Teknik Detaylar (JSON olarak sakla)
+        specs: item.specs || {}
+      }
+    });
+    console.log(`✅ Eklendi: ${item.brand} ${item.model}`);
   }
 }
 

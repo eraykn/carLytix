@@ -12,6 +12,8 @@ import { Marquee } from "@/components/ui/marquee"
 import { NumberTicker } from "@/components/ui/number-ticker"
 import { BorderBeam } from "@/components/ui/border-beam"
 import { RippleButton } from "@/components/ui/ripple-button"
+import { toast } from "sonner"
+import { Toaster } from "@/components/ui/sonner"
 
 const Globe = dynamic(() => import("react-globe.gl"), {
   ssr: false,
@@ -205,16 +207,45 @@ export default function GlobeVisualization() {
       newErrors.lastName = "Last name must be 15 characters or less"
     }
 
+    // Check if first name and last name are the same (troll prevention)
+    if (formData.firstName.trim().toLowerCase() === formData.lastName.trim().toLowerCase() && formData.firstName.trim() !== "") {
+      toast.error("Ad ve Soyad aynı olamaz!", {
+        description: "Lütfen geçerli bir ad ve soyad giriniz.",
+        position: "bottom-left",
+        duration: 4000,
+      })
+      return
+    }
+
     // Email validation
     if (!formData.email.trim()) {
       newErrors.email = "Email is required"
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = "Please enter a valid email"
+      toast.error("Geçersiz E-posta Adresi!", {
+        description: "Lütfen geçerli bir e-posta adresi giriniz. (örn: ornek@email.com)",
+        position: "bottom-left",
+        duration: 4000,
+      })
+      return
     }
 
     // Message validation
     if (!formData.message.trim()) {
       newErrors.message = "Message is required"
+    } else if (formData.message.trim().length < 10) {
+      toast.error("Mesaj çok kısa!", {
+        description: "Mesajınız en az 10 karakter olmalıdır.",
+        position: "bottom-left",
+        duration: 4000,
+      })
+      return
+    } else if (formData.message.trim().length > 240) {
+      toast.error("Mesaj çok uzun!", {
+        description: "Mesajınız en fazla 240 karakter olabilir.",
+        position: "bottom-left",
+        duration: 4000,
+      })
+      return
     }
 
     setErrors(newErrors)
@@ -222,7 +253,19 @@ export default function GlobeVisualization() {
     // If no errors, submit form
     if (!Object.values(newErrors).some((error) => error !== "")) {
       console.log("Form submitted:", formData)
-      // Add your form submission logic here
+      // Show success toast
+      toast.success("Talebin Başarıyla İletildi ✔️", {
+        description: "Sizinle en kısa sürede iletişime geçmek için sabırsızlanıyoruz ✨",
+        position: "bottom-left",
+        duration: 5000,
+      })
+      // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      })
     }
   }
 
@@ -386,6 +429,9 @@ export default function GlobeVisualization() {
       ref={scrollContainerRef}
       className="relative w-full h-screen overflow-y-auto overflow-x-hidden bg-slate-950 snap-y snap-mandatory scroll-smooth"
     >
+      {/* Toast Container */}
+      <Toaster richColors />
+      
       <div className="fixed inset-0 pointer-events-none z-0">
         <StarsBackground />
       </div>
@@ -425,7 +471,8 @@ export default function GlobeVisualization() {
         {[
           { name: "Main Menu", href: "/" },
           { name: "Compare", href: "/compare" },
-          { name: "CarLytix Assistant", href: "/assistant" },
+          { name: "CarLytix Match", href: "/assistant" },
+          { name: "CarLytix AI", href: "/ai" },
           { name: "About Us", href: "/aboutus" },
         ].map((item, index) => (
           <motion.a
@@ -762,12 +809,14 @@ export default function GlobeVisualization() {
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-emerald-400 mb-2">
                     Your Message
+                    <span className="text-slate-400 text-xs ml-2">({formData.message.length}/240)</span>
                   </label>
                   <textarea
                     id="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
+                    maxLength={240}
                     className={`w-full px-4 py-3 rounded-lg bg-slate-800/50 border ${
                       errors.message
                         ? "border-red-500/50 focus:border-red-500"

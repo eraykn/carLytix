@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react"; // useRef eklendi
 import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowLeft, Zap, Shield, Cpu, Gauge, Settings, Star, Sparkles, Check, X, Car, TurkishLira, Armchair } from "lucide-react";
 import { usePageCurtain } from "@/hooks/usePageCurtain";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
+// Veri Tipi Tanımlaması
 interface CarData {
   id: string;
   brand: string;
@@ -21,15 +22,7 @@ interface CarData {
     image_main: string;
     brand_logo: string;
   };
-  specs?: {
-    performans?: any;
-    ekonomi?: any;
-    boyutlar?: any;
-    guc_aktarma?: any;
-    güvenlik?: any;
-    teknoloji?: any;
-    konfor?: any;
-  };
+  specs?: any;
   score?: {
     toplam: number;
     kriterler: {
@@ -56,15 +49,25 @@ export default function RecommendedCarPage() {
 
   useEffect(() => {
     const carId = searchParams.get("id");
+    
     if (carId) {
-      // Load car data from assistant.json
-      import("@/lib/data/assistant.json").then((data) => {
-        const car = data.default.find((c: any) => c.id === carId);
-        if (car) {
-          setCarData(car);
-        }
+      setIsLoading(true);
+      // DÜZELTME: Artık JSON dosyasından değil, API'den çekiyoruz
+      fetch(`/api/assistant/car?id=${carId}`)
+        .then((res) => {
+            if (!res.ok) throw new Error("Araç bulunamadı");
+            return res.json();
+        })
+        .then((data) => {
+          setCarData(data);
+          setIsLoading(false);
+        })
+        .catch((err) => {
+            console.error(err);
+            setIsLoading(false);
+        });
+    } else {
         setIsLoading(false);
-      });
     }
   }, [searchParams]);
 
@@ -77,7 +80,7 @@ export default function RecommendedCarPage() {
           className="text-center"
         >
           <div className="w-16 h-16 border-4 border-[#2db7f5] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-600 font-semibold">Araç yükleniyor...</p>
+          <p className="text-gray-600 font-semibold">Araç verileri yükleniyor...</p>
         </motion.div>
       </div>
     );
@@ -87,7 +90,7 @@ export default function RecommendedCarPage() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-600 text-lg mb-4">Araç bulunamadı</p>
+          <p className="text-gray-600 text-lg mb-4">Araç bulunamadı veya bir hata oluştu.</p>
           <button 
             onClick={handleBackClick}
             className="text-[#2db7f5] hover:underline cursor-pointer"
@@ -101,7 +104,7 @@ export default function RecommendedCarPage() {
 
   return (
     <div className="min-h-screen bg-[#0f172a]">
-      {/* Hero Section with Car Image - Clean White Background */}
+      {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -128,7 +131,7 @@ export default function RecommendedCarPage() {
           </motion.button>
         </motion.div>
 
-        {/* Brand Logo - Top Right */}
+        {/* Brand Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, y: -50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -136,17 +139,20 @@ export default function RecommendedCarPage() {
           className="absolute top-4 right-8 z-20"
         >
           <div className="relative bg-gray-100/90 backdrop-blur-xl p-8 rounded-3xl shadow-lg border border-gray-200/50">
-            <Image
-              src={carData.media.brand_logo}
-              alt={carData.brand}
-              width={80}
-              height={80}
-              className="object-contain"
-            />
+             {/* Logo varsa göster, yoksa boş div */}
+             {carData.media.brand_logo ? (
+                <Image
+                src={carData.media.brand_logo}
+                alt={carData.brand}
+                width={80}
+                height={80}
+                className="object-contain"
+                />
+             ) : <div className="w-20 h-20 bg-gray-200 rounded-full" />}
           </div>
         </motion.div>
 
-        {/* Car Name & Info - Compact */}
+        {/* Car Name & Info */}
         <div className="relative z-10 pt-24 pb-2 px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -168,29 +174,33 @@ export default function RecommendedCarPage() {
             <div className="flex items-center gap-3 text-base mb-4">
               <span className="text-gray-600 font-semibold">{carData.year}</span>
               <span className="w-1 h-1 rounded-full bg-gray-400" />
-              <span className="text-[#2db7f5] font-bold">{carData.trim}</span>
+              <span className="text-[#2db7f5] font-bold">{carData.trim || ""}</span>
               <span className="w-1 h-1 rounded-full bg-gray-400" />
               <span className="text-gray-600 font-semibold">{carData.body}</span>
             </div>
           </motion.div>
 
-          {/* Car Main Image - Full Visible */}
+          {/* Car Main Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
             className="relative w-full max-w-6xl mx-auto"
           >
-            <Image
-              src={carData.media.image_main}
-              alt={`${carData.brand} ${carData.model}`}
-              width={1400}
-              height={700}
-              className="object-contain w-full h-auto"
-              priority
-            />
+            {carData.media.image_main ? (
+                <Image
+                src={carData.media.image_main}
+                alt={`${carData.brand} ${carData.model}`}
+                width={1400}
+                height={700}
+                className="object-contain w-full h-auto"
+                priority
+                />
+            ) : (
+                <div className="w-full h-96 bg-gray-100 flex items-center justify-center text-gray-400">Görsel Yok</div>
+            )}
             
-            {/* Price Tag - Small, Bottom Right Corner */}
+            {/* Price Tag */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -200,7 +210,7 @@ export default function RecommendedCarPage() {
               <div className="bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] px-5 py-3 rounded-2xl shadow-xl">
                 <p className="text-white/80 text-xs font-semibold mb-0.5">Fiyat</p>
                 <p className="text-lg md:text-xl font-black text-white whitespace-nowrap">
-                  {carData.priceTRY.toLocaleString('tr-TR')} ₺
+                  {carData.priceTRY ? carData.priceTRY.toLocaleString('tr-TR') : 0} ₺
                 </p>
               </div>
             </motion.div>
@@ -208,7 +218,7 @@ export default function RecommendedCarPage() {
         </div>
       </motion.section>
 
-      {/* Specs Section - Same as Main Page Background */}
+      {/* Specs Section */}
       <section className="relative py-20 px-8 bg-[#0f172a]">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -222,49 +232,18 @@ export default function RecommendedCarPage() {
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] mx-auto rounded-full" />
           </motion.div>
 
-          {/* Performans Card */}
-          <SpecCard
-            icon={<Gauge className="w-8 h-8" />}
-            title="Performans"
-            data={carData.specs?.performans || {}}
-            color="from-purple-500 to-pink-500"
-            delay={0.1}
-          />
-
-          {/* Güç Aktarma Card */}
-          <SpecCard
-            icon={<Settings className="w-8 h-8" />}
-            title="Güç Aktarma"
-            data={carData.specs?.guc_aktarma || {}}
-            color="from-blue-500 to-cyan-500"
-            delay={0.2}
-          />
-
-          {/* Güvenlik Card */}
-          <SpecCard
-            icon={<Shield className="w-8 h-8" />}
-            title="Güvenlik"
-            data={carData.specs?.güvenlik || {}}
-            color="from-green-500 to-emerald-500"
-            delay={0.3}
-          />
-
-          {/* Teknoloji Card */}
-          <SpecCard
-            icon={<Cpu className="w-8 h-8" />}
-            title="Teknoloji"
-            data={carData.specs?.teknoloji || {}}
-            color="from-orange-500 to-red-500"
-            delay={0.4}
-          />
+          {/* Cards */}
+          <SpecCard icon={<Gauge className="w-8 h-8" />} title="Performans" data={carData.specs?.performans || {}} color="from-purple-500 to-pink-500" delay={0.1} />
+          <SpecCard icon={<Settings className="w-8 h-8" />} title="Güç Aktarma" data={carData.specs?.guc_aktarma || {}} color="from-blue-500 to-cyan-500" delay={0.2} />
+          <SpecCard icon={<Shield className="w-8 h-8" />} title="Güvenlik" data={carData.specs?.güvenlik || {}} color="from-green-500 to-emerald-500" delay={0.3} />
+          <SpecCard icon={<Cpu className="w-8 h-8" />} title="Teknoloji" data={carData.specs?.teknoloji || {}} color="from-orange-500 to-red-500" delay={0.4} />
         </div>
       </section>
 
-      {/* CarLytix Score Section - Compact */}
+      {/* Score Section */}
       {carData.score && (
         <section className="relative py-12 px-8 bg-[#0f172a]">
           <div className="max-w-7xl mx-auto">
-            {/* Header with Title on Side */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -276,7 +255,7 @@ export default function RecommendedCarPage() {
               <h3 className="text-2xl font-bold text-white">CarLytix Puanlaması</h3>
             </motion.div>
 
-            {/* Total Score - In Box */}
+            {/* Total Score */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -285,9 +264,7 @@ export default function RecommendedCarPage() {
               className="flex justify-center mb-6"
             >
               <div className="group relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-xl p-6 border border-[#2db7f5]/20 hover:border-[#2db7f5]/40 transition-all duration-300 overflow-hidden">
-                {/* Subtle hover effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2db7f5]/0 to-[#0ea5d8]/0 group-hover:from-[#2db7f5]/5 group-hover:to-[#0ea5d8]/5 transition-all duration-300" />
-                
                 <div className="relative z-10 flex flex-col items-center text-center gap-3">
                   <p className="text-sm text-white/50 font-medium">Toplam Puan</p>
                   <div className="flex items-center gap-3">
@@ -295,10 +272,7 @@ export default function RecommendedCarPage() {
                       <Car className="w-6 h-6" />
                     </div>
                     <div className="flex items-baseline gap-2">
-                      <AnimatedCounter
-                        value={carData.score.toplam}
-                        className="text-5xl font-black text-white"
-                      />
+                      <AnimatedCounter value={carData.score.toplam} className="text-5xl font-black text-white" />
                       <span className="text-xl text-white/40 font-bold">/ 100</span>
                     </div>
                   </div>
@@ -306,55 +280,21 @@ export default function RecommendedCarPage() {
               </div>
             </motion.div>
 
-            {/* Score Cards Container - Centered and Evenly Spaced */}
+            {/* Sub Scores */}
             <div className="flex justify-center">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl">
-                {/* Ekonomi */}
-                <CompactScoreCard
-                  icon={<TurkishLira className="w-5 h-5" />}
-                  title="Ekonomi"
-                  score={carData.score.kriterler.ekonomi}
-                  delay={0.2}
-                />
-
-                {/* Konfor */}
-                <CompactScoreCard
-                  icon={<Armchair className="w-5 h-5" />}
-                  title="Konfor"
-                  score={carData.score.kriterler.konfor}
-                  delay={0.3}
-                />
-
-                {/* Güvenlik */}
-                <CompactScoreCard
-                  icon={<Shield className="w-5 h-5" />}
-                  title="Güvenlik"
-                  score={carData.score.kriterler.guvenlik}
-                  delay={0.4}
-                />
-
-                {/* Performans */}
-                <CompactScoreCard
-                  icon={<Gauge className="w-5 h-5" />}
-                  title="Performans"
-                  score={carData.score.kriterler.performans}
-                  delay={0.5}
-                />
-
-                {/* Teknoloji */}
-                <CompactScoreCard
-                  icon={<Cpu className="w-5 h-5" />}
-                  title="Teknoloji"
-                  score={carData.score.kriterler.teknoloji}
-                  delay={0.6}
-                />
+                <CompactScoreCard icon={<TurkishLira className="w-5 h-5" />} title="Ekonomi" score={carData.score.kriterler.ekonomi} delay={0.2} />
+                <CompactScoreCard icon={<Armchair className="w-5 h-5" />} title="Konfor" score={carData.score.kriterler.konfor} delay={0.3} />
+                <CompactScoreCard icon={<Shield className="w-5 h-5" />} title="Güvenlik" score={carData.score.kriterler.guvenlik} delay={0.4} />
+                <CompactScoreCard icon={<Gauge className="w-5 h-5" />} title="Performans" score={carData.score.kriterler.performans} delay={0.5} />
+                <CompactScoreCard icon={<Cpu className="w-5 h-5" />} title="Teknoloji" score={carData.score.kriterler.teknoloji} delay={0.6} />
               </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* Why Section - Tesla/Polestar Premium Design with Satoshi */}
+      {/* Why Section */}
       <section className="relative py-16 px-8 bg-[#0f172a]">
         <div className="relative z-10 max-w-5xl mx-auto">
           <motion.div
@@ -364,12 +304,9 @@ export default function RecommendedCarPage() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            {/* Premium Glass Card */}
             <div className="relative bg-white/[0.03] backdrop-blur-xl rounded-[24px] border border-white/[0.08] overflow-hidden shadow-2xl shadow-black/20">
-              {/* Subtle Top Strip */}
               <div className="bg-gradient-to-r from-[#2db7f5]/10 to-[#0ea5d8]/10 px-8 py-4 border-b border-white/[0.05]">
                 <div className="flex items-center gap-4">
-                  {/* Premium Logo Container */}
                   {carData.media.brand_logo && (
                     <div className="bg-white/95 backdrop-blur-sm p-3 rounded-2xl shadow-lg ring-1 ring-black/5">
                       <Image
@@ -381,14 +318,12 @@ export default function RecommendedCarPage() {
                       />
                     </div>
                   )}
-                  {/* Satoshi Font Title */}
                   <h3 className="font-satoshi text-base font-semibold text-white/80 tracking-wide">
                     Neden Bu Araç?
                   </h3>
                 </div>
               </div>
 
-              {/* Clean Content Area */}
               <div className="px-8 py-10">
                 <p className="font-satoshi text-lg leading-relaxed text-white/85 font-normal">
                   {carData.why || "Bu araç, kriterlerinize en uygun seçenek olarak önerilmektedir."}
@@ -424,281 +359,239 @@ export default function RecommendedCarPage() {
   );
 }
 
-// Reusable Spec Card Component
-function SpecCard({ 
-  icon, 
-  title, 
-  data, 
-  color, 
-  delay 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  data: any; 
-  color: string;
-  delay: number;
-}) {
-  // Special rendering for Teknoloji section
-  if (title === "Teknoloji") {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay }}
-        className="mb-8 last:mb-0"
-      >
-        <div className="group relative bg-slate-900/50 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/10 overflow-hidden">
-          {/* Animated gradient background */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-          
-          {/* Header */}
-          <div className="relative z-10 flex items-center gap-4 mb-6">
-            <div className={`p-4 rounded-2xl bg-gradient-to-br ${color} text-white shadow-lg`}>
-              {icon}
-            </div>
-            <h4 className="text-3xl font-black text-white">{title}</h4>
-          </div>
-
-          {/* Main Tech Specs Grid */}
-          <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-6">
-            {data.ekran_inch && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
-                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Ekran Inch</p>
-                <p className="text-lg font-black text-white">{data.ekran_inch}</p>
-              </div>
-            )}
-            {data.dijital_gosterge_inch && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
-                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Dijital Gösterge Inch</p>
-                <p className="text-lg font-black text-white">{data.dijital_gosterge_inch}</p>
-              </div>
-            )}
-            {data.gosterge_paneli && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
-                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Gösterge Paneli</p>
-                <p className="text-lg font-black text-white">{data.gosterge_paneli}</p>
-              </div>
-            )}
-            {data.multimedia && (
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
-                <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Multimedia</p>
-                <p className="text-lg font-black text-white">{data.multimedia}</p>
-              </div>
-            )}
-          </div>
-
-          {/* Kamera & Sensör Box */}
-          {(data.kamera_sistemi || data.park_asistani) && (
-            <div className="relative z-10 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5 mb-6">
-              <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-4">Kamera & Sensör</p>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {data.kamera_sistemi && (
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
-                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Kamera Sistemi</p>
-                    <p className="text-base font-black text-white">{data.kamera_sistemi}</p>
-                  </div>
-                )}
-                {data.park_asistani && (
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
-                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Park Asistanı</p>
-                    <p className="text-base font-black text-white">{data.park_asistani}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Isıtma Box */}
-          {data.isitma && (
-            <div className="relative z-10 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
-              <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-4">Isıtma</p>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {data.isitma.klima && (
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
-                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Klima</p>
-                    <p className="text-base font-black text-white">{data.isitma.klima}</p>
-                  </div>
-                )}
-                {data.isitma.koltuk_isitma_on !== undefined && (
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
-                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Koltuk Isıtma Ön</p>
-                    <div className="flex items-center gap-2">
-                      {data.isitma.koltuk_isitma_on ? (
-                        <Check className="w-6 h-6 text-green-400" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-400" />
-                      )}
-                    </div>
-                  </div>
-                )}
-                {data.isitma.koltuk_isitma_arka !== undefined && (
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
-                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Koltuk Isıtma Arka</p>
-                    <div className="flex items-center gap-2">
-                      {data.isitma.koltuk_isitma_arka ? (
-                        <Check className="w-6 h-6 text-green-400" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-400" />
-                      )}
-                    </div>
-                  </div>
-                )}
-                {data.isitma.direksiyon_isitma !== undefined && (
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 hover:bg-white/10 transition-colors border border-white/5">
-                    <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">Direksiyon Isıtma</p>
-                    <div className="flex items-center gap-2">
-                      {data.isitma.direksiyon_isitma ? (
-                        <Check className="w-6 h-6 text-green-400" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-400" />
-                      )}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-
-          {/* Decorative corner accents */}
-          <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${color} opacity-5 rounded-bl-full`} />
-          <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${color} opacity-5 rounded-tr-full`} />
-        </div>
-      </motion.div>
-    );
-  }
-
-  // Function to render nested data for other sections
-  const renderNestedData = (obj: any, parentKey: string = ''): React.ReactElement[] => {
+// Reusable Components
+function SpecCard({ icon, title, data, color, delay }: { icon: React.ReactNode; title: string; data: any; color: string; delay: number; }) {
+  
+  // Güvenlik bölümü için özel render
+  const renderSecurityData = (obj: any): React.ReactElement[] => {
     const elements: React.ReactElement[] = [];
-    
-    Object.entries(obj).forEach(([key, value]: [string, any]) => {
-      const fullKey = parentKey ? `${parentKey}_${key}` : key;
+    if (!obj) return elements;
+
+    // Sıralı güvenlik alanları: NCAP Yıldız, Seviye, Airbag Sayısı, ISOFIX
+    const securityOrder = ['ncap_yildiz', 'adas', 'airbag_sayisi', 'isofix'];
+    const securityLabels: Record<string, string> = {
+      'ncap_yildiz': 'NCAP Yıldız',
+      'adas': 'ADAS Seviyesi',
+      'airbag_sayisi': 'Airbag Sayısı',
+      'isofix': 'ISOFIX'
+    };
+    const tooltips: Record<string, string> = {
+      'ncap_yildiz': 'Euro NCAP güvenlik testi sonucu. 5 yıldız en yüksek güvenlik seviyesini temsil eder.',
+      'isofix': 'Çocuk koltuğu bağlantı sistemi. Güvenli ve kolay montaj sağlar.'
+    };
+
+    // Önce ADAS içindeki seviye bilgisini çıkar
+    let adasSeviye = null;
+    if (obj.adas && typeof obj.adas === 'object' && obj.adas.seviye) {
+      adasSeviye = obj.adas.seviye;
+    }
+
+    securityOrder.forEach((key) => {
+      let value = obj[key];
       
-      // Skip arrays and nested objects for main grid
-      if (Array.isArray(value)) return;
-      if (typeof value === 'object' && value !== null) {
-        // Recursively handle nested objects
-        const nestedElements = renderNestedData(value, fullKey);
-        elements.push(...nestedElements);
-        return;
+      // ADAS için seviye bilgisini kullan
+      if (key === 'adas') {
+        value = adasSeviye;
+        if (!value) return;
       }
       
-      // Format key for display
-      const formattedKey = key
-        .replace(/_/g, ' ')
-        .split(' ')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
+      if (value === undefined || value === null) return;
 
-      // Check if this is a field that needs a tooltip
-      const needsTooltip = key === 'ncap_yildiz' || key === 'isofix';
-      const tooltipText = key === 'ncap_yildiz' 
-        ? "NCAP yıldızı, bir aracın bağımsız çarpışma testlerindeki genel güvenlik puanıdır" 
-        : "ISOFIX, çocuk koltuklarının araca güvenli ve standart bir şekilde sabitlenmesini sağlayan bağlantı sistemidir";
+      const label = securityLabels[key] || key;
+      const tooltip = tooltips[key];
 
       elements.push(
-        <div key={fullKey} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
-          <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">
-            {formattedKey}
-            {needsTooltip && (
+        <div key={key} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2 flex items-center gap-1">
+            {label}
+            {tooltip && (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <span className="ml-1 text-blue-400 cursor-help">*</span>
+                  <span className="ml-0.5 text-blue-400 cursor-help text-[10px] font-bold leading-none">*</span>
                 </TooltipTrigger>
-                <TooltipContent 
-                  side="top" 
-                  className="bg-slate-800 border border-white/10 text-white max-w-xs"
-                >
-                  {tooltipText}
+                <TooltipContent side="top" className="bg-slate-800 border border-white/10 text-white max-w-xs text-sm">
+                  {tooltip}
                 </TooltipContent>
               </Tooltip>
             )}
           </p>
           {typeof value === 'boolean' ? (
             <div className="flex items-center gap-2">
-              {value ? (
-                <Check className="w-6 h-6 text-green-400" />
-              ) : (
-                <X className="w-6 h-6 text-red-400" />
-              )}
+              {value ? <Check className="w-6 h-6 text-green-400" /> : <X className="w-6 h-6 text-red-400" />}
             </div>
           ) : (
-            <p className="text-lg font-black text-white">
-              {value?.toString() || '-'}
-            </p>
+            <p className="text-lg font-black text-white">{value?.toString() || '-'}</p>
           )}
         </div>
       );
     });
-    
+
     return elements;
   };
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      className="mb-8 last:mb-0"
-    >
-      <div className="group relative bg-slate-900/50 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/10 overflow-hidden">
-        {/* Animated gradient background */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-        
-        {/* Header */}
-        <div className="relative z-10 flex items-center gap-4 mb-6">
-          <div className={`p-4 rounded-2xl bg-gradient-to-br ${color} text-white shadow-lg`}>
-            {icon}
+  // Teknoloji bölümü için özel render
+  const renderTechnologyData = (obj: any): React.ReactElement[] => {
+    const elements: React.ReactElement[] = [];
+    if (!obj) return elements;
+
+    // Ana bilgiler (ilk satır)
+    const mainFields = ['ekran_inch', 'dijital_gosterge_inch', 'gosterge_paneli', 'multimedia'];
+    const mainLabels: Record<string, string> = {
+      'ekran_inch': 'Ekran Inch',
+      'dijital_gosterge_inch': 'Dijital Gösterge Inch',
+      'gosterge_paneli': 'Gösterge Paneli',
+      'multimedia': 'Multimedia'
+    };
+
+    // Kamera & Sensör grubu
+    const cameraFields = ['kamera_sistemi', 'park_asistani'];
+    const cameraLabels: Record<string, string> = {
+      'kamera_sistemi': 'Kamera Sistemi',
+      'park_asistani': 'Park Asistanı'
+    };
+
+    // Isıtma grubu (isitma objesi içinden)
+    const heatingFields = ['klima', 'koltuk_isitma_on', 'koltuk_isitma_arka', 'direksiyon_isitma'];
+    const heatingLabels: Record<string, string> = {
+      'klima': 'Klima',
+      'koltuk_isitma_on': 'Koltuk Isıtma Ön',
+      'koltuk_isitma_arka': 'Koltuk Isıtma Arka',
+      'direksiyon_isitma': 'Direksiyon Isıtma'
+    };
+
+    // Ana bilgiler satırı
+    const mainElements: React.ReactElement[] = [];
+    mainFields.forEach((key) => {
+      const value = obj[key];
+      if (value === undefined || value === null) return;
+      mainElements.push(
+        <div key={key} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">{mainLabels[key]}</p>
+          <p className="text-lg font-black text-white">{value?.toString() || '-'}</p>
+        </div>
+      );
+    });
+
+    if (mainElements.length > 0) {
+      elements.push(
+        <div key="main-row" className="col-span-full grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          {mainElements}
+        </div>
+      );
+    }
+
+    // Kamera & Sensör grubu
+    const cameraElements: React.ReactElement[] = [];
+    cameraFields.forEach((key) => {
+      const value = obj[key];
+      if (value === undefined || value === null) return;
+      cameraElements.push(
+        <div key={key} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">{cameraLabels[key]}</p>
+          <p className="text-lg font-black text-white">{value?.toString() || '-'}</p>
+        </div>
+      );
+    });
+
+    if (cameraElements.length > 0) {
+      elements.push(
+        <div key="camera-section" className="col-span-full mb-6">
+          <p className="text-sm font-bold text-white/40 uppercase tracking-wider mb-3">Kamera & Sensör</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {cameraElements}
           </div>
+        </div>
+      );
+    }
+
+    // Isıtma grubu
+    const heatingData = obj.isitma || {};
+    const heatingElements: React.ReactElement[] = [];
+    heatingFields.forEach((key) => {
+      const value = heatingData[key];
+      if (value === undefined || value === null) return;
+      heatingElements.push(
+        <div key={key} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">{heatingLabels[key]}</p>
+          {typeof value === 'boolean' ? (
+            <div className="flex items-center gap-2">
+              {value ? <Check className="w-6 h-6 text-green-400" /> : <X className="w-6 h-6 text-red-400" />}
+            </div>
+          ) : (
+            <p className="text-lg font-black text-white">{value?.toString() || '-'}</p>
+          )}
+        </div>
+      );
+    });
+
+    if (heatingElements.length > 0) {
+      elements.push(
+        <div key="heating-section" className="col-span-full">
+          <p className="text-sm font-bold text-white/40 uppercase tracking-wider mb-3">Isıtma</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {heatingElements}
+          </div>
+        </div>
+      );
+    }
+
+    return elements;
+  };
+
+  // Genel render fonksiyonu (diğer bölümler için)
+  const renderNestedData = (obj: any, parentKey: string = ''): React.ReactElement[] => {
+    const elements: React.ReactElement[] = [];
+    if (!obj) return elements;
+
+    Object.entries(obj).forEach(([key, value]: [string, any]) => {
+      const fullKey = parentKey ? `${parentKey}_${key}` : key;
+      if (Array.isArray(value)) return;
+      if (typeof value === 'object' && value !== null) {
+        elements.push(...renderNestedData(value, fullKey));
+        return;
+      }
+      
+      const formattedKey = key.replace(/_/g, ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+      elements.push(
+        <div key={fullKey} className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 hover:bg-white/10 transition-colors border border-white/5">
+          <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-2">{formattedKey}</p>
+          {typeof value === 'boolean' ? (
+            <div className="flex items-center gap-2">
+              {value ? <Check className="w-6 h-6 text-green-400" /> : <X className="w-6 h-6 text-red-400" />}
+            </div>
+          ) : (
+            <p className="text-lg font-black text-white">{value?.toString() || '-'}</p>
+          )}
+        </div>
+      );
+    });
+    return elements;
+  };
+
+  // Bölüme göre doğru render fonksiyonunu seç
+  const renderContent = () => {
+    if (title === 'Güvenlik') {
+      return renderSecurityData(data);
+    } else if (title === 'Teknoloji') {
+      return renderTechnologyData(data);
+    } else {
+      return renderNestedData(data);
+    }
+  };
+
+  return (
+    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay }} className="mb-8 last:mb-0">
+      <div className="group relative bg-slate-900/50 backdrop-blur-xl rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/10 overflow-hidden">
+        <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+        <div className="relative z-10 flex items-center gap-4 mb-6">
+          <div className={`p-4 rounded-2xl bg-gradient-to-br ${color} text-white shadow-lg`}>{icon}</div>
           <h4 className="text-3xl font-black text-white">{title}</h4>
         </div>
-
-        {/* Data Grid */}
-        <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {renderNestedData(data)}
-
-          {/* Handle nested ADAS features */}
-          {data.adas?.ozellikler && Array.isArray(data.adas.ozellikler) && (
-            <div className="col-span-2 md:col-span-3 lg:col-span-4 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
-              <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-3">
-                ADAS Özellikleri
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {data.adas.ozellikler.map((feature: string, index: number) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-white/5 hover:bg-white/10 text-white text-sm font-semibold rounded-full shadow-md border border-white/5 transition-colors"
-                  >
-                    {feature}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Handle teknoloji baglanti */}
-          {data.baglanti && Array.isArray(data.baglanti) && (
-            <div className="col-span-2 md:col-span-3 lg:col-span-4 bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
-              <p className="text-xs font-bold text-white/50 uppercase tracking-wider mb-3">
-                Bağlantı Seçenekleri
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {data.baglanti.map((conn: string, index: number) => (
-                  <span
-                    key={index}
-                    className={`px-4 py-2 bg-gradient-to-r ${color} text-white text-sm font-semibold rounded-full shadow-md`}
-                  >
-                    {conn}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+        <div className={`relative z-10 ${title === 'Teknoloji' ? '' : 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'} mb-6`}>
+          {renderContent()}
         </div>
-
-        {/* Decorative corner accents */}
+        {/* Decorative elements */}
         <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${color} opacity-5 rounded-bl-full`} />
         <div className={`absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr ${color} opacity-5 rounded-tr-full`} />
       </div>
@@ -706,17 +599,11 @@ function SpecCard({
   );
 }
 
-// Animated Counter Component
-function AnimatedCounter({ 
-  value, 
-  className = "" 
-}: { 
-  value: number; 
-  className?: string; 
-}) {
+// DÜZELTME: Ref kullanımını React kuralına uygun hale getirdik (useRef)
+function AnimatedCounter({ value, className = "" }: { value: number; className?: string }) {
   const [displayValue, setDisplayValue] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
-  const spanRef = useState<HTMLSpanElement | null>(null);
+  const spanRef = useRef<HTMLSpanElement>(null); // DÜZELTME BURADA
 
   useEffect(() => {
     if (hasAnimated) return;
@@ -726,26 +613,18 @@ function AnimatedCounter({
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true);
-            const duration = 2000; // 2 seconds
+            const duration = 2000;
             const startTime = Date.now();
             const startValue = 0;
-            
             const updateCounter = () => {
               const currentTime = Date.now();
               const elapsed = currentTime - startTime;
               const progress = Math.min(elapsed / duration, 1);
-              
-              // Easing function for smooth animation
               const easeOutQuart = 1 - Math.pow(1 - progress, 4);
               const current = Math.round(startValue + (value - startValue) * easeOutQuart);
-              
               setDisplayValue(current);
-              
-              if (progress < 1) {
-                requestAnimationFrame(updateCounter);
-              }
+              if (progress < 1) requestAnimationFrame(updateCounter);
             };
-            
             requestAnimationFrame(updateCounter);
           }
         });
@@ -753,115 +632,27 @@ function AnimatedCounter({
       { threshold: 0.1 }
     );
 
-    const currentRef = spanRef[0];
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    const currentRef = spanRef.current;
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+      if (currentRef) observer.unobserve(currentRef);
     };
-  }, [value, hasAnimated, spanRef]);
+  }, [value, hasAnimated]);
 
-  return <span ref={(el) => { spanRef[0] = el; }} className={className}>{displayValue}</span>;
+  return <span ref={spanRef} className={className}>{displayValue}</span>;
 }
 
-// Score Card Component
-function ScoreCard({ 
-  icon, 
-  title, 
-  score, 
-  delay,
-  fullWidth = false
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  score: number; 
-  delay: number;
-  fullWidth?: boolean;
-}) {
+function CompactScoreCard({ icon, title, score, delay, className = "" }: { icon: React.ReactNode; title: string; score: number; delay: number; className?: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      className={fullWidth ? "w-full" : ""}
-    >
-      <div className="group relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-[#2db7f5]/20 hover:border-[#2db7f5]/40 overflow-hidden">
-        {/* Hover glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#2db7f5]/0 to-[#0ea5d8]/0 group-hover:from-[#2db7f5]/10 group-hover:to-[#0ea5d8]/10 transition-all duration-500" />
-        
-        <div className="relative z-10 flex flex-col items-center text-center">
-          {/* Icon */}
-          <div className="p-4 rounded-2xl bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] text-white shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
-            {icon}
-          </div>
-          
-          {/* Title */}
-          <h5 className="text-xl font-bold text-white/70 mb-3">{title}</h5>
-          
-          {/* Score with animated counter */}
-          <div className="flex items-baseline gap-2">
-            <AnimatedCounter
-              value={score}
-              className="text-5xl font-black text-white"
-            />
-            <span className="text-2xl text-white/50 font-bold">/ 100</span>
-          </div>
-        </div>
-
-        {/* Decorative corner */}
-        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#2db7f5]/20 to-transparent rounded-bl-full" />
-        <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-[#0ea5d8]/20 to-transparent rounded-tr-full" />
-      </div>
-    </motion.div>
-  );
-}
-
-// Compact Score Card Component
-function CompactScoreCard({ 
-  icon, 
-  title, 
-  score, 
-  delay,
-  className = ""
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  score: number; 
-  delay: number;
-  className?: string;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      className={className}
-    >
+    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay }} className={className}>
       <div className="group relative bg-gradient-to-br from-slate-800/30 to-slate-900/30 backdrop-blur-sm rounded-xl p-5 border border-[#2db7f5]/20 hover:border-[#2db7f5]/40 transition-all duration-300 overflow-hidden">
-        {/* Subtle hover effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#2db7f5]/0 to-[#0ea5d8]/0 group-hover:from-[#2db7f5]/5 group-hover:to-[#0ea5d8]/5 transition-all duration-300" />
-        
         <div className="relative z-10 flex flex-col items-center text-center gap-3">
-          {/* Icon */}
-          <div className="p-3 rounded-lg bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] text-white">
-            {icon}
-          </div>
-          
-          {/* Title */}
+          <div className="p-3 rounded-lg bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] text-white">{icon}</div>
           <p className="text-sm font-semibold text-white/60">{title}</p>
-          
-          {/* Score */}
           <div className="flex items-baseline gap-1">
-            <AnimatedCounter
-              value={score}
-              className="text-3xl font-black text-white"
-            />
+            <AnimatedCounter value={score} className="text-3xl font-black text-white" />
             <span className="text-sm text-white/40 font-bold">/ 100</span>
           </div>
         </div>

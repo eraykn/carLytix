@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
@@ -18,11 +18,11 @@ import {
   MessageCircle,
   Target,
   DollarSign,
-  TurkishLira
+  TurkishLira,
+  Loader2
 } from "lucide-react";
 import { Footer } from "@/components/common/Footer";
 import { CarRecommendationCard, CarRecommendation } from "@/components/car/CarRecommendationCard";
-import { filterCars, type CarFilterCriteria } from "@/lib/utils/carFiltering";
 
 // Minimal toast types
 type Toast = {
@@ -33,6 +33,9 @@ type Toast = {
   duration?: number;
 };
 
+// Session storage key
+const SESSION_STORAGE_KEY = 'carlytix_session_id';
+
 export function AssistantSection() {
   const [currentPath, setCurrentPath] = useState("");
   const [selectedStep, setSelectedStep] = useState<Record<string, string[]>>({});
@@ -42,6 +45,8 @@ export function AssistantSection() {
   const [budget, setBudget] = useState("");
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [recommendedCar, setRecommendedCar] = useState<CarRecommendation | null>(null);
+  const [isSearching, setIsSearching] = useState(false);
+  const [sessionId, setSessionId] = useState<string | null>(null);
 
   const pushToast = (t: Omit<Toast, 'id'>) => {
     const id = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
@@ -51,8 +56,59 @@ export function AssistantSection() {
 
   const removeToast = (id: string) => setToasts(prev => prev.filter(t => t.id !== id));
 
+  // Session'ı backend'e kaydet
+  const saveSessionToBackend = useCallback(async (
+    currentSessionId: string,
+    step: string,
+    action: string,
+    data: {
+      usageTags?: string[];
+      bodyType?: string;
+      fuelType?: string;
+      priorityTags?: string[];
+      budget?: number;
+    }
+  ) => {
+    try {
+      await fetch('/api/assistantApi/session', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId: currentSessionId,
+          step,
+          action,
+          ...data
+        })
+      });
+    } catch (error) {
+      console.error('Session kaydetme hatası:', error);
+    }
+  }, []);
+
+  // Sayfa yüklendiğinde yeni session oluştur (her ziyarette temiz başlangıç)
   useEffect(() => {
+    const initSession = async () => {
+      try {
+        // Her sayfa yüklendiğinde yeni session oluştur
+        const response = await fetch('/api/assistantApi/session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({}) // sessionId göndermiyoruz, yeni session oluşsun
+        });
+        
+        const result = await response.json();
+        
+        if (result.success && result.session) {
+          setSessionId(result.session.id);
+          localStorage.setItem(SESSION_STORAGE_KEY, result.session.id);
+        }
+      } catch (error) {
+        console.error('Session başlatma hatası:', error);
+      }
+    };
+
     setCurrentPath(window.location.pathname);
+    initSession();
   }, []);
 
   const formatBudget = (value: string) => {
@@ -217,6 +273,21 @@ export function AssistantSection() {
         }
       }
       
+      // Session'a kaydet (backend'e)
+      if (sessionId) {
+        const updatedSelections = {
+          ...prev,
+          [categoryId]: newSelections
+        };
+        
+        saveSessionToBackend(sessionId, categoryId, isSelected ? 'deselect' : 'select', {
+          usageTags: updatedSelections.usage || [],
+          bodyType: updatedSelections.body?.[0] || undefined,
+          fuelType: updatedSelections.fuel?.[0] || undefined,
+          priorityTags: updatedSelections.priorities || []
+        });
+      }
+      
       return {
         ...prev,
         [categoryId]: newSelections
@@ -348,7 +419,8 @@ export function AssistantSection() {
         >{[
             { name: "Main Menu", href: "/" },
             { name: "Compare", href: "/compare" },
-            { name: "CarLytix Assistant", href: "/assistant" },
+            { name: "CarLytix Match", href: "/assistant" },
+            { name: "CarLytix AI", href: "/ai" },
             { name: "About Us", href: "/aboutus" },
           ].map((item, index) => (
             <motion.a
@@ -469,7 +541,16 @@ export function AssistantSection() {
                     if (recommendedCar) {
                       setRecommendedCar(null);
                     }
-                    setBudget(formatBudget(e.target.value));
+                    const formattedBudget = formatBudget(e.target.value);
+                    setBudget(formattedBudget);
+                    
+                    // Bütçeyi backend'e kaydet
+                    const numericBudget = parseInt(formattedBudget.replace(/\./g, '')) || 0;
+                    if (sessionId && numericBudget > 0) {
+                      saveSessionToBackend(sessionId, 'budget', 'update', {
+                        budget: numericBudget
+                      });
+                    }
                   }}
                   placeholder="Bütçenizi girin"
                   className="px-4 py-2 pr-10 rounded-full border border-white/20 text-white/80 bg-white/5 hover:bg-white/10 focus:bg-white/10 focus:border-white/30 transition-all duration-300 text-sm text-center"
@@ -560,7 +641,7 @@ export function AssistantSection() {
                 className="w-full max-w-md flex justify-center mt-4"
               >
                 <motion.button
-                  onClick={() => {
+                  onClick={async () => {
                     // Validation: ensure each required category has at least 1 selection
                     const missing: string[] = [];
                     ['usage','body','fuel','priorities'].forEach(catId => {
@@ -601,53 +682,152 @@ export function AssistantSection() {
                       return;
                     }
 
-                    // Prepare filter criteria
-                    const criteria: CarFilterCriteria = {
-                      budget: numericBudget,
-                      body: selectedStep.body?.[0],
-                      fuel: selectedStep.fuel?.[0],
-                      usage: selectedStep.usage || [],
-                      priorities: selectedStep.priorities || []
-                    };
-
-                    // Filter cars - artık her zaman sonuç döndürür
-                    const results = filterCars(criteria);
-
-                    // Get the first (best match) car
-                    setRecommendedCar(results[0] as CarRecommendation);
+                    // API isteği başlat
+                    setIsSearching(true);
                     
-                    // Eşleşme skoruna göre mesaj
-                    const matchScore = (results[0] as any).matchScore || 0;
-                    if (matchScore > 150) {
+                    try {
+                      const response = await fetch('/api/assistantApi', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                          budget: numericBudget,
+                          bodyType: selectedStep.body?.[0] || 'Hepsi',
+                          fuelType: selectedStep.fuel?.[0] || 'Hepsi',
+                          usageTags: selectedStep.usage || [],
+                          priorityTags: selectedStep.priorities || []
+                        }),
+                      });
+
+                      if (!response.ok) {
+                        throw new Error('API isteği başarısız oldu');
+                      }
+
+                      const results = await response.json();
+                      
+                      // Debug log
+                      console.log('API Response:', results);
+                      console.log('Is Array:', Array.isArray(results));
+                      console.log('Length:', results?.length);
+
+                      if (!results || !Array.isArray(results) || results.length === 0) {
+                        pushToast({ 
+                          title: 'Sonuç bulunamadı', 
+                          message: 'Kriterlerinize uygun araç bulunamadı. Filtreleri gevşetmeyi deneyin.', 
+                          type: 'warning', 
+                          duration: 3000 
+                        });
+                        setIsSearching(false);
+                        return;
+                      }
+
+                      // API'den gelen veriyi frontend formatına dönüştür (Mapper)
+                      const dbCar = results[0];
+                      const dbSpecs = dbCar.specs || {};
+                      const mappedCar: CarRecommendation = {
+                        id: dbCar.id,
+                        brand: dbCar.brand,
+                        model: dbCar.model,
+                        trim: dbCar.trim || '',
+                        year: dbCar.year,
+                        body: dbCar.body,
+                        fuel: dbCar.fuel,
+                        drivetrain: dbCar.drivetrain || 'FWD',
+                        priceTRY: dbCar.price,
+                        tags: dbCar.tags || [],
+                        media: {
+                          image_main: dbCar.imageMain || '/images/cars/placeholder.jpg',
+                          image_interior: dbCar.imageInterior,
+                          brand_logo: dbCar.brandLogo || '/images/brands/default-logo.svg'
+                        },
+                        specs: {
+                          performans: {
+                            guc_hp: dbSpecs.performans?.guc_hp || 0,
+                            tork_Nm: dbSpecs.performans?.tork_Nm || 0
+                          },
+                          boyutlar: {
+                            bagaj_l: dbSpecs.boyutlar?.bagaj_l || '-'
+                          },
+                          guc_aktarma: {
+                            cekis: dbSpecs.guc_aktarma?.cekis || dbCar.drivetrain || 'FWD'
+                          }
+                        }
+                      };
+
+                      setRecommendedCar(mappedCar);
+                      
+                      // Önerilen araçları session'a kaydet
+                      if (sessionId) {
+                        const recommendedIds = results.slice(0, 5).map((car: any) => car.id);
+                        try {
+                          await fetch('/api/assistantApi/session', {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                              sessionId,
+                              step: 'recommendation',
+                              action: 'complete',
+                              recommendedCarIds: recommendedIds,
+                              selectedCarId: mappedCar.id
+                            })
+                          });
+                        } catch (error) {
+                          console.error('Öneri kaydetme hatası:', error);
+                        }
+                      }
+                      
+                      // Eşleşme skoruna göre mesaj
+                      const matchScore = dbCar.matchScore || 0;
+                      if (matchScore > 150) {
+                        pushToast({ 
+                          title: 'Mükemmel eşleşme!', 
+                          message: 'Tüm kriterlerinize uygun araç bulundu!', 
+                          type: 'success', 
+                          duration: 3000 
+                        });
+                      } else if (matchScore > 80) {
+                        pushToast({ 
+                          title: 'İyi eşleşme', 
+                          message: 'Kriterlerinize çok uygun bir araç bulundu.', 
+                          type: 'success', 
+                          duration: 3000 
+                        });
+                      } else {
+                        pushToast({ 
+                          title: 'Öneri bulundu', 
+                          message: 'Size en yakın araç önerisi hazırlandı.', 
+                          type: 'info', 
+                          duration: 3000 
+                        });
+                      }
+                    } catch (error) {
+                      console.error('API Error:', error);
                       pushToast({ 
-                        title: 'Mükemmel eşleşme!', 
-                        message: 'Tüm kriterlerinize uygun araç bulundu!', 
-                        type: 'success', 
+                        title: 'Hata oluştu', 
+                        message: 'Araç önerisi alınırken bir hata oluştu. Lütfen tekrar deneyin.', 
+                        type: 'error', 
                         duration: 3000 
                       });
-                    } else if (matchScore > 80) {
-                      pushToast({ 
-                        title: 'İyi eşleşme', 
-                        message: 'Kriterlerinize çok uygun bir araç bulundu.', 
-                        type: 'success', 
-                        duration: 3000 
-                      });
-                    } else {
-                      pushToast({ 
-                        title: 'Öneri bulundu', 
-                        message: 'Size en yakın araç önerisi hazırlandı.', 
-                        type: 'info', 
-                        duration: 3000 
-                      });
+                    } finally {
+                      setIsSearching(false);
                     }
                   }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: isSearching ? 1 : 1.05 }}
+                  whileTap={{ scale: isSearching ? 1 : 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  className="px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                  disabled={isSearching}
+                  className={`px-6 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#2db7f5] to-[#0ea5d8] shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center gap-2 ${isSearching ? 'opacity-80 cursor-not-allowed' : 'cursor-pointer'}`}
                   style={{ fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial' }}
                 >
-                  Araçımı bul
+                  {isSearching ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Aranıyor...
+                    </>
+                  ) : (
+                    'Araçımı bul'
+                  )}
                 </motion.button>
               </motion.div>
             )}
@@ -696,7 +876,7 @@ export function AssistantSection() {
             </div>
             <div className="flex items-center gap-2">
               <MessageCircle className="w-4 h-4 text-[#3CC6F0]" />
-              <span className="text-sm">Hızlı (≤ 5s)</span>
+              <span className="text-sm">Hızlı (≤5s)</span>
             </div>
           </motion.div>
         </div>
