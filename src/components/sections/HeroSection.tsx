@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Volume2, Share2, Settings, Menu, ChevronDown } from "lucide-react";
+import { Volume2, Share2, Settings, Menu, ChevronDown, Bot, Car } from "lucide-react";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { CarCarousel } from "@/components/car/CarCarousel";
 import { useState, useEffect, useRef } from "react";
@@ -114,12 +114,11 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
         className="absolute top-12 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
-        >{[
+      >
+        {/* Regular nav items */}
+        {[
           { name: "Main Menu", href: "#" },
           { name: "Compare", href: "/compare" },
-          { name: "CarLytix Match", href: "/assistant" },
-          { name: "CarLytix AI", href: "/ai" },
-          { name: "About Us", href: "/aboutus" },
         ].map((item, index) => (
           <motion.a
             key={item.name}
@@ -133,6 +132,54 @@ export function HeroSection() {
             <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
           </motion.a>
         ))}
+
+        {/* CarLytix AI Dropdown */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="relative group"
+        >
+          <a
+            href="/ai"
+            className="text-sm text-[#d1d5db] hover:text-[#3b82f6] transition-colors duration-300 relative flex items-center gap-1"
+          >
+            CarLytix AI
+            <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
+            <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
+          </a>
+          {/* Dropdown Menu */}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div className="bg-[#1e293b]/95 backdrop-blur-xl rounded-xl border border-white/[0.12] shadow-2xl overflow-hidden min-w-[160px]">
+              <a
+                href="/ai"
+                className="flex items-center gap-2 px-4 py-3 text-sm text-[#d1d5db] hover:text-[#0ea5d8] hover:bg-white/[0.06] transition-colors border-b border-white/[0.08]"
+              >
+                <Bot className="w-4 h-4" />
+                CarLytix AI
+              </a>
+              <a
+                href="/assistant"
+                className="flex items-center gap-2 px-4 py-3 text-sm text-[#d1d5db] hover:text-[#0ea5d8] hover:bg-white/[0.06] transition-colors"
+              >
+                <Car className="w-4 h-4" />
+                CarLytix Match
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* About Us */}
+        <motion.a
+          href="/aboutus"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="text-sm text-[#d1d5db] hover:text-[#3b82f6] transition-colors duration-300 relative group"
+        >
+          About Us
+          <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
+        </motion.a>
       </motion.nav>
 
       {/* Mobile Menu Button */}

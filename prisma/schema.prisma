@@ -127,3 +127,45 @@ model UserSession {
   updatedAt    DateTime @updatedAt
   completedAt  DateTime? // Öneri alındığında
 }
+
+// --- AI CHAT LOGLARI ---
+model ChatSession {
+  id            String   @id @default(cuid())
+  
+  // Oturum bilgileri
+  sessionToken  String?  // Tarayıcı oturumu için
+  ipAddress     String?
+  userAgent     String?
+  
+  // Ayarlar
+  persona       String?  // AI Persona seçimi
+  budgetFlex    String?  // Bütçe esnekliği
+  priorityWeight String? // Öncelik ağırlığı
+  theme         String?  // Tema seçimi
+  
+  // İlişkiler
+  messages      ChatMessage[]
+  
+  // Zaman damgaları
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ChatMessage {
+  id            String   @id @default(cuid())
+  
+  // Mesaj içeriği
+  role          String   // "user" veya "assistant"
+  content       String   @db.Text
+  
+  // İlişki
+  sessionId     String
+  session       ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  
+  // Meta bilgiler
+  tokenCount    Int?     // Kullanılan token sayısı (opsiyonel)
+  responseTime  Int?     // Yanıt süresi (ms)
+  
+  // Zaman damgası
+  createdAt     DateTime @default(now())
+}

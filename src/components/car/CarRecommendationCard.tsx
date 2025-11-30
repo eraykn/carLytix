@@ -155,11 +155,11 @@ export function CarRecommendationCard({ car, onLearnMore }: CarRecommendationCar
           </div>
 
           {/* Çekiş */}
-          <div className="group relative bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-md rounded-2xl px-4 py-4 border border-white/10 hover:border-[#3CC6F0]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#3CC6F0]/10">
+          <div className="group relative bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-md rounded-2xl px-3 py-4 border border-white/10 hover:border-[#3CC6F0]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#3CC6F0]/10 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[#3CC6F0]/0 to-[#3CC6F0]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
             <div className="relative">
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-black text-white">
+                <span className="text-base font-black text-white truncate leading-tight" title={car.specs?.guc_aktarma?.cekis || '-'}>
                   {car.specs?.guc_aktarma?.cekis || '-'}
                 </span>
               </div>
