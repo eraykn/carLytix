@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, ReactNode } from "react";
+import { useRouter } from "next/navigation";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { Bolt, Globe, BarChart3, ArrowRight } from "lucide-react";
 
@@ -12,6 +13,8 @@ interface FeatureItemProps {
 }
 
 export function AboutSection() {
+  const router = useRouter();
+  
   const ref1 = useRef(null);
   const isInView1 = useInView(ref1, { once: true, margin: "-200px" });
 
@@ -137,7 +140,10 @@ export function AboutSection() {
               >
                 Keşfet
               </button>
-              <button className="px-8 py-3 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300 cursor-pointer">
+              <button 
+                onClick={() => router.push('/aboutus')}
+                className="px-8 py-3 rounded-xl border-2 border-white/20 text-white font-medium hover:bg-white/5 transition-all duration-300 cursor-pointer"
+              >
                 Daha Fazla
               </button>
             </motion.div>
