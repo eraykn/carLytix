@@ -5,6 +5,10 @@ import { useState, useEffect, useRef } from "react";
 import { Send, Bot, User, Menu, Columns2, Plus, MessageSquare, Settings, PenSquare, Search, Fuel, Zap, Car, Shield, Users, TrendingUp, Sun, Moon, Monitor, ChevronRight, ChevronDown, Palette, Brain, Wallet, Target, Trash2 } from "lucide-react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import remarkBreaks from "remark-breaks";
+import rehypeRaw from "rehype-raw";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 interface ChatHistory {
   id: string;
@@ -50,7 +54,12 @@ export default function AIPage() {
   const [budgetFlex, setBudgetFlex] = useState<string>("+10%");
   const [priorityWeight, setPriorityWeight] = useState<string>("Güvenlik");
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const [displayedContent, setDisplayedContent] = useState<string>("");
+  const [targetContent, setTargetContent] = useState<string>("");
+  const [isTyping, setIsTyping] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const typewriterRef = useRef<NodeJS.Timeout | null>(null);
 
   // Auto scroll to bottom when new messages arrive
   const scrollToBottom = () => {
@@ -59,7 +68,33 @@ export default function AIPage() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, displayedContent]);
+
+  // Typewriter effect - karakterleri soft bir şekilde göster
+  useEffect(() => {
+    if (targetContent.length > displayedContent.length) {
+      setIsTyping(true);
+      
+      // Stream aktifken daha hızlı (çok karakter birden), bitince daha yavaş
+      const charsToAdd = isLoading ? 5 : 3; // Stream aktifken 5, değilse 3 karakter
+      const delay = isLoading ? 8 : 12; // Stream aktifken 8ms, değilse 12ms
+      
+      typewriterRef.current = setTimeout(() => {
+        setDisplayedContent((prev) => {
+          const nextLength = Math.min(prev.length + charsToAdd, targetContent.length);
+          return targetContent.slice(0, nextLength);
+        });
+      }, delay);
+      
+      return () => {
+        if (typewriterRef.current) {
+          clearTimeout(typewriterRef.current);
+        }
+      };
+    } else {
+      setIsTyping(false);
+    }
+  }, [targetContent, displayedContent, isLoading]);
 
   // Check if light mode is active
   const isLightMode = theme === "light";
@@ -162,6 +197,10 @@ export default function AIPage() {
       { role: "user", content: userMessage },
       { role: "assistant", content: "" },
     ]);
+    
+    // Reset typewriter state
+    setDisplayedContent("");
+    setTargetContent("");
 
     // Prepare messages for API (without the empty assistant message)
     const newMessages = [...messages, { role: "user" as const, content: userMessage }];
@@ -183,7 +222,10 @@ export default function AIPage() {
       });
 
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        // Try to get error message from response
+        const errorData = await response.json().catch(() => null);
+        const errorMessage = errorData?.error || `Sunucu hatası: ${response.status}`;
+        throw new Error(errorMessage);
       }
 
       // Handle streaming response
@@ -226,7 +268,10 @@ export default function AIPage() {
                 // Append chunk to accumulated text
                 accumulatedText += data.chunk;
                 
-                // Update the last message with accumulated content
+                // Set target content for typewriter effect
+                setTargetContent(accumulatedText);
+                
+                // Update the last message with full content (for state persistence)
                 setMessages((prev) => {
                   const updated = [...prev];
                   updated[updated.length - 1] = {
@@ -263,7 +308,6 @@ export default function AIPage() {
   };
 
   const handleNewChat = () => {
-    // Mesajlar zaten veritabanına kaydediliyor, sadece yeni sohbet başlat
     setMessages([welcomeMessage]);
     setActiveChatId(null);
     setSessionId(null);
@@ -491,7 +535,7 @@ export default function AIPage() {
                 />
               </div>
               
-              <div className="space-y-1">
+              <div className="space-y-0.5">
                 {chatHistory
                   .filter((chat) => 
                     chat.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -501,25 +545,21 @@ export default function AIPage() {
                   <motion.div
                     key={chat.id}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-left transition-all group ${
+                    className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-lg text-left transition-all group cursor-pointer ${
                       activeChatId === chat.id
                         ? themeColors.activeBg
-                        : themeColors.hoverBg
+                        : `${themeColors.hoverBg} hover:${isLightMode ? 'bg-gray-100' : 'bg-white/[0.06]'}`
                     }`}
+                    onClick={() => handleSelectChat(chat.id)}
                   >
-                    <button
-                      onClick={() => handleSelectChat(chat.id)}
-                      className="flex items-center gap-2.5 flex-1 min-w-0"
-                    >
-                      <MessageSquare className={`w-4 h-4 ${themeColors.textAccent} flex-shrink-0`} />
-                      <div className="flex-1 min-w-0">
-                        <p className={`text-sm ${themeColors.textPrimary} truncate`}>{chat.title}</p>
-                        <p className={`text-xs ${themeColors.textMuted}`}>{chat.date}</p>
-                      </div>
-                    </button>
+                    <MessageSquare className={`w-4 h-4 ${activeChatId === chat.id ? 'text-[#2db7f5]' : themeColors.textMuted} flex-shrink-0`} />
+                    <div className="flex-1 min-w-0">
+                      <p className={`text-sm ${themeColors.textPrimary} truncate leading-tight`}>{chat.title}</p>
+                      <p className={`text-[11px] ${themeColors.textMuted} leading-tight`}>{chat.date}</p>
+                    </div>
                     <button
                       onClick={(e) => handleDeleteChat(chat.id, e)}
-                      className={`p-1.5 rounded-md opacity-0 group-hover:opacity-100 transition-all ${isLightMode ? 'hover:bg-red-100 text-red-500' : 'hover:bg-red-500/20 text-red-400'}`}
+                      className={`p-1 rounded opacity-0 group-hover:opacity-100 transition-all flex-shrink-0 ${isLightMode ? 'hover:bg-red-100 text-red-500' : 'hover:bg-red-500/20 text-red-400'}`}
                       title="Sohbeti Sil"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -527,21 +567,55 @@ export default function AIPage() {
                   </motion.div>
                 ))}
                 {chatHistory.length === 0 && (
-                  <p className={`text-sm ${themeColors.textMuted} text-center py-4`}>Henüz sohbet yok</p>
+                  <div className={`flex flex-col items-center justify-center py-8 ${themeColors.textMuted}`}>
+                    <MessageSquare className="w-8 h-8 mb-2 opacity-40" />
+                    <p className="text-sm">Henüz sohbet yok</p>
+                    <p className="text-xs opacity-60 mt-1">Yeni bir sohbet başlatın</p>
+                  </div>
                 )}
                 {chatHistory.length > 0 && searchQuery && chatHistory.filter((chat) => 
                     chat.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                     chat.messages.some(m => m.content.toLowerCase().includes(searchQuery.toLowerCase()))
                   ).length === 0 && (
-                  <p className={`text-sm ${themeColors.textMuted} text-center py-4`}>Sonuç bulunamadı</p>
+                  <div className={`flex flex-col items-center justify-center py-6 ${themeColors.textMuted}`}>
+                    <Search className="w-6 h-6 mb-2 opacity-40" />
+                    <p className="text-sm">Sonuç bulunamadı</p>
+                  </div>
                 )}
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Bottom - Settings */}
-        <div className={`mt-auto border-t ${themeColors.borderColor} ${sidebarOpen ? 'p-3' : 'py-4 flex justify-center'}`}>
+        {/* Bottom - Profile & Settings */}
+        <div className={`mt-auto border-t ${themeColors.borderColor} ${sidebarOpen ? 'p-3' : 'py-4 flex flex-col items-center gap-2'}`}>
+          {/* Profile Icon */}
+          {sidebarOpen ? (
+            <div 
+              onClick={() => setIsAuthModalOpen(true)}
+              className={`flex items-center gap-3 px-3 py-2.5 mb-2 rounded-lg ${themeColors.hoverBg} transition-colors cursor-pointer`}
+            >
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] flex items-center justify-center">
+                <User className="w-4 h-4 text-white" />
+              </div>
+              <div className="flex-1">
+                <p className={`text-sm font-medium ${themeColors.textPrimary}`}>Kullanıcı</p>
+                <p className={`text-xs ${themeColors.textMuted}`}>Misafir</p>
+              </div>
+            </div>
+          ) : (
+            <button
+              aria-label="Profil"
+              onClick={() => setIsAuthModalOpen(true)}
+              className={`p-3 rounded-xl ${themeColors.hoverBg} transition-colors group cursor-pointer`}
+            >
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] flex items-center justify-center">
+                <User className="w-4 h-4 text-white" />
+              </div>
+            </button>
+          )}
+          
+          {/* Settings Button */}
           {sidebarOpen ? (
             <button 
               onClick={() => {
@@ -795,12 +869,32 @@ export default function AIPage() {
           </a>
         </motion.div>
 
+        {/* Center - CarLytix AI Live Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="absolute top-8 left-1/2 -translate-x-1/2 z-20 hidden md:flex"
+        >
+          <div className={`flex items-center gap-3 px-5 py-3 rounded-xl ${themeColors.navBg} backdrop-blur-[16px] border ${themeColors.borderColor}`}>
+            <span className={`text-sm font-semibold ${themeColors.textPrimary}`}>CarLytix AI</span>
+            <div className="flex items-center gap-2">
+              <div className="relative">
+                <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse" />
+                <div className="absolute inset-0 w-2.5 h-2.5 bg-green-400 rounded-full animate-ping opacity-75" />
+              </div>
+              <span className="text-xs text-green-400 font-medium">Live</span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Top Right Navigation */}
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className={`absolute top-8 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl ${themeColors.navBg} backdrop-blur-[16px] border transition-colors duration-300`}
+          className={`absolute top-8 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl ${themeColors.navBg} backdrop-blur-[16px] border transition-colors duration-300`}
+          style={{ right: 'calc(2.5rem + 52px)' }}
         >
           {/* Regular nav items */}
           {[
@@ -868,6 +962,22 @@ export default function AIPage() {
             <span className="absolute bottom-[-8px] left-0 h-0.5 bg-[#3b82f6] transition-all duration-300 w-0 group-hover:w-full" />
           </motion.a>
         </motion.nav>
+
+        {/* Profile Icon - Right side of nav */}
+        <motion.button
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          aria-label="Profil"
+          onClick={() => setIsAuthModalOpen(true)}
+          className={`absolute top-8 z-20 hidden md:flex items-center px-3 py-3 rounded-xl ${themeColors.navBg} backdrop-blur-[16px] border ${themeColors.borderColor} hover:border-[#3b82f6]/50 transition-all duration-300 group cursor-pointer`}
+          style={{ right: '2.5rem' }}
+        >
+          <User className={`w-5 h-5 ${themeColors.textSecondary} group-hover:text-[#3b82f6] transition-colors`} />
+        </motion.button>
+
+        {/* Auth Modal */}
+        <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
 
         {/* Mobile Menu Button */}
         <motion.button
@@ -1021,8 +1131,124 @@ export default function AIPage() {
                         } border`}
                       >
                         {message.role === "assistant" ? (
-                          <div className="text-sm leading-relaxed prose prose-sm dark:prose-invert max-w-none prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0 prose-headings:my-2 prose-table:text-xs">
-                            <ReactMarkdown>{message.content}</ReactMarkdown>
+                          <div className="text-sm leading-relaxed prose prose-sm dark:prose-invert max-w-none prose-p:my-1 prose-ul:my-1 prose-ol:my-1 prose-li:my-0 prose-headings:my-2">
+                            <ReactMarkdown 
+                              remarkPlugins={[remarkGfm, remarkBreaks]}
+                              rehypePlugins={[rehypeRaw]}
+                              components={{
+                                // Tablo stilleri
+                                table: ({children}) => (
+                                  <div className="overflow-x-auto my-3 rounded-lg border border-white/10">
+                                    <table className="min-w-full border-collapse text-xs">
+                                      {children}
+                                    </table>
+                                  </div>
+                                ),
+                                thead: ({children}) => (
+                                  <thead className="bg-[#2db7f5]/20">
+                                    {children}
+                                  </thead>
+                                ),
+                                th: ({children}) => (
+                                  <th className="px-3 py-2 text-left font-semibold text-[#2db7f5] border-b border-white/10">
+                                    {children}
+                                  </th>
+                                ),
+                                td: ({children}) => (
+                                  <td className="px-3 py-2 border-b border-white/5">
+                                    {children}
+                                  </td>
+                                ),
+                                tr: ({children}) => (
+                                  <tr className="hover:bg-white/5 transition-colors">
+                                    {children}
+                                  </tr>
+                                ),
+                                // Kod blokları
+                                code: ({className, children, ...props}) => {
+                                  const isInline = !className;
+                                  return isInline ? (
+                                    <code className="bg-white/10 px-1.5 py-0.5 rounded text-[#2db7f5] text-xs font-mono" {...props}>
+                                      {children}
+                                    </code>
+                                  ) : (
+                                    <code className="block bg-black/30 p-3 rounded-lg text-xs font-mono overflow-x-auto my-2" {...props}>
+                                      {children}
+                                    </code>
+                                  );
+                                },
+                                pre: ({children}) => (
+                                  <pre className="bg-black/30 rounded-lg overflow-x-auto my-2">
+                                    {children}
+                                  </pre>
+                                ),
+                                // Listeler
+                                ul: ({children}) => (
+                                  <ul className="list-disc list-inside space-y-1 my-2">
+                                    {children}
+                                  </ul>
+                                ),
+                                ol: ({children}) => (
+                                  <ol className="list-decimal list-inside space-y-1 my-2">
+                                    {children}
+                                  </ol>
+                                ),
+                                // Başlıklar
+                                h1: ({children}) => (
+                                  <h1 className="text-xl font-bold mt-4 mb-2 text-[#2db7f5]">
+                                    {children}
+                                  </h1>
+                                ),
+                                h2: ({children}) => (
+                                  <h2 className="text-lg font-bold mt-3 mb-2 text-[#2db7f5]">
+                                    {children}
+                                  </h2>
+                                ),
+                                h3: ({children}) => (
+                                  <h3 className="text-base font-semibold mt-2 mb-1 text-[#2db7f5]">
+                                    {children}
+                                  </h3>
+                                ),
+                                // Paragraf ve diğerleri
+                                p: ({children}) => (
+                                  <p className="my-1.5 leading-relaxed">
+                                    {children}
+                                  </p>
+                                ),
+                                strong: ({children}) => (
+                                  <strong className="font-semibold text-white">
+                                    {children}
+                                  </strong>
+                                ),
+                                em: ({children}) => (
+                                  <em className="italic text-white/90">
+                                    {children}
+                                  </em>
+                                ),
+                                blockquote: ({children}) => (
+                                  <blockquote className="border-l-4 border-[#2db7f5] pl-4 my-2 italic text-white/80">
+                                    {children}
+                                  </blockquote>
+                                ),
+                                a: ({href, children}) => (
+                                  <a href={href} className="text-[#2db7f5] hover:underline" target="_blank" rel="noopener noreferrer">
+                                    {children}
+                                  </a>
+                                ),
+                                hr: () => (
+                                  <hr className="border-white/20 my-4" />
+                                ),
+                              }}
+                            >
+                              {/* Son mesaj ve typing aktifse displayedContent göster, değilse normal content */}
+                              {isLastMessage && message.role === "assistant" && (isTyping || isLoading) 
+                                ? displayedContent 
+                                : message.content}
+                            </ReactMarkdown>
+                            {/* Typing cursor - sadece son mesajda ve typing aktifken göster */}
+                            {isLastMessage && message.role === "assistant" && isTyping && (
+                              <span className="inline-block w-0.5 h-4 bg-[#2db7f5] ml-0.5 animate-pulse" />
+                            )}
                           </div>
                         ) : (
                           <p className="text-sm leading-relaxed">{message.content}</p>

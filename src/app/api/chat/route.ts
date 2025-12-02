@@ -56,17 +56,31 @@ export async function POST(request: NextRequest) {
     // Create or get chat session
     let chatSession;
     if (sessionId) {
-      // Update existing session
-      chatSession = await prisma.chatSession.update({
-        where: { id: sessionId },
-        data: {
-          persona,
-          budgetFlex,
-          priorityWeight,
-          theme,
-          updatedAt: new Date(),
-        },
-      });
+      // Try to update existing session, create new if not found
+      try {
+        chatSession = await prisma.chatSession.update({
+          where: { id: sessionId },
+          data: {
+            persona,
+            budgetFlex,
+            priorityWeight,
+            theme,
+            updatedAt: new Date(),
+          },
+        });
+      } catch {
+        // Session not found, create new one
+        chatSession = await prisma.chatSession.create({
+          data: {
+            ipAddress,
+            userAgent,
+            persona,
+            budgetFlex,
+            priorityWeight,
+            theme,
+          },
+        });
+      }
     } else {
       // Create new session
       chatSession = await prisma.chatSession.create({
@@ -108,9 +122,9 @@ export async function POST(request: NextRequest) {
       contextPrompt += `\n\nÖncelik: ${priorityDescriptions[priorityWeight] || priorityWeight}`;
     }
 
-    // Get the model with system instruction - using gemini-1.5-flash-latest for stability
+    // Get the model with system instruction
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-2.0-flash",
+      model: "gemini-2.0-flash-001",
       systemInstruction: contextPrompt
     });
 

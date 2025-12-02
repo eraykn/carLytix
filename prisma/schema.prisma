@@ -169,3 +169,52 @@ model ChatMessage {
   // Zaman damgası
   createdAt     DateTime @default(now())
 }
+
+// --- KULLANICI YÖNETİMİ ---
+model User {
+  id            String   @id @default(cuid())
+  
+  // Temel bilgiler
+  email         String   @unique
+  password      String   // bcrypt hash
+  name          String?
+  
+  // Profil
+  avatar        String?
+  
+  // Hesap durumu
+  isVerified    Boolean  @default(false)
+  isActive      Boolean  @default(true)
+  
+  // Oturum bilgileri
+  lastLoginAt   DateTime?
+  lastLoginIp   String?
+  
+  // İlişkiler
+  sessions      AuthSession[]
+  
+  // Zaman damgaları
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model AuthSession {
+  id            String   @id @default(cuid())
+  
+  // Token
+  token         String   @unique
+  
+  // Kullanıcı ilişkisi
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Cihaz bilgileri
+  userAgent     String?
+  ipAddress     String?
+  
+  // Geçerlilik
+  expiresAt     DateTime
+  
+  // Zaman damgası
+  createdAt     DateTime @default(now())
+}

@@ -21,10 +21,12 @@ import {
   TurkishLira,
   Loader2,
   Bot,
-  ChevronDown
+  ChevronDown,
+  User
 } from "lucide-react";
 import { Footer } from "@/components/common/Footer";
 import { CarRecommendationCard, CarRecommendation } from "@/components/car/CarRecommendationCard";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 // Minimal toast types
 type Toast = {
@@ -49,6 +51,7 @@ export function AssistantSection() {
   const [recommendedCar, setRecommendedCar] = useState<CarRecommendation | null>(null);
   const [isSearching, setIsSearching] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   const pushToast = (t: Omit<Toast, 'id'>) => {
     const id = `${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
@@ -417,7 +420,8 @@ export function AssistantSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="absolute top-8 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
+          className="absolute top-8 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
+          style={{ right: 'calc(2.5rem + 52px)' }}
         >
           {/* Regular nav items */}
           {[
@@ -495,6 +499,22 @@ export function AssistantSection() {
             <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#0ea5d8] group-hover:w-full transition-all duration-300" />
           </motion.a>
         </motion.nav>
+
+        {/* Profile Icon - Right side of nav */}
+        <motion.button
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          aria-label="Profil"
+          onClick={() => setIsAuthModalOpen(true)}
+          className="absolute top-8 z-20 hidden md:flex items-center px-3 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] hover:border-[#3CC6F0]/50 transition-all duration-300 group cursor-pointer"
+          style={{ right: '2.5rem' }}
+        >
+          <User className="w-5 h-5 text-[#d1d5db] group-hover:text-[#3CC6F0] transition-colors" />
+        </motion.button>
+
+        {/* Auth Modal */}
+        <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
 
         {/* Mobile Menu Button */}
         <motion.button

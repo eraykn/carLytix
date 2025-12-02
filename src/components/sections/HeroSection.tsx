@@ -1,14 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Volume2, Share2, Settings, Menu, ChevronDown, Bot, Car } from "lucide-react";
+import { Volume2, Share2, Settings, Menu, ChevronDown, Bot, Car, User } from "lucide-react";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { CarCarousel } from "@/components/car/CarCarousel";
+import { AuthModal } from "@/components/auth/AuthModal";
 import { useState, useEffect, useRef } from "react";
 import { heroCarData } from "@/lib/constants/carData";
 
 export function HeroSection() {
   const [selectedCarId, setSelectedCarId] = useState("01");
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const selectedCar = heroCarData.find((car) => car.id === selectedCarId) || heroCarData[0];
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastScrollTimeRef = useRef(0);
@@ -113,7 +115,8 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="absolute top-12 right-10 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
+        className="absolute top-12 z-20 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12]"
+        style={{ right: 'calc(2.5rem + 52px)' }}
       >
         {/* Regular nav items */}
         {[
@@ -181,6 +184,22 @@ export function HeroSection() {
           <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
         </motion.a>
       </motion.nav>
+
+      {/* Profile Icon - Right side of nav */}
+      <motion.button
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        aria-label="Profil"
+        onClick={() => setIsAuthModalOpen(true)}
+        className="absolute top-12 z-20 hidden md:flex items-center px-3 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] hover:border-[#3b82f6]/50 transition-all duration-300 group cursor-pointer"
+        style={{ right: '2.5rem' }}
+      >
+        <User className="w-5 h-5 text-[#d1d5db] group-hover:text-[#3b82f6] transition-colors" />
+      </motion.button>
+
+      {/* Auth Modal */}
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
 
       {/* Mobile Menu Button */}
       <motion.button

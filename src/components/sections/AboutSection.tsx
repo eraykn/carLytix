@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect, ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
-import { Bolt, Globe, BarChart3, ArrowRight } from "lucide-react";
+import { Bolt, Globe, BarChart3, ArrowRight, Bot } from "lucide-react";
 
 interface FeatureItemProps {
   icon: ReactNode;
@@ -25,10 +25,10 @@ export function AboutSection() {
   const isInView3 = useInView(ref3, { once: true, margin: "-200px" });
   
   const [displayedText1, setDisplayedText1] = useState("");
-  const fullText1 = "CarLytix, araç verisini anlamlı içgörülere dönüştüren modern ve güvenilir bir analiz platformudur. Gerçek zamanlı telemetri ve tarihsel verilerle arıza öngörüsü, bakım optimizasyonu ve performans iyileştirmesi sunar. Hazır paneller ve güçlü entegrasyonlarla karar alma süreçlerini hızlandırır, operasyonel maliyetleri düşürür. Basit, güvenli ve ölçeklenebilir altyapısıyla filoları ve bireysel kullanıcıları geleceğe taşır.";
+  const fullText1 = "CarLytix, karmaşık araç verisini anlaşılır içgörülere dönüştüren akıllı bir analiz platformudur. Kullanım alışkanlıkları, performans verileri ve pazar dinamiklerini bir araya getirerek en doğru araç eşleşmesini sunar. Modern arayüzü, güçlü veri modeli ve yapay zeka destekli öneri motoru sayesinde karar alma sürecini hızlandırır; hem bireysel kullanıcılar hem de filolar için güvenilir ve şeffaf bir seçim deneyimi sağlar.";
 
   const [displayedText2, setDisplayedText2] = useState("");
-  const fullText2 = "CarLytix, otomotiv dünyasında ezber bozan bir deneyim sunuyor. Artık “hangi araba daha iyi?” sorusunun cevabı kulaktan dolma bilgiler değil, keskin veriler ve akıllı algoritmalar olacak.";
+  const fullText2 = "CarLytix, otomotiv verilerini analiz eden, karşılaştıran ve yapay zekâ ile anlamlandıran yeni nesil bir karar destek platformudur. Araç seçim sürecini sezgilere değil; doğrulanabilir verilere, objektif karşılaştırmalara ve akıllı algoritmalara dayandırır.";
 
   useEffect(() => {
     if (isInView1 && displayedText1.length < fullText1.length) {
@@ -65,6 +65,11 @@ export function AboutSection() {
       icon: <BarChart3 className="w-5 h-5 text-[#8b5cf6]" />,
       title: "Veri Odaklı Güç",
       description: "Tahmin değil, analiz. Sezgiler değil, istatistikler. CarLytix ile otomobil seçmek artık bir şans oyunu değil."
+    },
+    {
+      icon: <Bot className="w-5 h-5 text-[#22c55e]" />,
+      title: "CarLytix AI Asistanı",
+      description: "AI asistan, verileri sizin için analiz eder ve en doğru aracı saniyeler içinde öne çıkarır."
     }
   ];
 
@@ -168,15 +173,15 @@ export function AboutSection() {
         </div>
 
         {/* Bölüm 2: Size ne sunuyoruz? */}
-        <div ref={ref2} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div ref={ref2} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Sol - Araba Görseli */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView2 ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
+            className="relative lg:sticky lg:top-32"
           >
-            <div className="relative rounded-3xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 p-8">
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl border border-white/10 p-6 lg:p-8">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1080&auto=format&fit=crop"
                 alt="BMW M4 Comp"
@@ -191,23 +196,25 @@ export function AboutSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView2 ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <motion.h2 
-              className="text-5xl font-bold bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent"
+              className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent"
             >
               Size ne sunuyoruz?
             </motion.h2>
-            <div className="relative min-h-[120px]">
-              <p className="text-lg text-[#cbd5e1] leading-relaxed font-light">
+            
+            <div className="relative min-h-[100px]">
+              <p className="text-base lg:text-lg text-[#cbd5e1] leading-relaxed font-light">
                 {displayedText2}
                 {displayedText2.length < fullText2.length && (
-                  <motion.span animate={{ opacity: [1, 0] }} transition={{ duration: 0.8, repeat: Infinity }} className="inline-block w-0.5 h-6 bg-[#06b6d4] ml-1" />
+                  <motion.span animate={{ opacity: [1, 0] }} transition={{ duration: 0.8, repeat: Infinity }} className="inline-block w-0.5 h-5 bg-[#06b6d4] ml-1" />
                 )}
               </p>
             </div>
+            
             <motion.div 
-              className="space-y-6"
+              className="space-y-4 pt-2"
               initial={{ opacity: 0 }}
               animate={displayedText2.length === fullText2.length ? { opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -217,7 +224,7 @@ export function AboutSection() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={displayedText2.length === fullText2.length ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.2 }}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.15 }}
                 >
                   <FeatureItem icon={feature.icon} title={feature.title}>
                     {feature.description}
@@ -225,9 +232,18 @@ export function AboutSection() {
                 </motion.div>
               ))}
             </motion.div>
-            <motion.div className="flex items-center gap-2 text-[#64748b] font-medium pt-4" initial={{ opacity: 0 }} animate={displayedText2.length === fullText2.length ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 1.2 }}>
-              <ArrowRight className="w-5 h-5" />
-              <span>Kimin gerçekten en iyi olduğunu, sayılar gösterecek.</span>
+            
+            <motion.div 
+              className="flex items-center gap-3 pt-6" 
+              initial={{ opacity: 0 }} 
+              animate={displayedText2.length === fullText2.length ? { opacity: 1 } : {}} 
+              transition={{ duration: 0.5, delay: 1.4 }}
+            >
+              <div className="flex-1 h-px bg-gradient-to-r from-white/20 to-transparent" />
+              <div className="flex items-center gap-2 text-[#64748b] font-medium">
+                <ArrowRight className="w-4 h-4" />
+                <span className="text-sm">Kararı siz verirsiniz; biz verileri sunarız.</span>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -281,7 +297,7 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="px-10 py-4 rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:scale-105 cursor-pointer"
             onClick={() => {
-              window.location.href = '/compare';
+              window.location.href = '/ai';
             }}
           >
             Hemen Deneyin

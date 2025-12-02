@@ -6,7 +6,7 @@ import { useEffect, useState, useRef, useMemo, useCallback } from "react"
 import dynamic from "next/dynamic"
 import type { GlobeMethods } from "react-globe.gl"
 import * as THREE from "three"
-import { Users, Target, Smile, Quote, ChevronDown, Menu, Bot, Car } from "lucide-react"
+import { Users, Target, Smile, Quote, ChevronDown, Menu, Bot, Car, User } from "lucide-react"
 import { motion } from "framer-motion"
 import { Marquee } from "@/components/ui/marquee"
 import { NumberTicker } from "@/components/ui/number-ticker"
@@ -14,6 +14,7 @@ import { BorderBeam } from "@/components/ui/border-beam"
 import { RippleButton } from "@/components/ui/ripple-button"
 import { toast } from "sonner"
 import { Toaster } from "@/components/ui/sonner"
+import { AuthModal } from "@/components/auth/AuthModal"
 
 const Globe = dynamic(() => import("react-globe.gl"), {
   ssr: false,
@@ -162,6 +163,7 @@ export default function GlobeVisualization() {
   const [isDragging, setIsDragging] = useState(false)
   const [isZoomedClose, setIsZoomedClose] = useState(false)
   const [showGlobeUI, setShowGlobeUI] = useState(false)
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
 
   const [globeSize, setGlobeSize] = useState({ width: 0, height: 0 })
 
@@ -462,11 +464,12 @@ export default function GlobeVisualization() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className={`fixed top-12 right-10 z-40 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] transition-all duration-700 ${
+        className={`fixed top-12 z-40 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] transition-all duration-700 ${
           showGlobeUI && (isDragging || isZoomedClose)
             ? "opacity-0 translate-x-4 pointer-events-none"
             : "opacity-100 translate-x-0"
         }`}
+        style={{ right: 'calc(2.5rem + 52px)' }}
       >
         {/* Regular nav items */}
         {[
@@ -534,6 +537,26 @@ export default function GlobeVisualization() {
           <span className="absolute bottom-[-8px] left-0 w-full h-0.5 bg-[#3b82f6] transition-all duration-300" />
         </motion.a>
       </motion.nav>
+
+      {/* Profile Icon - Right side of nav */}
+      <motion.button
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.6 }}
+        aria-label="Profil"
+        onClick={() => setIsAuthModalOpen(true)}
+        className={`fixed top-12 z-40 hidden md:flex items-center px-3 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] hover:border-[#3b82f6]/50 transition-all duration-700 group cursor-pointer ${
+          showGlobeUI && (isDragging || isZoomedClose)
+            ? "opacity-0 translate-x-4 pointer-events-none"
+            : "opacity-100 translate-x-0"
+        }`}
+        style={{ right: '2.5rem' }}
+      >
+        <User className="w-5 h-5 text-[#d1d5db] group-hover:text-[#3b82f6] transition-colors" />
+      </motion.button>
+
+      {/* Auth Modal */}
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
 
       {/* Mobile Menu Button */}
       <motion.button
