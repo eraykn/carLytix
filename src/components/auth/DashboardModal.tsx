@@ -1,7 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, Search, Heart, Car, Settings, Sliders } from "lucide-react";
+import { X, Sparkles, Search, Heart, Sliders, ChevronLeft, Lock, Loader2 } from "lucide-react";
 
 interface User {
   id: string;
@@ -66,7 +67,7 @@ const GlassTile = ({
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
-      className="w-full p-4 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-300 text-left group"
+      className="w-full p-4 rounded-xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] hover:bg-white/[0.06] hover:border-white/[0.15] transition-all duration-300 text-left group cursor-pointer"
     >
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#3b82f6]/20 to-[#06b6d4]/20 flex items-center justify-center border border-white/[0.08]">
@@ -85,7 +86,374 @@ const GlassTile = ({
   );
 };
 
+// Toggle Switch Component
+const ToggleSwitch = ({ 
+  enabled, 
+  onChange 
+}: { 
+  enabled: boolean; 
+  onChange: (value: boolean) => void;
+}) => {
+  return (
+    <button
+      onClick={() => onChange(!enabled)}
+      aria-label={enabled ? "Disable" : "Enable"}
+      title={enabled ? "Disable" : "Enable"}
+      className={`relative w-11 h-6 rounded-full transition-colors duration-200 cursor-pointer ${
+        enabled ? 'bg-[#3b82f6]' : 'bg-slate-700'
+      }`}
+    >
+      <motion.div
+        animate={{ x: enabled ? 20 : 2 }}
+        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        className="absolute top-1 w-4 h-4 rounded-full bg-white shadow-md"
+      />
+    </button>
+  );
+};
+
+// Option Selector Component
+const OptionSelector = ({ 
+  options, 
+  selected, 
+  onChange 
+}: { 
+  options: string[]; 
+  selected: string; 
+  onChange: (value: string) => void;
+}) => {
+  return (
+    <div className="flex gap-1 p-0.5 rounded-lg bg-white/[0.03] border border-white/[0.08]">
+      {options.map((option) => (
+        <button
+          key={option}
+          onClick={() => onChange(option)}
+          className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all cursor-pointer ${
+            selected === option
+              ? 'bg-[#3b82f6] text-white'
+              : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
+          }`}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+// AI Settings Interface
+interface AISettings {
+  customizationEnabled: boolean;
+  customInstructions: string;
+  responseStyle: string;
+  tone: string;
+  suggestionSensitivity: string;
+  budgetFlexibility: string;
+  brandPreference: string;
+  typingAnimation: boolean;
+  useHistory: boolean;
+}
+
+// Default AI Settings
+const defaultAISettings: AISettings = {
+  customizationEnabled: true,
+  customInstructions: "",
+  responseStyle: "Dengeli",
+  tone: "Samimi",
+  suggestionSensitivity: "Orta",
+  budgetFlexibility: "+10%",
+  brandPreference: "Dengeli",
+  typingAnimation: true,
+  useHistory: true,
+};
+
+// AI Settings Panel Component - receives settings as props
+const AISettingsPanel = ({ 
+  onBack,
+  initialSettings,
+  onSave
+}: { 
+  onBack: () => void;
+  initialSettings: AISettings;
+  onSave: (settings: AISettings) => void;
+}) => {
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  
+  const [customizationEnabled, setCustomizationEnabled] = useState(initialSettings.customizationEnabled);
+  const [customInstructions, setCustomInstructions] = useState(initialSettings.customInstructions);
+  const [responseStyle, setResponseStyle] = useState(initialSettings.responseStyle);
+  const [tone, setTone] = useState(initialSettings.tone);
+  const [suggestionSensitivity, setSuggestionSensitivity] = useState(initialSettings.suggestionSensitivity);
+  const [budgetFlexibility, setBudgetFlexibility] = useState(initialSettings.budgetFlexibility);
+  const [brandPreference, setBrandPreference] = useState(initialSettings.brandPreference);
+  const [typingAnimation, setTypingAnimation] = useState(initialSettings.typingAnimation);
+  const [useHistory, setUseHistory] = useState(initialSettings.useHistory);
+
+  // Ayarları kaydet
+  const saveSettings = async () => {
+    try {
+      setSaving(true);
+      setError(null);
+      
+      const token = localStorage.getItem("auth_token");
+      if (!token) {
+        setError("Oturum bulunamadı");
+        return;
+      }
+
+      const newSettings: AISettings = {
+        customizationEnabled,
+        customInstructions,
+        responseStyle,
+        tone,
+        suggestionSensitivity,
+        budgetFlexibility,
+        brandPreference,
+        typingAnimation,
+        useHistory,
+      };
+
+      const response = await fetch("/api/user/ai-settings", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(newSettings),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || "Kaydetme başarısız");
+        return;
+      }
+
+      // Update parent state and close panel
+      onSave(newSettings);
+      onBack();
+    } catch (err) {
+      console.error("Failed to save AI settings:", err);
+      setError("Bağlantı hatası");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col h-full min-h-0">
+      {/* Header */}
+      <div className="flex-shrink-0 p-6 border-b border-white/[0.06]">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onBack}
+            className="p-2 rounded-lg hover:bg-white/[0.05] transition-colors cursor-pointer"
+            aria-label="Back"
+            title="Back"
+          >
+            <ChevronLeft className="w-5 h-5 text-slate-400" />
+          </button>
+          <div>
+            <h2 className="text-lg font-semibold text-white">AI Assistant Settings</h2>
+            <p className="text-xs text-slate-500">Customize your AI experience</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-h-0 overflow-y-auto p-6 space-y-6 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        {/* Error Message */}
+        {error && (
+          <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
+            <p className="text-sm text-red-400">{error}</p>
+          </div>
+        )}
+
+        {/* Enable Customization - Controls only custom instructions input */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-white">Enable customization</p>
+              <p className="text-xs text-slate-500 mt-0.5">Customize how CarLytix AI responds to you.</p>
+            </div>
+            <ToggleSwitch enabled={customizationEnabled} onChange={setCustomizationEnabled} />
+          </div>
+
+          {/* Custom Instructions - Shows locked state when disabled */}
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-white">Custom instructions</label>
+            <div className="relative">
+              {!customizationEnabled && (
+                <div className="absolute inset-0 flex items-center justify-center z-10 rounded-lg bg-black/40">
+                  <Lock className="w-5 h-5 text-slate-500" />
+                </div>
+              )}
+              <textarea
+                value={customInstructions}
+                onChange={(e) => setCustomInstructions(e.target.value)}
+                disabled={!customizationEnabled}
+                placeholder="Örn: Bana her zaman Türkçe cevap ver, teknik detayları basitleştir..."
+                maxLength={1000}
+                className={`w-full h-20 px-3 py-2 text-sm placeholder-slate-500 rounded-lg resize-none focus:outline-none transition-colors ${
+                  customizationEnabled 
+                    ? 'text-white bg-white/[0.03] border border-white/[0.08] focus:border-[#3b82f6]/50' 
+                    : 'text-slate-600 bg-black/60 border border-white/[0.04] cursor-not-allowed'
+                }`}
+              />
+              {customizationEnabled && (
+                <p className="text-[10px] text-slate-500 mt-1 text-right">{customInstructions.length}/1000</p>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Advanced Section - Always visible */}
+        <div className="pt-4 border-t border-white/[0.06]">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Advanced</p>
+          
+          <div className="space-y-4">
+            {/* Response Style */}
+            <div className="space-y-2">
+              <label className="text-sm text-slate-300">Yanıt stili</label>
+              <OptionSelector 
+                options={["Kısa", "Dengeli", "Detaylı"]} 
+                selected={responseStyle} 
+                onChange={setResponseStyle} 
+              />
+            </div>
+
+            {/* Tone */}
+            <div className="space-y-2">
+              <label className="text-sm text-slate-300">Ton</label>
+              <OptionSelector 
+                options={["Teknik", "Kurumsal", "Samimi"]} 
+                selected={tone} 
+                onChange={setTone} 
+              />
+            </div>
+
+            {/* Suggestion Sensitivity */}
+            <div className="space-y-2">
+              <label className="text-sm text-slate-300">Öneri hassasiyeti</label>
+              <OptionSelector 
+                options={["Sıkı", "Orta", "Geniş"]} 
+                selected={suggestionSensitivity} 
+                onChange={setSuggestionSensitivity} 
+              />
+            </div>
+
+            {/* Budget Flexibility */}
+            <div className="space-y-2">
+              <label className="text-sm text-slate-300">Bütçe esnekliği</label>
+              <OptionSelector 
+                options={["+5%", "+10%", "+20%"]} 
+                selected={budgetFlexibility} 
+                onChange={setBudgetFlexibility} 
+              />
+            </div>
+
+            {/* Brand Preference */}
+            <div className="space-y-2">
+              <label className="text-sm text-slate-300">Marka eğilimi</label>
+              <OptionSelector 
+                options={["Dengeli", "Favori"]} 
+                selected={brandPreference} 
+                onChange={setBrandPreference} 
+              />
+            </div>
+
+            {/* Typing Animation */}
+            <div className="flex items-center justify-between py-2">
+              <span className="text-sm text-slate-300">Typing animasyon</span>
+              <ToggleSwitch enabled={typingAnimation} onChange={setTypingAnimation} />
+            </div>
+
+            {/* Use History */}
+            <div className="flex items-center justify-between py-2">
+              <span className="text-sm text-slate-300">Kişisel geçmişi kullan</span>
+              <ToggleSwitch enabled={useHistory} onChange={setUseHistory} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="flex-shrink-0 px-6 py-4 border-t border-white/[0.06] bg-white/[0.02]">
+        <button 
+          onClick={saveSettings}
+          disabled={saving}
+          className="w-full py-2.5 text-sm font-medium text-white bg-[#3b82f6] hover:bg-[#2563eb] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-2"
+        >
+          {saving ? (
+            <>
+              <Loader2 className="w-4 h-4 animate-spin" />
+              Kaydediliyor...
+            </>
+          ) : (
+            "Kaydet"
+          )}
+        </button>
+      </div>
+    </div>
+  );
+};
+
 export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
+  const [activePanel, setActivePanel] = useState<'main' | 'ai-settings'>('main');
+  const [aiSettings, setAiSettings] = useState<AISettings>(defaultAISettings);
+  const [settingsLoaded, setSettingsLoaded] = useState(false);
+
+  // Lazy load AI settings when modal opens
+  useEffect(() => {
+    if (isOpen && !settingsLoaded) {
+      const loadSettings = async () => {
+        try {
+          const token = localStorage.getItem("auth_token");
+          if (!token) return;
+
+          const response = await fetch("/api/user/ai-settings", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            if (data.success && data.settings) {
+              setAiSettings({
+                customizationEnabled: data.settings.customizationEnabled,
+                customInstructions: data.settings.customInstructions || "",
+                responseStyle: data.settings.responseStyle,
+                tone: data.settings.tone,
+                suggestionSensitivity: data.settings.suggestionSensitivity,
+                budgetFlexibility: data.settings.budgetFlexibility,
+                brandPreference: data.settings.brandPreference,
+                typingAnimation: data.settings.typingAnimation,
+                useHistory: data.settings.useHistory,
+              });
+            }
+          }
+        } catch (err) {
+          console.error("Failed to load AI settings:", err);
+        } finally {
+          setSettingsLoaded(true);
+        }
+      };
+
+      loadSettings();
+    }
+  }, [isOpen, settingsLoaded]);
+
+  const handleClose = () => {
+    setActivePanel('main');
+    onClose();
+  };
+
+  const handleSaveSettings = (newSettings: AISettings) => {
+    setAiSettings(newSettings);
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -95,7 +463,7 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
+            onClick={handleClose}
             className="fixed inset-0 bg-black/60 backdrop-blur-md z-[100]"
           />
 
@@ -113,66 +481,98 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
               
               {/* Close Button */}
               <button
-                onClick={onClose}
+                onClick={handleClose}
                 aria-label="Close"
                 title="Close"
-                className="absolute -top-12 right-0 p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all z-10 group"
+                className="absolute -top-12 right-0 p-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all z-10 group cursor-pointer"
               >
                 <X className="w-5 h-5 text-slate-400 group-hover:text-white transition-colors" />
               </button>
 
               {/* Modal Content */}
-              <div className="relative bg-[#0a0a0f]/95 backdrop-blur-xl rounded-2xl border border-white/[0.08] shadow-2xl overflow-hidden">
-                {/* Header with user info */}
-                <div className="p-6 border-b border-white/[0.06]">
-                  <div className="flex items-center gap-4">
-                    <LargeGradientAvatar name={user.name} email={user.email} />
-                    <div className="flex-1 min-w-0">
-                      <h2 className="text-xl font-semibold text-white truncate">
-                        {user.name || "User"}
-                      </h2>
-                      <p className="text-sm text-slate-400 truncate">{user.email}</p>
-                      <div className="flex items-center gap-2 mt-2">
-                        <span className="px-2 py-0.5 text-xs font-medium text-[#3b82f6] bg-[#3b82f6]/10 rounded-full border border-[#3b82f6]/20">
-                          Free Plan
-                        </span>
+              <div className="relative bg-[#0a0a0f]/95 backdrop-blur-xl rounded-2xl border border-white/[0.08] shadow-2xl overflow-hidden min-h-[400px] max-h-[80vh] flex flex-col">
+                <AnimatePresence mode="wait">
+                  {activePanel === 'main' ? (
+                    <motion.div
+                      key="main"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {/* Header with user info */}
+                      <div className="p-6 border-b border-white/[0.06]">
+                        <div className="flex items-center gap-4">
+                          <LargeGradientAvatar name={user.name} email={user.email} />
+                          <div className="flex-1 min-w-0">
+                            {user.name && (
+                              <h2 className="text-xl font-semibold text-white truncate">
+                                {user.name}
+                              </h2>
+                            )}
+                            <p className={`text-sm text-slate-400 truncate ${!user.name ? 'text-base' : ''}`}>
+                              {user.email}
+                            </p>
+                            <div className="flex items-center gap-2 mt-2">
+                              <span className="px-2 py-0.5 text-xs font-medium text-[#3b82f6] bg-[#3b82f6]/10 rounded-full border border-[#3b82f6]/20">
+                                Free Plan
+                              </span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Content Grid */}
-                <div className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <GlassTile 
-                      icon={Sparkles} 
-                      title="AI Assistant Settings" 
-                      subtitle="Customize your AI experience"
-                    />
-                    <GlassTile 
-                      icon={Sliders} 
-                      title="Vehicle Preferences" 
-                      subtitle="Set your ideal car specs"
-                    />
-                    <GlassTile 
-                      icon={Heart} 
-                      title="Saved Cars" 
-                      subtitle="0 vehicles saved"
-                    />
-                    <GlassTile 
-                      icon={Search} 
-                      title="Search History" 
-                      subtitle="View past searches"
-                    />
-                  </div>
-                </div>
+                      {/* Content Grid */}
+                      <div className="p-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          <GlassTile 
+                            icon={Sparkles} 
+                            title="AI Assistant Settings" 
+                            subtitle="Customize your AI experience"
+                            onClick={() => setActivePanel('ai-settings')}
+                          />
+                          <GlassTile 
+                            icon={Sliders} 
+                            title="Vehicle Preferences" 
+                            subtitle="Set your ideal car specs"
+                          />
+                          <GlassTile 
+                            icon={Heart} 
+                            title="Saved Cars" 
+                            subtitle="0 vehicles saved"
+                          />
+                          <GlassTile 
+                            icon={Search} 
+                            title="Search History" 
+                            subtitle="View past searches"
+                          />
+                        </div>
+                      </div>
 
-                {/* Footer */}
-                <div className="px-6 py-4 border-t border-white/[0.06] bg-white/[0.02]">
-                  <p className="text-xs text-slate-500 text-center">
-                    CarLytix Dashboard • Manage your preferences
-                  </p>
-                </div>
+                      {/* Footer */}
+                      <div className="px-6 py-4 border-t border-white/[0.06] bg-white/[0.02]">
+                        <p className="text-xs text-slate-500 text-center">
+                          CarLytix Dashboard • Manage your preferences
+                        </p>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="ai-settings"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 20 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex-1 flex flex-col min-h-0 max-h-[80vh]"
+                    >
+                      <AISettingsPanel 
+                        onBack={() => setActivePanel('main')} 
+                        initialSettings={aiSettings}
+                        onSave={handleSaveSettings}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </motion.div>

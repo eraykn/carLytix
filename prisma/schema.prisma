@@ -192,6 +192,7 @@ model User {
   
   // İlişkiler
   sessions      AuthSession[]
+  aiSettings    UserAISettings?
   
   // Zaman damgaları
   createdAt     DateTime @default(now())
@@ -217,4 +218,34 @@ model AuthSession {
   
   // Zaman damgası
   createdAt     DateTime @default(now())
+}
+
+// --- AI ASSISTANT AYARLARI ---
+model UserAISettings {
+  id                    String   @id @default(cuid())
+  
+  // Kullanıcı ilişkisi
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Customization
+  customizationEnabled  Boolean  @default(true)
+  customInstructions    String?  @db.Text
+  
+  // Response Settings
+  responseStyle         String   @default("Dengeli")   // Kısa, Dengeli, Detaylı
+  tone                  String   @default("Samimi")    // Teknik, Kurumsal, Samimi
+  
+  // Suggestion Settings
+  suggestionSensitivity String   @default("Orta")      // Sıkı, Orta, Geniş
+  budgetFlexibility     String   @default("+10%")      // +5%, +10%, +20%
+  brandPreference       String   @default("Dengeli")   // Dengeli, Favori
+  
+  // UI Settings
+  typingAnimation       Boolean  @default(true)
+  useHistory            Boolean  @default(true)
+  
+  // Zaman damgaları
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 }

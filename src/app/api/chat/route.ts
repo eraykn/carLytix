@@ -5,6 +5,68 @@ import { prisma } from "@/lib/prisma";
 // Gemini API client initialization
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
+// User AI Settings Interface
+interface UserAISettings {
+  customizationEnabled: boolean;
+  customInstructions: string | null;
+  responseStyle: string;
+  tone: string;
+  suggestionSensitivity: string;
+  budgetFlexibility: string;
+  brandPreference: string;
+  typingAnimation: boolean;
+  useHistory: boolean;
+}
+
+// Token'dan kullanıcı AI ayarlarını al
+async function getUserAISettings(authHeader: string | null): Promise<UserAISettings | null> {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return null;
+  }
+
+  const token = authHeader.substring(7);
+
+  try {
+    const session = await prisma.authSession.findUnique({
+      where: { token },
+      select: {
+        expiresAt: true,
+        user: {
+          select: {
+            id: true,
+            isActive: true,
+            aiSettings: true
+          }
+        }
+      }
+    });
+
+    if (!session || new Date() > session.expiresAt || !session.user.isActive) {
+      return null;
+    }
+
+    // Ayarlar yoksa varsayılan döndür
+    if (!session.user.aiSettings) {
+      return {
+        customizationEnabled: true,
+        customInstructions: null,
+        responseStyle: "Dengeli",
+        tone: "Samimi",
+        suggestionSensitivity: "Orta",
+        budgetFlexibility: "+10%",
+        brandPreference: "Dengeli",
+        typingAnimation: true,
+        useHistory: true,
+      };
+    }
+
+    return session.user.aiSettings;
+  } catch (error) {
+    console.error("Failed to get user AI settings:", error);
+    return null;
+  }
+}
+
 // System prompt for CarLytix AI assistant
 const SYSTEM_PROMPT = `
 Sen CarLytix platformunun yapay zeka asistanısın. Türkiye otomobil pazarında uzmanlaşmış, veri odaklı bir danışmansın.
@@ -48,6 +110,10 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Get user AI settings if logged in
+    const authHeader = request.headers.get("authorization");
+    const userSettings = await getUserAISettings(authHeader);
 
     // Get request metadata for logging
     const ipAddress = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
@@ -97,7 +163,56 @@ export async function POST(request: NextRequest) {
 
     // Build context with settings
     let contextPrompt = SYSTEM_PROMPT;
+
+    // Apply user's personalized AI settings if available
+    if (userSettings && userSettings.customizationEnabled) {
+      // Response Style
+      const responseStyleDescriptions: Record<string, string> = {
+        "Kısa": "Yanıtlarını kısa ve öz tut. Gereksiz detaylara girme, sadece en önemli bilgileri ver.",
+        "Dengeli": "Orta uzunlukta, dengeli yanıtlar ver. Yeterli detay sun ama gereksiz uzatma.",
+        "Detaylı": "Kapsamlı ve detaylı yanıtlar ver. Tüm ilgili bilgileri, alternatifleri ve açıklamaları dahil et.",
+      };
+      if (userSettings.responseStyle && responseStyleDescriptions[userSettings.responseStyle]) {
+        contextPrompt += `\n\nYANIT UZUNLUĞU: ${responseStyleDescriptions[userSettings.responseStyle]}`;
+      }
+
+      // Tone
+      const toneDescriptions: Record<string, string> = {
+        "Teknik": "Teknik ve profesyonel bir dil kullan. Terminolojiye hakim biri gibi konuş, detaylı spesifikasyonlar ver.",
+        "Kurumsal": "Resmi ve kurumsal bir dil kullan. Profesyonel ama mesafeli ol.",
+        "Samimi": "Samimi ve arkadaşça bir dil kullan. Sanki bir arkadaşınla sohbet ediyormuş gibi rahat konuş.",
+      };
+      if (userSettings.tone && toneDescriptions[userSettings.tone]) {
+        contextPrompt += `\n\nTON: ${toneDescriptions[userSettings.tone]}`;
+      }
+
+      // Suggestion Sensitivity
+      const sensitivityDescriptions: Record<string, string> = {
+        "Sıkı": "Sadece kullanıcının belirttiği kriterlere tam uyan araçları öner. Tolerans gösterme.",
+        "Orta": "Kullanıcının kriterlerine yakın araçları da önerebilirsin, ama çok sapma.",
+        "Geniş": "Kullanıcının ilgisini çekebilecek farklı alternatifleri de sun. Yaratıcı öneriler yap.",
+      };
+      if (userSettings.suggestionSensitivity && sensitivityDescriptions[userSettings.suggestionSensitivity]) {
+        contextPrompt += `\n\nÖNERİ YAKLAŞIMI: ${sensitivityDescriptions[userSettings.suggestionSensitivity]}`;
+      }
+
+      // Budget Flexibility (user's saved setting overrides the per-chat setting)
+      if (userSettings.budgetFlexibility) {
+        contextPrompt += `\n\nBÜTÇE ESNEKLİĞİ: Kullanıcının belirttiği bütçenin ${userSettings.budgetFlexibility} üzerine kadar araç önerebilirsin.`;
+      }
+
+      // Brand Preference
+      if (userSettings.brandPreference === "Favori") {
+        contextPrompt += `\n\nMARKA TERCİHİ: Kullanıcı belirli markaları sevebilir. Geçmiş konuşmalarda bahsettiği veya beğendiği markalara öncelik ver.`;
+      }
+
+      // Custom Instructions (most important - user's own words)
+      if (userSettings.customInstructions && userSettings.customInstructions.trim()) {
+        contextPrompt += `\n\nKULLANICI ÖZEL TALİMATLARI (Bu talimatlara kesinlikle uy):\n${userSettings.customInstructions}`;
+      }
+    }
     
+    // Legacy persona support (for non-logged-in users or explicit selection)
     if (persona) {
       const personaDescriptions: Record<string, string> = {
         "Profesyonel Danışman": "Profesyonel ve resmi bir dil kullan, detaylı analizler sun.",
@@ -108,7 +223,8 @@ export async function POST(request: NextRequest) {
       contextPrompt += `\n\nKonuşma tarzı: ${personaDescriptions[persona] || persona}`;
     }
 
-    if (budgetFlex) {
+    // Legacy budgetFlex support (only if user settings don't have it)
+    if (budgetFlex && (!userSettings || !userSettings.customizationEnabled)) {
       contextPrompt += `\n\nBütçe esnekliği: Kullanıcının belirttiği bütçenin ${budgetFlex} üzerine kadar araç önerebilirsin.`;
     }
 

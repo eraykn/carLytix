@@ -207,11 +207,21 @@ export default function AIPage() {
     const newMessages = [...messages, { role: "user" as const, content: userMessage }];
 
     try {
+      // Get auth token if user is logged in
+      const authToken = localStorage.getItem("auth_token");
+      
+      const headers: Record<string, string> = {
+        "Content-Type": "application/json",
+      };
+      
+      // Add authorization header if logged in
+      if (authToken) {
+        headers["Authorization"] = `Bearer ${authToken}`;
+      }
+
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers,
         body: JSON.stringify({
           messages: newMessages,
           persona: aiPersona,
