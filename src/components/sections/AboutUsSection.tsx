@@ -6,7 +6,7 @@ import { useEffect, useState, useRef, useMemo, useCallback } from "react"
 import dynamic from "next/dynamic"
 import type { GlobeMethods } from "react-globe.gl"
 import * as THREE from "three"
-import { Users, Target, Smile, Quote, ChevronDown, Menu, Bot, Car, User } from "lucide-react"
+import { Users, Target, Smile, Quote, ChevronDown, Menu, Bot, Car } from "lucide-react"
 import { motion } from "framer-motion"
 import { Marquee } from "@/components/ui/marquee"
 import { NumberTicker } from "@/components/ui/number-ticker"
@@ -15,6 +15,7 @@ import { RippleButton } from "@/components/ui/ripple-button"
 import { toast } from "sonner"
 import { Toaster } from "@/components/ui/sonner"
 import { AuthModal } from "@/components/auth/AuthModal"
+import { UserProfileMenu } from "@/components/auth/UserProfileMenu"
 
 const Globe = dynamic(() => import("react-globe.gl"), {
   ssr: false,
@@ -429,7 +430,8 @@ export default function GlobeVisualization() {
   return (
     <div
       ref={scrollContainerRef}
-      className="relative w-full h-screen overflow-y-auto overflow-x-hidden bg-slate-950 snap-y snap-mandatory scroll-smooth"
+      className="relative w-full h-screen overflow-y-auto overflow-x-hidden bg-slate-950 snap-y snap-mandatory scroll-smooth scrollbar-hide"
+      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
       {/* Toast Container */}
       <Toaster richColors />
@@ -538,22 +540,20 @@ export default function GlobeVisualization() {
         </motion.a>
       </motion.nav>
 
-      {/* Profile Icon - Right side of nav */}
-      <motion.button
+      {/* Profile Menu - Right side of nav */}
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        aria-label="Profil"
-        onClick={() => setIsAuthModalOpen(true)}
-        className={`fixed top-12 z-40 hidden md:flex items-center px-3 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] hover:border-[#3b82f6]/50 transition-all duration-700 group cursor-pointer ${
+        className={`fixed top-12 z-40 hidden md:block ${
           showGlobeUI && (isDragging || isZoomedClose)
             ? "opacity-0 translate-x-4 pointer-events-none"
             : "opacity-100 translate-x-0"
         }`}
         style={{ right: '2.5rem' }}
       >
-        <User className="w-5 h-5 text-[#d1d5db] group-hover:text-[#3b82f6] transition-colors" />
-      </motion.button>
+        <UserProfileMenu onOpenAuthModal={() => setIsAuthModalOpen(true)} />
+      </motion.div>
 
       {/* Auth Modal */}
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />

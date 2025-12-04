@@ -2,11 +2,12 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, ChevronDown, Menu, Bot, Car, User } from "lucide-react";
+import { Plus, ChevronDown, Menu, Bot, Car } from "lucide-react";
 import { ImageWithFallback } from "@/components/common/ImageWithFallback";
 import { CarDetailsPanel } from "@/components/car/CarDetailsPanel";
 import { Footer } from "@/components/common/Footer";
 import { AuthModal } from "@/components/auth/AuthModal";
+import { UserProfileMenu } from "@/components/auth/UserProfileMenu";
 
 // --- TİP TANIMLAMALARI ---
 type BrandName = string;
@@ -573,18 +574,16 @@ export function CompareSection({ initialData }: CompareSectionProps) {
           </motion.a>
         </motion.nav>
 
-        {/* Profile Icon - Right side of nav */}
-        <motion.button
+        {/* Profile Menu - Right side of nav */}
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          aria-label="Profil"
-          onClick={() => setIsAuthModalOpen(true)}
-          className="absolute top-12 z-20 hidden md:flex items-center px-3 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] hover:border-[#3b82f6]/50 transition-all duration-300 group cursor-pointer"
+          className="absolute top-12 z-20 hidden md:block"
           style={{ right: '2.5rem' }}
         >
-          <User className="w-5 h-5 text-[#d1d5db] group-hover:text-[#3b82f6] transition-colors" />
-        </motion.button>
+          <UserProfileMenu onOpenAuthModal={() => setIsAuthModalOpen(true)} />
+        </motion.div>
 
         {/* Auth Modal */}
         <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />

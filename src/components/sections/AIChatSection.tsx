@@ -2,13 +2,14 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import { Send, Bot, User, Menu, Columns2, Plus, MessageSquare, Settings, PenSquare, Search, Fuel, Zap, Car, Shield, Users, TrendingUp, Sun, Moon, Monitor, ChevronRight, ChevronDown, Palette, Brain, Wallet, Target, Trash2 } from "lucide-react";
+import { Send, Bot, Menu, Columns2, Plus, MessageSquare, Settings, PenSquare, Search, Fuel, Zap, Car, Shield, Users, TrendingUp, Sun, Moon, Monitor, ChevronRight, ChevronDown, Palette, Brain, Wallet, Target, Trash2, User } from "lucide-react";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import remarkBreaks from "remark-breaks";
 import rehypeRaw from "rehype-raw";
 import { AuthModal } from "@/components/auth/AuthModal";
+import { UserProfileMenu } from "@/components/auth/UserProfileMenu";
 
 interface ChatHistory {
   id: string;
@@ -589,31 +590,10 @@ export default function AIPage() {
 
         {/* Bottom - Profile & Settings */}
         <div className={`mt-auto border-t ${themeColors.borderColor} ${sidebarOpen ? 'p-3' : 'py-4 flex flex-col items-center gap-2'}`}>
-          {/* Profile Icon */}
-          {sidebarOpen ? (
-            <div 
-              onClick={() => setIsAuthModalOpen(true)}
-              className={`flex items-center gap-3 px-3 py-2.5 mb-2 rounded-lg ${themeColors.hoverBg} transition-colors cursor-pointer`}
-            >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] flex items-center justify-center">
-                <User className="w-4 h-4 text-white" />
-              </div>
-              <div className="flex-1">
-                <p className={`text-sm font-medium ${themeColors.textPrimary}`}>Kullanıcı</p>
-                <p className={`text-xs ${themeColors.textMuted}`}>Misafir</p>
-              </div>
-            </div>
-          ) : (
-            <button
-              aria-label="Profil"
-              onClick={() => setIsAuthModalOpen(true)}
-              className={`p-3 rounded-xl ${themeColors.hoverBg} transition-colors group cursor-pointer`}
-            >
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#2db7f5] to-[#0ea5d8] flex items-center justify-center">
-                <User className="w-4 h-4 text-white" />
-              </div>
-            </button>
-          )}
+          {/* Profile Menu */}
+          <div className={sidebarOpen ? 'mb-2' : ''}>
+            <UserProfileMenu onOpenAuthModal={() => setIsAuthModalOpen(true)} />
+          </div>
           
           {/* Settings Button */}
           {sidebarOpen ? (
@@ -963,18 +943,16 @@ export default function AIPage() {
           </motion.a>
         </motion.nav>
 
-        {/* Profile Icon - Right side of nav */}
-        <motion.button
+        {/* Profile Menu - Right side of nav */}
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          aria-label="Profil"
-          onClick={() => setIsAuthModalOpen(true)}
-          className={`absolute top-8 z-20 hidden md:flex items-center px-3 py-3 rounded-xl ${themeColors.navBg} backdrop-blur-[16px] border ${themeColors.borderColor} hover:border-[#3b82f6]/50 transition-all duration-300 group cursor-pointer`}
+          className="absolute top-8 z-20 hidden md:block"
           style={{ right: '2.5rem' }}
         >
-          <User className={`w-5 h-5 ${themeColors.textSecondary} group-hover:text-[#3b82f6] transition-colors`} />
-        </motion.button>
+          <UserProfileMenu onOpenAuthModal={() => setIsAuthModalOpen(true)} />
+        </motion.div>
 
         {/* Auth Modal */}
         <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
