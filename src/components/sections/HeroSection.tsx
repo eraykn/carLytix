@@ -20,6 +20,11 @@ export function HeroSection() {
     let isScrolling = false;
 
     const handleWheel = (e: WheelEvent) => {
+      // Modal veya overlay açıksa wheel event'i işleme
+      if (document.body.style.position === 'fixed' || document.body.style.overflow === 'hidden') {
+        return;
+      }
+
       // Sadece hero section içindeyken çalışsın
       const heroElement = document.querySelector('.hero-section');
       if (!heroElement || window.scrollY > 100) {
@@ -99,7 +104,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="absolute top-12 left-1/2 -translate-x-1/2 z-30"
+        className="absolute top-12 left-1/2 -translate-x-1/2 z-20"
       >
         <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
           {/* CarLytix Logo */}
@@ -191,7 +196,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="absolute top-12 z-20 hidden md:block"
+        className="absolute top-12 z-30 hidden md:block"
         style={{ right: '2.5rem' }}
       >
         <UserProfileMenu onOpenAuthModal={() => setIsAuthModalOpen(true)} />
@@ -273,7 +278,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
         onClick={() => {
           document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
         }}

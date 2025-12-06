@@ -18,6 +18,15 @@ interface UserAISettings {
   useHistory: boolean;
 }
 
+// Vehicle Preferences Interface
+interface UserVehiclePreferences {
+  usage: string[];
+  bodyType: string[];
+  fuelType: string[];
+  priorities: string[];
+  brands: string[];
+}
+
 // Token'dan kullanıcı AI ayarlarını al
 async function getUserAISettings(authHeader: string | null): Promise<UserAISettings | null> {
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
@@ -63,6 +72,45 @@ async function getUserAISettings(authHeader: string | null): Promise<UserAISetti
     return session.user.aiSettings;
   } catch (error) {
     console.error("Failed to get user AI settings:", error);
+    return null;
+  }
+}
+
+// Token'dan kullanıcı araç tercihlerini al
+async function getUserVehiclePreferences(authHeader: string | null): Promise<UserVehiclePreferences | null> {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return null;
+  }
+
+  const token = authHeader.substring(7);
+
+  try {
+    const session = await prisma.authSession.findUnique({
+      where: { token },
+      select: {
+        expiresAt: true,
+        user: {
+          select: {
+            id: true,
+            isActive: true,
+            vehiclePrefs: true
+          }
+        }
+      }
+    });
+
+    if (!session || new Date() > session.expiresAt || !session.user.isActive) {
+      return null;
+    }
+
+    // Tercihler yoksa null döndür
+    if (!session.user.vehiclePrefs) {
+      return null;
+    }
+
+    return session.user.vehiclePrefs;
+  } catch (error) {
+    console.error("Failed to get user vehicle preferences:", error);
     return null;
   }
 }
@@ -114,6 +162,7 @@ export async function POST(request: NextRequest) {
     // Get user AI settings if logged in
     const authHeader = request.headers.get("authorization");
     const userSettings = await getUserAISettings(authHeader);
+    const vehiclePrefs = await getUserVehiclePreferences(authHeader);
 
     // Get request metadata for logging
     const ipAddress = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
@@ -209,6 +258,39 @@ export async function POST(request: NextRequest) {
       // Custom Instructions (most important - user's own words)
       if (userSettings.customInstructions && userSettings.customInstructions.trim()) {
         contextPrompt += `\n\nKULLANICI ÖZEL TALİMATLARI (Bu talimatlara kesinlikle uy):\n${userSettings.customInstructions}`;
+      }
+    }
+
+    // Apply user's vehicle preferences if available
+    if (vehiclePrefs) {
+      contextPrompt += `\n\n--- KULLANICI ARAÇ TERCİHLERİ (ÖNEMLİ) ---`;
+      
+      // Usage preferences
+      if (vehiclePrefs.usage && vehiclePrefs.usage.length > 0) {
+        contextPrompt += `\nKULLANIM AMACI: Kullanıcı aracını şu amaçlarla kullanacak: ${vehiclePrefs.usage.join(", ")}. Önerilerinde bu kullanım senaryolarına uygun araçları ön plana çıkar.`;
+      }
+      
+      // Body type preferences
+      if (vehiclePrefs.bodyType && vehiclePrefs.bodyType.length > 0) {
+        contextPrompt += `\nKASA TİPİ TERCİHİ: Kullanıcı şu kasa tiplerini tercih ediyor: ${vehiclePrefs.bodyType.join(", ")}. Önerilerinde bu kasa tiplerine öncelik ver.`;
+      }
+      
+      // Fuel type preferences
+      if (vehiclePrefs.fuelType && vehiclePrefs.fuelType.length > 0) {
+        contextPrompt += `\nYAKIT TİPİ TERCİHİ: Kullanıcı şu yakıt tiplerini tercih ediyor: ${vehiclePrefs.fuelType.join(", ")}. Önerilerinde bu yakıt tiplerindeki araçlara öncelik ver.`;
+      }
+      
+      // Priority preferences
+      if (vehiclePrefs.priorities && vehiclePrefs.priorities.length > 0) {
+        contextPrompt += `\nÖNCELİKLER: Kullanıcı için şunlar önemli: ${vehiclePrefs.priorities.join(", ")}. Araç önerirken ve karşılaştırırken bu kriterleri özellikle vurgula.`;
+      }
+      
+      // Brand preferences (CRITICAL - 90% weight)
+      if (vehiclePrefs.brands && vehiclePrefs.brands.length > 0) {
+        contextPrompt += `\n\n🚨 FAVORİ MARKALAR (KRİTİK - %90 AĞIRLIK): Kullanıcının favori markaları: ${vehiclePrefs.brands.join(", ")}. 
+KURAL: Araç önerirken önerilerinin EN AZ %90'ı bu markalardan olmalı. Kullanıcı spesifik bir marka sormadıysa, her zaman önce bu markalardan araç öner. 
+Sadece kullanıcı açıkça farklı bir marka sorduğunda veya bu markalarda uygun araç yoksa başka markalara yönel.
+Bu markalar dışından öneri yaparsan, mutlaka "Favori markalarınız dışından bir öneri:" şeklinde belirt.`;
       }
     }
     

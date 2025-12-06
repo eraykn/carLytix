@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, Search, Heart, Sliders, ChevronLeft, Lock, Loader2 } from "lucide-react";
+import { X, Sparkles, Search, Heart, Sliders, ChevronLeft, Lock, Loader2, Check } from "lucide-react";
+import { toast } from "sonner";
 
 interface User {
   id: string;
@@ -232,6 +234,10 @@ const AISettingsPanel = ({
 
       // Update parent state and close panel
       onSave(newSettings);
+      
+      // Diğer sayfalara bildir (AI Page için)
+      window.dispatchEvent(new Event("aiSettingsUpdated"));
+      
       onBack();
     } catch (err) {
       console.error("Failed to save AI settings:", err);
@@ -399,9 +405,339 @@ const AISettingsPanel = ({
   );
 };
 
+// Multi Select Chip Component
+const MultiSelectChip = ({ 
+  options, 
+  selected, 
+  onChange,
+  maxSelections
+}: { 
+  options: string[]; 
+  selected: string[]; 
+  onChange: (value: string[]) => void;
+  maxSelections: number;
+}) => {
+  const handleToggle = (option: string) => {
+    if (selected.includes(option)) {
+      // Remove from selection
+      onChange(selected.filter(s => s !== option));
+    } else {
+      // Add to selection, respecting max limit
+      if (selected.length >= maxSelections) {
+        // Remove first selected and add new one
+        onChange([...selected.slice(1), option]);
+      } else {
+        onChange([...selected, option]);
+      }
+    }
+  };
+
+  return (
+    <div className="flex flex-wrap gap-2">
+      {options.map((option) => {
+        const isSelected = selected.includes(option);
+        return (
+          <button
+            key={option}
+            onClick={() => handleToggle(option)}
+            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all cursor-pointer border ${
+              isSelected
+                ? 'bg-[#3b82f6]/20 text-[#3b82f6] border-[#3b82f6]/40'
+                : 'bg-white/[0.03] text-slate-400 border-white/[0.08] hover:text-white hover:bg-white/[0.06] hover:border-white/[0.15]'
+            }`}
+          >
+            {option}
+            {isSelected && <Check className="w-3 h-3 ml-1.5 inline" />}
+          </button>
+        );
+      })}
+    </div>
+  );
+};
+
+// Vehicle Preferences Interface
+interface VehiclePreferences {
+  usage: string[];
+  bodyType: string[];
+  fuelType: string[];
+  priorities: string[];
+  brands: string[];
+}
+
+// Default Vehicle Preferences
+const defaultVehiclePreferences: VehiclePreferences = {
+  usage: [],
+  bodyType: [],
+  fuelType: [],
+  priorities: [],
+  brands: [],
+};
+
+// Brand list
+const BRAND_LIST = [
+  "BMW", "Mercedes-Benz", "Audi", "Volkswagen", "Toyota", "Honda", "Hyundai", "Renault",
+  "Peugeot", "Opel", "Volvo", "Tesla", "Skoda", "Ford", "Kia", "Nissan", "Fiat", "Seat",
+  "Cupra", "Mazda", "Porsche", "Land Rover", "Jaguar", "Jeep", "Mini", "Citroën", "Dacia",
+  "Suzuki", "Mitsubishi", "Subaru", "Lexus", "Alfa Romeo", "Genesis", "Dodge", "Chrysler",
+  "Chevrolet", "Cadillac", "Holden", "Buick", "Infiniti", "Acura", "Rivian", "Lucid",
+  "Polestar", "BYD", "Chery", "Geely", "Great Wall", "MG"
+];
+
+// Vehicle Preferences Panel Component
+const VehiclePreferencesPanel = ({ 
+  onBack,
+  initialPreferences,
+  onSave
+}: { 
+  onBack: () => void;
+  initialPreferences: VehiclePreferences;
+  onSave: (preferences: VehiclePreferences) => void;
+}) => {
+  const [saving, setSaving] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [brandSearch, setBrandSearch] = useState("");
+  const [showBrandDropdown, setShowBrandDropdown] = useState(false);
+  
+  const [usage, setUsage] = useState<string[]>(initialPreferences.usage);
+  const [bodyType, setBodyType] = useState<string[]>(initialPreferences.bodyType);
+  const [fuelType, setFuelType] = useState<string[]>(initialPreferences.fuelType);
+  const [priorities, setPriorities] = useState<string[]>(initialPreferences.priorities);
+  const [brands, setBrands] = useState<string[]>(initialPreferences.brands);
+
+  const filteredBrands = BRAND_LIST.filter(
+    brand => brand.toLowerCase().includes(brandSearch.toLowerCase()) && !brands.includes(brand)
+  );
+
+  const handleAddBrand = (brand: string) => {
+    setBrands([...brands, brand]);
+    setBrandSearch("");
+    setShowBrandDropdown(false);
+  };
+
+  const handleRemoveBrand = (brand: string) => {
+    setBrands(brands.filter(b => b !== brand));
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    // Simulate save - backend integration later
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    const newPreferences: VehiclePreferences = {
+      usage,
+      bodyType,
+      fuelType,
+      priorities,
+      brands,
+    };
+    
+    onSave(newPreferences);
+    setSaving(false);
+    setShowSuccess(true);
+    
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 3000);
+  };
+
+  return (
+    <div className="flex flex-col h-full min-h-0">
+      {/* Header */}
+      <div className="flex-shrink-0 p-6 border-b border-white/[0.06]">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onBack}
+            className="p-2 rounded-lg hover:bg-white/[0.05] transition-colors cursor-pointer"
+            aria-label="Back"
+            title="Back"
+          >
+            <ChevronLeft className="w-5 h-5 text-slate-400" />
+          </button>
+          <div>
+            <h2 className="text-lg font-semibold text-white">Vehicle Preferences</h2>
+            <p className="text-xs text-slate-500">Set your ideal car specifications</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-h-0 overflow-y-auto p-6 space-y-6 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        {/* Success Message */}
+        <AnimatePresence>
+          {showSuccess && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20"
+            >
+              <div className="flex items-center gap-2">
+                <Check className="w-4 h-4 text-emerald-400" />
+                <p className="text-sm text-emerald-400">Tercihlerin güncellendi. Öneriler bundan sonra buna göre şekillenecek.</p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Usage Section */}
+        <div className="space-y-3">
+          <div>
+            <p className="text-sm font-medium text-white">Kullanım</p>
+            <p className="text-xs text-slate-500 mt-0.5">En fazla 3 seçenek</p>
+          </div>
+          <MultiSelectChip
+            options={["Şehir içi", "Uzun yol", "Karma", "Aile odaklı", "Sportif"]}
+            selected={usage}
+            onChange={setUsage}
+            maxSelections={3}
+          />
+        </div>
+
+        {/* Body Type Section */}
+        <div className="space-y-3">
+          <div>
+            <p className="text-sm font-medium text-white">Gövde Tipi</p>
+            <p className="text-xs text-slate-500 mt-0.5">En fazla 3 seçenek</p>
+          </div>
+          <MultiSelectChip
+            options={["SUV", "Sedan", "Hatchback", "Crossover", "Station", "Coupe"]}
+            selected={bodyType}
+            onChange={setBodyType}
+            maxSelections={3}
+          />
+        </div>
+
+        {/* Fuel Type Section */}
+        <div className="space-y-3">
+          <div>
+            <p className="text-sm font-medium text-white">Yakıt / Enerji</p>
+            <p className="text-xs text-slate-500 mt-0.5">En fazla 4 seçenek</p>
+          </div>
+          <MultiSelectChip
+            options={["Elektrikli", "Hibrit", "Benzin", "Dizel"]}
+            selected={fuelType}
+            onChange={setFuelType}
+            maxSelections={4}
+          />
+        </div>
+
+        {/* Priorities Section */}
+        <div className="space-y-3">
+          <div>
+            <p className="text-sm font-medium text-white">Öncelikler</p>
+            <p className="text-xs text-slate-500 mt-0.5">Hepsini seçebilirsiniz</p>
+          </div>
+          <MultiSelectChip
+            options={["Güvenlik", "Düşük tüketim", "Performans", "Konfor", "Teknoloji/ADAS", "Uygun bakım"]}
+            selected={priorities}
+            onChange={setPriorities}
+            maxSelections={6}
+          />
+        </div>
+
+        {/* Brand Preferences Section */}
+        <div className="space-y-3">
+          <div>
+            <p className="text-sm font-medium text-white">Marka Tercihleri</p>
+            <p className="text-xs text-slate-500 mt-0.5">Tercih ettiğiniz markaları ekleyin</p>
+          </div>
+          
+          {/* Brand Search Input */}
+          <div className="relative">
+            <input
+              type="text"
+              value={brandSearch}
+              onChange={(e) => {
+                setBrandSearch(e.target.value);
+                setShowBrandDropdown(true);
+              }}
+              onFocus={() => setShowBrandDropdown(true)}
+              placeholder="Marka ara..."
+              className="w-full px-4 py-2.5 text-sm text-white placeholder-slate-500 rounded-lg bg-white/[0.03] border border-white/[0.08] focus:border-[#3b82f6]/50 focus:outline-none transition-colors"
+            />
+            
+            {/* Brand Dropdown */}
+            <AnimatePresence>
+              {showBrandDropdown && brandSearch && filteredBrands.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="absolute top-full left-0 right-0 mt-1 max-h-40 overflow-y-auto rounded-lg bg-[#1a1a2e] border border-white/[0.08] shadow-xl z-10"
+                >
+                  {filteredBrands.slice(0, 8).map((brand) => (
+                    <button
+                      key={brand}
+                      onClick={() => handleAddBrand(brand)}
+                      className="w-full px-4 py-2 text-sm text-left text-slate-300 hover:bg-white/[0.05] hover:text-white transition-colors cursor-pointer"
+                    >
+                      {brand}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Selected Brands */}
+          {brands.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              {brands.map((brand) => (
+                <div
+                  key={brand}
+                  className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-[#3b82f6]/20 text-[#3b82f6] border border-[#3b82f6]/40"
+                >
+                  {brand}
+                  <button
+                    onClick={() => handleRemoveBrand(brand)}
+                    className="p-0.5 rounded hover:bg-white/10 transition-colors cursor-pointer"
+                    aria-label={`Remove ${brand}`}
+                    title={`Remove ${brand}`}
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Info Text */}
+        <div className="pt-4 border-t border-white/[0.06]">
+          <p className="text-xs text-slate-500 text-center italic">
+            Bu tercihleri Carlytix AI, öneri ve karşılaştırma yanıtlarında otomatik olarak dikkate alır.
+          </p>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="flex-shrink-0 px-6 py-4 border-t border-white/[0.06] bg-white/[0.02]">
+        <div className="flex justify-end">
+          <button 
+            onClick={handleSave}
+            disabled={saving}
+            className="px-6 py-2.5 text-sm font-medium text-white bg-[#3b82f6] hover:bg-[#2563eb] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors cursor-pointer flex items-center justify-center gap-2"
+          >
+            {saving ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Kaydediliyor...
+              </>
+            ) : (
+              "Tercihlerimi Kaydet"
+            )}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
-  const [activePanel, setActivePanel] = useState<'main' | 'ai-settings'>('main');
+  const [activePanel, setActivePanel] = useState<'main' | 'ai-settings' | 'vehicle-preferences'>('main');
   const [aiSettings, setAiSettings] = useState<AISettings>(defaultAISettings);
+  const [vehiclePreferences, setVehiclePreferences] = useState<VehiclePreferences>(defaultVehiclePreferences);
   const [settingsLoaded, setSettingsLoaded] = useState(false);
 
   // Lazy load AI settings when modal opens
@@ -445,6 +781,27 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
     }
   }, [isOpen, settingsLoaded]);
 
+  // Modal açıkken body scroll'u kilitle
+  useEffect(() => {
+    if (isOpen) {
+      // Mevcut scroll pozisyonunu kaydet
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      
+      return () => {
+        // Modal kapandığında scroll'u geri yükle
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [isOpen]);
+
   const handleClose = () => {
     setActivePanel('main');
     onClose();
@@ -454,7 +811,42 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
     setAiSettings(newSettings);
   };
 
-  return (
+  const handleVehicleSave = async (newPreferences: VehiclePreferences) => {
+    setVehiclePreferences(newPreferences);
+    
+    // API'ye kaydet
+    try {
+      const token = localStorage.getItem("auth_token");
+      if (token) {
+        await fetch("/api/vehicle-preferences", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+          },
+          body: JSON.stringify(newPreferences),
+        });
+      }
+    } catch (error) {
+      console.error("Failed to save vehicle preferences:", error);
+    }
+    
+    onClose(); // Dashboard'ı kapat
+    toast.success('Tercihlerin güncellendi. Öneriler bundan sonra buna göre şekillenecek.', {
+      position: 'bottom-left',
+      duration: 3000,
+    });
+  };
+
+  // Client-side only portal
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -474,8 +866,12 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+            onClick={handleClose}
           >
-            <div className="relative w-full max-w-2xl">
+            <div 
+              className="relative w-full max-w-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Decorative glow */}
               <div className="absolute -inset-1 bg-gradient-to-r from-[#3b82f6]/10 via-[#06b6d4]/10 to-[#3b82f6]/10 rounded-3xl blur-2xl opacity-40" />
               
@@ -535,11 +931,12 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                             icon={Sliders} 
                             title="Vehicle Preferences" 
                             subtitle="Set your ideal car specs"
+                            onClick={() => setActivePanel('vehicle-preferences')}
                           />
                           <GlassTile 
                             icon={Heart} 
-                            title="Saved Cars" 
-                            subtitle="0 vehicles saved"
+                            title="Match Cars" 
+                            subtitle="0 Cars matched yet"
                           />
                           <GlassTile 
                             icon={Search} 
@@ -556,7 +953,7 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                         </p>
                       </div>
                     </motion.div>
-                  ) : (
+                  ) : activePanel === 'ai-settings' ? (
                     <motion.div
                       key="ai-settings"
                       initial={{ opacity: 0, x: 20 }}
@@ -571,6 +968,21 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                         onSave={handleSaveSettings}
                       />
                     </motion.div>
+                  ) : (
+                    <motion.div
+                      key="vehicle-preferences"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 20 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex-1 flex flex-col min-h-0 max-h-[80vh]"
+                    >
+                      <VehiclePreferencesPanel 
+                        onBack={() => setActivePanel('main')} 
+                        initialPreferences={vehiclePreferences}
+                        onSave={handleVehicleSave}
+                      />
+                    </motion.div>
                   )}
                 </AnimatePresence>
               </div>
@@ -578,6 +990,7 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

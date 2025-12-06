@@ -425,26 +425,14 @@ export default function GlobeVisualization() {
   const getArcDashAnimateTime = useCallback((d: any) => d.dashAnimateTime, [])
   const getArcDashInitialGap = useCallback(() => Math.random() * 5, [])
 
-  if (!mounted) return null
-
+  // Navigation ve UI elementlerini her zaman render et, Globe beklesin
   return (
-    <div
-      ref={scrollContainerRef}
-      className="relative w-full h-screen overflow-y-auto overflow-x-hidden bg-slate-950 snap-y snap-mandatory scroll-smooth scrollbar-hide"
-      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-    >
-      {/* Toast Container */}
-      <Toaster richColors />
-      
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <StarsBackground />
-      </div>
-
-      {/* Top Center Logo - Glassmorphism */}
+    <>
+      {/* Top Center Logo - Glassmorphism - Her zaman görünür */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
+        transition={{ delay: 0.05, duration: 0.3 }}
         className={`fixed top-12 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 ${
           showGlobeUI && (isDragging || isZoomedClose)
             ? "opacity-0 -translate-y-4 pointer-events-none"
@@ -452,7 +440,6 @@ export default function GlobeVisualization() {
         }`}
       >
         <div className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 backdrop-blur-[20px] backdrop-saturate-[180%] border border-white/[0.18] shadow-[0_8px_32px_rgba(0,0,0,0.37),inset_0_1px_0_rgba(255,255,255,0.1)]">
-          {/* CarLytix Logo */}
           <img 
             src="/images/brands/carlytix-concept-a-logo.svg" 
             alt="CarLytix Logo" 
@@ -461,11 +448,11 @@ export default function GlobeVisualization() {
         </div>
       </motion.div>
 
-      {/* Top Right Navigation - Glassmorphism */}
+      {/* Top Right Navigation - Glassmorphism - Her zaman görünür */}
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
+        transition={{ delay: 0.08, duration: 0.3 }}
         className={`fixed top-12 z-40 hidden md:flex items-center gap-8 px-6 py-3 rounded-xl bg-white/[0.06] backdrop-blur-[16px] border border-white/[0.12] transition-all duration-700 ${
           showGlobeUI && (isDragging || isZoomedClose)
             ? "opacity-0 translate-x-4 pointer-events-none"
@@ -473,7 +460,6 @@ export default function GlobeVisualization() {
         }`}
         style={{ right: 'calc(2.5rem + 52px)' }}
       >
-        {/* Regular nav items */}
         {[
           { name: "Main Menu", href: "/" },
           { name: "Compare", href: "/compare" },
@@ -483,7 +469,7 @@ export default function GlobeVisualization() {
             href={item.href}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 + index * 0.1 }}
+            transition={{ delay: 0.1 + index * 0.03 }}
             className="text-sm text-[#d1d5db] hover:text-[#3b82f6] transition-colors duration-300 relative group"
           >
             {item.name}
@@ -491,11 +477,10 @@ export default function GlobeVisualization() {
           </motion.a>
         ))}
 
-        {/* CarLytix AI Dropdown */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.15 }}
           className="relative group"
         >
           <a
@@ -506,7 +491,6 @@ export default function GlobeVisualization() {
             <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
             <span className="absolute bottom-[-8px] left-0 w-0 h-0.5 bg-[#3b82f6] group-hover:w-full transition-all duration-300" />
           </a>
-          {/* Dropdown Menu */}
           <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div className="bg-[#1e293b]/95 backdrop-blur-xl rounded-xl border border-white/[0.12] shadow-2xl overflow-hidden min-w-[160px]">
               <a
@@ -527,12 +511,11 @@ export default function GlobeVisualization() {
           </div>
         </motion.div>
 
-        {/* About Us */}
         <motion.a
           href="/aboutus"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.18 }}
           className="text-sm text-[#0ea5d8] transition-colors duration-300 relative group"
         >
           About Us
@@ -540,12 +523,12 @@ export default function GlobeVisualization() {
         </motion.a>
       </motion.nav>
 
-      {/* Profile Menu - Right side of nav */}
+      {/* Profile Menu - Right side of nav - Her zaman görünür */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className={`fixed top-12 z-40 hidden md:block ${
+        transition={{ delay: 0.1, duration: 0.3 }}
+        className={`fixed top-12 z-[60] hidden md:block transition-all duration-700 ${
           showGlobeUI && (isDragging || isZoomedClose)
             ? "opacity-0 translate-x-4 pointer-events-none"
             : "opacity-100 translate-x-0"
@@ -558,11 +541,11 @@ export default function GlobeVisualization() {
       {/* Auth Modal */}
       <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
 
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu Button - Her zaman görünür */}
       <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.1 }}
         className={`fixed top-12 right-10 z-40 md:hidden p-2 rounded-lg bg-white/[0.08] backdrop-blur-xl border border-white/[0.15] hover:bg-white/[0.18] transition-all duration-700 ${
           showGlobeUI && (isDragging || isZoomedClose)
             ? "opacity-0 translate-x-4 pointer-events-none"
@@ -571,6 +554,20 @@ export default function GlobeVisualization() {
       >
         <Menu className="w-6 h-6 text-[#e2e8f0]" />
       </motion.button>
+
+      {/* Main Content - Globe hazır olduğunda render et */}
+      {mounted && (
+    <div
+      ref={scrollContainerRef}
+      className="relative w-full h-screen overflow-y-auto overflow-x-hidden bg-slate-950 snap-y snap-mandatory scroll-smooth scrollbar-hide"
+      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+    >
+      {/* Toast Container */}
+      <Toaster richColors />
+      
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <StarsBackground />
+      </div>
 
       {/* Section 1: About Carlytix - Full Screen */}
       <section className="relative w-full h-screen flex flex-col items-center justify-center z-10 snap-start shrink-0">
@@ -915,6 +912,8 @@ export default function GlobeVisualization() {
         </div>
       </section>
     </div>
+      )}
+    </>
   )
 }
 

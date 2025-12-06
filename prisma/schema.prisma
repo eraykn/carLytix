@@ -193,6 +193,7 @@ model User {
   // İlişkiler
   sessions      AuthSession[]
   aiSettings    UserAISettings?
+  vehiclePrefs  UserVehiclePreferences?
   
   // Zaman damgaları
   createdAt     DateTime @default(now())
@@ -244,6 +245,28 @@ model UserAISettings {
   // UI Settings
   typingAnimation       Boolean  @default(true)
   useHistory            Boolean  @default(true)
+  
+  // Zaman damgaları
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+// --- ARAÇ TERCİHLERİ ---
+model UserVehiclePreferences {
+  id                    String   @id @default(cuid())
+  
+  // Kullanıcı ilişkisi
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Kullanım tercihleri
+  usage                 String[] // ["Şehir içi", "Uzun yol", "Karma"]
+  bodyType              String[] // ["SUV", "Sedan", "Hatchback"]
+  fuelType              String[] // ["Elektrikli", "Hibrit", "Benzin"]
+  priorities            String[] // ["Güvenlik", "Düşük tüketim", "Performans"]
+  
+  // Favori markalar (%90 ağırlık)
+  brands                String[] // ["BMW", "Mercedes-Benz", "Audi"]
   
   // Zaman damgaları
   createdAt             DateTime @default(now())

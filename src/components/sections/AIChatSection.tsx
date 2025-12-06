@@ -59,8 +59,149 @@ export default function AIPage() {
   const [targetContent, setTargetContent] = useState<string>("");
   const [isTyping, setIsTyping] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [user, setUser] = useState<{ id: string; name?: string; email: string } | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const typewriterRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Load user from localStorage
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch {
+        setUser(null);
+      }
+    }
+    
+    // Listen for login/logout events
+    const handleUserChange = () => {
+      const u = localStorage.getItem("user");
+      setUser(u ? JSON.parse(u) : null);
+    };
+    
+    window.addEventListener("storage", handleUserChange);
+    window.addEventListener("userLoggedIn", handleUserChange);
+    return () => {
+      window.removeEventListener("storage", handleUserChange);
+      window.removeEventListener("userLoggedIn", handleUserChange);
+    };
+  }, []);
+
+  // Mapping fonksiyonları - Tone <-> AI Persona
+  const toneToPersona = (tone: string): string => {
+    switch (tone) {
+      case "Teknik": return "Teknik Uzman";
+      case "Kurumsal": return "Profesyonel Danışman";
+      case "Samimi": return "Sportif & Araç Tutkunu";
+      default: return "Profesyonel Danışman";
+    }
+  };
+
+  const personaToTone = (persona: string): string => {
+    switch (persona) {
+      case "Teknik Uzman": return "Teknik";
+      case "Profesyonel Danışman": return "Kurumsal";
+      case "Sportif & Araç Tutkunu": return "Samimi";
+      case "Basit Anlatıcı": return "Samimi";
+      default: return "Kurumsal";
+    }
+  };
+
+  // Load AI settings from API
+  useEffect(() => {
+    const loadAISettings = async () => {
+      try {
+        const token = localStorage.getItem("auth_token");
+        if (!token) return;
+
+        const response = await fetch("/api/user/ai-settings", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success && data.settings) {
+            // Budget flexibility direkt aynı
+            if (data.settings.budgetFlexibility) {
+              setBudgetFlex(data.settings.budgetFlexibility);
+            }
+            // Tone'u persona'ya çevir
+            if (data.settings.tone) {
+              setAiPersona(toneToPersona(data.settings.tone));
+            }
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load AI settings:", err);
+      }
+    };
+
+    loadAISettings();
+
+    // Dashboard'dan settings değişince yeniden yükle
+    const handleSettingsChange = () => {
+      loadAISettings();
+    };
+    window.addEventListener("aiSettingsUpdated", handleSettingsChange);
+    return () => {
+      window.removeEventListener("aiSettingsUpdated", handleSettingsChange);
+    };
+  }, []);
+
+  // Save settings to API when changed
+  const saveSettingToAPI = async (key: string, value: string) => {
+    try {
+      const token = localStorage.getItem("auth_token");
+      if (!token) return;
+
+      // Önce mevcut settings'i al
+      const getResponse = await fetch("/api/user/ai-settings", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      
+      let currentSettings = {};
+      if (getResponse.ok) {
+        const data = await getResponse.json();
+        if (data.success && data.settings) {
+          currentSettings = data.settings;
+        }
+      }
+
+      // Settings'i güncelle
+      const updatedSettings = { ...currentSettings, [key]: value };
+
+      await fetch("/api/user/ai-settings", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(updatedSettings),
+      });
+
+      // Diğer sayfalara bildir
+      window.dispatchEvent(new Event("aiSettingsUpdated"));
+    } catch (err) {
+      console.error("Failed to save setting:", err);
+    }
+  };
+
+  // Handle persona change
+  const handlePersonaChange = (persona: string) => {
+    setAiPersona(persona);
+    // Persona'yı tone'a çevirip API'ye kaydet
+    const tone = personaToTone(persona);
+    saveSettingToAPI("tone", tone);
+  };
+
+  // Handle budget flex change
+  const handleBudgetFlexChange = (flex: string) => {
+    setBudgetFlex(flex);
+    saveSettingToAPI("budgetFlexibility", flex);
+  };
 
   // Auto scroll to bottom when new messages arrive
   const scrollToBottom = () => {
@@ -599,11 +740,14 @@ export default function AIPage() {
         </AnimatePresence>
 
         {/* Bottom - Profile & Settings */}
-        <div className={`mt-auto border-t ${themeColors.borderColor} ${sidebarOpen ? 'p-3' : 'py-4 flex flex-col items-center gap-2'}`}>
-          {/* Profile Menu */}
-          <div className={sidebarOpen ? 'mb-2' : ''}>
-            <UserProfileMenu onOpenAuthModal={() => setIsAuthModalOpen(true)} />
-          </div>
+        <div className={`mt-auto border-t ${themeColors.borderColor} ${sidebarOpen ? 'p-3 space-y-2' : 'py-4 flex flex-col items-center gap-2'}`}>
+          {/* Profile Section */}
+          <UserProfileMenu 
+            onOpenAuthModal={() => setIsAuthModalOpen(true)} 
+            expanded={sidebarOpen}
+            isLightMode={isLightMode}
+            onCollapsedClick={() => setSidebarOpen(true)}
+          />
           
           {/* Settings Button */}
           {sidebarOpen ? (
@@ -738,7 +882,7 @@ export default function AIPage() {
                         {["Profesyonel Danışman", "Teknik Uzman", "Basit Anlatıcı", "Sportif & Araç Tutkunu"].map((persona) => (
                           <button
                             key={persona}
-                            onClick={() => setAiPersona(persona)}
+                            onClick={() => handlePersonaChange(persona)}
                             className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-sm ${
                               aiPersona === persona ? `${isLightMode ? 'bg-gray-200 text-gray-900' : 'bg-white/[0.1] text-white'}` : `${themeColors.textAccent} ${themeColors.hoverBg} hover:${themeColors.textPrimary}`
                             }`}
@@ -777,7 +921,7 @@ export default function AIPage() {
                         {["+5%", "+10%", "+20%"].map((flex) => (
                           <button
                             key={flex}
-                            onClick={() => setBudgetFlex(flex)}
+                            onClick={() => handleBudgetFlexChange(flex)}
                             className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-sm ${
                               budgetFlex === flex ? `${isLightMode ? 'bg-gray-200 text-gray-900' : 'bg-white/[0.1] text-white'}` : `${themeColors.textAccent} ${themeColors.hoverBg} hover:${themeColors.textPrimary}`
                             }`}
