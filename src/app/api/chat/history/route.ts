@@ -1,14 +1,63 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-// GET - Fetch chat history
+// Token'dan kullanıcı ID'sini al
+async function getUserIdFromToken(authHeader: string | null): Promise<string | null> {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return null;
+  }
+
+  const token = authHeader.substring(7);
+
+  try {
+    const session = await prisma.authSession.findUnique({
+      where: { token },
+      select: {
+        expiresAt: true,
+        user: {
+          select: {
+            id: true,
+            isActive: true,
+          }
+        }
+      }
+    });
+
+    if (!session || new Date() > session.expiresAt || !session.user.isActive) {
+      return null;
+    }
+
+    return session.user.id;
+  } catch (error) {
+    console.error("Failed to get user ID:", error);
+    return null;
+  }
+}
+
+// GET - Fetch chat history (for logged-in users only)
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get("limit") || "20");
+    
+    // Check if user is logged in
+    const authHeader = request.headers.get("authorization");
+    const userId = await getUserIdFromToken(authHeader);
+    
+    // If not logged in, return empty (frontend will use localStorage)
+    if (!userId) {
+      return NextResponse.json({
+        sessions: [],
+        success: true,
+        isGuest: true,
+      });
+    }
 
-    // Get recent chat sessions with their first user message
+    // Get user's chat sessions with their first user message
     const sessions = await prisma.chatSession.findMany({
+      where: {
+        userId: userId,
+      },
       take: limit,
       orderBy: {
         createdAt: "desc",

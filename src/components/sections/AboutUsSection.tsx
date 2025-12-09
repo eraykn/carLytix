@@ -182,13 +182,18 @@ export default function GlobeVisualization() {
     message: "",
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return emailRegex.test(email)
   }
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
+    
+    if (isSubmitting) return
+
     const newErrors = {
       firstName: "",
       lastName: "",
@@ -255,20 +260,54 @@ export default function GlobeVisualization() {
 
     // If no errors, submit form
     if (!Object.values(newErrors).some((error) => error !== "")) {
-      console.log("Form submitted:", formData)
-      // Show success toast
-      toast.success("Talebin Başarıyla İletildi ✔️", {
-        description: "Sizinle en kısa sürede iletişime geçmek için sabırsızlanıyoruz ✨",
-        position: "bottom-left",
-        duration: 5000,
-      })
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
-      })
+      setIsSubmitting(true)
+      
+      try {
+        const response = await fetch("/api/email/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: formData.firstName.trim(),
+            lastName: formData.lastName.trim(),
+            email: formData.email.trim(),
+            message: formData.message.trim(),
+          }),
+        })
+
+        const data = await response.json()
+
+        if (response.ok) {
+          toast.success("Talebin Başarıyla İletildi ✔️", {
+            description: "Sizinle en kısa sürede iletişime geçmek için sabırsızlanıyoruz ✨",
+            position: "bottom-left",
+            duration: 5000,
+          })
+          // Reset form
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: "",
+          })
+        } else {
+          toast.error("Bir hata oluştu!", {
+            description: data.error || "Lütfen daha sonra tekrar deneyin.",
+            position: "bottom-left",
+            duration: 4000,
+          })
+        }
+      } catch (error) {
+        console.error("Contact form error:", error)
+        toast.error("Bağlantı hatası!", {
+          description: "Sunucuya ulaşılamıyor. Lütfen internet bağlantınızı kontrol edin.",
+          position: "bottom-left",
+          duration: 4000,
+        })
+      } finally {
+        setIsSubmitting(false)
+      }
     }
   }
 
@@ -901,9 +940,10 @@ export default function GlobeVisualization() {
                     onClick={handleSubmit}
                     rippleColor="#10b981"
                     duration="1500ms"
-                    className="bg-slate-900/60 backdrop-blur-xl border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 hover:text-emerald-300 font-medium px-8 py-3 text-lg transition-all"
+                    className="bg-slate-900/60 backdrop-blur-xl border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 hover:text-emerald-300 font-medium px-8 py-3 text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
                   >
-                    Touch
+                    {isSubmitting ? "Gönderiliyor..." : "Touch"}
                   </RippleButton>
                 </div>
               </div>

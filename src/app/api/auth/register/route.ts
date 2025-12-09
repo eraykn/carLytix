@@ -3,6 +3,9 @@ import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import { z } from "zod";
+import { resend, FROM_EMAIL } from "@/lib/email/resend";
+import { WelcomeEmail } from "@/lib/email/templates/welcome-email";
+import React from "react";
 
 // Zod validasyon şeması
 const registerSchema = z.object({
@@ -81,6 +84,21 @@ export async function POST(request: NextRequest) {
         },
       },
     });
+
+    // Send welcome email (non-blocking)
+    try {
+      await resend.emails.send({
+        from: FROM_EMAIL,
+        to: user.email,
+        subject: "Carlytix'e Hoş Geldin! 🚗",
+        react: React.createElement(WelcomeEmail, { 
+          name: user.name || "Değerli Kullanıcımız" 
+        }),
+      });
+    } catch (emailError) {
+      console.error("Welcome email error:", emailError);
+      // Don't fail registration if email fails
+    }
 
     return NextResponse.json({
       success: true,

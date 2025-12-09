@@ -247,11 +247,45 @@ export default function AIPage() {
     content: "Merhaba! 👋 Ben CarLytix AI asistanıyım. Araç seçimi, karşılaştırma ve danışmanlık konularında size yardımcı olabilirim.\n\nSize nasıl yardımcı olabilirim? Bütçenizi, kullanım amacınızı veya tercihlerinizi paylaşabilirsiniz.",
   };
 
-  // Fetch chat history from database on mount
-  useEffect(() => {
-    const fetchChatHistory = async () => {
+  // LocalStorage key for guest chat history
+  const GUEST_CHAT_HISTORY_KEY = "carlytix_guest_chat_history";
+
+  // Load chat history from localStorage for guest users
+  const loadGuestChatHistory = (): ChatHistory[] => {
+    try {
+      const stored = localStorage.getItem(GUEST_CHAT_HISTORY_KEY);
+      if (stored) {
+        return JSON.parse(stored);
+      }
+    } catch (error) {
+      console.error("Failed to load guest chat history:", error);
+    }
+    return [];
+  };
+
+  // Save chat history to localStorage for guest users
+  const saveGuestChatHistory = (history: ChatHistory[]) => {
+    try {
+      // Keep only the last 20 chats
+      const limitedHistory = history.slice(0, 20);
+      localStorage.setItem(GUEST_CHAT_HISTORY_KEY, JSON.stringify(limitedHistory));
+    } catch (error) {
+      console.error("Failed to save guest chat history:", error);
+    }
+  };
+
+  // Fetch chat history function - reusable
+  const fetchChatHistory = async () => {
+    const authToken = localStorage.getItem("auth_token");
+    
+    if (authToken) {
+      // User is logged in - fetch from API
       try {
-        const response = await fetch("/api/chat/history");
+        const response = await fetch("/api/chat/history", {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
         const data = await response.json();
         
         if (data.success && data.sessions) {
@@ -265,9 +299,28 @@ export default function AIPage() {
       } catch (error) {
         console.error("Failed to fetch chat history:", error);
       }
-    };
+    } else {
+      // Guest user - load from localStorage
+      const guestHistory = loadGuestChatHistory();
+      setChatHistory(guestHistory);
+    }
+  };
 
+  // Fetch chat history - from API if logged in, localStorage if guest
+  useEffect(() => {
     fetchChatHistory();
+    
+    // Re-fetch when user logs in/out
+    const handleUserChange = () => {
+      fetchChatHistory();
+    };
+    
+    window.addEventListener("userLoggedIn", handleUserChange);
+    window.addEventListener("userLoggedOut", handleUserChange);
+    return () => {
+      window.removeEventListener("userLoggedIn", handleUserChange);
+      window.removeEventListener("userLoggedOut", handleUserChange);
+    };
   }, []);
 
   // Theme-based color classes
@@ -434,9 +487,74 @@ export default function AIPage() {
                 });
               }
 
-              if (data.done && data.sessionId && !sessionId) {
+              if (data.done && data.sessionId) {
                 // Save sessionId when streaming is complete
-                setSessionId(data.sessionId);
+                if (!sessionId) {
+                  setSessionId(data.sessionId);
+                }
+                
+                const authToken = localStorage.getItem("auth_token");
+                const chatTitle = userMessage.slice(0, 40) + (userMessage.length > 40 ? "..." : "");
+                const finalMessages = [
+                  ...newMessages,
+                  { role: "assistant" as const, content: data.fullText || accumulatedText }
+                ];
+                
+                if (authToken) {
+                  // For logged-in users - update chat history immediately
+                  const newChat: ChatHistory = {
+                    id: data.sessionId,
+                    title: chatTitle,
+                    date: "Az önce",
+                    messages: finalMessages,
+                  };
+                  
+                  setChatHistory((prev) => {
+                    // Check if this session already exists in the list
+                    const existingIndex = prev.findIndex(c => c.id === data.sessionId);
+                    if (existingIndex >= 0) {
+                      // Update existing session
+                      const updated = [...prev];
+                      updated[existingIndex] = {
+                        ...updated[existingIndex],
+                        messages: finalMessages,
+                      };
+                      return updated;
+                    } else {
+                      // Add new session to the top of the list
+                      setActiveChatId(data.sessionId);
+                      return [newChat, ...prev];
+                    }
+                  });
+                } else if (data.fullText) {
+                  // For guest users, save to localStorage
+                  const newChatId = data.sessionId || `local_${Date.now()}`;
+                  
+                  const newChat: ChatHistory = {
+                    id: newChatId,
+                    title: chatTitle,
+                    date: "Az önce",
+                    messages: finalMessages,
+                  };
+                  
+                  setChatHistory((prev) => {
+                    // Update existing or add new
+                    const existingIndex = prev.findIndex(c => c.id === activeChatId);
+                    let updated;
+                    if (existingIndex >= 0 && activeChatId) {
+                      updated = [...prev];
+                      updated[existingIndex] = {
+                        ...updated[existingIndex],
+                        messages: finalMessages,
+                      };
+                    } else {
+                      updated = [newChat, ...prev];
+                      setActiveChatId(newChatId);
+                    }
+                    saveGuestChatHistory(updated);
+                    return updated;
+                  });
+                }
               }
             } catch (parseError) {
               console.error("Failed to parse SSE data:", parseError);
@@ -446,11 +564,25 @@ export default function AIPage() {
       }
     } catch (error) {
       console.error("Chat error:", error);
+      
+      // Determine error type for better messaging
+      let errorMessage = "Bağlantı hatası oluştu. Lütfen tekrar deneyin.";
+      
+      if (error instanceof Error) {
+        if (error.message.includes("Failed to fetch") || error.message.includes("NetworkError")) {
+          errorMessage = "İnternet bağlantınızda bir sorun var. Bağlantınızı kontrol edip tekrar deneyin.";
+        } else if (error.message.includes("timeout")) {
+          errorMessage = "İstek zaman aşımına uğradı. Sunucu yoğun olabilir, lütfen tekrar deneyin.";
+        } else if (error.message.includes("No reader available")) {
+          errorMessage = "Yanıt alınamadı. Lütfen sayfayı yenileyip tekrar deneyin.";
+        }
+      }
+      
       setMessages((prev) => {
         const updated = [...prev];
         updated[updated.length - 1] = {
           role: "assistant",
-          content: "Bağlantı hatası oluştu. Lütfen internet bağlantınızı kontrol edin ve tekrar deneyin.",
+          content: errorMessage,
         };
         return updated;
       });
@@ -466,60 +598,97 @@ export default function AIPage() {
   };
 
   const handleSelectChat = async (chatId: string) => {
-    try {
-      // Veritabanından sohbet mesajlarını çek
-      const response = await fetch("/api/chat/history", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sessionId: chatId }),
-      });
-      
-      const data = await response.json();
-      
-      if (data.success && data.session) {
-        // Mesajları doğru formata dönüştür
-        const loadedMessages = data.session.messages.map((msg: { role: string; content: string }) => ({
-          role: msg.role as "user" | "assistant",
-          content: msg.content,
-        }));
+    const authToken = localStorage.getItem("auth_token");
+    
+    if (authToken) {
+      // User is logged in - fetch from API
+      try {
+        const response = await fetch("/api/chat/history", {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${authToken}`,
+          },
+          body: JSON.stringify({ sessionId: chatId }),
+        });
         
-        setMessages(loadedMessages);
-        setSessionId(chatId);
-        setActiveChatId(chatId);
+        const data = await response.json();
         
-        // Kaydedilen ayarları geri yükle
-        if (data.session.persona) setAiPersona(data.session.persona);
-        if (data.session.budgetFlex !== undefined) setBudgetFlex(data.session.budgetFlex);
-        if (data.session.priorityWeight) setPriorityWeight(data.session.priorityWeight);
+        if (data.success && data.session) {
+          // Mesajları doğru formata dönüştür
+          const loadedMessages = data.session.messages.map((msg: { role: string; content: string }) => ({
+            role: msg.role as "user" | "assistant",
+            content: msg.content,
+          }));
+          
+          setMessages(loadedMessages);
+          setSessionId(chatId);
+          setActiveChatId(chatId);
+          
+          // Kaydedilen ayarları geri yükle
+          if (data.session.persona) setAiPersona(data.session.persona);
+          if (data.session.budgetFlex !== undefined) setBudgetFlex(data.session.budgetFlex);
+          if (data.session.priorityWeight) setPriorityWeight(data.session.priorityWeight);
+        }
+      } catch (error) {
+        console.error("Sohbet yüklenirken hata:", error);
       }
-    } catch (error) {
-      console.error("Sohbet yüklenirken hata:", error);
+    } else {
+      // Guest user - load from localStorage
+      const chat = chatHistory.find(c => c.id === chatId);
+      if (chat && chat.messages.length > 0) {
+        setMessages(chat.messages);
+        setActiveChatId(chatId);
+        setSessionId(chatId.startsWith("local_") ? null : chatId);
+      }
     }
   };
 
   const handleDeleteChat = async (chatId: string, e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent triggering chat selection
     
-    try {
-      const response = await fetch(`/api/chat/history/${chatId}`, {
-        method: "DELETE",
+    const authToken = localStorage.getItem("auth_token");
+    
+    if (authToken) {
+      // User is logged in - delete from API
+      try {
+        const response = await fetch(`/api/chat/history/${chatId}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          // Remove from local state
+          setChatHistory((prev) => prev.filter((chat) => chat.id !== chatId));
+          
+          // If deleted chat was active, clear current chat
+          if (activeChatId === chatId) {
+            setMessages([welcomeMessage]);
+            setActiveChatId(null);
+            setSessionId(null);
+          }
+        }
+      } catch (error) {
+        console.error("Sohbet silinirken hata:", error);
+      }
+    } else {
+      // Guest user - delete from localStorage
+      setChatHistory((prev) => {
+        const updated = prev.filter((chat) => chat.id !== chatId);
+        saveGuestChatHistory(updated);
+        return updated;
       });
       
-      const data = await response.json();
-      
-      if (data.success) {
-        // Remove from local state
-        setChatHistory((prev) => prev.filter((chat) => chat.id !== chatId));
-        
-        // If deleted chat was active, clear current chat
-        if (activeChatId === chatId) {
-          setMessages([welcomeMessage]);
-          setActiveChatId(null);
-          setSessionId(null);
-        }
+      // If deleted chat was active, clear current chat
+      if (activeChatId === chatId) {
+        setMessages([welcomeMessage]);
+        setActiveChatId(null);
+        setSessionId(null);
       }
-    } catch (error) {
-      console.error("Sohbet silinirken hata:", error);
     }
   };
 

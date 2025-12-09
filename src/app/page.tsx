@@ -8,19 +8,26 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { Footer } from "@/components/common/Footer";
 
 export default function App() {
-  const [isLoading, setIsLoading] = useState(() => {
-    // Tarayıcı ortamında olup olmadığımızı kontrol edelim.
-    if (typeof window !== "undefined") {
-      // Eğer 'hasVisited' anahtarı sessionStorage'da yoksa, yükleme ekranını göster.
-      return !sessionStorage.getItem("hasVisited");
-    }
-    // Sunucu tarafında varsayılan olarak yükleme ekranını gösterme.
-    return false;
-  });
+  // Start with null to indicate we haven't determined the state yet
+  const [isLoading, setIsLoading] = useState<boolean | null>(null);
 
   useEffect(() => {
+    // Check sessionStorage only on client after hydration
+    const hasVisited = sessionStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      setIsLoading(true);
+    } else {
+      setIsLoading(false);
+    }
     sessionStorage.setItem("hasVisited", "true");
   }, []);
+
+  // Show nothing during initial hydration to prevent mismatch
+  if (isLoading === null) {
+    return (
+      <div className="w-full overflow-x-hidden bg-[#0f172a] relative min-h-screen" />
+    );
+  }
 
   return (
     <div className="w-full overflow-x-hidden bg-[#0f172a] relative">

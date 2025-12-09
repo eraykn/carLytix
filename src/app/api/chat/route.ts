@@ -115,6 +115,39 @@ async function getUserVehiclePreferences(authHeader: string | null): Promise<Use
   }
 }
 
+// Token'dan kullanıcı ID'sini al
+async function getUserIdFromToken(authHeader: string | null): Promise<string | null> {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return null;
+  }
+
+  const token = authHeader.substring(7);
+
+  try {
+    const session = await prisma.authSession.findUnique({
+      where: { token },
+      select: {
+        expiresAt: true,
+        user: {
+          select: {
+            id: true,
+            isActive: true,
+          }
+        }
+      }
+    });
+
+    if (!session || new Date() > session.expiresAt || !session.user.isActive) {
+      return null;
+    }
+
+    return session.user.id;
+  } catch (error) {
+    console.error("Failed to get user ID:", error);
+    return null;
+  }
+}
+
 // System prompt for CarLytix AI assistant
 const SYSTEM_PROMPT = `
 Sen CarLytix platformunun yapay zeka asistanısın. Türkiye otomobil pazarında uzmanlaşmış, veri odaklı bir danışmansın.
@@ -163,6 +196,7 @@ export async function POST(request: NextRequest) {
     const authHeader = request.headers.get("authorization");
     const userSettings = await getUserAISettings(authHeader);
     const vehiclePrefs = await getUserVehiclePreferences(authHeader);
+    const userId = await getUserIdFromToken(authHeader);
 
     // Get request metadata for logging
     const ipAddress = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown";
@@ -187,6 +221,7 @@ export async function POST(request: NextRequest) {
         // Session not found, create new one
         chatSession = await prisma.chatSession.create({
           data: {
+            userId,
             ipAddress,
             userAgent,
             persona,
@@ -200,6 +235,7 @@ export async function POST(request: NextRequest) {
       // Create new session
       chatSession = await prisma.chatSession.create({
         data: {
+          userId,
           ipAddress,
           userAgent,
           persona,
@@ -322,12 +358,26 @@ Bu markalar dışından öneri yaparsan, mutlaka "Favori markalarınız dışın
 
     // Get the model with system instruction
     const model = genAI.getGenerativeModel({ 
-      model: "gemini-2.0-flash-001",
+      model: "gemini-2.5-flash",
       systemInstruction: contextPrompt
     });
 
     // Convert messages to Gemini format
-    const chatHistory = messages.slice(0, -1).map((msg: { role: string; content: string }) => ({
+    // Filter out welcome/system messages and ensure proper conversation structure
+    const filteredMessages = messages.slice(0, -1).filter((msg: { role: string; content: string }) => {
+      // Skip welcome messages (they start with "Merhaba!" from assistant)
+      if (msg.role === "assistant" && msg.content.includes("Ben CarLytix AI asistanıyım")) {
+        return false;
+      }
+      return true;
+    });
+
+    // Gemini requires the first message to be from user, not model
+    // Find the first user message index and start from there
+    const firstUserIndex = filteredMessages.findIndex((msg: { role: string }) => msg.role === "user");
+    const validMessages = firstUserIndex >= 0 ? filteredMessages.slice(firstUserIndex) : [];
+
+    const chatHistory = validMessages.map((msg: { role: string; content: string }) => ({
       role: msg.role === "user" ? "user" : "model",
       parts: [{ text: msg.content }],
     }));
@@ -342,7 +392,7 @@ Bu markalar dışından öneri yaparsan, mutlaka "Favori markalarınız dışın
         temperature: 0.7,
         topK: 40,
         topP: 0.95,
-        maxOutputTokens: 1024,
+        maxOutputTokens: 8192,
       },
     });
 
@@ -370,23 +420,28 @@ Bu markalar dışından öneri yaparsan, mutlaka "Favori markalarınız dışın
           const responseTime = Date.now() - startTime;
 
           // Log both messages to database in parallel after streaming completes
-          await Promise.all([
-            prisma.chatMessage.create({
-              data: {
-                sessionId: chatSession.id,
-                role: "user",
-                content: lastMessage.content,
-              },
-            }),
-            prisma.chatMessage.create({
-              data: {
-                sessionId: chatSession.id,
-                role: "assistant",
-                content: fullText,
-                responseTime,
-              },
-            }),
-          ]);
+          try {
+            await Promise.all([
+              prisma.chatMessage.create({
+                data: {
+                  sessionId: chatSession.id,
+                  role: "user",
+                  content: lastMessage.content,
+                },
+              }),
+              prisma.chatMessage.create({
+                data: {
+                  sessionId: chatSession.id,
+                  role: "assistant",
+                  content: fullText,
+                  responseTime,
+                },
+              }),
+            ]);
+          } catch (dbError) {
+            console.error("Database save error:", dbError);
+            // Continue even if database save fails - user already got the response
+          }
 
           // Send final event with complete message
           controller.enqueue(
@@ -396,10 +451,35 @@ Bu markalar dışından öneri yaparsan, mutlaka "Favori markalarınız dışın
           controller.close();
         } catch (error) {
           console.error("Stream error:", error);
-          const errorMessage = error instanceof Error ? error.message : "Bir hata oluştu";
-          controller.enqueue(
-            encoder.encode(`data: ${JSON.stringify({ error: errorMessage })}\n\n`)
-          );
+          
+          // More detailed error messages
+          let errorMessage = "Bir hata oluştu. Lütfen tekrar deneyin.";
+          
+          if (error instanceof Error) {
+            if (error.message.includes("SAFETY") || error.message.includes("blocked")) {
+              errorMessage = "Güvenlik filtreleri nedeniyle yanıt oluşturulamadı. Lütfen farklı bir şekilde sormayı deneyin.";
+            } else if (error.message.includes("quota") || error.message.includes("RESOURCE_EXHAUSTED")) {
+              errorMessage = "API kotası aşıldı. Lütfen biraz bekleyip tekrar deneyin.";
+            } else if (error.message.includes("timeout") || error.message.includes("DEADLINE_EXCEEDED")) {
+              errorMessage = "İstek zaman aşımına uğradı. Lütfen tekrar deneyin.";
+            } else if (error.message.includes("API key") || error.message.includes("INVALID_ARGUMENT")) {
+              errorMessage = "API yapılandırma hatası. Lütfen yönetici ile iletişime geçin.";
+            } else if (error.message.includes("network") || error.message.includes("fetch")) {
+              errorMessage = "Bağlantı hatası oluştu. İnternet bağlantınızı kontrol edin.";
+            }
+            console.error("Error details:", error.message);
+          }
+          
+          // If we have partial content, send it with the error
+          if (fullText.length > 0) {
+            controller.enqueue(
+              encoder.encode(`data: ${JSON.stringify({ done: true, fullText: fullText + "\n\n_(Yanıt tamamlanamadı)_", sessionId: chatSession.id })}\n\n`)
+            );
+          } else {
+            controller.enqueue(
+              encoder.encode(`data: ${JSON.stringify({ error: errorMessage })}\n\n`)
+            );
+          }
           controller.close();
         }
       },

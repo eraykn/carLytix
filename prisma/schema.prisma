@@ -132,6 +132,10 @@ model UserSession {
 model ChatSession {
   id            String   @id @default(cuid())
   
+  // Kullanıcı ilişkisi (opsiyonel - giriş yapmamış kullanıcılar için null)
+  userId        String?
+  user          User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
   // Oturum bilgileri
   sessionToken  String?  // Tarayıcı oturumu için
   ipAddress     String?
@@ -194,6 +198,7 @@ model User {
   sessions      AuthSession[]
   aiSettings    UserAISettings?
   vehiclePrefs  UserVehiclePreferences?
+  chatSessions  ChatSession[]
   
   // Zaman damgaları
   createdAt     DateTime @default(now())
