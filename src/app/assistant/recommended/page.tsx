@@ -2,11 +2,12 @@
 
 import { useEffect, useState, useRef } from "react"; // useRef eklendi
 import { useSearchParams } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowLeft, Zap, Shield, Cpu, Gauge, Settings, Star, Sparkles, Check, X, Car, TurkishLira, Armchair } from "lucide-react";
+import { ArrowLeft, Zap, Shield, Cpu, Gauge, Settings, Star, Sparkles, Check, X, Car, TurkishLira, Armchair, Heart, Loader2, CheckCircle2 } from "lucide-react";
 import { usePageCurtain } from "@/hooks/usePageCurtain";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { toast } from "sonner";
 
 // Veri Tipi Tanımlaması
 interface CarData {
@@ -41,10 +42,75 @@ export default function RecommendedCarPage() {
   const { navigateWithCurtain, isTransitioning } = usePageCurtain();
   const [carData, setCarData] = useState<CarData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isSaving, setIsSaving] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
 
   const handleBackClick = () => {
     if (isTransitioning) return;
     navigateWithCurtain("/assistant");
+  };
+
+  // Bu arabayı hesabıma kaydet
+  const handleSaveToAccount = async () => {
+    if (!carData || isSaving || isSaved) return;
+
+    const authToken = localStorage.getItem("auth_token");
+    if (!authToken) {
+      toast.error("Bu özelliği kullanmak için giriş yapmalısınız", {
+        position: "bottom-center",
+      });
+      return;
+    }
+
+    setIsSaving(true);
+
+    try {
+      const response = await fetch("/api/user/matched-cars", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${authToken}`,
+        },
+        body: JSON.stringify({
+          carId: carData.id,
+          brand: carData.brand,
+          model: carData.model,
+          trim: carData.trim,
+          year: carData.year,
+          body: carData.body,
+          fuel: carData.fuel,
+          price: carData.priceTRY,
+          imageMain: carData.media?.image_main,
+          brandLogo: carData.media?.brand_logo,
+          matchScore: carData.score?.toplam,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSaved(true);
+        if (data.isExisting) {
+          toast.info("Bu araç zaten listenizde!", {
+            position: "bottom-center",
+          });
+        } else {
+          toast.success("Araç Match Cars listenize eklendi! 🎉", {
+            position: "bottom-center",
+          });
+        }
+      } else {
+        toast.error(data.error || "Bir hata oluştu", {
+          position: "bottom-center",
+        });
+      }
+    } catch (error) {
+      toast.error("Bağlantı hatası oluştu", {
+        position: "bottom-center",
+      });
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   useEffect(() => {
@@ -116,7 +182,7 @@ export default function RecommendedCarPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
-          className="absolute top-4 left-8 z-20"
+          className="absolute top-4 left-8 z-20 flex items-center gap-3"
         >
           <motion.button
             onClick={handleBackClick}
@@ -127,6 +193,34 @@ export default function RecommendedCarPage() {
             <ArrowLeft className="w-5 h-5 text-gray-700 group-hover:text-[#2db7f5] transition-colors" />
             <span className="font-semibold text-gray-700 group-hover:text-[#2db7f5] transition-colors cursor-pointer">
               Geri Dön
+            </span>
+          </motion.button>
+
+          {/* Save to Match Cars Button */}
+          <motion.button
+            onClick={handleSaveToAccount}
+            disabled={isSaving || isSaved}
+            whileHover={{ scale: isSaved ? 1 : 1.05 }}
+            whileTap={{ scale: isSaved ? 1 : 0.95 }}
+            className={`flex items-center gap-2 backdrop-blur-xl px-6 py-3 rounded-full shadow-lg transition-all border group ${
+              isSaved 
+                ? "bg-emerald-100/90 border-emerald-300/50 cursor-default" 
+                : "bg-gray-100/90 border-gray-200/50 hover:shadow-xl"
+            } disabled:opacity-70`}
+          >
+            {isSaving ? (
+              <Loader2 className="w-5 h-5 animate-spin text-gray-700" />
+            ) : isSaved ? (
+              <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+            ) : (
+              <Heart className="w-5 h-5 text-gray-700 group-hover:text-[#2db7f5] transition-colors" />
+            )}
+            <span className={`font-semibold transition-colors ${
+              isSaved 
+                ? "text-emerald-700" 
+                : "text-gray-700 group-hover:text-[#2db7f5]"
+            }`}>
+              {isSaving ? "Kaydediliyor..." : isSaved ? "Kaydedildi!" : "Bu Arabayı Seç"}
             </span>
           </motion.button>
         </motion.div>

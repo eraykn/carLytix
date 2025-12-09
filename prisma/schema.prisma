@@ -199,10 +199,43 @@ model User {
   aiSettings    UserAISettings?
   vehiclePrefs  UserVehiclePreferences?
   chatSessions  ChatSession[]
+  matchedCars   UserMatchedCar[]
   
   // Zaman damgaları
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+}
+
+// --- KULLANICI MATCH ARAÇLARI ---
+model UserMatchedCar {
+  id            String   @id @default(cuid())
+  
+  // Kullanıcı ilişkisi
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Araç bilgileri (AssistantCar'dan kopyalanır)
+  carId         String   // AssistantCar originalId
+  brand         String
+  model         String
+  trim          String?
+  year          Int
+  body          String
+  fuel          String
+  price         Int
+  imageMain     String?
+  brandLogo     String?
+  
+  // Match bilgileri
+  matchScore    Int?     // Eşleşme skoru
+  matchDate     DateTime @default(now())
+  
+  // Notlar (kullanıcı ekleyebilir)
+  notes         String?
+  isFavorite    Boolean  @default(false)
+  
+  // Unique constraint - aynı kullanıcı aynı arabayı birden fazla kez ekleyemez
+  @@unique([userId, carId])
 }
 
 model AuthSession {
@@ -276,4 +309,19 @@ model UserVehiclePreferences {
   // Zaman damgaları
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
+}
+
+// --- BÜLTEN ABONELİĞİ ---
+model NewsletterSubscriber {
+  id            String   @id @default(cuid())
+  
+  // E-posta adresi
+  email         String   @unique
+  
+  // Abonelik durumu
+  isActive      Boolean  @default(true)
+  
+  // Zaman damgaları
+  subscribedAt  DateTime @default(now())
+  unsubscribedAt DateTime?
 }

@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, Search, Heart, Sliders, ChevronLeft, Lock, Loader2, Check } from "lucide-react";
+import { X, Sparkles, Search, Heart, Sliders, ChevronLeft, Lock, Loader2, Check, Car, Trash2, Calendar, Fuel, TurkishLira } from "lucide-react";
 import { toast } from "sonner";
+import Image from "next/image";
 
 interface User {
   id: string;
@@ -734,13 +735,231 @@ const VehiclePreferencesPanel = ({
   );
 };
 
+// Matched Car Interface
+interface MatchedCar {
+  id: string;
+  carId: string;
+  brand: string;
+  model: string;
+  trim?: string;
+  year: number;
+  body: string;
+  fuel: string;
+  price: number;
+  imageMain?: string;
+  brandLogo?: string;
+  matchScore?: number;
+  matchDate: string;
+  isFavorite: boolean;
+  notes?: string;
+}
+
+// Match Cars Panel Component
+const MatchCarsPanel = ({ 
+  onBack,
+  onCountChange 
+}: { 
+  onBack: () => void;
+  onCountChange?: (count: number) => void;
+}) => {
+  const [loading, setLoading] = useState(true);
+  const [matchedCars, setMatchedCars] = useState<MatchedCar[]>([]);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  // Fetch matched cars
+  useEffect(() => {
+    const fetchMatchedCars = async () => {
+      try {
+        const token = localStorage.getItem("auth_token");
+        if (!token) return;
+
+        const response = await fetch("/api/user/matched-cars", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          setMatchedCars(data.cars);
+          onCountChange?.(data.cars.length);
+        }
+      } catch (error) {
+        console.error("Failed to fetch matched cars:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMatchedCars();
+  }, [onCountChange]);
+
+  // Delete a matched car
+  const handleDelete = async (carId: string) => {
+    setDeletingId(carId);
+    try {
+      const token = localStorage.getItem("auth_token");
+      if (!token) return;
+
+      const response = await fetch(`/api/user/matched-cars?carId=${carId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        const newCars = matchedCars.filter((car) => car.carId !== carId);
+        setMatchedCars(newCars);
+        onCountChange?.(newCars.length);
+        toast.success("Araç listeden kaldırıldı");
+      }
+    } catch (error) {
+      toast.error("Bir hata oluştu");
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
+  // Format date
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    return date.toLocaleDateString("tr-TR", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+  };
+
+  return (
+    <div className="flex flex-col h-full min-h-0">
+      {/* Header */}
+      <div className="flex-shrink-0 p-6 border-b border-white/[0.06]">
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onBack}
+            className="p-2 rounded-lg hover:bg-white/[0.05] transition-colors cursor-pointer"
+            aria-label="Back"
+            title="Back"
+          >
+            <ChevronLeft className="w-5 h-5 text-slate-400" />
+          </button>
+          <div>
+            <h2 className="text-lg font-semibold text-white">Match Cars</h2>
+            <p className="text-xs text-slate-500">CarLytix Match ile eşleştiğiniz araçlar</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 min-h-0 overflow-y-auto p-6 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        {loading ? (
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="w-8 h-8 animate-spin text-[#3b82f6]" />
+          </div>
+        ) : matchedCars.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-12 text-center">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#06b6d4]/20 flex items-center justify-center mb-4">
+              <Car className="w-8 h-8 text-[#3b82f6]" />
+            </div>
+            <h3 className="text-lg font-semibold text-white mb-2">Henüz eşleşme yok</h3>
+            <p className="text-sm text-slate-400 max-w-xs">
+              CarLytix Match&apos;te size önerilen araçları &quot;Bu Arabayı Seç&quot; butonuyla buraya ekleyebilirsiniz.
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {matchedCars.map((car) => (
+              <motion.div
+                key={car.id}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="relative group p-4 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:bg-white/[0.06] hover:border-white/[0.15] transition-all"
+              >
+                <div className="flex gap-4 items-center">
+                  {/* Car Image */}
+                  <div className="flex-shrink-0 w-28 h-20 rounded-lg overflow-hidden bg-white/[0.05] flex items-center justify-center">
+                    {car.imageMain ? (
+                      <Image
+                        src={car.imageMain}
+                        alt={`${car.brand} ${car.model}`}
+                        width={112}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <Car className="w-8 h-8 text-slate-600" />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Car Info */}
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-sm font-semibold text-white truncate">
+                      {car.brand} {car.model}
+                    </h4>
+                    <p className="text-xs text-slate-400 mt-0.5">
+                      {car.year} • {car.trim || car.body} • {car.fuel}
+                    </p>
+                    <div className="flex items-center gap-4 mt-2 text-xs text-slate-500">
+                      <span className="flex items-center gap-1">
+                        <TurkishLira className="w-3 h-3" />
+                        {car.price?.toLocaleString("tr-TR")} ₺
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {formatDate(car.matchDate)}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Match Score - Centered */}
+                  {car.matchScore && (
+                    <div className="flex-shrink-0 px-3 py-2 rounded-lg bg-[#3b82f6]/20 border border-[#3b82f6]/30">
+                      <span className="text-sm font-bold text-[#3b82f6]">{car.matchScore}</span>
+                    </div>
+                  )}
+
+                  {/* Delete Button */}
+                  <button
+                    onClick={() => handleDelete(car.carId)}
+                    disabled={deletingId === car.carId}
+                    className="flex-shrink-0 p-2 rounded-lg opacity-0 group-hover:opacity-100 hover:bg-red-500/20 text-red-400 transition-all"
+                    title="Listeden Kaldır"
+                  >
+                    {deletingId === car.carId ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Trash2 className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div className="flex-shrink-0 px-6 py-4 border-t border-white/[0.06] bg-white/[0.02]">
+        <p className="text-xs text-slate-500 text-center">
+          {matchedCars.length} araç listenizde
+        </p>
+      </div>
+    </div>
+  );
+};
+
 export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
-  const [activePanel, setActivePanel] = useState<'main' | 'ai-settings' | 'vehicle-preferences'>('main');
+  const [activePanel, setActivePanel] = useState<'main' | 'ai-settings' | 'vehicle-preferences' | 'match-cars'>('main');
   const [aiSettings, setAiSettings] = useState<AISettings>(defaultAISettings);
   const [vehiclePreferences, setVehiclePreferences] = useState<VehiclePreferences>(defaultVehiclePreferences);
   const [settingsLoaded, setSettingsLoaded] = useState(false);
+  const [matchedCarsCount, setMatchedCarsCount] = useState(0);
 
-  // Lazy load AI settings when modal opens
+  // Lazy load AI settings and matched cars count when modal opens
   useEffect(() => {
     if (isOpen && !settingsLoaded) {
       const loadSettings = async () => {
@@ -748,6 +967,7 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
           const token = localStorage.getItem("auth_token");
           if (!token) return;
 
+          // Load AI settings
           const response = await fetch("/api/user/ai-settings", {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -768,6 +988,20 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                 typingAnimation: data.settings.typingAnimation,
                 useHistory: data.settings.useHistory,
               });
+            }
+          }
+
+          // Load matched cars count
+          const carsResponse = await fetch("/api/user/matched-cars", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+
+          if (carsResponse.ok) {
+            const carsData = await carsResponse.json();
+            if (carsData.success) {
+              setMatchedCarsCount(carsData.count || 0);
             }
           }
         } catch (err) {
@@ -936,7 +1170,8 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                           <GlassTile 
                             icon={Heart} 
                             title="Match Cars" 
-                            subtitle="0 Cars matched yet"
+                            subtitle={matchedCarsCount > 0 ? `${matchedCarsCount} araç eşleşti` : "Henüz eşleşme yok"}
+                            onClick={() => setActivePanel('match-cars')}
                           />
                           <GlassTile 
                             icon={Search} 
@@ -968,7 +1203,7 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                         onSave={handleSaveSettings}
                       />
                     </motion.div>
-                  ) : (
+                  ) : activePanel === 'vehicle-preferences' ? (
                     <motion.div
                       key="vehicle-preferences"
                       initial={{ opacity: 0, x: 20 }}
@@ -981,6 +1216,20 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                         onBack={() => setActivePanel('main')} 
                         initialPreferences={vehiclePreferences}
                         onSave={handleVehicleSave}
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="match-cars"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 20 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex-1 flex flex-col min-h-0 max-h-[80vh]"
+                    >
+                      <MatchCarsPanel 
+                        onBack={() => setActivePanel('main')} 
+                        onCountChange={(count) => setMatchedCarsCount(count)}
                       />
                     </motion.div>
                   )}
