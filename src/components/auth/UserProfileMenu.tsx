@@ -59,6 +59,7 @@ export function UserProfileMenu({ onOpenAuthModal, className = "", expanded = fa
   const [user, setUser] = useState<User | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isDashboardOpen, setIsDashboardOpen] = useState(false);
+  const [dashboardInitialPanel, setDashboardInitialPanel] = useState<'main' | 'account'>('main');
   const [mounted, setMounted] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
@@ -91,11 +92,18 @@ export function UserProfileMenu({ onOpenAuthModal, className = "", expanded = fa
       checkUser();
     };
 
+    // Listen for user profile updates (avatar, name changes)
+    const handleUserUpdated = () => {
+      checkUser();
+    };
+
     window.addEventListener("storage", handleStorageChange);
     window.addEventListener("userLoggedIn", handleUserLoggedIn);
+    window.addEventListener("userUpdated", handleUserUpdated);
     return () => {
       window.removeEventListener("storage", handleStorageChange);
       window.removeEventListener("userLoggedIn", handleUserLoggedIn);
+      window.removeEventListener("userUpdated", handleUserUpdated);
     };
   }, []);
 
@@ -230,15 +238,15 @@ export function UserProfileMenu({ onOpenAuthModal, className = "", expanded = fa
             {/* Menu Items */}
             <div className="py-2">
               <button
-                onClick={() => { setIsOpen(false); setIsDashboardOpen(true); }}
+                onClick={() => { setIsOpen(false); setDashboardInitialPanel('main'); setIsDashboardOpen(true); }}
                 className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm cursor-pointer transition-colors ${isLightMode ? 'text-gray-700 hover:bg-gray-100 hover:text-gray-900' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}
               >
                 <LayoutDashboard className="w-4 h-4" />
                 Dashboard
               </button>
               <button
-                onClick={() => { setIsOpen(false); /* Navigate to account */ }}
-                className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${isLightMode ? 'text-gray-700 hover:bg-gray-100 hover:text-gray-900' : 'text-slate-300 hover:bg-white/5 hover:text-white cursor-pointer'}`}
+                onClick={() => { setIsOpen(false); setDashboardInitialPanel('account'); setIsDashboardOpen(true); }}
+                className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm cursor-pointer transition-colors ${isLightMode ? 'text-gray-700 hover:bg-gray-100 hover:text-gray-900' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}
               >
                 <UserCog className="w-4 h-4" />
                 Account
@@ -312,7 +320,8 @@ export function UserProfileMenu({ onOpenAuthModal, className = "", expanded = fa
         <DashboardModal 
           isOpen={isDashboardOpen} 
           onClose={() => setIsDashboardOpen(false)} 
-          user={user} 
+          user={user}
+          initialPanel={dashboardInitialPanel}
         />
       )}
     </div>

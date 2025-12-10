@@ -75,6 +75,7 @@ export async function POST(request: NextRequest) {
         id: true,
         email: true,
         name: true,
+        createdAt: true,
         sessions: {
           select: {
             token: true,
@@ -107,6 +108,7 @@ export async function POST(request: NextRequest) {
         id: user.id,
         email: user.email,
         name: user.name,
+        createdAt: user.createdAt,
       },
       token: user.sessions[0].token,
       expiresAt: user.sessions[0].expiresAt,

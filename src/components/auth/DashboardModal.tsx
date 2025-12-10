@@ -3,21 +3,25 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, Search, Heart, Sliders, ChevronLeft, Lock, Loader2, Check, Car, Trash2, Calendar, Fuel, TurkishLira } from "lucide-react";
+import { X, Sparkles, Search, Heart, Sliders, ChevronLeft, Lock, Loader2, Check, Car, Trash2, Calendar, Fuel, TurkishLira, User as UserIcon } from "lucide-react";
 import { toast } from "sonner";
 import Image from "next/image";
+import { AccountPanel } from "./AccountPanel";
 
-interface User {
+interface UserData {
   id: string;
   name?: string;
   email: string;
   avatar?: string;
+  createdAt?: string;
+  membershipType?: string;
 }
 
 interface DashboardModalProps {
   isOpen: boolean;
   onClose: () => void;
-  user: User;
+  user: UserData;
+  initialPanel?: 'main' | 'ai-settings' | 'vehicle-preferences' | 'match-cars' | 'account';
 }
 
 // Large Gradient Avatar for Dashboard
@@ -952,12 +956,30 @@ const MatchCarsPanel = ({
   );
 };
 
-export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
-  const [activePanel, setActivePanel] = useState<'main' | 'ai-settings' | 'vehicle-preferences' | 'match-cars'>('main');
+export function DashboardModal({ isOpen, onClose, user: initialUser, initialPanel = 'main' }: DashboardModalProps) {
+  const [activePanel, setActivePanel] = useState<'main' | 'ai-settings' | 'vehicle-preferences' | 'match-cars' | 'account'>(initialPanel);
+
+  // Reset panel when modal opens with different initialPanel
+  useEffect(() => {
+    if (isOpen) {
+      setActivePanel(initialPanel);
+    }
+  }, [isOpen, initialPanel]);
   const [aiSettings, setAiSettings] = useState<AISettings>(defaultAISettings);
   const [vehiclePreferences, setVehiclePreferences] = useState<VehiclePreferences>(defaultVehiclePreferences);
   const [settingsLoaded, setSettingsLoaded] = useState(false);
   const [matchedCarsCount, setMatchedCarsCount] = useState(0);
+  const [user, setUser] = useState(initialUser);
+
+  // Sync user state with prop changes
+  useEffect(() => {
+    setUser(initialUser);
+  }, [initialUser]);
+
+  // Handle user profile updates from AccountPanel
+  const handleUserUpdate = (updates: { name?: string; email?: string; avatar?: string }) => {
+    setUser(prev => ({ ...prev, ...updates }));
+  };
 
   // Lazy load AI settings and matched cars count when modal opens
   useEffect(() => {
@@ -1218,7 +1240,7 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                         onSave={handleVehicleSave}
                       />
                     </motion.div>
-                  ) : (
+                  ) : activePanel === 'match-cars' ? (
                     <motion.div
                       key="match-cars"
                       initial={{ opacity: 0, x: 20 }}
@@ -1230,6 +1252,21 @@ export function DashboardModal({ isOpen, onClose, user }: DashboardModalProps) {
                       <MatchCarsPanel 
                         onBack={() => setActivePanel('main')} 
                         onCountChange={(count) => setMatchedCarsCount(count)}
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="account"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 20 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex-1 flex flex-col min-h-0 max-h-[80vh]"
+                    >
+                      <AccountPanel 
+                        onBack={() => setActivePanel('main')} 
+                        user={user}
+                        onUserUpdate={handleUserUpdate}
                       />
                     </motion.div>
                   )}

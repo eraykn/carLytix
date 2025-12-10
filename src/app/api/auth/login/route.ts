@@ -92,6 +92,7 @@ export async function POST(request: NextRequest) {
         email: true,
         name: true,
         avatar: true,
+        createdAt: true,
         sessions: {
           select: {
             token: true,
@@ -111,6 +112,7 @@ export async function POST(request: NextRequest) {
         email: updatedUser.email,
         name: updatedUser.name,
         avatar: updatedUser.avatar,
+        createdAt: updatedUser.createdAt,
       },
       token: updatedUser.sessions[0].token,
       expiresAt: updatedUser.sessions[0].expiresAt,
