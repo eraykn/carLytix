@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { LogOut, LayoutDashboard, UserCog, Moon, Sun, Monitor } from "lucide-react";
+import { LogOut, LayoutDashboard, UserCog } from "lucide-react";
 import { useTheme } from "next-themes";
 import { DashboardModal } from "./DashboardModal";
 
@@ -251,51 +251,6 @@ export function UserProfileMenu({ onOpenAuthModal, className = "", expanded = fa
                 <UserCog className="w-4 h-4" />
                 Account
               </button>
-            </div>
-
-            {/* Divider */}
-            <div className={`border-t ${isLightMode ? 'border-gray-200' : 'border-white/10'}`} />
-
-            {/* Theme Toggle */}
-            <div className="px-4 py-3">
-              <div className="flex items-center justify-between">
-                <span className={`text-sm ${isLightMode ? 'text-gray-700' : 'text-slate-300'}`}>Theme</span>
-                <div className={`flex items-center gap-0.5 p-0.5 rounded-md ${isLightMode ? 'bg-gray-100 border-gray-200' : 'bg-white/5 border-white/10'} border`}>
-                  <button
-                    onClick={() => setTheme("system")}
-                    className={`p-1 rounded transition-all ${
-                      (theme === "system" || !theme)
-                        ? isLightMode ? "bg-white text-gray-900 shadow-sm" : "bg-white/10 text-white"
-                        : isLightMode ? "text-gray-500 hover:text-gray-700" : "text-slate-500 hover:text-slate-300"
-                    }`}
-                    title="System"
-                  >
-                    <Monitor className="w-3.5 h-3.5" />
-                  </button>
-                  <button
-                    onClick={() => setTheme("light")}
-                    className={`p-1 rounded transition-all ${
-                      theme === "light" 
-                        ? isLightMode ? "bg-white text-gray-900 shadow-sm" : "bg-white/10 text-white"
-                        : isLightMode ? "text-gray-500 hover:text-gray-700" : "text-slate-500 hover:text-slate-300"
-                    }`}
-                    title="Light"
-                  >
-                    <Sun className="w-3.5 h-3.5" />
-                  </button>
-                  <button
-                    onClick={() => setTheme("dark")}
-                    className={`p-1 rounded transition-all ${
-                      theme === "dark" 
-                        ? isLightMode ? "bg-white text-gray-900 shadow-sm" : "bg-white/10 text-white"
-                        : isLightMode ? "text-gray-500 hover:text-gray-700" : "text-slate-500 hover:text-slate-300"
-                    }`}
-                    title="Dark"
-                  >
-                    <Moon className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
             </div>
 
             {/* Divider */}
