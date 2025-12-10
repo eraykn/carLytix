@@ -76,13 +76,6 @@
 - Şifre hashleme (bcrypt)
 - Token tabanlı oturum yönetimi
 - Modal tabanlı auth arayüzü
-
-### ℹ️ Hakkımızda (`/aboutus`)
-- Platform misyon ve vizyon bilgileri
-- Ekip tanıtımı
-- CarLytix'in hikayesi ve hedefleri
-- Modern tasarımlı bilgilendirme sayfası
-
 ---
 
 ## 🛠 Teknolojiler
