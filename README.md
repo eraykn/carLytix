@@ -337,7 +337,3 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 - GitHub: [@eraykn](https://github.com/eraykn)
 
 ---
-
-<p align="center">
-  Made with ❤️ using Next.js and AI
-</p>

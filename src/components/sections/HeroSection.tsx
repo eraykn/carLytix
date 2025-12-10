@@ -112,6 +112,8 @@ export function HeroSection() {
             src="/images/brands/carlytix-concept-a-logo.svg" 
             alt="CarLytix Logo" 
             className="h-[40px] w-auto drop-shadow-[0_0_10px_rgba(59,130,246,0.4)] ml-2"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
       </motion.div>
