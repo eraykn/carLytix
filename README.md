@@ -11,7 +11,6 @@
 <p align="center">
   <a href="#özellikler">Özellikler</a> •
   <a href="#teknolojiler">Teknolojiler</a> •
-  <a href="#kurulum">Kurulum</a> •
   <a href="#dosya-yapısı">Dosya Yapısı</a> •
   <a href="#api-endpoints">API</a>
 </p>
@@ -93,6 +92,7 @@
 | **shadcn/ui** | Radix UI tabanlı yeniden kullanılabilir bileşen kütüphanesi |
 | **Magic UI** | Modern animasyonlu UI bileşenleri |
 | **Three.js** | 3D grafik ve görselleştirme |
+| **Figma** | UI/UX tasarım aracı |
 | **Framer Motion** | Animasyon kütüphanesi |
 | **GSAP** | Gelişmiş animasyonlar |
 | **Radix UI** | Erişilebilir UI primitifleri |
