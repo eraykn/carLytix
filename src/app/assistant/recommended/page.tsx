@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react"; // useRef eklendi
+import { useEffect, useState, useRef, Suspense } from "react"; // useRef eklendi
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -37,7 +37,19 @@ interface CarData {
   why?: string;
 }
 
-export default function RecommendedCarPage() {
+// Loading fallback component
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center">
+      <div className="flex flex-col items-center gap-4">
+        <Loader2 className="w-8 h-8 text-[#2db7f5] animate-spin" />
+        <p className="text-white/60">Yükleniyor...</p>
+      </div>
+    </div>
+  );
+}
+
+function RecommendedCarContent() {
   const searchParams = useSearchParams();
   const { navigateWithCurtain, isTransitioning } = usePageCurtain();
   const [carData, setCarData] = useState<CarData | null>(null);
@@ -752,5 +764,14 @@ function CompactScoreCard({ icon, title, score, delay, className = "" }: { icon:
         </div>
       </div>
     </motion.div>
+  );
+}
+
+// Main export with Suspense boundary
+export default function RecommendedCarPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <RecommendedCarContent />
+    </Suspense>
   );
 }
