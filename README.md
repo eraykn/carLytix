@@ -9,10 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="#özellikler">Özellikler</a> •
-  <a href="#teknolojiler">Teknolojiler</a> •
-  <a href="#dosya-yapısı">Dosya Yapısı</a> •
-  <a href="#api-endpoints">API</a>
+  <a href="https://carlytix.vercel.app/" target="_blank"><strong>🌐 https://carlytix.vercel.app/</strong></a>
 </p>
 
 ---
