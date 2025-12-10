@@ -90,6 +90,9 @@
 | **React 19** | UI kütüphanesi |
 | **TypeScript** | Tip güvenli JavaScript |
 | **Tailwind CSS 4** | Utility-first CSS framework |
+| **shadcn/ui** | Radix UI tabanlı yeniden kullanılabilir bileşen kütüphanesi |
+| **Magic UI** | Modern animasyonlu UI bileşenleri |
+| **Three.js** | 3D grafik ve görselleştirme |
 | **Framer Motion** | Animasyon kütüphanesi |
 | **GSAP** | Gelişmiş animasyonlar |
 | **Radix UI** | Erişilebilir UI primitifleri |
